@@ -13,9 +13,13 @@
     <main>
         <div class="container">
             <div class="row">
-               <ul class="list-group">
-                   <li class="list-group-item list-group-item-action"><a href="Week-2/02-teach.php">02 Teach: Team Activity</li>
-               </ul>
+               <ul class="list-group w-50">
+                    <li class="list-group-item list-group-item-action">Week 02
+                        <ul class="list-group-item list-group-item-action">
+                            <li class="list-group-item list-group-item-action"><a href="Week-2/02-teach.php">02 Teach: Team Activity</li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
         </div>
     </main>
