@@ -5,7 +5,7 @@
 ?>
 
 <!-- Header -->
-<?php include '/common/header.php'; ?>
+<?php include 'common/header.php'; ?>
 
     <main>
         <div class="container">
