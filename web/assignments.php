@@ -19,7 +19,7 @@
                             <li class="py-1"><a href="Week-2/02-teach.php">02 Teach: Team Activity</a></li>
                             <li class="py-1"><a href="Week-2/assignments.php">02 Prove: Assignment page</a></li>
                             <li class="py-1"><a href="Week-2/index.php">02 Prove: Home page</a></li>
-                            <li class="pb-2 pt-1"><a href="#">Coming soon</a></li>
+                            <li class="pb-2 pt-1"><a href="#">02 Prove: Project Proposal 1 - Coming soon</a></li>
                         </ul>
                     </li>
                     <li class="list-group-item" id="vis-wk-03"> &#9660; Week 03</li>

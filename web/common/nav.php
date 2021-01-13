@@ -10,7 +10,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="../js/scripts.js"></script>
 </head>
-<body class="bg-light h-100 m-0">
+<body class="bg-dark h-100 m-0">
     <header>
         <nav class="navbar navbar-expand-sm bg-info navbar-toggleable-sm navbar-dark text-dark border-bottom box-shadow mb-3">
             <div class="container">
