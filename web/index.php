@@ -11,7 +11,7 @@
     </header>
     
     <main>
-        <div class="container">
+        <div class="container main-image">
             <div class="row d-md-flex">
                 <div id="box-1" class="hidden-content shadow-lg rounded box p-2 mt-4 offset-2 col-8 offset-md-0 col-md d-flex flex-column">
                 </div>

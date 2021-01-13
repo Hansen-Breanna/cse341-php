@@ -31,3 +31,9 @@ footer {
 .main-assign:nth-child(odd) {
     background-color: #a8a8a8;
 }
+
+.main-image {
+    background-image: url('../images/web-code.jpg');
+    background-position: center center;
+    background-size: cover;
+}
