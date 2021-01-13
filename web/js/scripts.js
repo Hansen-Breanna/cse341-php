@@ -59,6 +59,6 @@ $(document).ready(function(){
 
       //Mouse over
       $("#box-1").mouseover(function() {
-            $("#box-1").css('transform',  'scale(' + 2 + ')');
+            $("#box-1").css('transform',  'scale(' + 1.2 + ')');
       })
   });

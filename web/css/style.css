@@ -27,10 +27,6 @@ footer {
     list-style-type: none;
 }
 
-.main-assign:nth-child(odd) {
-    background: #a8a8a8;
-}
-
 .main-image {
     background-image: url('../images/web-code.jpg');
     background-position: center center;
