@@ -15,7 +15,7 @@
             <div class="row d-md-flex">
                 <div id="box-1" class="shadow-lg rounded box p-2 mt-4 offset-2 col-8 offset-md-0 col-md d-flex flex-column">
                   <h2>Outdoors</h2>
-                  <img src="images/outdoors.jpg" alt="Mountains behind a lake and trees">
+                  <img class="col-12" src="images/outdoors.jpg" alt="Mountains behind a lake and trees">
                   <p>I love to enjoy the outdoors</p>
                 </div>
                 <div id="box-2" class="shadow-lg rounded box p-2 mt-4 offset-2 col-8 offset-md-1 col-md">
