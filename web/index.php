@@ -15,17 +15,17 @@
             <div class="row d-md-flex">
                 <div id="box-1" class="shadow-lg rounded box p-2 mt-4 offset-2 col-8 offset-md-0 col-md d-flex flex-column">
                   <h2>Outdoors</h2>
-                  <img class="col-12" src="images/outdoors.jpg" alt="Mountains behind a lake and trees">
+                  <img class="offset-1 col-10" src="images/outdoors.jpg" alt="Mountains behind a lake and trees">
                   <p>I love to enjoy the outdoors</p>
                 </div>
                 <div id="box-2" class="shadow-lg rounded box p-2 mt-4 offset-2 col-8 offset-md-1 col-md">
                   <h2>Games</h2>
-                  <img src="images/dominion-strategy-game.jpg" alt="Dominion Strategy Games">
+                  <img class="offset-1 col-10" src="images/dominion-strategy-game.jpg" alt="Dominion Strategy Games">
                   <p>My kids and I love to play games together.</p>
                 </div>
                 <div id="box-3" class="shadow-lg rounded box p-2 mt-4 offset-2 col-8 offset-md-1 col-md">
                   <h2>Reading</h2>
-                  <img src="images/library.jpg" alt="Large public library">
+                  <img class="offset-1 col-10" src="images/library.jpg" alt="Large public library">
                   <p>I love to read.</p>
                 </div>
             </div> 
