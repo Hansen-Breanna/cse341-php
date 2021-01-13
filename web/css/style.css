@@ -23,3 +23,8 @@ footer {
     background-color: #cfcfcf;
     height: 250px;
 }
+
+.assign {
+    text-decoration: none;
+    margin: 0;
+}
