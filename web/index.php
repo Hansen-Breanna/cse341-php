@@ -5,7 +5,7 @@
 ?>
 
 <!-- Header -->
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/web/common/header.php'; ?>
+<?php include '/common/header.php'; ?>
 
     <main>
         <div class="container">
