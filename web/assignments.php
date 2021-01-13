@@ -14,7 +14,7 @@
             <div class="row">
                <ul class="list-group w-100 w-md-50 bg-light main-assign">
                     <li class="list-group-item" id="vis-wk-02"> &#9660; Week 02</li>
-                    <li id="week-02" class="list-group-item">                    
+                    <li id="week-02" class="list-group-item d-none">                    
                         <ul class="list-group-item-action p-0 assign">
                             <li class="py-1"><a href="Week-2/02-teach.php">02 Teach: Team Activity</a></li>
                             <li class="py-1"><a href="Week-2/assignments.php">02 Prove: Assignment page</a></li>
