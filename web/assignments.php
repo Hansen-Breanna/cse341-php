@@ -22,6 +22,78 @@
                             <li class="pb-2 pt-1"><a href="#">Coming soon</a></li>
                         </ul>
                     </li>
+                    <li class="list-group-item" id="vis-wk-02"> &#9660; Week 03</li>
+                    <li id="week-02" class="list-group-item">                    
+                        <ul class="list-group-item-action p-0 assign">
+                            <li class="py-1"><a href="#">Coming soon</a></li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item" id="vis-wk-02"> &#9660; Week 04</li>
+                    <li id="week-02" class="list-group-item">                    
+                        <ul class="list-group-item-action p-0 assign">
+                            <li class="py-1"><a href="#">Coming soon</a></li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item" id="vis-wk-02"> &#9660; Week 05</li>
+                    <li id="week-02" class="list-group-item">                    
+                        <ul class="list-group-item-action p-0 assign">
+                            <li class="py-1"><a href="#">Coming soon</a></li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item" id="vis-wk-02"> &#9660; Week 06</li>
+                    <li id="week-02" class="list-group-item">                    
+                        <ul class="list-group-item-action p-0 assign">
+                            <li class="py-1"><a href="#">Coming soon</a></li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item" id="vis-wk-02"> &#9660; Week 07</li>
+                    <li id="week-02" class="list-group-item">                    
+                        <ul class="list-group-item-action p-0 assign">
+                            <li class="py-1"><a href="#">Coming soon</a></li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item" id="vis-wk-02"> &#9660; Week 08</li>
+                    <li id="week-02" class="list-group-item">                    
+                        <ul class="list-group-item-action p-0 assign">
+                            <li class="py-1"><a href="#">Coming soon</a></li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item" id="vis-wk-02"> &#9660; Week 09</li>
+                    <li id="week-02" class="list-group-item">                    
+                        <ul class="list-group-item-action p-0 assign">
+                            <li class="py-1"><a href="#">Coming soon</a></li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item" id="vis-wk-02"> &#9660; Week 10</li>
+                    <li id="week-02" class="list-group-item">                    
+                        <ul class="list-group-item-action p-0 assign">
+                            <li class="py-1"><a href="#">Coming soon</a></li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item" id="vis-wk-02"> &#9660; Week 11</li>
+                    <li id="week-02" class="list-group-item">                    
+                        <ul class="list-group-item-action p-0 assign">
+                            <li class="py-1"><a href="#">Coming soon</a></li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item" id="vis-wk-02"> &#9660; Week 12</li>
+                    <li id="week-02" class="list-group-item">                    
+                        <ul class="list-group-item-action p-0 assign">
+                            <li class="py-1"><a href="#">Coming soon</a></li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item" id="vis-wk-02"> &#9660; Week 13</li>
+                    <li id="week-02" class="list-group-item">                    
+                        <ul class="list-group-item-action p-0 assign">
+                            <li class="py-1"><a href="#">Coming soon</a></li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item" id="vis-wk-02"> &#9660; Week 14</li>
+                    <li id="week-02" class="list-group-item">                    
+                        <ul class="list-group-item-action p-0 assign">
+                            <li class="py-1"><a href="#">Coming soon</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>
