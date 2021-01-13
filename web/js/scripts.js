@@ -2,6 +2,6 @@
 // https://api.jquery.com/slidetoggle/
 $(document).ready(function(){
     $("#vis-wk-02").click(function(){
-      $("#week-02").toggleClass('d-none');
+      $("#week-02").toggleClass('d-block');
     });
   });
