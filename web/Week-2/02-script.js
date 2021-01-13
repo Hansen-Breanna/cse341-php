@@ -18,8 +18,9 @@ $(document).ready(function(){
 
 // Toggle visibility of div #3
 // https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_lib_google
+// https://api.jquery.com/slidetoggle/
 $(document).ready(function(){
     $("#visibility").click(function(){
-      $("#box-3").toggle();
+      $("#box-3").toggle("slow");
     });
   });
