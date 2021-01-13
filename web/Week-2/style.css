@@ -1,0 +1,21 @@
+.box {
+    background-color: #a8a8a8;
+    font-size: 1.5em;
+    height: 250px;
+}
+
+.box:hover {
+    font-weight: bold;
+}
+
+#box-1 {
+    border-bottom: 5px solid #0275d8;
+}
+
+#box-2 {
+    border-bottom: 5px solid #5cb85c;
+}
+
+#box-3 {
+    border-bottom: 5px solid #5bc0de;
+}
