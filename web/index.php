@@ -9,7 +9,7 @@
       </div>
     </header>
     
-    <main>
+    <main class="mb-5">
       <div class="container">
             <div class="row d-md-flex">
                 <div id="box-1" class="shadow-lg rounded box p-2 mt-4 offset-2 col-8 offset-md-0 col-md d-flex flex-column">
