@@ -23,3 +23,8 @@
 h2 {
     font-weight: normal;
 }
+
+footer {
+    position: sticky;
+    bottom: 0;
+}
