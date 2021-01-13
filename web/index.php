@@ -13,11 +13,11 @@
     <main>
       <div class="container">
           <div class="row d-md-flex">
-              <div id="box-1" class="hidden-content shadow-lg rounded box p-2 mt-4 offset-2 col-8 offset-md-0 col-md d-flex flex-column">
+              <div id="box-1" class="main-image shadow-lg rounded box p-2 mt-4 offset-2 col-8 offset-md-0 col-md d-flex flex-column">
               </div>
-              <div id="box-2" class="hidden-content shadow-lg rounded box p-2 mt-4 offset-2 col-8 offset-md-1 col-md">
+              <div id="box-2" class="shadow-lg rounded box p-2 mt-4 offset-2 col-8 offset-md-1 col-md">
               </div>
-              <div id="box-3" class="hidden-content shadow-lg rounded box p-2 mt-4 offset-2 col-8 offset-md-1 col-md">
+              <div id="box-3" class="shadow-lg rounded box p-2 mt-4 offset-2 col-8 offset-md-1 col-md">
               </div>
           </div> 
           <div class="row col-6 offset-3 col-md-8 offset-md-2">
