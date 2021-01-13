@@ -1,3 +1,13 @@
+body {
+    position: relative;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
 #box-1 {
     border-bottom: 5px solid #0275d8;
 }
