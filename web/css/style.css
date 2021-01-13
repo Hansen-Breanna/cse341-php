@@ -40,3 +40,9 @@ footer {
 a {
     text-decoration: none;
 }
+
+/* Assignment Weeks */
+
+.week-02 {
+    display: none;
+}
