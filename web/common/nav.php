@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-100 m-0">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +10,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="../js/scripts.js"></script>
 </head>
-<body class="bg-light">
+<body class="bg-light h-100 m-0">
     <header>
         <nav class="navbar navbar-expand-sm bg-success navbar-toggleable-sm navbar-dark text-light border-bottom box-shadow mb-3">
             <div class="container">
