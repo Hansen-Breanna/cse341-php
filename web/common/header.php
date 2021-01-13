@@ -11,6 +11,7 @@
     <script src="../js/scripts.js"></script>
 </head>
 <body>
+    <header>
         <nav class="navbar navbar-expand-sm bg-secondary navbar-toggleable-sm navbar-dark text-light border-bottom box-shadow mb-3">
             <div class="container">
                 <a class="navbar-brand text-light">CSE 341 Software Engineering I</a>
@@ -29,8 +30,4 @@
                 </div>
             </div>
         </nav>
-
-    <div class="content">
-    <header>
-      <div class="container">
-          <div class="row">
+    </header>

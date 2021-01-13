@@ -1,6 +1,10 @@
 <!-- Header -->
 <?php include 'common/nav.php'; ?>
 
+  <div class="content">
+    <header>
+      <div class="container">
+          <div class="row">
               <h1>Breanna Hansen</h1>
           </div>
       </div>
@@ -8,7 +12,6 @@
     
     <main>
       <div class="container">
-        <h1>Ab
           <div class="row d-md-flex">
               <div id="box-1" class="main-image shadow-lg rounded box p-2 mt-4 offset-2 col-8 offset-md-0 col-md d-flex flex-column">
                 Outdoors
@@ -25,6 +28,6 @@
           </div> 
       </div>
     </main>
-
+  </div>
 <!-- Footer -->
 <?php include 'common/footer.php'; ?>
