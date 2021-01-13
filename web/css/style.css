@@ -23,3 +23,7 @@ footer {
     background-color: #cfcfcf;
     height: 250px;
 }
+
+.assign {
+    list-style-type: none;
+}
