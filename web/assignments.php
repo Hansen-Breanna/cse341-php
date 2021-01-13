@@ -12,7 +12,7 @@
     <main class="bg-light">
         <div class="container">
             <div class="row">
-               <ul class="list-group w-100 w-md-50 bg-light main-assign">
+               <ul class="bg-light list-group w-100 w-md-50 bg-light main-assign">
                     <li class="list-group-item" id="vis-wk-02"> &#9660; Week 02</li>
                     <li id="week-02" class="list-group-item">                    
                         <ul class="list-group-item-action p-0 assign">
