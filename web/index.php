@@ -5,7 +5,7 @@
     <header>
       <div class="container">
           <div class="row">
-              <h1>Breanna Hansen</h1>
+              <h1 class="display-2">Breanna Hansen</h1>
           </div>
       </div>
     </header>
@@ -14,9 +14,9 @@
       <div class="container">
             <div class="row d-md-flex">
                 <div id="box-1" class="shadow-lg rounded box p-2 mt-4 offset-2 col-8 offset-md-0 col-md d-flex flex-column">
-                  <h2 class="text-center display-2">Outdoors</h2>
+                  <h2 class="text-center display-5 py-3">Outdoors</h2>
                   <img class="offset-1 col-10" src="images/outdoors.jpg" alt="Mountains behind a lake and trees">
-                  <p>I love to enjoy the outdoors</p>
+                  <p class="py-3">I love to enjoy the outdoors</p>
                 </div>
                 <div id="box-2" class="shadow-lg rounded box p-2 mt-4 offset-2 col-8 offset-md-1 col-md">
                   <h2>Games</h2>
