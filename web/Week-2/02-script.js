@@ -20,6 +20,6 @@ $(document).ready(function(){
 // https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_lib_google
 $(document).ready(function(){
     $("#visibility").click(function(){
-      $("#box-3").hide();
+      $("#box-3").toggle();
     });
   });
