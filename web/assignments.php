@@ -14,7 +14,7 @@
         <div class="container">
             <div class="row">
                <ul class="list-group">
-                   <li><a href="Week-2/02-teach.html" class="list-group-item list-group-item-action">02 Teach: Team Activity</li>
+                   <li><a href="Week-2/02-teach.html">02 Teach: Team Activity</li>
                </ul>
             </div>
         </div>
