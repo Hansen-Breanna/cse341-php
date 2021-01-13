@@ -27,3 +27,7 @@ footer {
 .assign {
     list-style-type: none;
 }
+
+.main-assign:nth-child(odd) {
+    background-color: #a8a8a8;
+}

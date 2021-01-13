@@ -21,7 +21,7 @@
                             <li class="pt-2"><a href="Week-2/assignments.php">02 Prove: Assignment page</li>
                             <li class="pt-2"><a href="Week-2/index.php">02 Prove: Home page</li>
                         </ul>
-                    <li>
+                    </li>
                 </ul>
             </div>
         </div>
