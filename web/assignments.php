@@ -16,10 +16,10 @@
                     <li class="list-group-item" id="vis-wk-02"> &#9660; Week 02</li>
                     <li id="week-02" class="list-group-item p-0">                    
                         <ul class="list-group-item-action p-0 assign">
-                            <li class="ml-2 py-1"><a href="Week-2/02-teach.php">02 Teach: Team Activity</a></li>
-                            <li class="ml-2 py-1"><a href="Week-2/assignments.php">02 Prove: Assignment page</a></li>
-                            <li class="ml-2 py-1"><a href="Week-2/index.php">02 Prove: Home page</a></li>
-                            <li class="ml-2 pb-2 pt-1"><a href="#">Coming soon</a></li>
+                            <li class="py-1"><a class="ml-2" href="Week-2/02-teach.php">02 Teach: Team Activity</a></li>
+                            <li class="py-1"><a class="ml-2" href="Week-2/assignments.php">02 Prove: Assignment page</a></li>
+                            <li class="py-1"><a class="ml-2" href="Week-2/index.php">02 Prove: Home page</a></li>
+                            <li class="pb-2 pt-1"><a class="ml-2" href="#">Coming soon</a></li>
                         </ul>
                     </li>
                 </ul>
