@@ -9,12 +9,12 @@
         </div>
     </header>
 
-    <main class="bg-light">
+    <main>
         <div class="container">
             <div class="row">
                <ul class="list-group w-100 w-md-50 bg-light main-assign">
                     <li class="bg-light list-group-item" id="vis-wk-02"> &#9660; Week 02</li>
-                    <li id="week-02" class="bg-light list-group-item">                    
+                    <li id="week-02" class="list-group-item">                    
                         <ul class="list-group-item-action p-0 assign">
                             <li class="py-1"><a href="Week-2/02-teach.php">02 Teach: Team Activity</a></li>
                             <li class="py-1"><a href="Week-2/assignments.php">02 Prove: Assignment page</a></li>
