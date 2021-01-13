@@ -2,7 +2,11 @@
 <?php include 'common/nav.php'; ?>
 
   <header>
-    <h1>Breanna Hansen</h1>
+  <div class="container">
+        <div class="row">
+            <h1>Breanna Hansen</h1>
+        </div>
+    </div>
   </header>
   
   <main>
