@@ -1,10 +1,9 @@
-<!-- Header -->
+<!-- Nav -->
 <?php include 'common/nav.php'; ?>
 
-<div class="content">
-    <header>
-        <div class="container">
-            <div class="row">
+<!-- Header -->
+<?php include 'common/header.php'; ?>
+
                 <h1>Assignments</h1>
             </div>
         </div>
@@ -27,6 +26,6 @@
             </div>
         </div>
     </main>
-</div>
+
 <!-- Footer -->
 <?php include 'common/footer.php'; ?>

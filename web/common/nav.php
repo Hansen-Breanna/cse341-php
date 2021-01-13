@@ -12,7 +12,7 @@
 </head>
 <body class="bg-light h-100 m-0">
     <header>
-        <nav class="navbar navbar-expand-sm bg-success navbar-toggleable-sm navbar-dark text-light border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm bg-info navbar-toggleable-sm navbar-dark text-light border-bottom box-shadow mb-3">
             <div class="container">
                 <a class="navbar-brand text-light">CSE 341 Software Engineering I</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse">
