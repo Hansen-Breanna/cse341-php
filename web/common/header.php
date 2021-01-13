@@ -10,7 +10,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="../js/scripts.js"></script>
 </head>
-<body class="bg-light">
+<body class="main-image position-absolute">
     <header>
         <nav class="navbar navbar-expand-sm bg-secondary navbar-toggleable-sm navbar-dark text-light border-bottom box-shadow mb-3">
             <div class="container">

@@ -10,7 +10,7 @@
         </div>
     </header>
 
-    <main>
+    <main class="bg-light">
         <div class="container">
             <div class="row">
                <ul class="list-group w-50 bg-light main-assign">
