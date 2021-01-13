@@ -33,7 +33,7 @@
             </div> 
             <div class="row col-6 offset-3 col-md-8 offset-md-2">
                 <button type="button" class="col-md btn btn-lg bg-primary mt-5 text-light shadow-lg" onclick="clickedAlert()">Click me</button>
-                <button id="visibility" type="button" class="col-md offset-md-1 btn btn-lg bg-primary mt-5 text-light shadow-lg" onclick="changeBackground()">Toggle Div 3</button>
+                <button id="visibility" type="button" class="col-md offset-md-1 btn btn-lg bg-primary mt-5 text-light shadow-lg">Toggle Div 3</button>
             </div> 
         </div>
     </main>
