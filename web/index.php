@@ -19,14 +19,14 @@
                   <p class="py-3">I love to enjoy the outdoors</p>
                 </div>
                 <div id="box-2" class="shadow-lg rounded box p-2 mt-4 offset-2 col-8 offset-md-1 col-md">
-                  <h2>Games</h2>
+                  <h2 class="text-center display-5 py-3">Games</h2>
                   <img class="offset-1 col-10" src="images/dominion-strategy-game.jpg" alt="Dominion Strategy Games">
-                  <p>My kids and I love to play games together.</p>
+                  <p class="py-3">My kids and I love to play games together.</p>
                 </div>
                 <div id="box-3" class="shadow-lg rounded box p-2 mt-4 offset-2 col-8 offset-md-1 col-md">
-                  <h2>Reading</h2>
+                  <h2 class="text-center display-5 py-3">Reading</h2>
                   <img class="offset-1 col-10" src="images/library.jpg" alt="Large public library">
-                  <p>I love to read.</p>
+                  <p class="py-3">I love to read.</p>
                 </div>
             </div> 
             <div class="row col-6 offset-3 col-md-8 offset-md-2">
