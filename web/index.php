@@ -30,7 +30,7 @@
                 </div>
             </div> 
             <div class="row col-6 offset-3 col-md-8 offset-md-2">
-                <button type="button" class="col-md btn btn-lg bg-primary mt-5 text-light shadow-lg">Assignments</button>
+                <button type="button" class="col-md btn btn-lg bg-info mt-5 text-light shadow-lg">Assignments</button>
             </div> 
         </div>
       </main>
