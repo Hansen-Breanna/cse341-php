@@ -1,7 +1,6 @@
 <!-- Header -->
 <?php include 'common/nav.php'; ?>
 
-<div class="content">
     <header>
         <div class="container">
             <div class="row">
@@ -17,6 +16,6 @@
             </div>
         </div>
     </main>
-</div>
+
 <!-- Footer -->
 <?php include 'common/footer.php'; ?>

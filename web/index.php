@@ -1,9 +1,8 @@
 <!-- Header -->
 <?php include 'common/nav.php'; ?>
 
-  <div class="content">
     <header>
-    <div class="container">
+      <div class="container">
           <div class="row">
               <h1>Breanna Hansen</h1>
           </div>
@@ -26,6 +25,6 @@
             </div> 
         </div>
     </main>
-  </div>
+  
 <!-- Footer -->
 <?php include 'common/footer.php'; ?>
