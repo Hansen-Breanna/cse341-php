@@ -29,7 +29,7 @@
                 </div>
             </div> 
             <div class="row col-6 offset-3 col-md-8 offset-md-2">
-                <button type="button" class="col-md btn btn-lg bg-info mt-5 text-dark shadow-lg">Assignments</button>
+                <a class="col-md btn btn-lg bg-info mt-5 text-dark shadow-lg" href="assignments.php">Assignments</button>
             </div> 
         </div>
       </main>
