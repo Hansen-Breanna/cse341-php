@@ -1,4 +1,4 @@
 <div class="content">
-    <header>
+    <header class="text-light">
       <div class="container">
           <div class="row">
