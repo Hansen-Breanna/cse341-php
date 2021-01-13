@@ -1,20 +1,22 @@
 <!-- Header -->
 <?php include 'common/nav.php'; ?>
 
-<header>
-    <div class="container">
-        <div class="row">
-            <h1>Assignments</h1>
+<div class="content">
+    <header>
+        <div class="container">
+            <div class="row">
+                <h1>Assignments</h1>
+            </div>
         </div>
-    </div>
-</header>
+    </header>
 
-<main>
-    <div class="container">
-        <div class="row">
-            <ul>
+    <main>
+        <div class="container">
+            <div class="row">
+                <ul>
+            </div>
         </div>
-    </div>
-</main>
+    </main>
+</div>
 <!-- Footer -->
 <?php include 'common/footer.php'; ?>
