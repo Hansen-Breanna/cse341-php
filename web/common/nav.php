@@ -1,6 +1,6 @@
 </head>
 <body class="bg-dark h-100 m-0">
-<nav class="navbar navbar-expand-sm bg-info navbar-toggleable-sm navbar-dark text-dark border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm bg-info navbar-toggleable-sm navbar-dark text-dark border-bottom box-shadow mb-3">
             <div class="container">
                 <a class="navbar-brand text-dark">CSE 341 Software Engineering I</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="navbar-collapse">

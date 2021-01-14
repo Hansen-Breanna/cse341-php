@@ -17,7 +17,7 @@ $(document).ready(function(){
     $("#week-14").hide();
 
     // initially hide ul in nav
-    $(".navbar-nav").hide();
+    //$(".navbar-nav").hide();
 
     // Toggle weeks
     $("#vis-wk-02").click(function(){
