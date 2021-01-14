@@ -6,7 +6,7 @@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div id="navbar-collapse" class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                <div class="d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
                             <a class="nav-link text-dark" href="index.php">Home</a>
