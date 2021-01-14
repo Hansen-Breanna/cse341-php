@@ -61,7 +61,7 @@ $(document).ready(function(){
       });
 
       // Toggle nav
-      //$(".navbar-toggler-icon").click(function(){
-        //$(".navbar-nav").toggle();
-      //});
+      $(".navbar-toggler-icon").click(function(){
+        $(".navbar-nav").toggle();
+      });
   });
