@@ -1,6 +1,3 @@
-<!-- Header -->
-<?php include '../common/nav.php'; ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,6 +34,3 @@
             </div> 
         </div>
     </main>
-
-    <!-- Footer -->
-<?php include '../common/footer.php'; ?>
