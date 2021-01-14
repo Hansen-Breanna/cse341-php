@@ -56,9 +56,4 @@ $(document).ready(function(){
       $("#vis-wk-14").click(function(){
         $("#week-14").toggle();
       });
-
-      //Mouse over
-      $("#box-1").mouseover(function() {
-            $("#box-1").css('transform',  'scale(' + 1.2 + ')');
-      })
   });
