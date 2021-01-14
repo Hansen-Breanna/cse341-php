@@ -16,9 +16,6 @@ $(document).ready(function(){
     $("#week-13").hide();
     $("#week-14").hide();
 
-    // initially hide ul in nav
-    //$(".navbar-nav").hide();
-
     // Toggle weeks
     $("#vis-wk-02").click(function(){
       $("#week-02").toggle();
@@ -58,10 +55,5 @@ $(document).ready(function(){
       });
       $("#vis-wk-14").click(function(){
         $("#week-14").toggle();
-      });
-
-      // Toggle nav
-      $(".navbar-toggler-icon").click(function(){
-        $(".navbar-nav").toggle();
       });
   });
