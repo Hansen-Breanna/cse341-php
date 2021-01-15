@@ -61,8 +61,8 @@ $(document).ready(function(){
   // Nav toggle
 
   function navToggle() {
-    var nav = document.getElementById("nav");
-    if (nav.style.display === "none") {
+    var nav = document.getElementById("link-nav");
+    if (nav.style.display == "none") {
       nav.style.display = "block";
     } else {
       nav.style.display = "none";
