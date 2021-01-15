@@ -67,4 +67,5 @@ $(document).ready(function(){
     } else {
       nav.style.display = "none";
     }
+    alert("worked");
   }
