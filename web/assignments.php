@@ -22,8 +22,8 @@
                     <li id="week-02" class="list-group-item">                    
                         <ul class="list-group-item-action p-0 assign">
                             <li class="py-1"><a href="Week-2/02-teach.php">02 Teach: Team Activity</a></li>
-                            <li class="py-1"><a href="Week-2/assignments.php">02 Prove: Assignment page</a></li>
-                            <li class="py-1"><a href="Week-2/index.php">02 Prove: Home page</a></li>
+                            <li class="py-1"><a href="assignments.php">02 Prove: Assignment page</a></li>
+                            <li class="py-1"><a href="index.php">02 Prove: Home page</a></li>
                             <li class="pb-2 pt-1"><a href="#">02 Prove: Project Proposal 1 - Coming soon</a></li>
                         </ul>
                     </li>
