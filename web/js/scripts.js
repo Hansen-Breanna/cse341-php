@@ -65,5 +65,5 @@ $(document).ready(function(){
 
   function navToggle() {
       alert("oh");
-      document.getElementsByClassName("nav-item").style.border-top = "1px solid white";
+      document.getElementsByClassName("nav-item").style.border = "1px solid white";
   }
