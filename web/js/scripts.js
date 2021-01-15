@@ -68,9 +68,9 @@ $(document).ready(function(){
   }
 
   function mOver(obj) {
-    obj.style.transform = "rotate(7deg)";
+    obj.style.transform = "scale(1.2)";
   }
   
   function mOut(obj) {
-    obj.innerHTML = "Mouse Over Me"
+    obj.style.transform = "scale(1)";
   }
