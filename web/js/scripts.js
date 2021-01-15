@@ -57,3 +57,13 @@ $(document).ready(function(){
         $("#week-14").toggle();
       });
   });
+
+  // Nav toggle
+  function navToggle() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+      x.className += " responsive";
+    } else {
+      x.className = "topnav";
+    }
+  }
