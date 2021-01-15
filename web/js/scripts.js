@@ -69,6 +69,7 @@ $(document).ready(function(){
 
   function mOver(obj) {
     obj.style.transform = "rotateY(180deg)";
+    obj.style.visibility = "hidden";
   }
   
   function mOut(obj) {
