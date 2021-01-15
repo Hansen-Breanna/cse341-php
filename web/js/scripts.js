@@ -64,6 +64,5 @@ $(document).ready(function(){
   });
 
   function navToggle() {
-      alert("oh");
       document.getElementsByClassName("nav-item").style.border = "1px solid white";
   }
