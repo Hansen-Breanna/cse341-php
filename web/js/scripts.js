@@ -61,11 +61,7 @@ $(document).ready(function(){
   // Nav toggle
 
   function navToggle() {
-    var nav = document.getElementById("link-nav");
-    if (nav.style.display == "none") {
-      nav.style.display = "block";
-    } else {
-      nav.style.display = "none";
-    }
+        document.getElementById("link-nav").classList.toggle("hide");
+      }
     alert("worked");
   }
