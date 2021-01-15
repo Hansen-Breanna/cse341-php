@@ -68,11 +68,9 @@ $(document).ready(function(){
   }
 
   function mOver(obj) {
-    obj.style.transform = "rotateY(180deg)";
-    obj.style.innerHTML = "<h3>Favorite places to visit:<h3>" +
-        "<ul><li>Warm River</li><li>Redfish Lake</li><li>Yellowstone</li></ul>";
+    obj.style.transform = "scale(1.1)";
   }
   
   function mOut(obj) {
-    obj.style.transform = "rotateY(-180deg)";
+    obj.style.transform = "scale(1)";
   }
