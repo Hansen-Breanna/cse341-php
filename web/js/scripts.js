@@ -61,7 +61,7 @@ $(document).ready(function(){
   // Nav toggle
 
   function navToggle() {
-    var nav = document.getElementsByClassName("navbar-nav")
+    var nav = document.getElementsByClassName("navbar-nav");
     if (nav.style.display === "none") {
       nav.style.display = "block";
     } else {
