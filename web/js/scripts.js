@@ -65,5 +65,5 @@ $(document).ready(function(){
 
   function navToggle() {
       var test = document.getElementsByClassName('nav-item');
-      alert('test');
+      alert(test);
   }
