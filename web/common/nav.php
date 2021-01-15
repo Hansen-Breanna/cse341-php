@@ -1,16 +1,16 @@
 </head>
 <body class="bg-dark h-100 m-0">
     <header>
-
-        <nav class="topnav" id="myTopnav">
-            <a href="#home" class="active">CSE 341 Software Engineering I</a>
-            <a href="#news">News</a>
-            <a href="#contact">Contact</a>
-            <a href="#about">About</a>
-            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                <span class="navbar-toggler-icon"></span>
-            </a>
-        </nav>
+    
+    <div class="topnav" id="nav">
+  <a href="#home" class="active">Home</a>
+  <a href="#news">News</a>
+  <a href="#contact">Contact</a>
+  <a href="#about">About</a>
+  <a href="javascript:void(0);" class="icon" onclick="navToggle()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
 
         <nav class="navbar navbar-expand-sm bg-info navbar-toggleable-sm navbar-dark text-dark border-bottom box-shadow mb-3">
             <div class="container">
