@@ -63,10 +63,7 @@ $(document).ready(function(){
       });
   });
 
-  function navToggle() {
-    document.getElementById('nav-border').style.borderTop = '1px solid #f7f7f7';
-  }
-
+  // Box scaling
   function mOver(obj) {
     obj.style.transform = "scale(1.1)";
   }
