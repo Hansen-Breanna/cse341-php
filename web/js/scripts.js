@@ -57,7 +57,7 @@ $(document).ready(function(){
         $("#week-14").toggle();
       });
 
-      $("#link-nav").click(function(){
+      $(".navbar-toggler").click(function(){
         $("#link-nav").toggle();
       });
   });
@@ -65,7 +65,7 @@ $(document).ready(function(){
   // Nav toggle
 
   function navToggle() {
-    $("#link-nav").click(function(){
+    $(".navbar-#link-nav").click(function(){
         $("#link-nav").toggle();
       });
     alert("worked");
