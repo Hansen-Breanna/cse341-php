@@ -57,16 +57,13 @@ $(document).ready(function(){
         $("#week-14").toggle();
       });
 
+      // Nav toggle
       $(".navbar-toggler").click(function(){
         $("#link-nav").toggle();
       });
   });
 
-  // Nav toggle
-
   function navToggle() {
-    $(".navbar-#link-nav").click(function(){
-        $("#link-nav").toggle();
-      });
-    alert("worked");
+      alert("oh");
+      document.getElementsByClassName("nav-item").style.border-top = "1px solid white";
   }
