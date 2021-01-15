@@ -60,10 +60,10 @@ $(document).ready(function(){
 
   // Nav toggle
   function navToggle() {
-    var x = document.getElementById("nav");
-    if (x.className === "topnav") {
-      x.className += " responsive";
+    var nav = document.getElementById("nav");
+    if (nav.className === "topnav") {
+      nav.className += "responsive";
     } else {
-      x.className = "topnav";
+      nav.className = "topnav";
     }
   }
