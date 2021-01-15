@@ -22,7 +22,7 @@
     </header>
 
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark border-bottom box-shadow mb-3">
             <div class="container">
                 <a class="navbar-brand text-light" asp-page="/Scriptures/Index">My Scripture Journal</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse">
