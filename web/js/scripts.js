@@ -56,6 +56,10 @@ $(document).ready(function(){
       $("#vis-wk-14").click(function(){
         $("#week-14").toggle();
       });
+
+      $("#link-nav").click(function(){
+        $("#link-nav").toggle();
+      });
   });
 
   // Nav toggle
