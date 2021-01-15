@@ -8,7 +8,7 @@
                 </button>
                 <div class="navbar-collapse d-md-inline-flex flex-md-row-reverse">
                     <ul id="link-nav" class="navbar-nav flex-grow-1 d-md-inline-flex">
-                        <li class="nav-item">
+                        <li id="home-link" class="nav-item">
                             <a class="nav-link text-dark" href="index.php">Home</a>
                         </li>
                         <li class="nav-item">
