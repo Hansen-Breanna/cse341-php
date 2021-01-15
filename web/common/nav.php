@@ -13,7 +13,7 @@
 </div>
 
         <nav class="navbar navbar-expand-sm bg-info navbar-toggleable-sm navbar-dark text-dark border-bottom box-shadow mb-3">
-            <div class="container">
+            <div class="container top-nav">
                 <a class="navbar-brand text-dark">CSE 341 Software Engineering I</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" onclick="navToggle()">
                     <span class="navbar-toggler-icon"></span>
