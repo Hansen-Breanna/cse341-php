@@ -66,3 +66,11 @@ $(document).ready(function(){
   function navToggle() {
     document.getElementById('nav-border').style.borderTop = '1px solid #f7f7f7';
   }
+
+  function mOver(obj) {
+    obj.innerHTML = "Thank You"
+  }
+  
+  function mOut(obj) {
+    obj.innerHTML = "Mouse Over Me"
+  }
