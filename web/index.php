@@ -9,7 +9,7 @@
 <!-- Header -->
 <?php include 'common/header.php'; ?>
 
-              <h1 class="display-2">Breanna Hansen</h1>
+              <h1 class="display-3">Breanna Hansen</h1>
           </div>
       </div>
     </header>
