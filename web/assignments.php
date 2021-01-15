@@ -1,3 +1,8 @@
+<!-- Head -->
+<?php include 'common/head.php'; ?>
+
+    <title>02 Prove: Assignments</title>
+
 <!-- Nav -->
 <?php include 'common/nav.php'; ?>
 
