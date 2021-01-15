@@ -21,7 +21,7 @@
                 </button>
                 <!-- Link list -->
                 <div class="d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="navbar-nav flex-grow-1">
+                    <ul id="topnav" class="navbar-nav flex-grow-1">
                         <li class="nav-item">
                             <a class="nav-link text-dark" href="index.php">Home</a>
                         </li>
