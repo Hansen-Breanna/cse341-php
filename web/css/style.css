@@ -39,5 +39,5 @@ a {
 }
 
 .navbar-nav {
-    visibility: hidden;
+    display: none;
 }
