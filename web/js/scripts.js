@@ -68,7 +68,7 @@ $(document).ready(function(){
   }
 
   function mOver(obj) {
-    obj.style.transform = "rotateY(180)";
+    obj.style.transform = "rotateY(180deg)";
   }
   
   function mOut(obj) {
