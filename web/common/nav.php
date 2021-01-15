@@ -5,9 +5,15 @@
         <!-- Nav code altered from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_topnav -->
         <nav class="topnav bg-info navbar-dark text-dark border-bottom box-shadow mb-3" id="nav">
             <a href="index.php" class="navbar-brand text-dark">CSE 341 Software Engineering I</a>
-            <a href="index.php" class="nav-item">Home</a>
-            <a href="assignments.php" class="nav-item">Assignments</a>
-            <a href="javascript:void(0);" class="navbar-toggler" onclick="navToggle()">
+            <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="index.php">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="assignments.php">Assignments</a>
+                        </li>
+                    </ul>
+            <a href="javascript:void(0);" class="navbar-toggler icon" onclick="navToggle()">
                 <span class="navbar-toggler-icon"></span>
             </a>
         </nav>
