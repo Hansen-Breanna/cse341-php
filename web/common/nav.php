@@ -1,9 +1,9 @@
 </head>
 <body class="bg-dark h-100 m-0">
-        <nav class="navbar navbar-expand-sm bg-info navbar-dark text-ldark border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-md bg-info navbar-dark text-dark border-bottom box-shadow mb-3">
             <div class="container">
                 <a class="navbar-brand text-dark" href="index.php">CSE 341 Software Engineering I</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse">
+                <button class="navbar-toggler" type="button" onclick="navToggle()">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse d-md-inline-flex flex-md-row-reverse">
