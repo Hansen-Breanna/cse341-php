@@ -61,6 +61,8 @@ $(document).ready(function(){
   // Nav toggle
 
   function navToggle() {
-    document.getElementById("link-nav").classList.toggle("hide");
+    $("#link-nav").click(function(){
+        $("#link-nav").toggle();
+      });
     alert("worked");
   }
