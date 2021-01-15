@@ -4,7 +4,7 @@
             <div class="container">
                 <a class="navbar-brand text-dark" href="index.php">CSE 341 Software Engineering I</a>
                 <div class="navbar-collapse d-md-inline-flex flex-md-row-reverse">
-                    <ul class="navbar-nav flex-grow-1 d-none d-inline-flex">
+                    <ul class="navbar-nav flex-grow-1 d-none d-md-inline-flex">
                         <li class="nav-item">
                             <a class="nav-link text-dark" href="index.php">Home</a>
                         </li>
