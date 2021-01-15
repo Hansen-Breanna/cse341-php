@@ -2,15 +2,15 @@
 <body class="bg-dark h-100 m-0">
     <header>
 
-    <div class="topnav" id="myTopnav">
-  <a href="#home" class="active">Home</a>
-  <a href="#news">News</a>
-  <a href="#contact">Contact</a>
-  <a href="#about">About</a>
-  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-  <span class="navbar-toggler-icon"></span>
-  </a>
-</div>
+        <!-- Nav code altered from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_topnav -->
+        <nav class="topnav bg-info navbar-dark text-dark border-bottom box-shadow mb-3" id="nav">
+            <a href="index.php" class="navbar-brand text-dark">CSE 341 Software Engineering I</a>
+            <a href="index.php">Home</a>
+            <a href="assignments.php">Assignments</a>
+            <a href="javascript:void(0);" class="icon" onclick="navToggle()">
+                <span class="navbar-toggler-icon"></span>
+            </a>
+        </nav>
 
         <nav class="navbar navbar-expand-sm bg-info navbar-toggleable-sm navbar-dark text-dark border-bottom box-shadow mb-3">
             <div class="container">
