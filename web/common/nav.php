@@ -18,8 +18,8 @@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" onclick="navToggle()">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="top-nav navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="navbar-nav flex-grow-1">
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <ul id="navbar-nav" class="navbar-nav flex-grow-1 topnav">
                         <li class="nav-item">
                             <a class="nav-link text-dark" href="index.php">Home</a>
                         </li>
