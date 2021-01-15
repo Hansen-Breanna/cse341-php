@@ -64,5 +64,5 @@ $(document).ready(function(){
   });
 
   function navToggle() {
-      document.getElementsByClassName('nav-item').style.color = "blue";
+    document.getElementById('home-link').style.border = '1px solid red';
   }
