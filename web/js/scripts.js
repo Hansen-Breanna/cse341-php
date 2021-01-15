@@ -64,6 +64,5 @@ $(document).ready(function(){
   });
 
   function navToggle() {
-    document.getElementById('home-link').style.borderTop = '1px solid white';
     document.getElementById('assignments-link').style.borderTop = '1px solid white'; 
   }
