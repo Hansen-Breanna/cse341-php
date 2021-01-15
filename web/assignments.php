@@ -9,7 +9,7 @@
 <!-- Header -->
 <?php include 'common/header.php'; ?>
 
-                <h1>Assignments</h1>
+                <h1 class="offset-1 col-10 offset-md-0 col-md-12">Assignments</h1>
             </div>
         </div>
     </header>
@@ -17,7 +17,7 @@
     <main>
         <div class="container">
             <div class="row">
-               <ul class="list-group w-100 w-md-50 bg-light main-assign p-0">
+               <ul class="list-group w-100 w-md-50 bg-light main-assign p-0 offset-1 col-10 offset-md-0 col-md-12">
                     <li class="list-group-item" id="vis-wk-02"> &#9660; Week 02</li>
                     <li id="week-02" class="list-group-item">                    
                         <ul class="list-group-item-action p-0 assign">
