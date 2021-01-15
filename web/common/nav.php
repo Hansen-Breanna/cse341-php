@@ -8,7 +8,7 @@
   <a href="#contact">Contact</a>
   <a href="#about">About</a>
   <a href="javascript:void(0);" class="icon" onclick="navToggle()">
-    <i class="fa fa-bars"></i>
+  <span class="navbar-toggler-icon"></span>
   </a>
 </div>
 
