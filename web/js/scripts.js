@@ -64,6 +64,5 @@ $(document).ready(function(){
   });
 
   function navToggle() {
-      var test = document.getElementsByClassName('nav-item');
-      alert(test);
+      document.getElementsByClassName('nav-item').style.color = "blue";
   }
