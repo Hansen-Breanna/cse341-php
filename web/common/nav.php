@@ -2,15 +2,15 @@
 <body class="bg-dark h-100 m-0">
     <header>
     
-    <div class="topnav" id="nav">
-  <a href="#home" class="active">Home</a>
-  <a href="#news">News</a>
-  <a href="#contact">Contact</a>
-  <a href="#about">About</a>
-  <a href="javascript:void(0);" class="icon" onclick="navToggle()">
-  <span class="navbar-toggler-icon"></span>
-  </a>
-</div>
+    <div class="topnav bg-info" id="nav">
+        <a href="#home" class="active">Home</a>
+        <a href="#news">News</a>
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+        <a href="javascript:void(0);" class="icon" onclick="navToggle()">
+        <span class="navbar-toggler-icon"></span>
+        </a>
+    </div>
 
         <nav class="navbar navbar-expand-sm bg-info navbar-toggleable-sm navbar-dark text-dark border-bottom box-shadow mb-3">
             <div class="container">
