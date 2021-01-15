@@ -3,8 +3,8 @@
     <header>
 
         <!-- Nav code altered from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_topnav -->
-        <nav class="topnav bg-info navbar-dark text-dark border-bottom box-shadow mb-3" id="myTopnav">
-            <a href="index.php" class="navbar-brand text-dark bg-info">CSE 341 Software Engineering I</a>
+        <nav class="topnav" id="myTopnav">
+            <a href="index.php" class="navbar-brand text-dark">CSE 341 Software Engineering I</a>
             <a href="index.php">Home</a>
             <a href="assignments.php">Assignments</a>
             <a href="javascript:void(0);" class="icon" onclick="navToggle()">
