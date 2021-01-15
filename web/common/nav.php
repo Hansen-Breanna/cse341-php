@@ -20,6 +20,16 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <!-- Link list -->
+                <div class="d-sm-inline-flex flex-sm-row-reverse">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="index.php">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="assignments.php">Assignments</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </nav>
 
@@ -29,7 +39,7 @@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" onclick="navToggle()">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div id="nav" class="topnav d-sm-inline-flex flex-sm-row-reverse">
+                <div class="d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
                             <a class="nav-link text-dark" href="index.php">Home</a>
