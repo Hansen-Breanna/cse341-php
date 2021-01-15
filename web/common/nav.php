@@ -14,9 +14,15 @@
 
         <nav class="navbar navbar-expand-sm bg-info navbar-toggleable-sm navbar-dark text-dark border-bottom box-shadow mb-3">
             <div class="container">
+                <!-- Navbar-brand and toggler icon -->
                 <a class="navbar-brand text-dark" href="index.php">CSE 341 Software Engineering I</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" onclick="navToggle()">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- Link list -->
             </div>
         </nav>
+
         <nav>
             <div class="container">
                 <a class="navbar-brand text-dark">CSE 341 Software Engineering I</a>
