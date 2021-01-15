@@ -60,7 +60,7 @@ $(document).ready(function(){
 
   // Nav toggle
   function navToggle() {
-    var x = document.getElementById("navbar-nav");
+    var x = document.getElementById("nav");
     if (x.className === "topnav") {
       x.className += " responsive";
     } else {
