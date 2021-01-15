@@ -68,7 +68,7 @@ $(document).ready(function(){
   }
 
   function mOver(obj) {
-    obj.innerHTML = "Thank You"
+    obj.style.transform = "rotate(7deg)";
   }
   
   function mOut(obj) {
