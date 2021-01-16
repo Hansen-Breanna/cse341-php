@@ -45,6 +45,18 @@
                   <p class="py-3 offset-1 col-10">I love to read. My favorite books are historical fiction.</p>
                 </div>
             </div> 
+            <div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <img src="img_avatar.png" alt="Avatar" style="width:300px;height:300px;">
+    </div>
+    <div class="flip-card-back">
+      <h1>John Doe</h1>
+      <p>Architect & Engineer</p>
+      <p>We love that guy</p>
+    </div>
+  </div>
+</div>
             <div class="row col-6 offset-3 col-md-8 offset-md-2">
                 <a class="col-md btn btn-lg bg-info mt-5 text-dark shadow-lg" href="assignments.php">Assignments</a>
             </div> 
