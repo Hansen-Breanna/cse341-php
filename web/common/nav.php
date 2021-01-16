@@ -3,7 +3,7 @@
         <nav class="navbar navbar-expand-md bg-info navbar-dark text-dark border-bottom box-shadow mb-3">
             <div class="container">
                 <a class="navbar-brand text-dark" href="index.php">CSE 341 Software Engineering I</a>
-                <button class="navbar-toggler" type="button" onclick="navToggle()">
+                <button class="navbar-toggler" type="button">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse d-md-inline-flex flex-md-row-reverse">
