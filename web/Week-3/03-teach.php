@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $email = test_input($_POST["email"]);
   $major = test_input($_POST["major"]);
   $comment = test_input($_POST["comment"]);
-  $continents = test_input($_POST["continents"]);
+  $continents = test_input($_POST["North America"]);
 }
 
 function test_input($data) {

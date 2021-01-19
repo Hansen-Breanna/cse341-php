@@ -21,7 +21,14 @@
             Email: <a href="mailto:<?php echo $_POST["email"]; ?>"><?php echo $_POST["email"]; ?></a><br>
             Major: <?php echo $_POST["major"]; ?><br>
             Comments: <?php echo $_POST["comment"]; ?><br>
-            Continents: <?php echo $_POST["continents"]; ?><br>
+            Continents: <br>
+            <?php echo $_POST["North America"]; ?><br>
+            <?php echo $_POST["South America"]; ?><br>
+            <?php echo $_POST["Europe"]; ?><br>
+            <?php echo $_POST["Asia"]; ?><br>
+            <?php echo $_POST["Australia"]; ?><br>
+            <?php echo $_POST["Africa"]; ?><br>
+            <?php echo $_POST["Antartica"]; ?><br>
         </div>
       </div>
     </main>
