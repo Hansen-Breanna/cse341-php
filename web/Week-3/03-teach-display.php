@@ -17,11 +17,11 @@
     <main class="mb-5  text-light">
       <div class="container">
         <div class="row d-md-flex">
-            <p>Name: <?php echo $_POST["name"]; ?></p>
-            <p>Email: <a href="mailto:<?php echo $_POST["email"]; ?>"><?php echo $_POST["email"]; ?></a></p>
-            <p>Major: <?php echo $_POST["major"]; ?></p>
-            <p>Comments: <?php echo $_POST["comment"]; ?></p>
-            <p>Continents: <?php echo $_POST["continents"]; ?></p>
+            Name: <?php echo $_POST["name"]; ?><br>
+            Email: <a href="mailto:<?php echo $_POST["email"]; ?>"><?php echo $_POST["email"]; ?></a><br>
+            Major: <?php echo $_POST["major"]; ?><br>
+            Comments: <?php echo $_POST["comment"]; ?><br>
+            Continents: <?php echo $_POST["continents"]; ?><br>
         </div>
       </div>
     </main>
