@@ -29,10 +29,10 @@
                 </div>
                 <div class="major">
                     <label for="major">Major:</label>
-                    <input type="radio" name="major" value="Computer Science">Computer Science
-                    <input type="radio" name="major" value="Web Design & Development">Web Design & Development
-                    <input type="radio" name="major" value="Computer Information Technology">Computer Information Technology
-                    <input type="radio" name="major" value="Computer Engineering">Computer Engineering
+                    <input type="radio" name="major" value="Computer Science">Computer Science<br>
+                    <input type="radio" name="major" value="Web Design & Development">Web Design & Development<br>
+                    <input type="radio" name="major" value="Computer Information Technology">Computer Information Technology<br>
+                    <input type="radio" name="major" value="Computer Engineering">Computer Engineering<br>
                 </div>
                 <div class="comments">
                     <label for="comments">Comments:</label>
