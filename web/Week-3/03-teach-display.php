@@ -1,13 +1,13 @@
 <!-- Head -->
-<?php include '$_SERVER["common/head.php"]'; ?>
+<?php include '../common/head.php'; ?>
 
     <title>02 Teach: Team Activity</title>
 
 <!-- Nav -->
-<?php include '$_SERVER["common/nav.php"]'; ?>
+<?php include '../common/nav.php'; ?>
 
 <!-- Header -->
-<?php include '$_SERVER["common/header.php"]'; ?>
+<?php include '../common/header.php'; ?>
 
               <h1 class="offset-1 col-10 offset-md-0 col-md-12">Breanna Hansen</h1>
           </div>
@@ -24,4 +24,4 @@
     </main>
 
 <!-- Footer -->
-<?php include '$_SERVER["common/footer.php"]'; ?>
+<?php include '../common/footer.php'; ?>
