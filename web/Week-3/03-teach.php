@@ -39,40 +39,40 @@ function test_input($data) {
             <div class="row d-md-flex">
 
             <form method="post" action="03-teach-display.php">
-                <div class="name">
+                <div class="name my-2">
                     <label for="name">Name:</label> 
                     <input type="text" name="name"><br>
                 </div>
-                <div class="email">
+                <div class="email my-2">
                     <label for="email">Email:</label>
                     <input type="text" name="email"><br>
                 </div>
-                <div class="major">
+                <div class="major my-2">
                     <label for="major">Major:</label><br>
                     <input type="radio" name="major" value="Computer Science">Computer Science<br>
                     <input type="radio" name="major" value="Web Design & Development">Web Design & Development<br>
                     <input type="radio" name="major" value="Computer Information Technology">Computer Information Technology<br>
                     <input type="radio" name="major" value="Computer Engineering">Computer Engineering<br>
                 </div>
-                <div class="comments">
-                    <label for="comments">Comments:</label><br>
+                <div class="comments my-2">
+                    <label for="comment">Comments:</label><br>
                     <textarea name="comment" rows=5 cols="40"></textarea>
                 </div>
-                <div class="continents">
+                <div class="continents my-2">
                     <label for="continents">Continents visited:<br>
                         <input type="checkbox" id="na" name="North America" value="North America">
                         <label for="North America">North America</label><br>
-                        <input type="checkbox" id="na" name="South America" value="South America">
+                        <input type="checkbox" id="sa" name="South America" value="South America">
                         <label for="South America">South America</label><br>
-                        <input type="checkbox" id="na" name="Europe" value="Europe">
+                        <input type="checkbox" id="eu" name="Europe" value="Europe">
                         <label for="Europe">Europe</label><br>
-                        <input type="checkbox" id="na" name="Asia" value="Asia">
+                        <input type="checkbox" id="as" name="Asia" value="Asia">
                         <label for="Asia">Asia</label><br>
-                        <input type="checkbox" id="na" name="Australia" value="Australia">
+                        <input type="checkbox" id="au" name="Australia" value="Australia">
                         <label for="Australia">Australia</label><br>
-                        <input type="checkbox" id="na" name="Africa" value="Africa">
+                        <input type="checkbox" id="af" name="Africa" value="Africa">
                         <label for="Africa">Africa</label><br>
-                        <input type="checkbox" id="na" name="Antartica" value="Antartica">
+                        <input type="checkbox" id="an" name="Antartica" value="Antartica">
                         <label for="Antartica">Antartica</label><br>
                 </div>
                 <div class="submit">
