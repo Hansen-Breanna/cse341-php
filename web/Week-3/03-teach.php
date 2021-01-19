@@ -1,13 +1,13 @@
 <!-- Head -->
-<?php include '../common/head.php'; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '../common/head.php'; ?>
 
     <title>03 Teach: Team Activity</title>
 
 <!-- Nav -->
-<?php include '../common/nav.php'; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '../common/nav.php'; ?>
 
 <!-- Header -->
-<?php include '../common/header.php'; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '../common/header.php'; ?>
 
 <?php
 // define variables and set to empty values
@@ -90,4 +90,4 @@ function test_input($data) {
     </main>
 
 <!-- Footer -->
-<?php include '../common/footer.php'; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '../common/footer.php'; ?>
