@@ -17,8 +17,11 @@
     <main class="mb-5  text-light">
       <div class="container">
         <div class="row d-md-flex">
-            Welcome <?php echo $_POST["name"]; ?><br>
-            Your email address is: <?php echo $_POST["email"]; ?>
+            Name: <?php echo $_POST["name"]; ?><br>
+            Email: <a href="mailto:<?php echo $_POST["email"]; ?>"><?php echo $_POST["email"]; ?></a><br>
+            Major: <?php echo $_POST["major"]; ?><br>
+            Comments: <?php echo $_POST["comments"]; ?><br>
+            Continents: <?php echo $_POST["continents"]; ?><br>
         </div>
       </div>
     </main>
