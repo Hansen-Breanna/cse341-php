@@ -38,7 +38,7 @@ function test_input($data) {
       <div class="container">
             <div class="row d-md-flex">
 
-            <form method="post" action="<?php echo htmlspecialchars($_SERVER["03-teach-display.php"]);?>">
+            <form method="post" action="03-teach-display.php">
                 <div class="name">
                     <label for="name">Name:</label> 
                     <input type="text" name="name"><br>
@@ -48,14 +48,14 @@ function test_input($data) {
                     <input type="text" name="email"><br>
                 </div>
                 <div class="major">
-                    <label for="major">Major:</label>
+                    <label for="major">Major:</label><br>
                     <input type="radio" name="major" value="Computer Science">Computer Science<br>
                     <input type="radio" name="major" value="Web Design & Development">Web Design & Development<br>
                     <input type="radio" name="major" value="Computer Information Technology">Computer Information Technology<br>
                     <input type="radio" name="major" value="Computer Engineering">Computer Engineering<br>
                 </div>
                 <div class="comments">
-                    <label for="comments">Comments:</label>
+                    <label for="comments">Comments:</label><br>
                     <textarea name="comment" rows=5 cols="40"></textarea>
                 </div>
                 <div class="continents">
