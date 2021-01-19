@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $email = test_input($_POST["email"]);
   $major = test_input($_POST["major"]);
   $comment = test_input($_POST["comment"]);
-  $continents = test_input($_POST["North America"]);
+  $continents = test_input($_POST["north-america"]);
 }
 
 function test_input($data) {
@@ -60,7 +60,7 @@ function test_input($data) {
                 </div>
                 <div class="continents my-2">
                     <label for="continents">Continents visited:<br>
-                        <input type="checkbox" id="na" name="North America" value="North America">
+                        <input type="checkbox" id="na" name="north-america" value="North America">
                         <label for="North America">North America</label><br>
                         <input type="checkbox" id="sa" name="South America" value="South America">
                         <label for="South America">South America</label><br>
