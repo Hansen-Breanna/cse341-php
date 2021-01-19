@@ -14,7 +14,7 @@
       </div>
     </header>
     
-    <main class="mb-5">
+    <main class="mb-5  text-light">
       <div class="container">
         <div class="row d-md-flex">
             Welcome <?php echo $_POST["name"]; ?><br>

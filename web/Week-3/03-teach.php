@@ -1,20 +1,20 @@
 <!-- Head -->
-<?php include 'common/head.php'; ?>
+<?php include '../common/head.php'; ?>
 
     <title>03 Teach: Team Activity</title>
 
 <!-- Nav -->
-<?php include 'common/nav.php'; ?>
+<?php include '../common/nav.php'; ?>
 
 <!-- Header -->
-<?php include 'common/header.php'; ?>
+<?php include '../common/header.php'; ?>
 
               <h1 class="offset-1 col-10 offset-md-0 col-md-12">03 Teach: Team Activity</h1>
           </div>
       </div>
     </header>
     
-    <main class="mb-5">
+    <main class="mb-5 text-light">
       <div class="container">
             <div class="row d-md-flex">
 
@@ -48,4 +48,4 @@
     </main>
 
 <!-- Footer -->
-<?php include 'common/footer.php'; ?>
+<?php include '../common/footer.php'; ?>
