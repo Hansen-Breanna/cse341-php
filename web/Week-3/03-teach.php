@@ -75,6 +75,11 @@ function test_input($data) {
                         <input type="checkbox" id="an" name="Antartica" value="Antartica">
                         <label for="Antartica">Antartica</label><br>
                 </div>
+                <?php
+                    $continents = fopen("continents.txt", "r") or die("Unable to open file!");
+                    echo fgets($continents);
+                    fclose($myfile);
+                ?>
                 <div class="submit">
                     <input type="submit">
                 </div>
