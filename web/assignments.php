@@ -30,6 +30,7 @@
                     <li class="list-group-item" id="vis-wk-03"> &#9660; Week 03</li>
                     <li id="week-03" class="list-group-item">                    
                         <ul class="list-group-item-action p-0 assign">
+                            <li class="py-1"><a href="Week-3/03-teach.php" target="_blank">03 Teach: Team Activity</a></li>
                             <li class="py-1"><a href="#">Coming soon</a></li>
                         </ul>
                     </li>
