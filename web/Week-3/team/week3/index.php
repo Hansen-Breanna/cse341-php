@@ -5,32 +5,42 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Week 3 Team Activity</title>
-  <link href="../../../css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../../css/style.css" />
 </head>
 
 <body>
-  <form action="form.php" method="POST">
-    <label for="name">Name</label>
-    <input type="text" name="name" id="name"><br>
+  <form action="form.php" method="POST">    
+    <div class="name">
+        <label for="name">Name:</label> 
+        <input type="text" name="name" id="name"><br>
+    </div>
+    <div class="email">
+        <label for="email">Email:</label>
+        <input type="text" name="email" id="email"><br>
+    </div>
 
-    <label for="email">Email</label>
-    <input type="email" name="email" id="email"><br><br><br>
+    <div class="major">>
+        <label for="major">Major:</label><br>
 
-    <p><strong><u>Major</u></strong></p>
-    <?php
+        <?php
 
-    $majors = array("Computer Science", "Web Design and Development", "Computer Information Technology", "Computer Engineering");
+          $majors = array("CS"=>"Computer Science", "WDD"=>"Web Design and Development", "CIT"=>"Computer Information Technology", "CE"=>"Computer Engineering");
 
-    echo '<input type="radio" id="cs" name="major" value="'.$majors[0].'">
-    <label for="cs">Computer Science</label><br>';
-    echo '<input type="radio" id="wdd" name="major" value="'.$majors[1].'">
-    <label for="wdd">Web Design and Development</label><br>';
-    echo '<input type="radio" id="cis" name="major" value="'.$majors[2].'">
-    <label for="cis">Computer Information Technonlgy</label><br>';
-    echo '<input type="radio" id="ce" name="major" value="'.$majors[3].'">
-    <label for="ce">Computer Engineering</label><br><br><br>';
-    ?>
+          foreach ($majors as $key => $value) {
+            echo '<input type="radio" id="'.$key.'" name="major" value="'.$value.'">
+            <label for="'.$key.'">'.$value.'</label><br>';
+          }
+          echo '<input type="radio" id="cs" name="major" value="'.$majors[0].'">
+          <label for="cs">Computer Science</label><br>';
+          echo '<input type="radio" id="wdd" name="major" value="'.$majors[1].'">
+          <label for="wdd">Web Design and Development</label><br>';
+          echo '<input type="radio" id="cis" name="major" value="'.$majors[2].'">
+          <label for="cis">Computer Information Technonlgy</label><br>';
+          echo '<input type="radio" id="ce" name="major" value="'.$majors[3].'">
+          <label for="ce">Computer Engineering</label><br><br><br>';
+        ?>
 
+</div>
     <label for="comments">Comments</label>
     <textarea id="comments" name="comments"></textarea><br><br>
 
