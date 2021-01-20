@@ -26,18 +26,11 @@
 
           $majors = array("CS"=>"Computer Science", "WDD"=>"Web Design and Development", "CIT"=>"Computer Information Technology", "CE"=>"Computer Engineering");
 
+          //Create major radio buttons
           foreach ($majors as $key => $value) {
             echo '<input type="radio" id="'.$key.'" name="major" value="'.$value.'">
             <label for="'.$key.'">'.$value.'</label><br>';
           }
-          echo '<input type="radio" id="cs" name="major" value="'.$majors[0].'">
-          <label for="cs">Computer Science</label><br>';
-          echo '<input type="radio" id="wdd" name="major" value="'.$majors[1].'">
-          <label for="wdd">Web Design and Development</label><br>';
-          echo '<input type="radio" id="cis" name="major" value="'.$majors[2].'">
-          <label for="cis">Computer Information Technonlgy</label><br>';
-          echo '<input type="radio" id="ce" name="major" value="'.$majors[3].'">
-          <label for="ce">Computer Engineering</label><br><br><br>';
         ?>
 
 </div>
