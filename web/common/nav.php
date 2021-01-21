@@ -9,7 +9,7 @@
                 <div class="navbar-collapse d-md-inline-flex flex-md-row-reverse">
                     <ul id="link-nav" class="navbar-nav flex-grow-1 d-md-inline-flex">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" href=" <?php $_SERVER['DOCUMENT_ROOT'] . '/index.php' ?>">Home</a>
+                            <a class="nav-link text-dark" href=" <?php $_SERVER['DOCUMENT_ROOT'] . 'index.php' ?>">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" href="assignments.php">Assignments</a>
