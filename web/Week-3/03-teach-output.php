@@ -17,7 +17,7 @@
     <main class="mb-5 text-light">
       <div class="container">
         <div class="row">
-          <div class="my-1">
+          <div class="my-1 d-flex-column">
             <label>Name: </label> <?php echo $_POST["name"]; ?><br>
           </div>
           <div>
