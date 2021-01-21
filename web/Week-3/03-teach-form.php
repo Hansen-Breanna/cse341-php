@@ -9,26 +9,6 @@
 <!-- Header -->
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/header.php'; ?>
 
-<?php
-// define variables and set to empty values
-$name = $email = $major = $comment = $continents[] = "";
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  $name = test_input($_POST["name"]);
-  $email = test_input($_POST["email"]);
-  $major = test_input($_POST["major"]);
-  $comment = test_input($_POST["comment"]);
-  $continents[] = test_input($_POST["continents"]);
-}
-
-function test_input($data) {
-  $data = trim($data);
-  $data = stripslashes($data);
-  $data = htmlspecialchars($data);
-  return $data;
-}
-?>
-
               <h1 class="offset-1 col-10 offset-md-0 col-md-12">03 Teach: Team Activity</h1>
           </div>
       </div>
