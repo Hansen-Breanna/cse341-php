@@ -14,10 +14,10 @@
       </div>
     </header>
     
-    <main class="mb-5  text-light">
+    <main class="mb-5 text-light">
       <div class="container">
         <div class="row">
-          <div>
+          <div class="my-1">
             <label>Name: </label> <?php echo $_POST["name"]; ?><br>
           </div>
           <div>

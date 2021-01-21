@@ -81,7 +81,7 @@ function test_input($data) {
                     <label for="antarctica">Antarctica</label><br>
                 </div>    
                 <div class="submit">
-                    <input type="submit" class="btn bg-primary">
+                    <input type="submit" class="btn bg-primary text-light">
                 </div>
             </form>
 
