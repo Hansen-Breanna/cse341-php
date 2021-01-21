@@ -32,7 +32,7 @@ function test_input($data) {
 }
 ?>
 
-<?php echo $continents[0]; ?>
+<?php echo var_dump($_POST);  var_dump($continents[0]);?>
   <div>
     <label>Name: </label> <?php echo $_POST["name"]; ?>
   </div>
