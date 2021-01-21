@@ -1,13 +1,13 @@
 <!-- Head -->
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/common/head.php'; ?>
+<?php include '../common/head.php'; ?>
 
     <title>03 Teach: Team Activity</title>
 
 <!-- Nav -->
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/common/nav.php'; ?>
+<?php include '../common/nav.php'; ?>
 
 <!-- Header -->
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/common/header.php'; ?>
+<?php include '../common/header.php'; ?>
 
               <h1 class="offset-1 col-10 offset-md-0 col-md-12">03 Teach: Team Activity</h1>
           </div>
@@ -70,4 +70,4 @@
     </main>
 
 <!-- Footer -->
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php'; ?>
+<?php include '../common/footer.php'; ?>

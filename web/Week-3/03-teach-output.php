@@ -38,19 +38,19 @@ function test_input($data) {
       <div class="container">
         <div class="row d-flex flex-column">
           <div>
-            <label>Name: </label> <?php echo $_POST["name"]; ?><br>
+            <label>Name:</label> <?php echo $_POST["name"]; ?><br>
           </div>
           <div>
-            <label>Email: </label><a href="mailto:<?php echo $_POST["email"]; ?>"><?php echo$_POST["email"]; ?></a><br>
+            <label>Email:</label> <a href="mailto:<?php echo $_POST["email"]; ?>"><?php echo$_POST["email"]; ?></a><br>
           </div>
           <div>
-            <label>Major: </label><?php echo $_POST["major"]; ?><br>
+            <label>Major:</label> <?php echo $_POST["major"]; ?><br>
           </div>
           <div> 
-            <label>Comments: </label><?php echo $_POST["comment"]; ?><br>
+            <label>Comments:</label> <?php echo $_POST["comment"]; ?><br>
           </div>
           <div>
-            <label>Continents visited: </label><br>
+            <label>Continents visited:</label><br>
             <?php 
               echo "<ul>"; 
               $abr = array("na"=>"North America", "sa"=>"South America", "eu"=>"Europe", "as"=>"Asia", "au"=>"Australia", "af"=>"Africa", "an"=>"Antarctica");
