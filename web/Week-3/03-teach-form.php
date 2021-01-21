@@ -54,10 +54,10 @@
                     </div>
                     <div class="comments">
                         <label for="comment">Comments:</label><br>
-                        <textarea name="comment" rows=5 cols="40"></textarea>
+                        <textarea id="comment" name="comment" rows=5 cols="40"></textarea>
                     </div>
                     <div class="continents">
-                        <label for="continents">Which continents have you visited?</label><br>
+                        <label>Which continents have you visited?</label><br>
                         <input type="checkbox" id="nAmerica" name="continents[]" value="na">
                         <label for="nAmerica">North America</label><br>
                         <input type="checkbox" id="sAmerica" name="continents[]" value="sa">
