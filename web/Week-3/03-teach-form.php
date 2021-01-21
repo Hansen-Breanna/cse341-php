@@ -9,7 +9,6 @@
 <!-- Header -->
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/header.php'; ?>
 
-
 <?php
 // define variables and set to empty values
 $name = $email = $major = $comment = $continents[] = "";
@@ -39,50 +38,50 @@ function test_input($data) {
       <div class="container">
             <div class="row d-md-flex">
 
-            <form method="post" action="03-teach-display.php">
+            <form method="post" action="03-teach-output.php">
                 <div class="name my-2">
                     <label for="name">Name:</label> 
-                    <input type="text" name="name"><br>
+                    <input type="text" name="name" id="name"><br>
                 </div>
                 <div class="email my-2">
                     <label for="email">Email:</label>
-                    <input type="text" name="email"><br>
+                    <input type="text" name="email" id="email"><br><br>
                 </div>
                 <div class="major my-2">
-                    <label for="major">Major:</label><br>
-                    <input type="radio" name="major" value="Computer Science">Computer Science<br>
-                    <input type="radio" name="major" value="Web Design & Development">Web Design & Development<br>
-                    <input type="radio" name="major" value="Computer Information Technology">Computer Information Technology<br>
-                    <input type="radio" name="major" value="Computer Engineering">Computer Engineering<br>
+                    <label for="major">Major:</label><br><br>
+                    <?php
+                    $majors = array("CS"=>"Computer Science", "WDD"=>"Web Design and Development", "CIT"=>"Computer Information Technology", "CE"=>"Computer Engineering");
+                    
+                    //Create major radio buttons
+                    foreach ($majors as $key => $value) {
+                        echo '<input type="radio" id="'.$key.'" name="major" value="'.$value.'">
+                        <label for="'.$key.'">'.$value.'</label><br>';
+                    }
+                    ?>
                 </div>
                 <div class="comments my-2">
                     <label for="comment">Comments:</label><br>
                     <textarea name="comment" rows=5 cols="40"></textarea>
                 </div>
                 <div class="continents my-2">
-                    <label for="continents">Continents visited:<br>
-                        <input type="checkbox" id="na" name="north-america" value="North America">
-                        <label for="North America">North America</label><br>
-                        <input type="checkbox" id="sa" name="South America" value="South America">
-                        <label for="South America">South America</label><br>
-                        <input type="checkbox" id="eu" name="Europe" value="Europe">
-                        <label for="Europe">Europe</label><br>
-                        <input type="checkbox" id="as" name="Asia" value="Asia">
-                        <label for="Asia">Asia</label><br>
-                        <input type="checkbox" id="au" name="Australia" value="Australia">
-                        <label for="Australia">Australia</label><br>
-                        <input type="checkbox" id="af" name="Africa" value="Africa">
-                        <label for="Africa">Africa</label><br>
-                        <input type="checkbox" id="an" name="Antartica" value="Antartica">
-                        <label for="Antartica">Antartica</label><br>
-                </div>
-                <?php
-                    $continents = fopen("continents.txt", "r") or die("Unable to open file!");
-                    echo fgets($continents);
-                    fclose($myfile);
-                ?>
+                    <label for="continents">Which continents have you visited?</label><br>
+                    <input type="checkbox" id="nAmerica" name="continents[]" value="na">
+                    <label for="nAmerica">North America</label><br>
+                    <input type="checkbox" id="sAmerica" name="continents[]" value="sa">
+                    <label for="sAmerica">South America</label><br>
+                    <input type="checkbox" id="europe" name="continents[]" value="eu">
+                    <label for="europe">Europe</label><br>
+                    <input type="checkbox" id="asia" name="continents[]" value="as">
+                    <label for="asia">Asia</label><br>
+                    <input type="checkbox" id="australia" name="continents[]" value="au">
+                    <label for="australia">Australia</label><br>
+                    <input type="checkbox" id="africa" name="continents[]" value="af">
+                    <label for="africa">Africa</label><br>
+                    <input type="checkbox" id="antarctica" name="continents[]" value="an">
+                    <label for="antarctica">Antarctica</label><br><br><br>
+                </div>    
                 <div class="submit">
-                    <input type="submit">
+                    <input type="submit" class="btn bg-primary">
                 </div>
             </form>
 
