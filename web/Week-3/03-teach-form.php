@@ -41,7 +41,7 @@
                     <input type="text" name="email" id="email"><br>
                 </div>
                 <div class="major">
-                    <label for="major">Major:</label><br>
+                    <label>Major:</label><br>
                     <?php
                     $majors = array("CS"=>"Computer Science", "WDD"=>"Web Design and Development", "CIT"=>"Computer Information Technology", "CE"=>"Computer Engineering");
                     
