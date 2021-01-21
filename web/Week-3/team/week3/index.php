@@ -38,19 +38,19 @@
 
 <div class="continents">
     <label for="continents">Which continents have you visited?</label><br>
-    <input type="checkbox" id="nAmerica" name="continents[]" value="na">
+    <input type="checkbox" id="nAmerica" name="continents" value="na">
     <label for="nAmerica">North America</label><br>
-    <input type="checkbox" id="sAmerica" name="continents[]" value="sa">
+    <input type="checkbox" id="sAmerica" name="continents" value="sa">
     <label for="sAmerica">South America</label><br>
-    <input type="checkbox" id="europe" name="continents[]" value="eu">
+    <input type="checkbox" id="europe" name="continents" value="eu">
     <label for="europe">Europe</label><br>
-    <input type="checkbox" id="asia" name="continents[]" value="as">
+    <input type="checkbox" id="asia" name="continents" value="as">
     <label for="asia">Asia</label><br>
-    <input type="checkbox" id="australia" name="continents[]" value="au">
+    <input type="checkbox" id="australia" name="continents" value="au">
     <label for="australia">Australia</label><br>
-    <input type="checkbox" id="africa" name="continents[]" value="af">
+    <input type="checkbox" id="africa" name="continents" value="af">
     <label for="africa">Africa</label><br>
-    <input type="checkbox" id="antarctica" name="continents[]" value="an">
+    <input type="checkbox" id="antarctica" name="continents" value="an">
     <label for="antarctica">Antarctica</label><br><br><br>
 </div>    
 
