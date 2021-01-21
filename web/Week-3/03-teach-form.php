@@ -39,16 +39,16 @@ function test_input($data) {
             <div class="row d-md-flex">
 
             <form method="post" action="03-teach-output.php">
-                <div class="name my-2">
+                <div class="name">
                     <label for="name">Name:</label> 
                     <input type="text" name="name" id="name"><br>
                 </div>
-                <div class="email my-2">
+                <div class="email">
                     <label for="email">Email:</label>
-                    <input type="text" name="email" id="email"><br><br>
+                    <input type="text" name="email" id="email"><br>
                 </div>
-                <div class="major my-2">
-                    <label for="major">Major:</label><br><br>
+                <div class="major">
+                    <label for="major">Major:</label><br>
                     <?php
                     $majors = array("CS"=>"Computer Science", "WDD"=>"Web Design and Development", "CIT"=>"Computer Information Technology", "CE"=>"Computer Engineering");
                     
@@ -59,11 +59,11 @@ function test_input($data) {
                     }
                     ?>
                 </div>
-                <div class="comments my-2">
+                <div class="comments">
                     <label for="comment">Comments:</label><br>
                     <textarea name="comment" rows=5 cols="40"></textarea>
                 </div>
-                <div class="continents my-2">
+                <div class="continents">
                     <label for="continents">Which continents have you visited?</label><br>
                     <input type="checkbox" id="nAmerica" name="continents[]" value="na">
                     <label for="nAmerica">North America</label><br>
@@ -78,7 +78,7 @@ function test_input($data) {
                     <input type="checkbox" id="africa" name="continents[]" value="af">
                     <label for="africa">Africa</label><br>
                     <input type="checkbox" id="antarctica" name="continents[]" value="an">
-                    <label for="antarctica">Antarctica</label><br><br><br>
+                    <label for="antarctica">Antarctica</label><br>
                 </div>    
                 <div class="submit">
                     <input type="submit" class="btn bg-primary">

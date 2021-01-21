@@ -18,16 +18,16 @@
       <div class="container">
         <div class="row">
           <div>
-            <label>Name: </label> <?php echo $_POST["name"]; ?>
+            <label>Name: </label> <?php echo $_POST["name"]; ?><br>
           </div>
           <div>
-            <label>Email: </label><a href="mailto:<?php echo $_POST["email"]; ?>"><?php echo$_POST["email"]; ?></a>
+            <label>Email: </label><a href="mailto:<?php echo $_POST["email"]; ?>"><?php echo$_POST["email"]; ?></a><br>
           </div>
           <div>
-            <label>Major: </label><?php echo $_POST["major"]; ?>
+            <label>Major: </label><?php echo $_POST["major"]; ?><br>
           </div>
           <div> 
-            <label>Comments: </label><?php echo $_POST["comment"]; ?>
+            <label>Comments: </label><?php echo $_POST["comment"]; ?><br>
           </div>
           <div>
             <label>Continents visited: </label><br>
