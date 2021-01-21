@@ -48,7 +48,7 @@ function test_input($data) {
       echo "<ul>"; 
       $abr = array("na"=>"North America", "sa"=>"South America", "eu"=>"Europe", "as"=>"Asia", "au"=>"Australia", "af"=>"Africa", "an"=>"Antarctica");
         
-      foreach($continents as $key => $value) { 
+      foreach($abr as $continents[]) { 
         echo "<li class='bullets'>" . $value ."</li>";
       } 
       echo "</ul>"; ?>
