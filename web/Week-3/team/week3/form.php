@@ -32,7 +32,8 @@ function test_input($data) {
 }
 ?>
 
-<?php echo var_dump($_POST);  var_dump($continents[0]);?>
+<?php echo var_dump($_POST);  var_dump($continents[0]);
+?>
   <div>
     <label>Name: </label> <?php echo $_POST["name"]; ?>
   </div>
@@ -51,8 +52,8 @@ function test_input($data) {
       echo "<ul>"; 
       $abr = array("na"=>"North America", "sa"=>"South America", "eu"=>"Europe", "as"=>"Asia", "au"=>"Australia", "af"=>"Africa", "an"=>"Antarctica");
         
-      foreach($key as $continents[]) { 
-        echo "<li class='bullets'>" . $abr[$key] ."</li>";
+      foreach($_POST["continents"] as $selected) { 
+        echo "<li class='bullets'>" . $abr[$selected] ."</li>";
       } 
       echo "</ul>"; ?>
   </div>
