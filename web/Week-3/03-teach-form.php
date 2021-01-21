@@ -1,15 +1,28 @@
-<!-- Head -->
-<?php include '../common/head.php'; ?>
+<!DOCTYPE html>
+<html lang="en" class="h-100 m-0">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="../bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="../css/style.css" />
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <title>03 Teach: Team Activity</title>
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <!-- <script src="../bootstrap/dist/js/bootstrap.bundle.min.js"></script> -->
+  <script src="../js/scripts.js"></script>
+  <title>03 Teach: Team Activity Output</title>
+</head>
 
-<!-- Nav -->
-<?php include '../common/nav.php'; ?>
+<body class="bg-dark h-100 m-0">
 
-<!-- Header -->
-<?php include '../common/header.php'; ?>
-
-              <h1 class="offset-1 col-10 offset-md-0 col-md-12">03 Teach: Team Activity</h1>
+<div class="content">
+    <header class="text-light">
+      <div class="container">
+        <div class="row">
+              <h1 class="offset-1 col-10 offset-md-0 col-md-12">03 Teach: Team Activity Output</h1>
           </div>
       </div>
     </header>
@@ -68,6 +81,6 @@
             </div>
         </div>
     </main>
+    </body>
 
-<!-- Footer -->
-<?php include '../common/footer.php'; ?>
+</html>
