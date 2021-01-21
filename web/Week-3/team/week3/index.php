@@ -8,18 +8,39 @@
   <link rel="stylesheet" href="../../../css/style.css" />
 </head>
 
-<body class="bg-secondary text-light">
+<body>
+
+<?php
+// define variables and set to empty values
+$name = $email = $major = $comment = $continents = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  $name = test_input(htmlspecialchars($_POST["name"]));
+  $email = test_input(htmlspecialchars($_POST["email"]));
+  $major = test_input(htmlspecialchars($_POST["major"]));
+  $comment = test_input(htmlspecialchars($_POST["comment"]));
+  $continents = test_input(htmlspecialchars($_POST["continents[]"]));
+}
+
+function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
+?>
+
   <form action="form.php" method="POST">    
     <div class="name">
         <label for="name">Name:</label> 
-        <input type="text" name="name" id="name"><br>
+        <input type="text" name="name" id="name"><br><br>
     </div>
     <div class="email">
         <label for="email">Email:</label>
-        <input type="text" name="email" id="email"><br>
+        <input type="text" name="email" id="email"><br><br>
     </div>
     <div class="major">
-        <label for="major">Major:</label><br>
+        <label for="major">Major:</label><br><br>
         <?php
           $majors = array("CS"=>"Computer Science", "WDD"=>"Web Design and Development", "CIT"=>"Computer Information Technology", "CE"=>"Computer Engineering");
           
@@ -31,17 +52,17 @@
         ?>
 </div>
 <div class="comments">
-    <label for="comment">Comments:</label><br>
+    <label for="comment">Comments:</label><br><br>
     <textarea name="comment" rows=5 cols="40"></textarea>
 </div>
 
 <div class="continents">
-    <label for="continents[]">Which continents have you visited?</label>
+    <label for="continents">Which continents have you visited?</label><br>
     <input type="checkbox" id="nAmerica" name="continents[]" value="na">
     <label for="nAmerica">North America</label><br>
     <input type="checkbox" id="sAmerica" name="continents[]" value="sa">
     <label for="sAmerica">South America</label><br>
-    <input type="checkbox" id="europe" name="continents[]" value="e">
+    <input type="checkbox" id="europe" name="continents[]" value="eu">
     <label for="europe">Europe</label><br>
     <input type="checkbox" id="asia" name="continents[]" value="as">
     <label for="asia">Asia</label><br>

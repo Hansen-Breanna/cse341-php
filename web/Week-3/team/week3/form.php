@@ -5,41 +5,54 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Week 3 Team Activity</title>
-  <link href="../css/style.css" rel="stylesheet">
+  <link href="../../../css/style.css" rel="stylesheet">
 </head>
 
 <body>
-  <p>Name: <?php echo $_POST["name"]; ?></p>
-  <p>Email: <a href="mailto:<?php echo $_POST["email"]; ?>"><?php echo$_POST["email"]; ?></a></p>
-  <p>Major: <?php echo $_POST["major"]; ?></p>
-  <p>Comments: <?php echo $_POST["comments"]; ?></p>
-  <p><u>Continents Visited</u><br>
 
-    <?php echo "<ul>"; 
+<?php
+// define variables and set to empty values
+$name = $email = $major = $comment = $continents[] = "";
 
-    foreach($_POST["continents"] as $selected)
-  {
-    $abr = ['North America', 'South America', 'Europe', 'Asia', 'Australia', 'Africa', 'Antarctica'];
-    $name[] = $selected;
-    if ($selected == 'na') {
-      echo "<li class='bullets'>".$abr[0]."</li>";
-    } elseif ($selected == 'sa') {
-      echo "<li class='bullets'>".$abr[1]."</li>";
-    } elseif ($selected == 'e') {
-      echo "<li class='bullets'>".$abr[2]."</li>";
-    } elseif ($selected == 'as') {
-      echo "<li class='bullets'>".$abr[3]."</li>";
-    } elseif ($selected == 'au') {
-      echo "<li class='bullets'>".$abr[4]."</li>";
-    } elseif ($selected == 'af') {
-      echo "<li class='bullets'>".$abr[5]."</li>";
-    } elseif ($selected == 'an') {
-      echo "<li class='bullets'>".$abr[6]."</li>";
-    }
-  } 
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  $name = test_input($_POST["name"]);
+  $email = test_input($_POST["email"]);
+  $major = test_input($_POST["major"]);
+  $comment = test_input($_POST["comment"]);
+  $continents[] = test_input($_POST["continents[]"]);
+}
 
-    echo "</ul>"; ?>
-  </p>
+function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
+?>
+
+  <div>
+    <label>Name: </label> <?php echo $_POST["name"]; ?>
+  </div>
+  <div>
+    <label>Email: </label><a href="mailto:<?php echo $_POST["email"]; ?>"><?php echo$_POST["email"]; ?></a>
+  </div>
+  <div>
+    <label>Major: </label><?php echo $_POST["major"]; ?>
+  </div>
+  <div> 
+    <label>Comments: </label><?php echo $_POST["comment"]; ?>
+  </div>
+  <div>
+    <label>Continents visited: </label><br>
+    <?php 
+      echo "<ul>"; 
+      $abr = array("na"=>"North America", "sa"=>"South America", "eu"=>"Europe", "as"=>"Asia", "au"=>"Australia", "af"=>"Africa", "an"=>"Antarctica");
+        
+      foreach($continents as $key => $value) { 
+        echo "<li class='bullets'>" . $value ."</li>";
+      } 
+      echo "</ul>"; ?>
+  </div>
 </body>
 
 </html>
