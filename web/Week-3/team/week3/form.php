@@ -20,7 +20,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $major = test_input($_POST["major"]);
   $comment = test_input($_POST["comment"]);
   $continents[] = $_POST["continents[]"];
-  echo $_POST["continents[]"];
+  echo "here is my post";
+  echo $_POST;
 }
 
 function test_input($data) {
