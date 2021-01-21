@@ -48,10 +48,8 @@ function test_input($data) {
       echo "<ul>"; 
       $abr = array("na"=>"North America", "sa"=>"South America", "eu"=>"Europe", "as"=>"Asia", "au"=>"Australia", "af"=>"Africa", "an"=>"Antarctica");
         
-      foreach($abr as $continents[]) { 
-        if ($key == $abr) {
-          echo "<li class='bullets'>" . $value ."</li>";
-        }
+      foreach($key as $continents[]) { 
+        echo "<li class='bullets'>" . $abr[$key] ."</li>";
       } 
       echo "</ul>"; ?>
   </div>
