@@ -9,16 +9,17 @@
 <!-- Header -->
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/header.php'; ?>
 
+
 <?php
 // define variables and set to empty values
-$name = $email = $major = $comment = $continents = "";
+$name = $email = $major = $comment = $continents[] = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $name = test_input($_POST["name"]);
   $email = test_input($_POST["email"]);
   $major = test_input($_POST["major"]);
   $comment = test_input($_POST["comment"]);
-  $continents = test_input($_POST["north-america"]);
+  $continents[] = test_input($_POST["continents"]);
 }
 
 function test_input($data) {
