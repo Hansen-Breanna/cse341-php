@@ -27,12 +27,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if (!isset($_SESSION['cart'][$key])) {
                 $value[3] = 1;
                 $_SESSION['cart'][$key] = [array($value[1], $value[0], $value[2], $value[3])];
-                var_dump($_SESSION['cart'][$key][0]);
             } else {
                 $count = $_SESSION['cart'][$key][0][3]++;
                 ++$count;
                 $_SESSION['cart'][$key] = [array($value[1], $value[0], $value[2], $count)];
-                var_dump($_SESSION['cart'][$key][0]);
             }
         }
     }
