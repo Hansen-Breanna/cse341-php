@@ -31,7 +31,7 @@
                     <li id="week-03" class="list-group-item">                    
                         <ul class="list-group-item-action p-0 assign">
                             <li class="py-1"><a href="Week-3/03-teach-form.php" target="_blank">03 Teach: Team Activity</a></li>
-                            <li class="py-1"><a href="#">Coming soon</a></li>
+                            <li class="py-1"><a href="Week-3/prove/browse.php">03 Prove</a></li>
                         </ul>
                     </li>
                     <li class="list-group-item" id="vis-wk-04"> &#9660; Week 04</li>
