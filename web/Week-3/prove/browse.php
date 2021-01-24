@@ -15,7 +15,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $price = test_input($_POST["price"]);
     $id = test_input($_POST["id"]);
 
-    echo "<script>document.getElementById('message').innerHTML = $productName + 'added to your cart.');</script>";
     $product = [];
     $myfile = fopen("images/images.txt", "r") or die("Unable to open file!");
     // Output one line until end-of-file
