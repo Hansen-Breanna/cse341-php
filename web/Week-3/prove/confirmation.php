@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $zip = test_input($_POST["zip"]);
     $email = test_input($_POST["email"]);
     $session = test_input($_POST["session"]);
-}
+} 
 
 function test_input($data)
 {
@@ -101,6 +101,7 @@ function subtotal() {
                 ?>
                     <h3 class="mt-2 text-right">Total: $<?php subtotal() ?>.00</h3>
 
+                <?php session_destroy(); ?>
                 </div>
             </div>
         </div>
