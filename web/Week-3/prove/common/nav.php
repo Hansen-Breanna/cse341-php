@@ -19,7 +19,6 @@
                         </li>
                     </ul>
                 </div>
-                <i class="fas fa-shopping-cart"></i>
             </div>
         </nav>
 
