@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $price = test_input($_POST["price"]);
     $id = test_input($_POST["id"]);
 
-    echo "<script type='text/javascript'>alert('$productName added to your cart.');</script>";
+    echo "<script type='text/javascript'>document.getElementById('messagedemo').innerHTML = $productName + 'added to your cart.');</script>";
     $product = [];
     $myfile = fopen("images/images.txt", "r") or die("Unable to open file!");
     // Output one line until end-of-file
@@ -69,6 +69,7 @@ function test_input($data)
 
               <h1 class="offset-1 col-10 offset-md-0 col-md-12 text-dark display-3">Gourmet Hot Chocolates</h1>
               <h2 class="text-dark ml-4">Browse Products</h2>
+              <p class="message"></p>
           </div>
       </div>
     </header>
