@@ -50,7 +50,11 @@ function countProducts() {
             $productCount = $cost[$key][0][3];
             $totalCount = $productCount + $totalCount;
         }
-        echo($totalCount);
+        if ($totalCount > 1) {
+            echo($totalCount . " items");
+        } else {
+            echo($totalCount . " item");
+        }
     } 
 }
 
@@ -101,14 +105,14 @@ function countProducts() {
                     echo '</div>';
                     echo "<input type='submit' class='btn btn-block bg-green shadow' value='Remove'>";
                     echo "</form></div>";
-                    }
+                    } 
                 }
             } ?>
 
             <div id="subtotal" class='m-2 d-flex justify-content-start flex-column p-2 browse-product align-items-start'>
                 <h3>Total</h3>
                 <div>
-                    <p class="p-0 m-0"><?php countProducts(); ?> items</p>
+                    <p class="p-0 m-0"><?php countProducts(); ?></p>
                     <p class="p-0 m-0 price">$<?php echo(subtotal()); ?>.00</p>
                 </div>
                 <form method='post' action='checkout.php'>
