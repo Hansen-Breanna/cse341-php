@@ -2,6 +2,15 @@
 // start session
 session_start ();
 
+while(!feof($myfile)) { 
+    $file = fgets($myfile);
+    // split url and price
+    $details = explode(" ", $file);
+    $idArray[] = $details[2];
+    echo($details[2]);
+}
+fclose($myfile);
+
 // define variables and set to empty values
 $productName = $imageUrl = $price = $id = "";
 $idArray = array();
@@ -68,6 +77,7 @@ function idArray() {
         // split url and price
         $details = explode(" ", $file);
         $idArray[] = $details[2];
+        echo($details[2]);
     }
     fclose($myfile);
 }
