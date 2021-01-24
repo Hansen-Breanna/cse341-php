@@ -89,22 +89,22 @@ function countProducts() {
                 foreach ($cart as $key => $value) {
                     $id = $key;
                     if (isset($cart[$key])) {
-                    // product display box
-                    echo "<div class='m-2 d-flex justify-content-end flex-column border p-2 browse-product align-items-center'>";
-                    echo "<h3>" . $cart[$key][0][0] . "</h3>";
-                    echo "<img src='images/" . $cart[$key][0][1] . "' alt='" . $cart[$key][0][0] . "' class='d-block' />";
-                    echo "<p class='price'>" . $cart[$key][0][2] . "</p>";
-                    // product form
-                    echo "<form method='post' action='" . htmlspecialchars($_SERVER["PHP_SELF"]) . "'>";
-                    echo "<input type='hidden' name='id' value='" . $id . "'>";
-                    echo '<div class="input-group mb-3">';
-                       echo '<div class="input-group-prepend">';
-                           echo '<span class="input-group-text">quantity</span>';
-                       echo '</div>';
-                       echo '<input type="text" class="form-control text-center" placeholder="' . $cart[$key][0][3] . '">';
-                    echo '</div>';
-                    echo "<input type='submit' class='btn btn-block bg-green shadow' value='Remove'>";
-                    echo "</form></div>";
+                        // product display box
+                        echo "<div class='m-2 d-flex justify-content-end flex-column border p-2 browse-product align-items-center'>";
+                        echo "<h3>" . $cart[$key][0][0] . "</h3>";
+                        echo "<img src='images/" . $cart[$key][0][1] . "' alt='" . $cart[$key][0][0] . "' class='d-block' />";
+                        echo "<p class='price'>$" . $cart[$key][0][2] . ".00</p>";
+                        // product form
+                        echo "<form method='post' action='" . htmlspecialchars($_SERVER["PHP_SELF"]) . "'>";
+                        echo "<input type='hidden' name='id' value='" . $id . "'>";
+                        echo '<div class="input-group mb-3">';
+                        echo '<div class="input-group-prepend">';
+                            echo '<span class="input-group-text">quantity</span>';
+                        echo '</div>';
+                        echo '<input type="text" class="form-control text-center" placeholder="' . $cart[$key][0][3] . '">';
+                        echo '</div>';
+                        echo "<input type='submit' class='btn btn-block bg-green shadow' value='Remove'>";
+                        echo "</form></div>";
                     } 
                 }
             } ?>
