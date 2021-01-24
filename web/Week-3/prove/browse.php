@@ -2,6 +2,10 @@
 // start session
 session_start ();
 
+// define variables and set to empty values
+$productName = $imageUrl = $price = $id = "";
+$idArray = array();
+
 while(!feof($myfile)) { 
     $file = fgets($myfile);
     // split url and price
@@ -10,10 +14,6 @@ while(!feof($myfile)) {
     echo($details[2]);
 }
 fclose($myfile);
-
-// define variables and set to empty values
-$productName = $imageUrl = $price = $id = "";
-$idArray = array();
  
 if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION))) {
     $_SESSION["cart"] = array();   
