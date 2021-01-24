@@ -1,0 +1,6 @@
+Aztec-Spicy-Hot-Chocolate.jpg 13 AZ
+Hot-Chocolate-Sampler.jpg 34 SA
+Marshmallow-Hot-Chocolate.jpg 13 MA
+Mocha-Hot-Chocolate.jpg 13 MO
+Traditional-Hot-Chocolate.jpg 13 TR
+Unsweetended-Cocoa.jpg 13 UN

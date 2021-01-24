@@ -1,0 +1,68 @@
+.bg-brown {
+    background-color: #6c584c;
+}
+
+.bg-green {
+    background-color: #adc178;
+}
+
+.bg-light-brown {
+    background-color: #a98467;
+}
+
+label {
+    width: 75px;
+}
+
+select {
+    width: 185px;
+    padding: 3px;
+}
+
+.color-brown {
+    color: #6c584c;
+}
+
+.browse-product {
+    max-width: 240px;
+}
+
+.price {
+    font-size: 1.5em;
+    color: #6c584c;
+}
+
+h2 {
+    font-size: 3em;
+}
+h3 {
+    font-size: 1.25em;
+}
+
+.quantity {
+    width: 50px;
+}
+
+.item-quantity {
+    width: 1000px;
+}
+
+.btn-custom {
+    width: 150px;
+}
+
+footer {
+    position: sticky;
+    bottom: 0;
+}
+
+.content {
+    min-height: 65%;
+}
+
+@media only screen and (max-height: 768px) {    
+    .content {
+        min-height: 90%;
+    }
+}
+
