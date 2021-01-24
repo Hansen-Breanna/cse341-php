@@ -4,16 +4,6 @@ session_start ();
 
 // define variables and set to empty values
 $productName = $imageUrl = $price = $id = "";
-$idArray = array();
-
-while(!feof($myfile)) { 
-    $file = fgets($myfile);
-    // split url and price
-    $details = explode(" ", $file);
-    $idArray[] = $details[2];
-    echo($details[2]);
-}
-fclose($myfile);
  
 if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION))) {
     $_SESSION["cart"] = array();   
@@ -25,61 +15,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $price = test_input($_POST["price"]);
     $id = test_input($_POST["id"]);
 
-    $products = idArray();
-    var_dump($products);
-
-//     $products = array("AZ"=>array("Aztec-Spicy-Hot-Chocolate.jpg", "Aztec Spicy Hot Chocolate", "$13.00", 0),
-//     "SA"=>array("Hot-Chocolate-Sampler.jpg", "Hot Chocolate Sampler", "$34.00", 0), 
-//     "MA"=>array("Marshmallow-Hot-Chocolate.jpg", "Marshmallow Hot Chocolate", "$13.00", 0), 
-//     "MO"=>array("Mocha-Hot-Chocolate.jpg", "Mocha Hot Chocolate", "$13.00", 0),
-//     "TR"=>array("Traditional-Hot-Chocolate.jpg", "Traditional Hot Chocolate", "$13.00", 0),
-//     "UN"=>array("Unsweetended-Cocoa.jpg", "Unsweetended Cocoa", "$13.00", 0));
-                    
-// foreach ($products as $key => $value) {
-//     if ($id == $key) {
-//         if (!isset($_SESSION['cart'][$key])) {
-//             $value[3] = 1;
-//             $_SESSION['cart'][$key] = [array($value[1], $value[0], $value[2], $value[3])];
-//         } else {
-//             $count = $_SESSION['cart'][$key][0][3]++;
-//             ++$count;
-//             $_SESSION['cart'][$key] = [array($value[1], $value[0], $value[2], $count)];
-//         }
-//     }
-// }
-
-    // $products = array("AZ"=>array("Aztec-Spicy-Hot-Chocolate.jpg", "Aztec Spicy Hot Chocolate", "$13.00", 0),
-    //     "SA"=>array("Hot-Chocolate-Sampler.jpg", "Hot Chocolate Sampler", "$34.00", 0), 
-    //     "MA"=>array("Marshmallow-Hot-Chocolate.jpg", "Marshmallow Hot Chocolate", "$13.00", 0), 
-    //     "MO"=>array("Mocha-Hot-Chocolate.jpg", "Mocha Hot Chocolate", "$13.00", 0),
-    //     "TR"=>array("Traditional-Hot-Chocolate.jpg", "Traditional Hot Chocolate", "$13.00", 0),
-    //     "UN"=>array("Unsweetended-Cocoa.jpg", "Unsweetended Cocoa", "$13.00", 0));
+    $products = array("AZ"=>array("Aztec-Spicy-Hot-Chocolate.jpg", "Aztec Spicy Hot Chocolate", "$13.00", 0),
+        "SA"=>array("Hot-Chocolate-Sampler.jpg", "Hot Chocolate Sampler", "$34.00", 0), 
+        "MA"=>array("Marshmallow-Hot-Chocolate.jpg", "Marshmallow Hot Chocolate", "$13.00", 0), 
+        "MO"=>array("Mocha-Hot-Chocolate.jpg", "Mocha Hot Chocolate", "$13.00", 0),
+        "TR"=>array("Traditional-Hot-Chocolate.jpg", "Traditional Hot Chocolate", "$13.00", 0),
+        "UN"=>array("Unsweetended-Cocoa.jpg", "Unsweetended Cocoa", "$13.00", 0));
                         
-    // foreach ($products as $key => $value) {
-    //     if ($id == $key) {
-    //         if (!isset($_SESSION['cart'][$key])) {
-    //             $value[3] = 1;
-    //             $_SESSION['cart'][$key] = [array($value[1], $value[0], $value[2], $value[3])];
-    //         } else {
-    //             $count = $_SESSION['cart'][$key][0][3]++;
-    //             ++$count;
-    //             $_SESSION['cart'][$key] = [array($value[1], $value[0], $value[2], $count)];
-    //         }
-    //     }
-    // }
-}
-
-function idArray() {
-    $myfile = fopen("images/images.txt", "r") or die("Unable to open file!");
-    // Output one line until end-of-file
-    while(!feof($myfile)) { 
-        $file = fgets($myfile);
-        // split url and price
-        $details = explode(" ", $file);
-        $idArray[] = $details[2];
-        echo($details[2]);
+    foreach ($products as $key => $value) {
+        if ($id == $key) {
+            if (!isset($_SESSION['cart'][$key])) {
+                $value[3] = 1;
+                $_SESSION['cart'][$key] = [array($value[1], $value[0], $value[2], $value[3])];
+            } else {
+                $count = $_SESSION['cart'][$key][0][3]++;
+                ++$count;
+                $_SESSION['cart'][$key] = [array($value[1], $value[0], $value[2], $count)];
+            }
+        }
     }
-    fclose($myfile);
 }
 
 function test_input($data)
