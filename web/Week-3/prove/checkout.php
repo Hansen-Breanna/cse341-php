@@ -99,7 +99,7 @@ function subtotal() {
                     </div>
                     <div class="submit">
                         <input type='hidden' id='session' name='session' value='<?php var_dump($_SESSION); ?>'>
-                        <input type="submit" class="btn btn-custom bg-green text-dark my-2">
+                        <input type="submit" class="btn btn-custom bg-green text-dark my-2" value="Purchase">
                     </div>
                 </form>
             </div>
