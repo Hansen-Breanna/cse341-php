@@ -5,7 +5,6 @@ session_start ();
 // define variables and set to empty values
 $productName = $imageUrl = $price = $id = "";
  
-var_dump($_SESSION);
 if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION))) {
     $_SESSION["cart"] = array();   
 } 
@@ -94,11 +93,11 @@ function test_input($data)
                 echo "<p class='price'>$" . $details[1] . ".00</p>";
                 // product form
                 echo "<form method='post' action='" . htmlspecialchars($_SERVER["PHP_SELF"]) . "'>";
-                echo "<input type='hidden' id='imageUrl' name='imageUrl' value='" . $details[0] . "'>";
-                echo "<input type='hidden' id='productName' name='productName' value='" . $imageName . "'>";
-                echo "<input type='hidden' id='price' name='price' value='" . $details[1] . "'>";
-                echo "<input type='hidden' id='id' name='id' value='" . $details[2] . "'>";
-                echo "<input type='submit' class='btn btn-lg bg-green shadow' value='Add to Cart'>";
+                echo "<input type='hidden' name='imageUrl' value='" . $details[0] . "'>";
+                echo "<input type='hidden' name='productName' value='" . $imageName . "'>";
+                echo "<input type='hidden' name='price' value='" . $details[1] . "'>";
+                echo "<input type='hidden' name='id' value='" . $details[2] . "'>";
+                echo "<input type='submit' class='btn btn-lg bg-green shadow px-5' value='Add to Cart'>";
                 echo "</form></div>";
             }
             fclose($myfile);

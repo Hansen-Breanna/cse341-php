@@ -2,7 +2,6 @@
 // start session
 session_start ();
 
-var_dump($_SESSION);
 // define variables and set to empty values
 $id = $total = "";
 
@@ -68,7 +67,8 @@ function countProducts() {
 <!-- Header -->
 <?php include '../../common/header.php'; ?>
 
-              <h1 class="offset-1 col-10 offset-md-0 col-md-12 text-dark">View Cart</h1>
+            <h1 class="offset-1 col-10 offset-md-0 col-md-12 text-dark display-3">Gourmet Hot Chocolates</h1>
+            <h2 class="text-dark ml-4">View Cart</h2>
           </div>
       </div>
     </header>
@@ -76,6 +76,9 @@ function countProducts() {
     <main class="mb-5 text-dark">
       <div class="container">
         <div class="row d-md-flex justify-content-center">
+            <div>
+                
+            </div>
             <?php 
             $products = array();
             foreach ($_SESSION as $cart) {
@@ -89,10 +92,10 @@ function countProducts() {
                     echo "<p class='price'>" . $cart[$key][0][2] . "</p>";
                     // product form
                     echo "<form method='post' action='" . htmlspecialchars($_SERVER["PHP_SELF"]) . "'>";
-                    echo "<input type='hidden' id='id' name='id' value='" . $id . "'>";
+                    echo "<input type='hidden' name='id' value='" . $id . "'>";
                     echo '<div class="input-group mb-3">';
                        echo '<div class="input-group-prepend">';
-                           echo '<span class="input-group-text" id="basic-addon1">quantity</span>';
+                           echo '<span class="input-group-text">quantity</span>';
                        echo '</div>';
                        echo '<input type="text" class="form-control text-center" placeholder="' . $cart[$key][0][3] . '">';
                     echo '</div>';
@@ -103,13 +106,12 @@ function countProducts() {
             } ?>
 
             <div id="subtotal" class='m-2 d-flex justify-content-start flex-column p-2 browse-product align-items-start'>
-                <h3>Subtotal</h3>
+                <h3>Total</h3>
                 <div>
                     <p class="p-0 m-0"><?php countProducts(); ?> items</p>
                     <p class="p-0 m-0 price">$<?php echo(subtotal()); ?>.00</p>
                 </div>
                 <form method='post' action='checkout.php'>
-                    <input type='hidden' id='total' name='total' value='<?php echo(subtotal()); ?>'>
                     <input type='submit' class='btn btn-block bg-green shadow px-3' value='Checkout'>
                 </form>
             </div>

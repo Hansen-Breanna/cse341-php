@@ -44,9 +44,9 @@ h3 {
 }
 
 .item-quantity {
-    width: 1000px;
+    width: 75vw;
+    max-width: 550px;
 }
-
 .btn-custom {
     width: 150px;
 }
@@ -58,6 +58,14 @@ footer {
 
 .content {
     min-height: 65%;
+}
+
+.checkout-form input {
+    max-width: 525px;
+}
+
+.btn-main {
+    width: 300px;
 }
 
 @media only screen and (max-height: 768px) {    

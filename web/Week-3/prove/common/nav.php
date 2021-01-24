@@ -1,6 +1,6 @@
 </head>
 <body class="h-100 m-0">
-        <nav class="navbar navbar-expand-md bg-secondary navbar-dark text-light border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-md bg-brown navbar-dark text-light border-bottom box-shadow mb-3">
             <div class="container">
                 <a class="navbar-brand text-light" href="index.php">CSE 341 03 Prove</a>
                 <button class="navbar-toggler" type="button">
