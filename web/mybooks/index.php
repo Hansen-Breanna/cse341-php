@@ -26,6 +26,7 @@ switch ($action){
         include 'view/blacklisted-authors.php';
     break;
     case 'catalog':
+        $catalog = getCatalog();
         include 'view/catalog.php';
     break;
     case 'favorite':
