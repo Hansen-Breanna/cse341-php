@@ -8,7 +8,7 @@
  // get catalog list
  function getCatalog() {
     $db = connect();
-    $statement = $db->query('SELECT * FROM borrower');
+    //$statement = $db->query('SELECT * FROM borrower');
     //$statement = $db->query('');
     //$results = $statement->fetchAll(PDO::FETCH_ASSOC);
 }
