@@ -27,8 +27,9 @@ function connect() {
 
  // get catalog list
  function getCatalog() {
-    $db = connect();
-    $statement = $db->query('SELECT * FROM book_title');
-    $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+    //$db = connect();
+    //$statement = $db->query('SELECT * FROM book_title');
+    //$results = $statement->fetchAll(PDO::FETCH_ASSOC);
+    echo("hello");
 }
 ?>
