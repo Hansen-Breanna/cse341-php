@@ -5,8 +5,12 @@
  */
 
  // get catalog list
-function getCatalog() {
-    
+ // get catalog list
+ function getCatalog() {
+    //$db = connect();
+    //$statement = $db->query('SELECT * FROM book_title');
+    //$results = $statement->fetchAll(PDO::FETCH_ASSOC);
+    echo("hello");
 }
  // get read wish list
 
