@@ -10,7 +10,7 @@ function connect() {
     $dbHost = $dbOpts["host"];
     $dbPort = $dbOpts["port"];
     $dbUser = $dbOpts["user"];
-    $dbPassword = $dbOpts["School12!me"];
+    $dbPassword = $dbOpts["pass"];
     $dbName = ltrim($dbOpts["path"],'/');
 
     $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
