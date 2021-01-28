@@ -8,7 +8,7 @@
  // get catalog list
  function getCatalog() {
      $db = connect();
-    foreach ($db->query('SELECT * password FROM book_title') as $row)
+    foreach ($db->query('SELECT * FROM book_title') as $row)
     {
       echo("hello");
     }
