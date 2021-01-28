@@ -8,10 +8,10 @@
  // get catalog list
  function getCatalog() {
      $db = connect();
-     //if (!$db) {
-       // echo "An error occurred.\n";
-        //exit;
-     //}
+     if (!$db) {
+       echo "An error occurred.\n";
+        exit;
+     }
 }
  // get read wish list
 
