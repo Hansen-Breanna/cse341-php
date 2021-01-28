@@ -5,7 +5,7 @@ function connect() {
   $dbOpts = parse_url($dbUrl);
   $dbHost = $dbOpts["host"];
   $dbPort = $dbOpts["port"];
-  $dbUser = $dbOpts["user"];
+  $dbUser = $dbOts["user"];
   $dbPassword = $dbOpts["pass"];
   $dbName = ltrim($dbOpts["path"],'/');
 
