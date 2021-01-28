@@ -7,9 +7,9 @@
  // get catalog list
  // get catalog list
  function getCatalog() {
-     $db = connect();
-     if (!$db) {
-       echo "An error occurred.\n";
+     $db = connectMyBooks();
+      if (!$db) {
+        echo "An error occurred.\n";
         exit;
      }
 }

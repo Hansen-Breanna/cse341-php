@@ -1,6 +1,7 @@
 <?php 
 
-function connect() {
+function connectMyBooks() {
+  echo 'into the connections function';
   $dbUrl = getenv('DATABASE_URL');
   $dbOpts = parse_url($dbUrl);
   $dbHost = $dbOpts["host"];
@@ -20,7 +21,5 @@ function connect() {
     die();
   }
 }
-
-$db = connect();
 
 ?>
