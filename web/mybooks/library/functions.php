@@ -7,10 +7,12 @@
  // get catalog list
  // get catalog list
  function getCatalog() {
-    $db = connect();
-    //$statement = $db->query('SELECT * FROM borrower');
-    //$statement = $db->query('');
-    //$results = $statement->fetchAll(PDO::FETCH_ASSOC);
+     $db = connect();
+    foreach ($db->query('SELECT * password FROM book_title') as $row)
+    {
+      echo 'user: ' . $row['book_title'];
+      echo '<br/>';
+    }
 }
  // get read wish list
 
