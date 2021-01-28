@@ -10,7 +10,7 @@
     $db = connect();
     $statement = $db->query('SELECT * FROM borrower');
     //$statement = $db->query('');
-    $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+    //$results = $statement->fetchAll(PDO::FETCH_ASSOC);
 }
  // get read wish list
 
