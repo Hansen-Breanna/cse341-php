@@ -23,16 +23,4 @@ function connect() {
 
 $db = connect();
 
- // get catalog list
- function getCatalog() {
-  $db = connect();
-  if (!$db) {
-    echo "An error occurred.\n";
-     exit;
-  } else {
-    echo "It worked.\n";
-    exit;
-  }
-}
-
 ?>
