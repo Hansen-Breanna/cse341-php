@@ -8,10 +8,7 @@
  // get catalog list
  function getCatalog() {
      $db = connect();
-    foreach ($db->query('SELECT * FROM book_title') as $row)
-    {
-      echo("hello");
-    }
+     echo($db);
 }
  // get read wish list
 
