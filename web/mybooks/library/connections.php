@@ -13,6 +13,7 @@ function connect() {
   {
     $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    echo("It worked");
   }
   catch (PDOException $ex)
   {
