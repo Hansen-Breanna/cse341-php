@@ -11,6 +11,8 @@
       if (!$db) {
         echo "An error occurred.\n";
         exit;
+     } else {
+         echo 'hello';
      }
 }
  // get read wish list
