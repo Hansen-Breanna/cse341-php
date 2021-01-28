@@ -10,8 +10,7 @@
      $db = connect();
     foreach ($db->query('SELECT * password FROM book_title') as $row)
     {
-      echo 'user: ' . $row['book_title'];
-      echo '<br/>';
+      echo("hello");
     }
 }
  // get read wish list
