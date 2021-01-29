@@ -14,6 +14,7 @@
      } else {
         $statement = $db->query('SELECT * FROM book_title');
         $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+        return $results;
      }
 }
  // get read wish list
