@@ -33,6 +33,10 @@ h2 a {
     align-items: center;
 }
 
+.navbar-nav {
+    display: none;
+}
+
 @media only screen and (min-width: 568px) {
     .main-box {
         height: 20vh;
