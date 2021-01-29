@@ -20,7 +20,7 @@
             <table>
               <thead>
                 <tr>
-                  <th class="pl-5">Book Title</th>
+                  <th class="pl-1">Book Title</th>
                   <th class="pl-5">Author</th>
                 </tr>
               </thead>
