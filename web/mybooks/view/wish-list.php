@@ -20,7 +20,6 @@
       <div>
         <h2>Own Wish List</h2>
         <table>
-          <caption>Own Wish List</caption>
           <thead>
             <tr>
               <th class="pl-1">Book Title</th>
@@ -35,7 +34,6 @@
       <div>
         <h2>Read Wish List</h2>
         <table>
-          <caption>Read Wish List</caption>
           <thead>
             <tr>
               <th class="pl-1">Book Title</th>
