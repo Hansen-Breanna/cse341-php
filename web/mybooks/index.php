@@ -40,8 +40,10 @@ switch ($action){
         include 'view/reviews.php';
     break;
     case 'wish':
-        $wish = getWishes();
-        $wishesTable = displayWishList($wish);
+        $readWishes = getReadWishes();
+        $ownWishes = getOwnWishes();
+        $ownTable = displayCatalog($ownWishes);
+        $readTable = displayCatalog($readWishes);
         include 'view/wish-list.php';
     break;
     default:

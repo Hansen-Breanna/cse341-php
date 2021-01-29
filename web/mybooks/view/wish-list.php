@@ -27,7 +27,10 @@
                 </tr>
               </thead>
               <tbody>
-                <?php echo $wishesTable; ?>
+                <?php 
+                  echo '<div' . $ownTable . '</div>';
+                  echo '<div' . $readTable . '</div>';
+                ?>
               </tbody>
             </table>
         </div>
