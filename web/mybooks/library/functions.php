@@ -56,8 +56,8 @@ function displayCatalog($catalog) {
          $bookList .= '<tr>';
          $bookList .= '<td>' . $book['title_of_book'] . '</td>';
          $bookList .= '<td class="pl-5">' . getAuthorName($book['author_id']) . '</td>';
-         $bookList .= '<td class="pl-5">' . getReadList($book['read_wish_list']) . '</td>';
-         $bookList .= '<td class="pl-5">' . getWishOwn($book['own_wish_list']) . '</td>';
+         $bookList .= '<td class="pl-5">' . $book['read_wish_list'] . '</td>';
+         $bookList .= '<td class="pl-5">' . $book['own_wish_list'] . '</td>';
          $bookList .= '</tr>';
       }
       $bookList .= '</tbody>';
