@@ -24,7 +24,7 @@
       echo "An error occurred.\n";
       exit;
    } else {
-      $statement = $db->query('SELECT * FROM book_title WHERE own_wish_list = TRUE ORDER BY title_of_book');
+      $statement = $db->query('SELECT * FROM book_title WHERE own_wish_list = TRUE AS True AND read_wish_list = TRUE ORDER BY title_of_book');
       $results = $statement->fetchAll(PDO::FETCH_ASSOC);
       return $results;
    }
@@ -63,9 +63,6 @@ function displayWishList($wish) {
    $bookList .= '</tbody>';
    return $bookList;
 }
-
-
- // get own wish list
 
  // get favorite authors
 
