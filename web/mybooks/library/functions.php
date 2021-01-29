@@ -37,7 +37,7 @@ function getReadWishes() {
       echo "An error occurred.\n";
       exit;
    } else {
-      $statement = $db->query('SELECT * FROM book_title WHERE own_wish_list = TRUE ORDER BY title_of_book');
+      $statement = $db->query('SELECT * FROM book_title WHERE read_wish_list = TRUE ORDER BY title_of_book');
       $results = $statement->fetchAll(PDO::FETCH_ASSOC);
       return $results;
    }
@@ -52,7 +52,7 @@ function getAuthorName($author_id) {
    return $row[0]['first_name'] . " " . $row[0]['middle_name'] . " " . $row[0]['last_name'];
 }
 
-// Display full catalog
+// Display book catalog
 function displayCatalog($catalog) {
    $bookList = '<tbody class="table table-striped table-dark text-light">';
    foreach ($catalog as $book) {
