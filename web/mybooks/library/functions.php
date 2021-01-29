@@ -12,7 +12,7 @@
         echo "An error occurred.\n";
         exit;
      } else {
-        $statement = $db->query('SELECT * FROM book_title ORDER BY book_title');
+        $statement = $db->query('SELECT * FROM book_title ORDER BY title_of_book');
         $results = $statement->fetchAll(PDO::FETCH_ASSOC);
         return $results;
      }
