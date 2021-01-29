@@ -20,8 +20,8 @@
 
 function getAuthorName($author_id) {
    $db = connectMyBooks();
-   $stmt = $db->prepare('SELECT first_name, middle_name, last_name FROM author WHERE author_id = :author_id');
-   $stmt->execute(array(':author_id' => $author_id));
+   $stmt = $db->prepare('SELECT first_name, middle_name, last_name FROM author WHERE id = :id');
+   $stmt->execute(array(':id' => $author_id));
    $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
    return $row;
 }
