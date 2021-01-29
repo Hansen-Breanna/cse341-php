@@ -18,7 +18,6 @@
 }
 
 // get wishes list 
- // get catalog list
  function getWishes() {
    $db = connectMyBooks();
     if (!$db) {
@@ -49,21 +48,22 @@ function displayCatalog($catalog) {
    $bookList .= '</tbody>';
    return $bookList;
 }
- // get wish list
- function displayWishList($wish) {
-      $bookList = '<tbody class="table table-striped table-dark text-light">';
-      foreach ($wish as $book) {
-         $bookList .= '<tr>';
-         $bookList .= '<td>' . $book['title_of_book'] . '</td>';
-         $bookList .= '<td class="pl-5">' . getAuthorName($book['author_id']) . '</td>';
-         $bookList .= '<td class="pl-5">' . $book['read_wish_list'] . '</td>';
-         $bookList .= '<td class="pl-5">' . $book['own_wish_list'] . '</td>';
-         $bookList .= '</tr>';
-      }
-      $bookList .= '</tbody>';
-      return $bookList;
+
+// get wish list
+function displayWishList($wish) {
+   $bookList = '<tbody class="table table-striped table-dark text-light">';
+   foreach ($wish as $book) {
+      $bookList .= '<tr>';
+      $bookList .= '<td>' . $book['title_of_book'] . '</td>';
+      $bookList .= '<td class="pl-5">' . getAuthorName($book['author_id']) . '</td>';
+      $bookList .= '<td class="pl-5">' . $book['read_wish_list'] . '</td>';
+      $bookList .= '<td class="pl-5">' . $book['own_wish_list'] . '</td>';
+      $bookList .= '</tr>';
    }
- }
+   $bookList .= '</tbody>';
+   return $bookList;
+}
+
 
  // get own wish list
 
