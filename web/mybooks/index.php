@@ -27,6 +27,7 @@ switch ($action){
     break;
     case 'catalog':
         $catalog = getCatalog();
+        $catalogTable = displayCatalog($catalog);
         include 'view/catalog.php';
     break;
     case 'favorite':

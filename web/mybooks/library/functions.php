@@ -14,8 +14,17 @@
      } else {
         $statement = $db->query('SELECT * FROM book_title');
         $results = $statement->fetchAll(PDO::FETCH_ASSOC);
-        return var_dump($results);
+        return $results;
      }
+}
+
+function displayCatalog($catalog) {
+   $bookList = '<tbody>';
+   foreach ($catalog as $book) {
+      $bookList .= '<tr><td>' . $book['title_of_book'] . '</td><td>' . '</td></tr>';
+   }
+   $bookList .= '</tbody>';
+   return $bookList;
 }
  // get read wish list
 

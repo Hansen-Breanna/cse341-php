@@ -17,9 +17,17 @@
     <main class="mb-5">
       <div class="container">
         <div class="row d-md-flex">
-            <?php 
-            echo $catalog;
-            echo "<p class='text-light'>hello</p>"; ?>
+            <table>
+              <thead>
+                <tr>
+                  <th>Book Title</th>
+                  <th>Author</th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php echo $catalogTable; ?>
+              </tbody>
+            </table>
         </div>
       </div>
     </main>
