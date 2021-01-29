@@ -40,6 +40,8 @@ switch ($action){
         include 'view/reviews.php';
     break;
     case 'wish':
+        $catalog = getCatalog();
+        $catalogTable = displayCatalog($catalog);
         include 'view/wish-list.php';
     break;
     default:
