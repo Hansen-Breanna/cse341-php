@@ -17,7 +17,9 @@
     <main class="mb-5">
       <div class="container">
         <div class="row d-md-flex">
-            <?php echo $catalog; echo("<p class='text-light'>hello</p>"); */ ?>
+            <?php 
+            echo $catalog;
+            echo "<p class='text-light'>hello</p>"; ?>
         </div>
       </div>
     </main>
