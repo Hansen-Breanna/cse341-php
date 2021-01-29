@@ -25,7 +25,7 @@
       echo "An error occurred.\n";
       exit;
    } else {
-      $statement = $db->query('SELECT * FROM book_title WHERE own_wish_list = TRUE AND read_wish_list = TRUE ORDER BY title_of_book');
+      $statement = $db->query('SELECT * FROM book_title WHERE own_wish_list = TRUE ORDER BY title_of_book');
       $results = $statement->fetchAll(PDO::FETCH_ASSOC);
       return $results;
    }
@@ -52,12 +52,12 @@ function displayCatalog($catalog) {
  // get wish list
  function displayWishList($wish) {
       $bookList = '<tbody class="table table-striped table-dark text-light">';
-      foreach ($catalog as $book) {
+      foreach ($wish as $book) {
          $bookList .= '<tr>';
          $bookList .= '<td>' . $book['title_of_book'] . '</td>';
          $bookList .= '<td class="pl-5">' . getAuthorName($book['author_id']) . '</td>';
-         $bookList .= '<td class="pl-5">' . getReadList($book['']) . '</td>';
-         $bookList .= '<td class="pl-5">' . getWishOwn($book['']) . '</td>';
+         $bookList .= '<td class="pl-5">' . getReadList($book['read_wish_list']) . '</td>';
+         $bookList .= '<td class="pl-5">' . getWishOwn($book['own_wish_list']) . '</td>';
          $bookList .= '</tr>';
       }
       $bookList .= '</tbody>';
