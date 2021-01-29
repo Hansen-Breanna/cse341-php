@@ -1,7 +1,7 @@
 <!-- Head -->
 <?php include 'common/head.php'; ?>
 
-    <title>My Books - Personal Library Application</title>
+<title>My Books - Personal Library Application</title>
 
 <!-- Nav -->
 <?php include 'common/nav.php'; ?>
@@ -9,41 +9,47 @@
 <!-- Header -->
 <?php include '../common/header.php'; ?>
 
-              <h1 class="offset-1 col-10 offset-md-0 col-md-12">My Wish List</h1>
-          </div>
+<h1 class="offset-1 col-10 offset-md-0 col-md-12">My Wish List</h1>
+</div>
+</div>
+</header>
+
+<main class="mb-5">
+  <div class="container">
+    <div class="row d-md-flex">
+      <div>
+        <h2>Own Wish List</h2>
+        <table>
+          <caption>Own Wish List</caption>
+          <thead>
+            <tr>
+              <th class="pl-1">Book Title</th>
+              <th class="pl-5">Author</th>
+            </tr>
+          </thead>
+          <?php
+          echo '<div' . $ownTable . '</div>';
+          ?>
+        </table>
       </div>
-    </header>
-    
-    <main class="mb-5">
-      <div class="container">
-        <div class="row d-md-flex">
-          <table>
-            <caption>Own Wish List</caption>
-            <thead>
-              <tr>
-                <th class="pl-1">Book Title</th>
-                <th class="pl-5">Author</th>
-              </tr>
-            </thead>
-              <?php 
-                echo '<div' . $ownTable . '</div>';
-              ?>
-          </table>
-          <table>
-            <caption>Own Wish List</caption>
-            <thead>
-              <tr>
-                <th class="pl-1">Book Title</th>
-                <th class="pl-5">Author</th>
-              </tr>
-            </thead>
-              <?php 
-                echo '<div' . $readTable . '</div>';
-              ?>
-          </table>
-        </div>
+      <div>
+        <h2>Read Wish List</h2>
+        <table>
+          <caption>Read Wish List</caption>
+          <thead>
+            <tr>
+              <th class="pl-1">Book Title</th>
+              <th class="pl-5">Author</th>
+            </tr>
+          </thead>
+          <?php
+          echo '<div' . $readTable . '</div>';
+          ?>
+        </table>
       </div>
-    </main>
+    </div>
+  </div>
+</main>
 
 <!-- Footer -->
 <?php include 'common/footer.php'; ?>
