@@ -16,7 +16,7 @@
 
 <main class="mb-5">
   <div class="container">
-    <div class="row d-md-flex just-content-around">
+    <div class="row d-md-flex justify-content-around">
       <div>
         <h2>Own Wish List</h2>
         <table>
