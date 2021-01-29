@@ -12,7 +12,8 @@
         echo "An error occurred.\n";
         exit;
      } else {
-         echo 'hello';
+        $statement = $db->query('SELECT * FROM book_title');
+        $results = $statement->fetchAll(PDO::FETCH_ASSOC);
      }
 }
  // get read wish list
