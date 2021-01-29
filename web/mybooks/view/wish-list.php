@@ -9,7 +9,7 @@
 <!-- Header -->
 <?php include '../common/header.php'; ?>
 
-<h1 class="offset-1 col-10 offset-md-0 col-md-12">My Wish List</h1>
+<h1 class="offset-1 col-10 offset-md-0 col-md-12">My Wish Lists</h1>
 </div>
 </div>
 </header>
