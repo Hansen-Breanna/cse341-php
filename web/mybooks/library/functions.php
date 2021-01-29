@@ -21,7 +21,7 @@
 function displayCatalog($catalog) {
    $bookList = '<tbody>';
    foreach ($catalog as $book) {
-      $bookList .= '<tr><td>' . $book['title_of_book'] . '</td><td>' . '</td></tr>';
+      $bookList .= '<tr><td>' . $book['title_of_book'] . $book['author_id'] . '</td><td>' . '</td></tr>';
    }
    $bookList .= '</tbody>';
    return $bookList;
