@@ -23,7 +23,7 @@ function getAuthorName($author_id) {
    $stmt = $db->prepare('SELECT first_name, middle_name, last_name FROM author WHERE id = :id');
    $stmt->execute(array(':id' => $author_id));
    $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
-   return var_dump($row);//['first_name'] . " " . $row['middle_name'] . " " . $row['last_name'];
+   return $row[0]['first_name'] . " " . $row[0]['middle_name'] . " " . $row[0]['last_name'];
 }
 
 function displayCatalog($catalog) {
