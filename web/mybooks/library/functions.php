@@ -18,10 +18,21 @@
      }
 }
 
+function getAuthorName($author_id) {
+   $db = connectMyBooks();
+   $statement = $db->query('SELECT first_name, middle_name, last_name FROM author WHERE id = :author_id');
+   $stmt = $db->prepare($sql);
+   $stmt->bindValue(':author_id', $author_id, PDO::PARAM_STR);
+   $stmt->execute();
+   $authorData = $stmt->fetch(PDO::FETCH_ASSOC);
+   $stmt->closeCursor();
+   return $authorData;
+}
+
 function displayCatalog($catalog) {
    $bookList = '<tbody>';
    foreach ($catalog as $book) {
-      $bookList .= '<tr><td>' . $book['title_of_book'] . $book['author_id'] . '</td><td>' . '</td></tr>';
+      $bookList .= '<tr><td>' . $book['title_of_book'] . '</td><td>' . getAuthorName($book['author_id']) . '</td></tr>';
    }
    $bookList .= '</tbody>';
    return $bookList;
