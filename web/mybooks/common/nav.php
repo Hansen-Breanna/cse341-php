@@ -1,6 +1,6 @@
 </head>
 <body class="bg-dark h-100 m-0 text-light">
-        <nav class="navbar navbar-expand-md bg-orange navbar-dark border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-md bg-info navbar-dark border-bottom box-shadow mb-3">
             <div class="container">
                 <a class="navbar-brand" href="index.php">My Books</a>
                 <button class="navbar-toggler" type="button">
