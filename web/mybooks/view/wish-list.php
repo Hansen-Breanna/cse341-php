@@ -27,7 +27,7 @@
                 </tr>
               </thead>
               <tbody>
-                <?php echo $catalogTable; ?>
+                <?php echo $wishesTable; ?>
               </tbody>
             </table>
         </div>
