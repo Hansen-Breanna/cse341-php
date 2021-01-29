@@ -19,7 +19,7 @@
     <div class="row d-md-flex justify-content-around">
       <div>
         <h2>Own Wish List</h2>
-        <table>
+        <table class="table table-dark table-striped text-light">
           <thead>
             <tr>
               <th class="pl-1">Book Title</th>
@@ -33,7 +33,7 @@
       </div>
       <div>
         <h2>Read Wish List</h2>
-        <table>
+        <table class="table table-dark table-striped text-light">
           <thead>
             <tr>
               <th class="pl-1">Book Title</th>

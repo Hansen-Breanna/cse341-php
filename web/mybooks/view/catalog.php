@@ -17,7 +17,7 @@
     <main class="mb-5">
       <div class="container">
         <div class="row d-flex justify-content-center">
-            <table>
+          <table class="table table-dark table-striped text-light">
               <thead>
                 <tr>
                   <th class="pl-1">Book Title</th>

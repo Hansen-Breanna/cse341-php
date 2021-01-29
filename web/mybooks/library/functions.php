@@ -54,7 +54,7 @@ function getAuthorName($author_id) {
 
 // Display book catalog
 function displayCatalog($catalog) {
-   $bookList = '<tbody class="table table-striped bg-success text-light">';
+   $bookList = '<tbody>';
    foreach ($catalog as $book) {
       $bookList .= '<tr><td>' . $book['title_of_book'] . '</td><td class="pl-5">' . getAuthorName($book['author_id']) . '</td></tr>';
    }
