@@ -17,22 +17,30 @@
     <main class="mb-5">
       <div class="container">
         <div class="row d-md-flex">
-        <table>
-              <thead>
-                <tr>
-                  <th class="pl-1">Book Title</th>
-                  <th class="pl-5">Author</th>
-                  <th class="pl-5">With to Read</th>
-                  <th class="pl-5">Wish to Own</th>
-                </tr>
-              </thead>
-              <tbody>
-                <?php 
-                  echo '<div' . $ownTable . '</div>';
-                  echo '<div' . $readTable . '</div>';
-                ?>
-              </tbody>
-            </table>
+          <table>
+            <caption>Own Wish List</caption>
+            <thead>
+              <tr>
+                <th class="pl-1">Book Title</th>
+                <th class="pl-5">Author</th>
+              </tr>
+            </thead>
+              <?php 
+                echo '<div' . $ownTable . '</div>';
+              ?>
+          </table>
+          <table>
+            <caption>Own Wish List</caption>
+            <thead>
+              <tr>
+                <th class="pl-1">Book Title</th>
+                <th class="pl-5">Author</th>
+              </tr>
+            </thead>
+              <?php 
+                echo '<div' . $readTable . '</div>';
+              ?>
+          </table>
         </div>
       </div>
     </main>
