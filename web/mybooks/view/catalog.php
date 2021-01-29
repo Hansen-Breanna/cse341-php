@@ -16,12 +16,12 @@
     
     <main class="mb-5">
       <div class="container">
-        <div class="row d-md-flex">
+        <div class="row d-flex justify-content-center">
             <table>
               <thead>
                 <tr>
                   <th>Book Title</th>
-                  <th>Author</th>
+                  <th class="pl-5">Author</th>
                 </tr>
               </thead>
               <tbody>

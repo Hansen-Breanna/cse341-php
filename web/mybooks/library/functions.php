@@ -27,9 +27,9 @@ function getAuthorName($author_id) {
 }
 
 function displayCatalog($catalog) {
-   $bookList = '<tbody>';
+   $bookList = '<tbody class="table table-striped table-hover">';
    foreach ($catalog as $book) {
-      $bookList .= '<tr><td>' . $book['title_of_book'] . '</td><td class="pl-3">' . getAuthorName($book['author_id']) . '</td></tr>';
+      $bookList .= '<tr><td>' . $book['title_of_book'] . '</td><td class="pl-5">' . getAuthorName($book['author_id']) . '</td></tr>';
    }
    $bookList .= '</tbody>';
    return $bookList;
