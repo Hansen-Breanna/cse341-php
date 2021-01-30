@@ -23,7 +23,6 @@ CREATE TABLE book_title
 	id SERIAL,
 	author_id INT NOT NULL,
 	title_of_book VARCHAR(100) NOT NULL,
-	isbn BIGINT,
 	is_owned BOOLEAN NOT NULL,
 	own_wish_list BOOLEAN,
 	read_wish_list BOOLEAN,
@@ -45,7 +44,9 @@ INSERT INTO book_title (author_id, title_of_book, is_owned, read_wish_list) VALU
 INSERT INTO book_title (author_id, title_of_book, is_owned, read_wish_list) VALUES (3, 'Undetected', FALSE, TRUE);
 /* select author names by author by id */
 SELECT author.first_name, author.middle_name, author.last_name, book_title.title_of_book FROM author INNER JOIN book_title ON author.id = book_title.author_id;
+/* select books by owned wish list */
 SELECT * FROM book_title WHERE own_wish_list = TRUE;
+/* select books by read wish list */
 SELECT * FROM book_title WHERE read_wish_list = TRUE;
 /* create reviews table */
 CREATE TABLE reviews

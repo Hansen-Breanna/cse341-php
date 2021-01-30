@@ -43,6 +43,14 @@ function getReadWishes() {
    }
 }
 
+ // get favorite authors
+
+ // get blacklisted authors
+
+ // get loans
+
+ // get reviews
+
 // Get authors names
 function getAuthorName($author_id) {
    $db = connectMyBooks();
@@ -61,13 +69,5 @@ function displayCatalog($catalog) {
    $bookList .= '</tbody>';
    return $bookList;
 }
-
- // get favorite authors
-
- // get blacklisted authors
-
- // get loans
-
- // get reviews
 
  ?>
