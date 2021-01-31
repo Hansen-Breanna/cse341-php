@@ -42,6 +42,9 @@ h2 a {
     border-bottom: none;
 }
 
+.btn-custom {
+    width: 200px;
+}
 @media only screen and (min-width: 568px) {
     .main-box {
         height: 20vh;
