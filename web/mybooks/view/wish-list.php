@@ -37,12 +37,12 @@
               </div>
             </form>
           </div>
-          <div class="my-3 py-2 border-secondary border-top border-bottom">
+      <div>
+        <h2>Own Wish List</h2>
+        <div class="my-3 py-2 border-secondary border-top border-bottom">
             <a href="index.php?action=add-book" class="btn btn-custom bg-orange text-dark my-2">Add Title</a>
             <a href="index.php?action=remove-book" class="btn btn-custom bg-orange text-dark my-2">Remove Title</a>
           </div>
-      <div>
-        <h2>Own Wish List</h2>
         <table class="table table-dark table-striped text-light">
           <thead>
             <tr>
@@ -57,6 +57,10 @@
       </div>
       <div>
         <h2>Read Wish List</h2>
+        <div class="my-3 py-2 border-secondary border-top border-bottom">
+            <a href="index.php?action=add-book" class="btn btn-custom bg-orange text-dark my-2">Add Title</a>
+            <a href="index.php?action=remove-book" class="btn btn-custom bg-orange text-dark my-2">Remove Title</a>
+          </div>
         <table class="table table-dark table-striped text-light">
           <thead>
             <tr>
