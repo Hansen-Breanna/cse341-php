@@ -24,10 +24,8 @@
                   <label>Search by Author:</label><br>
                   <input class="rounded" type="text" name="first-name" id="first-name" placeholder="First Name">
                   <input class="rounded" type="text" name="last-name" id="last-name" placeholder="Last Name"><br>
-              </div>
-              <div class="submit">
                   <input type='hidden' id='session' name='session' value=''>
-                  <input type="submit" class="btn btn-custom bg-green text-dark my-2">
+                  <input type="submit" class="btn btn-custom bg-orange text-dark my-2">
               </div>
             </form>
             <form>
