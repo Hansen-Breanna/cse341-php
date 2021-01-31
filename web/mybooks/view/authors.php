@@ -18,7 +18,7 @@
       <div class="container">
         <div class="row d-md-flex justify-content-center">
           <!-- Search Boxes -->
-          <?php include 'common/search.php'; echo "hello"; ?>
+          <?php include 'common/search.php'; ?>
         </div>
       </div>
     </main>

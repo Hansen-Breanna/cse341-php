@@ -18,7 +18,7 @@
       <div class="container">
         <div class="row d-flex flex-column align-items-center">
                <!-- Search Boxes -->
-               <?php include '../common/search.php'; ?>
+               <?php include 'common/search.php'; ?>
           <div>
             <form method="post" action="index.php?action=catalog"> 
               <div>
