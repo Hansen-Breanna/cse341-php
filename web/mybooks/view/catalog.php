@@ -17,17 +17,32 @@
     <main class="mb-5">
       <div class="container">
         <div class="row d-flex justify-content-center">
-          <table class="table table-dark table-striped text-light">
-              <thead>
-                <tr>
-                  <th class="pl-1">Book Title</th>
-                  <th class="pl-5">Author</th>
-                </tr>
-              </thead>
-              <tbody>
-                <?php echo $catalogTable; ?>
-              </tbody>
-            </table>
+          <div>
+            <?php
+              echo "<form method='post' action='" . htmlspecialchars($_SERVER["PHP_SELF"]) . "'>";
+              echo "<input type='text' name='author'>";
+              echo "<input type='submit' class='btn btn-lg bg-green shadow px-5' value='Search Authors'>";
+              echo "</form></div>";
+            ?>
+
+            </form>
+            <form>
+            
+            </form>
+          </div>
+          <div>
+            <table class="table table-dark table-striped text-light">
+                <thead>
+                  <tr>
+                    <th class="pl-1">Book Title</th>
+                    <th class="pl-5">Author</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <?php echo $catalogTable; ?>
+                </tbody>
+              </table>
+          </div>
         </div>
       </div>
     </main>
