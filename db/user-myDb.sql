@@ -85,14 +85,17 @@ CREATE TABLE user_book
 CREATE TABLE reviews
 (
 	id SERIAL,
+	library_user_id INT NOT NULL,
 	book_title_id INT NOT NULL,
 	review TEXT NOT NULL,
 	rating INT,
 	PRIMARY KEY (id),
 	FOREIGN KEY (book_title_id) REFERENCES book_title(id)
+	FOREIGN KEY (book_title_id) REFERENCES book_title(id)
 );
 /* insert reviews */
 INSERT INTO reviews (book_title_id, review, rating) VALUES (1, 'Loved the mystery and humor involved in the historical romance', 5);
+
 /* create borrowers */
 CREATE TABLE borrower
 (
@@ -110,12 +113,14 @@ INSERT INTO borrower (first_name, last_name, phone_number) VALUES ('Breanna', 'H
 CREATE TABLE loan
 (
 	id SERIAL,
+	library_user_id INT NOT NULL,
 	book_title_id INT NOT NULL,
 	borrower_id INT NOT NULL, 
 	date_borrowed DATE NOT NULL,
 	return_date DATE,
 	is_returned BOOLEAN NOT NULL,
 	PRIMARY KEY (id),
+	FOREIGN KEY (library_user_id) REFERENCES library_user(id),
 	FOREIGN KEY (book_title_id) REFERENCES book_title(id),
 	FOREIGN KEY (borrower_id) REFERENCES borrower(id)
 );
