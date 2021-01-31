@@ -38,8 +38,8 @@
             </form>
           </div>
           <div>
-            <a href="index.php?action=add-book">Add Title</a>
-            <a href="index.php?action=remove-book">Remove Title</a>
+            <a href="index.php?action=add-book" class="btn btn-custom bg-orange text-dark my-2">Add Title</a>
+            <a href="index.php?action=remove-book" class="btn btn-custom bg-orange text-dark my-2">Remove Title</a>
           </div>
           <div>
             <table class="table table-dark table-striped text-light">
