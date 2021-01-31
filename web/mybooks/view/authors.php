@@ -17,7 +17,8 @@
     <main class="mb-5">
       <div class="container">
         <div class="row d-md-flex">
-            
+                   <!-- Search Boxes -->
+        <?php include '../common/search.php'; ?>
         </div>
       </div>
     </main>
