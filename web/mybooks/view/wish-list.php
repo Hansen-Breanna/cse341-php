@@ -9,7 +9,7 @@
 <!-- Header -->
 <?php include '../common/header.php'; ?>
 
-<h1 class="offset-1 col-10 offset-md-0 col-md-12">My Wish Lists</h1>
+<h1 class="offset-1 col-10 offset-md-0 col-md-12 pb-2">My Wish Lists</h1>
 </div>
 </div>
 </header>
@@ -38,7 +38,7 @@
             </form>
           </div>
       <div>
-        <h2>Own Wish List</h2>
+        <h2 class="pt-2">Own Wish List</h2>
         <div class="my-3 py-2 border-secondary border-top border-bottom">
             <a href="index.php?action=add-book" class="btn btn-custom bg-orange text-dark my-2">Add Title</a>
             <a href="index.php?action=remove-book" class="btn btn-custom bg-orange text-dark my-2">Remove Title</a>
@@ -56,7 +56,7 @@
         </table>
       </div>
       <div>
-        <h2>Read Wish List</h2>
+        <h2 class="pt-2">Read Wish List</h2>
         <div class="my-3 py-2 border-secondary border-top border-bottom">
             <a href="index.php?action=add-book" class="btn btn-custom bg-orange text-dark my-2">Add Title</a>
             <a href="index.php?action=remove-book" class="btn btn-custom bg-orange text-dark my-2">Remove Title</a>
