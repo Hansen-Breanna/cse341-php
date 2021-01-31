@@ -18,10 +18,7 @@
                             <a class="nav-link" href="index.php?action=wish">Wishes</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="index.php?action=favorite">Favorites</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href='index.php?action=blacklist'>Blacklisted</a>
+                            <a class="nav-link" href="index.php?action=authors">Authors</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="index.php?action=loans">Loans</a>

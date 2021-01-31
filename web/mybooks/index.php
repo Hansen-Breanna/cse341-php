@@ -22,16 +22,13 @@ $action = filter_input(INPUT_POST, 'action');
 
 // Switch case to choose page
 switch ($action){
-    case 'blacklist':
-        include 'view/blacklisted-authors.php';
-    break;
     case 'catalog':
         $catalog = getCatalog();
         $catalogTable = displayCatalog($catalog);
         include 'view/catalog.php';
     break;
-    case 'favorite':
-        include 'view/favorite-authors.php';
+    case 'author':
+        include 'view/authors.php';
     break;
     case 'loans':
         include 'view/loans.php';
