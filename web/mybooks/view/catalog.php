@@ -20,7 +20,7 @@
           <div>
             <form method="post" action="catalog.php"> 
             <form method="post" action="index.php?action=catalog"> 
-              <div class="name">
+              <div>
                   <label>Search by Author:</label><br>
                   <input class="rounded" type="text" name="first-name" id="first-name" placeholder="First Name">
                   <input class="rounded" type="text" name="last-name" id="last-name" placeholder="Last Name"><br>
@@ -28,7 +28,13 @@
                   <input type="submit" class="btn btn-custom bg-orange text-dark my-2">
               </div>
             </form>
-            <form>
+            <form method="post" action="index.php?action=catalog"> 
+              <div>
+                  <label>Search by Title:</label><br>
+                  <input class="rounded" type="text" name="title" id="title" placeholder="Title">
+                  <input type='hidden' id='session' name='session' value=''>
+                  <input type="submit" class="btn btn-custom bg-orange text-dark my-2">
+              </div>
             
             </form>
           </div>
