@@ -16,7 +16,7 @@
 
 <main class="mb-5">
   <div class="container">
-    <div class="row d-md-flex justify-content-around">
+    <div class="row">
       <div>
         <form method="post" action="index.php?action=catalog">
           <div>
@@ -37,7 +37,7 @@
           </div>
         </form>
       </div>
-      <div>
+      <div class="d-md-flex justify-content-around">
         <div>
           <h2 class="pt-4">Own Wish List</h2>
           <div class="pb-2">
