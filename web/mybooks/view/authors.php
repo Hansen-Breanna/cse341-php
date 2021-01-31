@@ -19,6 +19,8 @@
         <div class="row d-md-flex">
                    <!-- Search Boxes -->
         <?php include '../common/search.php'; ?>
+               <!-- Search Boxes -->
+               <?php include '../common/search.php'; ?>
         </div>
       </div>
     </main>
