@@ -22,15 +22,15 @@
               echo "<form method='post' action='" . htmlspecialchars($_SERVER["PHP_SELF"]) . "'>";
                 echo '<div class="input-group">';
                   echo '<div class="input-group-prepend">';
-                    echo '<span class="input-group-text" id="">First and last name</span>';
+                    echo '<span class="input-group-text bg-info" id="">First and last name</span>';
                   echo '</div>';
-                  echo '<input type="text" class="form-control p-2">';
-                  echo '<input type="text" class="form-control">';
+                  echo '<input type="text" class="form-control search-box">';
+                  echo '<input type="text" class="form-control search-box">';
                   echo '<div class="input-group-append">';
-                    echo '<label class="input-group-text" for="inputGroupSelect02">Options</label>';
+                    echo '<label class="input-group-text bg-orange" for="inputGroupSelect02">Options</label>';
                   echo '</div>';
-              echo "<input type='submit' class='btn btn-lg bg-green shadow px-5' value='Search Authors'>";
               echo '</div>';
+              echo "<input type='submit' class='btn btn-lg bg-green shadow px-5' value='Search Authors'>";
               echo "</form>";
             ?>
 

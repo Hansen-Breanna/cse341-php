@@ -37,6 +37,11 @@ h2 a {
     display: none;
 }
 
+.search-box {
+    height: 55px;
+    border-bottom: none;
+}
+
 @media only screen and (min-width: 568px) {
     .main-box {
         height: 20vh;
