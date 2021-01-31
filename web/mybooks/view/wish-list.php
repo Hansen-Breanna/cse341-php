@@ -38,8 +38,8 @@
             </form>
           </div>
       <div>
-        <h2 class="pt-3">Own Wish List</h2>
-        <div class="py-2">
+        <h2 class="pt-4">Own Wish List</h2>
+        <div class="pb-2">
             <a href="index.php?action=add-book" class="btn btn-custom bg-orange text-dark my-2">Add Title</a>
             <a href="index.php?action=remove-book" class="btn btn-custom bg-orange text-dark my-2">Remove Title</a>
           </div>
