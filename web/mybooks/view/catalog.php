@@ -21,7 +21,7 @@
             <form method="post" action="catalog.php"> 
             <form method="post" action="index.php?action=catalog"> 
               <div class="name">
-                  <label>Search Authors:</label>
+                  <label>Search by Author:</label><br>
                   <input class="rounded" type="text" name="first-name" id="first-name" placeholder="First Name">
                   <input class="rounded" type="text" name="last-name" id="last-name" placeholder="Last Name"><br>
               </div>
