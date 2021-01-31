@@ -22,8 +22,8 @@
             <form method="post" action="index.php?action=catalog"> 
               <div class="name">
                   <label>Search Authors:</label>
-                  <input class="w-75" type="text" name="first-name" id="first-name" placeholder="First Name">
-                  <input class="w-75" type="text" name="last-name" id="last-name" placeholder="Last Name"><br>
+                  <input class="rounded" type="text" name="first-name" id="first-name" placeholder="First Name">
+                  <input class="rounded" type="text" name="last-name" id="last-name" placeholder="Last Name"><br>
               </div>
               <div class="submit">
                   <input type='hidden' id='session' name='session' value=''>
