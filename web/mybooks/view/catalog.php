@@ -22,8 +22,8 @@
             <form method="post" action="index.php?action=catalog"> 
               <div>
                   <label>Search by Author:</label><br>
-                  <input class="rounded" type="text" name="first-name" id="first-name" placeholder="First Name">
-                  <input class="rounded" type="text" name="last-name" id="last-name" placeholder="Last Name"><br>
+                  <input class="rounded p-1" type="text" name="first-name" id="first-name" placeholder="First Name">
+                  <input class="rounded p-1" type="text" name="last-name" id="last-name" placeholder="Last Name"><br>
                   <input type='hidden' id='session' name='session' value=''>
                   <input type="submit" class="btn btn-custom bg-orange text-dark my-2">
               </div>
@@ -31,12 +31,15 @@
             <form method="post" action="index.php?action=catalog"> 
               <div>
                   <label>Search by Title:</label><br>
-                  <input class="rounded" type="text" name="title" id="title" placeholder="Title">
+                  <input class="rounded p-1" type="text" name="title" id="title" placeholder="Title">
                   <input type='hidden' id='session' name='session' value=''>
                   <input type="submit" class="btn btn-custom bg-orange text-dark my-2">
               </div>
-            
             </form>
+          </div>
+          <div>
+            <a href="index.php?action=add-book">Add Title</a>
+            <a href="index.php?action=remove-book">Remove Title</a>
           </div>
           <div>
             <table class="table table-dark table-striped text-light">
