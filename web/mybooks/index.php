@@ -27,7 +27,7 @@ switch ($action){
         $catalogTable = displayCatalog($catalog);
         include 'view/catalog.php';
     break;
-    case 'author':
+    case 'authors':
         include 'view/authors.php';
     break;
     case 'loans':
