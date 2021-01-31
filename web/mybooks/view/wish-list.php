@@ -56,8 +56,8 @@
         </table>
       </div>
       <div>
-        <h2 class="pt-2">Read Wish List</h2>
-        <div class="my-3 py-2 border-secondary border-top border-bottom">
+      <h2 class="pt-4">Read Wish List</h2>
+        <div class="pb-2">
             <a href="index.php?action=add-book" class="btn btn-custom bg-orange text-dark my-2">Add Title</a>
             <a href="index.php?action=remove-book" class="btn btn-custom bg-orange text-dark my-2">Remove Title</a>
           </div>
