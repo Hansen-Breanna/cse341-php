@@ -20,13 +20,10 @@
           <div>
             <form method="post" action="catalog.php"> 
             <form method="post" action="index.php?action=catalog"> 
-              <div class="first-name">
-                  <label for="first-name">First name:</label>
-                  <input class="w-75" type="text" name="first-name" id="first-name"><br>
-              </div>
-              <div class="last-name">
-                  <label for="last-name">First name:</label>
-                  <input class="w-75" type="text" name="last-name" id="last-name"><br>
+              <div class="name">
+                  <label>Search Authors:</label>
+                  <input class="w-75" type="text" name="first-name" id="first-name" placeholder="First Name">
+                  <input class="w-75" type="text" name="last-name" id="last-name" placeholder="Last Name"><br>
               </div>
               <div class="submit">
                   <input type='hidden' id='session' name='session' value=''>
