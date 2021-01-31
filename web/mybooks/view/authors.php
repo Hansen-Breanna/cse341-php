@@ -9,7 +9,7 @@
 <!-- Header -->
 <?php include '../common/header.php'; ?>
 
-              <h1 class="offset-1 col-10 offset-md-0 col-md-12">Favorite Authors</h1>
+              <h1 class="offset-1 col-10 offset-md-0 col-md-12">Authors</h1>
           </div>
       </div>
     </header>
@@ -18,9 +18,7 @@
       <div class="container">
         <div class="row d-md-flex">
                    <!-- Search Boxes -->
-        <?php include '../common/search.php'; ?>
-               <!-- Search Boxes -->
-               <?php include '../common/search.php'; ?>
+        <?php include '../common/search.php'; echo "hello"; ?>
         </div>
       </div>
     </main>
