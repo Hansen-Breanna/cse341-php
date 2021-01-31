@@ -31,9 +31,11 @@
             <form method="post" action="index.php?action=catalog"> 
               <div>
                   <label>Search by Title:</label><br>
-                  <input class="rounded p-1" type="text" name="title" id="title" placeholder="Title">
-                  <input type='hidden' id='session' name='session' value=''>
-                  <input type="submit" class="btn btn-custom bg-orange text-dark my-2">
+                  <div class="d-flex align-items-end">
+                    <input class="rounded p-1" type="text" name="title" id="title" placeholder="Title">
+                    <input type='hidden' id='session' name='session' value=''>
+                    <input type="submit" class="btn btn-custom bg-orange text-dark my-2">
+                  </div>
               </div>
             </form>
           </div>
