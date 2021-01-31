@@ -18,22 +18,20 @@
       <div class="container">
         <div class="row d-flex justify-content-center">
           <div>
-            <?php
-              echo "<form method='post' action='" . htmlspecialchars($_SERVER["PHP_SELF"]) . "'>";
-                echo '<div class="input-group">';
-                  echo '<div class="input-group-prepend">';
-                    echo '<span class="input-group-text bg-info" id="">First and last name</span>';
-                  echo '</div>';
-                  echo '<input type="text" class="form-control search-box">';
-                  echo '<input type="text" class="form-control search-box">';
-                  echo '<div class="input-group-append">';
-                    echo '<label class="input-group-text bg-orange" for="inputGroupSelect02">Options</label>';
-                  echo '</div>';
-              echo '</div>';
-              echo "<input type='submit' class='btn btn-lg bg-green shadow px-5' value='Search Authors'>";
-              echo "</form>";
-            ?>
-
+            <form method="post" action="catalog.php"> 
+            <form method="post" action="index.php?action=catalog"> 
+              <div class="first-name">
+                  <label for="first-name">First name:</label>
+                  <input class="w-75" type="text" name="first-name" id="first-name"><br>
+              </div>
+              <div class="last-name">
+                  <label for="last-name">First name:</label>
+                  <input class="w-75" type="text" name="last-name" id="last-name"><br>
+              </div>
+              <div class="submit">
+                  <input type='hidden' id='session' name='session' value=''>
+                  <input type="submit" class="btn btn-custom bg-green text-dark my-2">
+              </div>
             </form>
             <form>
             
