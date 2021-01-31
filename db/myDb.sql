@@ -5,6 +5,8 @@ CREATE TABLE author
 	first_name VARCHAR(100) NOT NULL,
 	middle_name VARCHAR(100),
 	last_name VARCHAR(100) NOT NULL,
+	is_blacklist BOOLEAN,
+	is_favorite BOOLEAN,
 	PRIMARY KEY (id)
 );
 /* author inserts */
@@ -15,35 +17,15 @@ INSERT INTO author (first_name, middle_name, last_name, is_favorite) VALUES ('Kr
 INSERT INTO author (first_name, last_name, is_favorite) VALUES ('John', 'Flanagan', TRUE);
 /* search for favorites */
 SELECT first_name, last_name FROM author WHERE is_favorite = TRUE;
-/* create user */
-CREATE TABLE library_user
-(
-	id serial,
-	first_name VARCHAR(100) NOT NULL,
-	last_name VARCHAR(100) NOT NULL,
-	username VARCHAR(40) NOT NULL,
-	password VARCHAR(40) NOT NULL,
-	email VARCHAR(50) NOT NULL,
-	PRIMARY KEY (id)
-);
-/* create user/author bridge table */
-CREATE TABLE user_author
-(
-	id serial,
-	library_user_id INT NOT NULL,
-	author_id INT NOT NULL,
-	is_blacklist BOOLEAN,
-	is_favorite BOOLEAN,
-	PRIMARY KEY (id),
-	FOREIGN KEY (library_user_id) REFERENCES library_user(id)
-	FOREIGN KEY (author_id) REFERENCES author(id)
-);
 /* create book title table */
 CREATE TABLE book_title
 (
 	id SERIAL,
 	author_id INT NOT NULL,
 	title_of_book VARCHAR(100) NOT NULL,
+	is_owned BOOLEAN NOT NULL,
+	own_wish_list BOOLEAN,
+	read_wish_list BOOLEAN,
 	PRIMARY KEY (id),
 	FOREIGN KEY (author_id) REFERENCES author(id)
 );
@@ -66,21 +48,6 @@ SELECT author.first_name, author.middle_name, author.last_name, book_title.title
 SELECT * FROM book_title WHERE own_wish_list = TRUE;
 /* select books by read wish list */
 SELECT * FROM book_title WHERE read_wish_list = TRUE;
-/* create book owned table */
-CREATE TABLE user_book
-(
-	id serial,
-	library_user_id INT NOT NULL,
-	author_id INT NOT NULL,
-	book_title_id INT NOT NULL,
-	is_owned BOOLEAN NOT NULL,
-	own_wish_list BOOLEAN,
-	read_wish_list BOOLEAN,
-	PRIMARY KEY (id),
-	FOREIGN KEY (library_user_id) REFERENCES library_user(id),
-	FOREIGN KEY (author_id) REFERENCES author(id),
-	FOREIGN KEY (book_title_id) REFERENCES book_title(id)	
-);
 /* create reviews table */
 CREATE TABLE reviews
 (
