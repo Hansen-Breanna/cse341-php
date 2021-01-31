@@ -34,7 +34,7 @@
                   <div class="d-flex align-items-end">
                     <input class="rounded p-1" type="text" name="title" id="title" placeholder="Title">
                     <input type='hidden' id='session' name='session' value=''>
-                    <input type="submit" class="btn btn-custom bg-orange text-dark my-2">
+                    <input type="submit" class="btn btn-custom bg-orange text-dark">
                   </div>
               </div>
             </form>
