@@ -16,7 +16,7 @@
 
 <main class="mb-5">
   <div class="container">
-    <div class="row">
+    <div class="row d-md-flex flex-column align-items-around">
       <div>
         <form method="post" action="index.php?action=catalog">
           <div>
