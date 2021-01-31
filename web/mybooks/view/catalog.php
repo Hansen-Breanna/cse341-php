@@ -37,7 +37,7 @@
               </div>
             </form>
           </div>
-          <div class="my-3 border border-light border-top border-bottom d-flex justify-content-around">
+          <div class="my-3 border border-light border-top border-bottom d-flex justify-content-around container">
             <a href="index.php?action=add-book" class="btn btn-custom bg-orange text-dark my-2">Add Title</a>
             <a href="index.php?action=remove-book" class="btn btn-custom bg-orange text-dark my-2">Remove Title</a>
           </div>
