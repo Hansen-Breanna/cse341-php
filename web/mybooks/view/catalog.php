@@ -28,7 +28,7 @@
               </div>
             </form>
             <form method="post" action="index.php?action=catalog"> 
-              <div>
+              <div class="mt-1">
                   <label>Search by Title:</label><br>
                   <div class="d-flex align-items-end">
                     <input class="rounded p-1" type="text" name="title" id="title" placeholder="Title">
