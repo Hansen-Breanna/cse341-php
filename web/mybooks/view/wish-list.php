@@ -17,7 +17,7 @@
 <main class="mb-5">
   <div class="container">
     <div class="row d-md-flex flex-column align-items-around">
-      <div>
+      <div class="d-md-flex flex-column align-items-around">
         <form method="post" action="index.php?action=catalog">
           <div>
             <label>Search by Author:</label><br>
