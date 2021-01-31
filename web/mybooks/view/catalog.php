@@ -25,7 +25,7 @@
                   <input class="rounded p-1" type="text" name="first-name" id="first-name" placeholder="First Name">
                   <input class="rounded p-1" type="text" name="last-name" id="last-name" placeholder="Last Name">
                   <input type='hidden' id='session' name='session' value=''>
-                  <input type="submit" class="btn btn-custom bg-orange text-dark my-2">
+                  <input type="submit" class="btn btn-custom bg-info mb-1">
               </div>
             </form>
             <form method="post" action="index.php?action=catalog"> 
@@ -34,13 +34,13 @@
                   <div class="d-flex align-items-end">
                     <input class="rounded p-1" type="text" name="title" id="title" placeholder="Title">
                     <input type='hidden' id='session' name='session' value=''>
-                    <input type="submit" class="btn btn-custom bg-orange text-dark">
+                    <input type="submit" class="btn btn-custom bg-info ml-1">
                   </div>
               </div>
             </form>
           </div>
           <div class="my-3 border-light border-top border-bottom d-flex justify-content-around container">
-            <a href="index.php?action=add-book" class="btn btn-custom bg-orange text-dark my-2">Add Title</a>
+            <a href="index.php?action=add-book" class="btn btn-custom bg-info text-dark my-2">Add Title</a>
             <a href="index.php?action=remove-book" class="btn btn-custom bg-orange text-dark my-2">Remove Title</a>
           </div>
           <div>
