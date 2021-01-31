@@ -25,7 +25,6 @@
                   <input class="rounded p-1" type="text" name="first-name" id="first-name" placeholder="First Name">
                   <input class="rounded p-1" type="text" name="last-name" id="last-name" placeholder="Last Name">
                   <input type='hidden' id='session' name='session' value=''>
-                  <input type="submit" class="btn btn-custom bg-info mb-1">
               </div>
             </form>
             <form method="post" action="index.php?action=catalog"> 
