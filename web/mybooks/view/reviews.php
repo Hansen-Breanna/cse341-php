@@ -17,7 +17,8 @@
     <main class="mb-5">
       <div class="container">
         <div class="row d-md-flex">
-          <table class="table table-dark table-striped text-light">
+        <?php echo $reviewsTable; ?>
+          <!-- <table class="table table-dark table-striped text-light">
             <thead>
               <tr>
                 <th class="pl-1">Book Title</th>
@@ -27,9 +28,9 @@
               </tr>
             </thead>
             <tbody>
-              <?php echo $reviewsTable; ?>
+
             </tbody>
-          </table>
+          </table> -->
         </div>
       </div>
     </main>
