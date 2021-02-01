@@ -61,7 +61,7 @@ function getReadWishes() {
    $authorList = '<tbody>';
    $blacklist = array();
    foreach ($authors as $author) {
-      if($author[4] == TRUE) {
+      if($author[4] == 't') {
          $blacklist[] = $author[4];
       }
       $authorList .= '<tr><td>' . $author['last_name'] . ', ' . $author['first_name'] . ' ' . $author['middle_name'] . '</td></tr>';
