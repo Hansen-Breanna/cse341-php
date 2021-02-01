@@ -31,9 +31,7 @@ switch ($action){
         $authors = getAuthors();
         $authorsTable = displayAuthors($authors);
         $favorites = getFavorites($authors);
-        //$favoritesTable = displayFavorites($favorites);
-        //$blacklist = getBlacklisted();
-        //$blacklistedTable = displayBlacklisted($blacklist);
+        $blacklist = getBlacklisted($authors);
         include 'view/authors.php';
     break;
     case 'loans':

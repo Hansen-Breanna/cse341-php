@@ -15,6 +15,7 @@ INSERT INTO author (first_name, last_name, is_favorite) VALUES ('Tracie', 'Peter
 INSERT INTO author (first_name, last_name, is_favorite) VALUES ('Dee', 'Henderson', TRUE);
 INSERT INTO author (first_name, middle_name, last_name, is_favorite) VALUES ('Kristi', 'Ann', 'Hunter', TRUE);
 INSERT INTO author (first_name, last_name, is_favorite) VALUES ('John', 'Flanagan', TRUE);
+INSERT INTO author (first_name, last_name, is_blacklist) VALUES ('J.K.', 'Rowling', TRUE);
 /* search for favorites */
 SELECT first_name, last_name FROM author WHERE is_favorite = TRUE;
 /* create book title table */

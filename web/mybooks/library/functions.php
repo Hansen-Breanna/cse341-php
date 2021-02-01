@@ -70,7 +70,14 @@ function getReadWishes() {
 
  // get blacklisted authors
 function getBlacklisted($authors) {
-
+   $authorList = '<tbody>';
+   foreach ($authors as $author) {
+      if($author['is_blacklist'] == 't') {
+         $authorList .= '<tr><td>' . $author['last_name'] . ', ' . $author['first_name'] . ' ' . $author['middle_name'] . '</td></tr>';
+      }
+   }
+   $authorList .= '</tbody>';
+   return $authorList;
 }
  // get loans
 

@@ -50,7 +50,7 @@
                 </tr>
               </thead>
               <tbody>
-                <?php echo $blacklistedTable; ?>
+                <?php echo $blacklist; ?>
               </tbody>
             </table>
           </div>
