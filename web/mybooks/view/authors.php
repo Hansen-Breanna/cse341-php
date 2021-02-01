@@ -20,21 +20,19 @@
       <!-- Search Boxes -->
       <?php include 'common/search.php'; ?>
     </div>
-    <div class="row d-md-flex justify-content-around">
-      <div>
-        <table class="table table-dark table-striped text-light">
-          <thead>
-            <tr>
-              <th class="pl-5">Authors</th>
-              <th class="pl-5">Favorite</th>
-              <th class="pl-5">Blacklisted</th>
-            </tr>
-          </thead>
-          <tbody>
-            <?php echo $authorsTable; ?>
-          </tbody>
-        </table>
-      </div>
+    <div class="row d-flex flex-column align-items-center">
+      <table class="table table-dark table-striped text-light">
+        <thead>
+          <tr>
+            <th class="pl-5">Authors</th>
+            <th class="pl-5">Favorite</th>
+            <th class="pl-5">Blacklisted</th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php echo $authorsTable; ?>
+        </tbody>
+      </table>
     </div>
   </div>
 </main>
