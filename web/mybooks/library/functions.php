@@ -149,24 +149,23 @@ function displayReviews($reviews) {
       $count = $review['rating'];
       $reviewList = '<div>';
       $reviewList .= '<div><p>';
-         for ($i = 0; $i < $count; $i++) {
-            $reviewList .= '<i class="fa fa-star text-orange"></i>';
+      for ($i = 0; $i < $count; $i++) {
+         $reviewList .= '<i class="fa fa-star text-orange"></i>';
+      }
+      if ($review['rating'] < 5) {
+         $emptyStars = 5 - $count;
+         for ($i = 0; $i < $emptyStars; $i++) {
+            $reviewList .= '<i class="far fa-star text-orange"></i>';
+            //$i++;
          }
-         if ($review['rating'] < 5) {
-            $emptyStars = 5 - $count;
-            for ($i = 0; $i < $emptyStars; $i++) {
-               $reviewList .= '<i class="far fa-star text-orange"></i>';
-               //$i++;
-            }
-         }
-         
+      }   
       $reviewList .= '(' . $review['rating'] . ')</p></div>';
       $reviewList .= '<h3>' . $review['book_title_id'] . '</h3>';
       $reviewList .= '<p>' . $review['author_id'] . '<p>';
       $reviewList .= '<p>' . $review['review'] . '<p>';
       $reviewList .= '</div>';
+      echo $reviewList;
    }
-   return $reviewList;
 }
 
 ?>
