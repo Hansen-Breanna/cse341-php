@@ -56,33 +56,31 @@ function getReadWishes() {
    }
 }
 
- // get favorite authors
- function getFavorites($authors) {
-   $authorList = '<tbody>';
-   foreach ($authors as $author) {
-      if($author['is_favorite'] == 't') {
-         $authorList .= '<tr><td>' . $author['last_name'] . ', ' . $author['first_name'] . ' ' . $author['middle_name'] . '</td></tr>';
-      }
-   }
-   $authorList .= '</tbody>';
-   return $authorList;
- }
-
- // get blacklisted authors
-function getBlacklisted($authors) {
-   $authorList = '<tbody>';
-   foreach ($authors as $author) {
-      if($author['is_blacklist'] == 't') {
-         $authorList .= '<tr><td>' . $author['last_name'] . ', ' . $author['first_name'] . ' ' . $author['middle_name'] . '</td></tr>';
-      }
-   }
-   $authorList .= '</tbody>';
-   return $authorList;
-}
  // get loans
+ function getLoans() {
+   $db = connectMyBooks();
+    if (!$db) {
+      echo "An error occurred.\n";
+      exit;
+   } else {
+      $statement = $db->query('SELECT * FROM loan ORDER BY date_borrowed DESC');
+      $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+      return $results;
+   }
+}
 
  // get reviews
-
+ function getReviews() {
+   $db = connectMyBooks();
+    if (!$db) {
+      echo "An error occurred.\n";
+      exit;
+   } else {
+      $statement = $db->query('SELECT * FROM reviews');
+      $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+      return $results;
+   }
+}
 // Get authors names
 function getAuthorName($author_id) {
    $db = connectMyBooks();
@@ -121,4 +119,33 @@ function displayAuthors($authors) {
    $authorList .= '</tbody>';
    return $authorList;
 }
+
+// Display loans
+function displayLoans($loans) {
+   $loanList = '<tbody>';
+   foreach ($loans as $loan) {
+      $loanList .= '<tr><td>' . $loan['book_title_id'] . '</td>';
+      $loanList .= '<td>' . $loan['borrower_id'] . '</td>';
+      $loanList .= '<td>' . $loan['date_borrowed'] . '</td>';
+      $loanList .= '<td>' . $loan['return_date'] . '</td>'; 
+      // $loanList .= '<td>' . $loan['is_returned'] . '</td>';
+      // if($loan['is_favorite'] == 't') {
+      //    $loanList .= '<td class="text-center">Yes</td>';
+      // } else {
+      //    $loanList .= '<td></td>';
+      // }
+      // if($loan['is_blacklist'] == 't') {
+      //    $loanList .= '<td class="text-center">Yes</td></tr>';
+      // } else {
+      //    $loanList .= '<td></td>';
+      // }
+   }
+   $loanList .= '</tbody>';
+   return $loanList;
+}
+
+function displayReviews($reviews) {
+
+}
+
 ?>

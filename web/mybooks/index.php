@@ -30,14 +30,16 @@ switch ($action){
     case 'authors':
         $authors = getAuthors();
         $authorsTable = displayAuthors($authors);
-        $favorites = getFavorites($authors);
-        $blacklist = getBlacklisted($authors);
         include 'view/authors.php';
     break;
     case 'loans':
+        $loans = getLoans();
+        $loansTable = displayLoans($loans);
         include 'view/loans.php';
     break;
     case 'reviews':
+        $reviews = getReviews();
+        $reviewsTable = displayReviews($reviews);
         include 'view/reviews.php';
     break;
     case 'wish':
