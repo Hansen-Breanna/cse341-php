@@ -1,6 +1,6 @@
 <div>
     <form method="post" action="index.php?action=catalog"> 
-        <div class="d-flex">
+        <div class="d-flex flex-wrap">
             <label>Search by Author:</label><br>
             <input class="rounded p-1" type="text" name="first-name" id="first-name" placeholder="First Name">
             <input class="rounded p-1" type="text" name="last-name" id="last-name" placeholder="Last Name">
