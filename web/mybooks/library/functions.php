@@ -79,7 +79,6 @@ function getBorrower($borrower_id) {
       $stmt = $db->query('SELECT * FROM borrower WHERE id = :id');
       $stmt->execute(array(':id' => $borrower_id));
       $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-      var_dump($results);
       return $results;
    }
 }
@@ -148,7 +147,7 @@ function displayLoans($loans) {
    $loanList = '<tbody>';
    foreach ($loans as $loan) {
       $title = getDetails($loan['book_title_id']);
-      $borrower = getBorrower($loan['borrower_id']);
+      //$borrower = getBorrower($loan['borrower_id']);
       $loanList .= '<tr><td>' . $title[0]['title_of_book'] . '</td>';
       $loanList .= '<td>' . $borrower[0]['first_name'] . ' ' . $borrower[0]['last_name'] . '</td>';
       $loanList .= '<td>' . $loan['date_borrowed'] . '</td>';
