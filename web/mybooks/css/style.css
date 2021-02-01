@@ -57,8 +57,15 @@ table {
     color: #fb8500;
 }
 
+.review {
+    width: 80vw;
+}
+
 @media only screen and (min-width: 568px) {
     .main-box {
         height: 20vh;
+    }
+    .review {
+        width: 48vw;
     }
 }

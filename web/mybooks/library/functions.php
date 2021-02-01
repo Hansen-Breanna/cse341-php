@@ -153,7 +153,7 @@ function displayLoans($loans) {
 }
 
 function displayReviews($reviews) {
-   $reviewList = '<div class="d-flex justify-content-center">';
+   $reviewList = '<div class="d-flex justify-content-center review">';
    foreach ($reviews as $review) {
       $count = $review['rating'];
       $details = getDetails($review['book_title_id']);
