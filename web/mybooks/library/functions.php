@@ -159,6 +159,7 @@ function displayReviews($reviews) {
                //$i++;
             }
          }
+         
       $reviewList .= '(' . $review['rating'] . ')</p></div>';
       $reviewList .= '<h3>' . $review['book_title_id'] . '</h3>';
       $reviewList .= '<p>' . $review['author_id'] . '<p>';
