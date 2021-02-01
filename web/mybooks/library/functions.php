@@ -149,7 +149,7 @@ function displayLoans($loans) {
       $title = getDetails($loan['book_title_id']);
       //$borrower = getBorrower($loan['borrower_id']);
       $loanList .= '<tr><td>' . $title[0]['title_of_book'] . '</td>';
-      //$loanList .= '<td>' . $borrower[0]['first_name'] . ' ' . $borrower[0]['last_name'] . '</td>';
+      $loanList .= '<td></td>' . //$borrower[0]['first_name'] . ' ' . $borrower[0]['last_name'] . '</td>';
       $loanList .= '<td>' . $loan['date_borrowed'] . '</td>';
       $loanList .= '<td>' . $loan['return_date'] . '</td>'; 
       $loanList .= '<td>' . $loan['is_returned'] . '</td>';
