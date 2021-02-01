@@ -61,6 +61,7 @@ CREATE TABLE reviews
 );
 /* insert reviews */
 INSERT INTO reviews (book_title_id, review, rating) VALUES (1, 'Loved the mystery and humor involved in the historical romance', 5);
+INSERT INTO reviews (book_title_id, review, rating) VALUES (6, 'Good romance but a little slow.', 4);
 /* create borrowers */
 CREATE TABLE borrower
 (
