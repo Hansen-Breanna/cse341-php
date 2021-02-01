@@ -169,7 +169,7 @@ function displayReviews($reviews) {
          }
       }   
       $reviewList .= '(' . $review['rating'] . ')</p></div>';
-      $reviewList .= '<h3>' . $details[0]['book_title'] . '</h3>';
+      $reviewList .= '<h3>' . $details[0]['title_of_book'] . '</h3>';
       $reviewList .= '<p>' . $details[0]['first_name'] . ' ' . $details[0]['middle_name'] . ' ' . $details[0]['last_name'] . '<p>';
       $reviewList .= '<p>' . $review['review'] . '<p>';
       $reviewList .= '</div>';
