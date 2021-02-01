@@ -35,28 +35,6 @@
           </tbody>
         </table>
       </div>
-      <div>
-        <table class="table table-dark table-striped text-light">
-          <thead>
-            <tr>
-              <th class="pl-5">Favorite Authors</th>
-            </tr>
-          </thead>
-          <tbody>
-            <?php echo $favorites; ?>
-          </tbody>
-        </table>
-        <table class="table table-dark table-striped text-light">
-          <thead>
-            <tr>
-              <th class="pl-5">Blacklisted Authors</th>
-            </tr>
-          </thead>
-          <tbody>
-            <?php echo $blacklist; ?>
-          </tbody>
-        </table>
-      </div>
     </div>
   </div>
 </main>
