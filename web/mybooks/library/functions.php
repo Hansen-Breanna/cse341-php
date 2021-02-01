@@ -66,7 +66,7 @@ function getReadWishes() {
       }
       $authorList .= '<tr><td>' . $author['last_name'] . ', ' . $author['first_name'] . ' ' . $author['middle_name'] . '</td></tr>';
    }
-   var_dump($blacklist);
+   var_dump($authors);
    $authorList .= '</tbody>';
    return $authorList;
  }
