@@ -151,7 +151,7 @@ function displayReviews($reviews) {
       $reviewList .= '<div><p>';
          for ($i = 0; $i <= $count; $i++) {
             $reviewList .= '<i class="fa fa-star text-orange"></i>';
-            $i++;
+            //$i++;
          }
       $reviewList .= '</p></div>';
       $reviewList .= '<h3>' . $review['book_title_id'] . '</h3>';
