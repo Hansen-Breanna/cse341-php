@@ -16,7 +16,9 @@
     
     <main class="mb-5">
       <div class="container">
-        <div class="row d-md-flex">
+      <div class="row d-flex flex-column align-items-center">
+                     <!-- Search Boxes -->
+                     <?php include 'common/search.php'; ?>
           <table class="table table-dark table-striped text-light">
             <thead>
               <tr>
