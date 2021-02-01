@@ -90,14 +90,14 @@ function getAuthorName($author_id) {
    return $row[0]['first_name'] . " " . $row[0]['middle_name'] . " " . $row[0]['last_name'];
 }
 
-// function getDetails($book_title_id) {
-//    $db = connectMyBooks();
-//    $stmt = $db->prepare('SELECT author.first_name, author.middle_name, author.last_name, book_title.title_of_book FROM author INNER JOIN book_title ON author.id = book_title.author_id WHERE id = :id');
-//    $stmt->execute(array(':id' => $book_title_id));
-//    $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
-//    var_dump($row);
-//    return $row;
-// }
+function getDetails($book_title_id) {
+   $db = connectMyBooks();
+   $stmt = $db->prepare('SELECT author.first_name, author.middle_name, author.last_name, book_title.title_of_book FROM author INNER JOIN book_title ON author.id = book_title.author_id');
+   $stmt->execute(array(':id' => $book_title_id));
+   $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
+   var_dump($row);
+   return $row;
+}
 
 // Display book catalog
 function displayCatalog($catalog) {
@@ -157,7 +157,7 @@ function displayReviews($reviews) {
    $reviewList = '<div>';
    foreach ($reviews as $review) {
       $count = $review['rating'];
-      //$details = getDetails($review['book_title_id']);
+      $details = getDetails($review['book_title_id']);
       $reviewList .= '<div><p class="text-orange>';
       for ($i = 0; $i < $count; $i++) {
          $reviewList .= '<i class="fa fa-star"></i>';
