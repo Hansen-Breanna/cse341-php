@@ -50,6 +50,10 @@ input  {
     height: 44px;
 }
 
+.width-25 {
+    width: 25vw;
+}
+
 @media only screen and (min-width: 568px) {
     .main-box {
         height: 20vh;
