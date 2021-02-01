@@ -107,7 +107,7 @@ function displayAuthors($authors) {
    $authorList = '<tbody>';
    foreach ($authors as $author) {
       $authorList .= '<tr><td>' . $author['last_name'] . ', ' . $author['first_name'] . ' ' . $author['middle_name'] . '</td>';
-      if($author['is_favorite' == 't']) {
+      if($author['is_favorite'] == 't') {
          $authorList .= '<td>Yes</td>';
       } else {
          $authorList .= '<td></td>';
