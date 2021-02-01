@@ -61,7 +61,7 @@ function getReadWishes() {
    $authorList = '<tbody>';
    foreach ($authors as $author) {
       if($author['is_favorite'] == 't') {
-         $authorList .= '<tr><td>' . $author['last_name'] . ', ' . $author['first_name'] . ' ' . $author['middle_name'] . '</td></tr>';
+         $authorList .= '<tr><td>' . $author['last_name'] . ', hello ' . $author['first_name'] . ' ' . $author['middle_name'] . '</td></tr>';
       }
    }
    $authorList .= '</tbody>';
