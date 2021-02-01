@@ -153,11 +153,11 @@ function displayLoans($loans) {
 }
 
 function displayReviews($reviews) {
-   $reviewList = '<div>';
+   $reviewList = '<div class="d-flex justify-content-center">';
    foreach ($reviews as $review) {
       $count = $review['rating'];
       $details = getDetails($review['book_title_id']);
-      $reviewList .= '<div class="p-2 border border-secondary m-3 d-flex justify-content-center"><p>';
+      $reviewList .= '<div class="p-2 border border-secondary m-3"><p>';
       for ($i = 0; $i < $count; $i++) {
          $reviewList .= '<i class="fa fa-star text-orange"></i>';
       }
