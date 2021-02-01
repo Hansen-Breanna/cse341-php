@@ -92,7 +92,7 @@ function getAuthorName($author_id) {
 
 function getDetails($book_title_id) {
    $db = connectMyBooks();
-   $stmt = $db->prepare('SELECT author.first_name, author.middle_name, author.last_name, book_title.title_of_book FROM author INNER JOIN book_title ON author.id = book_title.author_id');
+   $stmt = $db->prepare('SELECT author.first_name, author.middle_name, author.last_name, book_title.title_of_book FROM author INNER JOIN book_title ON author.id = book_title.author_id WHERE book_title.id = :id');
    $stmt->execute(array(':id' => $book_title_id));
    $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
    var_dump($row);
