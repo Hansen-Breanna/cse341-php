@@ -19,34 +19,36 @@
     <div class="row d-md-flex flex-column align-items-around">
       <!-- Search Boxes -->
       <?php include 'common/search.php'; ?>
-      <div class="d-md-flex justify-content-around">
-        <div>
-          <h2 class="pt-4">Own Wish List</h2>
-          <table class="table table-dark table-striped text-light m-2">
-            <thead>
-              <tr>
-                <th class="pl-1">Book Title</th>
-                <th class="pl-5">Author</th>
-              </tr>
-            </thead>
-            <?php
-            echo '<div>' . $ownTable . '</div>';
-            ?>
-          </table>
-        </div>
-        <div>
-          <h2 class="pt-4">Read Wish List</h2>
-          <table class="table table-dark table-striped text-light m-2">
-            <thead>
-              <tr>
-                <th class="pl-1">Book Title</th>
-                <th class="pl-5">Author</th>
-              </tr>
-            </thead>
-            <?php
-            echo '<div' . $readTable . '</div>';
-            ?>
-          </table>
+      <div>
+        <div class="d-md-flex justify-content-around">
+          <div>
+            <h2 class="pt-4">Own Wish List</h2>
+            <table class="table table-dark table-striped text-light m-2">
+              <thead>
+                <tr>
+                  <th class="pl-1">Book Title</th>
+                  <th class="pl-5">Author</th>
+                </tr>
+              </thead>
+              <?php
+              echo '<div>' . $ownTable . '</div>';
+              ?>
+            </table>
+          </div>
+          <div>
+            <h2 class="pt-4">Read Wish List</h2>
+            <table class="table table-dark table-striped text-light m-2">
+              <thead>
+                <tr>
+                  <th class="pl-1">Book Title</th>
+                  <th class="pl-5">Author</th>
+                </tr>
+              </thead>
+              <?php
+              echo '<div' . $readTable . '</div>';
+              ?>
+            </table>
+          </div>
         </div>
       </div>
     </div>
