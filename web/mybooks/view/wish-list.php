@@ -21,7 +21,7 @@
       <?php include 'common/search.php'; ?>
       <div>
         <div class="d-flex justify-content-around">
-          <div>
+          <div class="m-2">
             <h2 class="pt-4">Own Wish List</h2>
             <table class="table table-dark table-striped text-light m-2">
               <thead>
@@ -35,7 +35,7 @@
               ?>
             </table>
           </div>
-          <div>
+          <div class="m-2">
             <h2 class="pt-4">Read Wish List</h2>
             <table class="table table-dark table-striped text-light m-2">
               <thead>
