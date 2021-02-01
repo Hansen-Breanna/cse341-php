@@ -40,7 +40,7 @@
                 </tr>
               </thead>
               <tbody>
-                <?php echo $favoritesTable; ?>
+                <?php echo $favorites; ?>
               </tbody>
             </table>
             <table class="table table-dark table-striped text-light">
