@@ -25,7 +25,9 @@
         <table class="table table-dark table-striped text-light">
           <thead>
             <tr>
-              <th class="pl-5">All Authors</th>
+              <th class="pl-5">Authors</th>
+              <th class="pl-5">Favorite</th>
+              <th class="pl-5">Blacklisted</th>
             </tr>
           </thead>
           <tbody>

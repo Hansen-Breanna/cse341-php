@@ -107,8 +107,12 @@ function displayAuthors($authors) {
    $authorList = '<tbody>';
    foreach ($authors as $author) {
       $authorList .= '<tr><td>' . $author['last_name'] . ', ' . $author['first_name'] . ' ' . $author['middle_name'] . '</td>';
-      $authorList .= '<td>' . $author['is_favorite'] . '</td><td>' . $author['is_blacklist'] . '</td></tr>';
-   }
+      if($author['is_favorite' == 't']) {
+         $authorList .= '<td>Yes</td>';
+      } 
+      if($author['is_blacklist'] == 't') {
+         $authorList .= '<td>Yes</td></tr>';
+      }
    $authorList .= '</tbody>';
    return $authorList;
 }
