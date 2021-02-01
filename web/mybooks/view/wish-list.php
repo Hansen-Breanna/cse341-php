@@ -41,7 +41,7 @@
         <div>
           <h2 class="pt-4">Own Wish List</h2>
           <div class="pb-2">
-            <a href="index.php?action=add-book" class="btn btn-custom bg-orange my-2">Add Title</a>
+            <a href="index.php?action=add-book" class="btn btn-custom bg-orange text-light my-2">Add Title</a>
             <a href="index.php?action=remove-book" class="btn btn-custom bg-orange my-2">Remove Title</a>
           </div>
           <table class="table table-dark table-striped text-light">
