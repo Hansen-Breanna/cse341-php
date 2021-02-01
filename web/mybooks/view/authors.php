@@ -16,11 +16,11 @@
 
 <main class="mb-5">
   <div class="container">
-    <div class="row">
+    <div class="row d-flex justify-content-center">
       <!-- Search Boxes -->
       <?php include 'common/search.php'; ?>
     </div>
-    <div class="row d-md-flex justify-content-center">
+    <div class="row d-md-flex justify-content-around">
       <div>
         <table class="table table-dark table-striped text-light">
           <thead>
