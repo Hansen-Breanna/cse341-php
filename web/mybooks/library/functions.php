@@ -59,14 +59,14 @@ function getReadWishes() {
  // get favorite authors
  function getFavorites($authors) {
    $authorList = '<tbody>';
-   $blacklist = array();
+   $favorites = array();
    foreach ($authors as $author) {
       if($author['is_favorite'] == 't') {
-         $blacklist[] = $author['is_favorite'];
+         $favorites[] = $author['is_favorite'];
       }
       $authorList .= '<tr><td>' . $author['last_name'] . ', ' . $author['first_name'] . ' ' . $author['middle_name'] . '</td></tr>';
    }
-   var_dump($authors);
+   var_dump($favorites);
    $authorList .= '</tbody>';
    return $authorList;
  }
