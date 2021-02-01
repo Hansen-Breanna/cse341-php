@@ -25,7 +25,7 @@
         <table class="table table-dark table-striped text-light">
           <thead>
             <tr>
-              <th class="pl-5 text-center">All Authors</th>
+              <th class="pl-5">All Authors</th>
             </tr>
           </thead>
           <tbody>
@@ -37,7 +37,7 @@
         <table class="table table-dark table-striped text-light">
           <thead>
             <tr>
-              <th class="pl-5 text-center">Favorite Authors</th>
+              <th class="pl-5">Favorite Authors</th>
             </tr>
           </thead>
           <tbody>
@@ -47,7 +47,7 @@
         <table class="table table-dark table-striped text-light">
           <thead>
             <tr>
-              <th class="pl-5 text-center">Blacklisted Authors</th>
+              <th class="pl-5">Blacklisted Authors</th>
             </tr>
           </thead>
           <tbody>
