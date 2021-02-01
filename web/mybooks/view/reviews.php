@@ -17,34 +17,19 @@
     <main class="mb-5">
       <div class="container">
         <div class="row d-md-flex">
-        <table class="table table-dark table-striped text-light">
-                <thead>
-                  <tr>
-                    <th class="pl-1">Book Title</th>
-                    <th class="pl-5">Author</th>
-                    <th class="pl-5">Review</th>
-                    <th class="pl-5">Rating</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <?php echo $reviewsTable; ?>
-                </tbody>
-              </table>
-              <!-- Load Facebook SDK for JavaScript -->
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-var js, fjs = d.getElementsByTagName(s)[0];
-if (d.getElementById(id)) return;
-js = d.createElement(s); js.id = id;
-js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
-fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
-<!-- Your share button code -->
-<div class="fb-share-button" 
-data-href="https://www.your-domain.com/your-page.html" 
-data-layout="button_count">
-</div>
+          <!-- <table class="table table-dark table-striped text-light">
+            <thead>
+              <tr>
+                <th class="pl-1">Book Title</th>
+                <th class="pl-5">Author</th>
+                <th class="pl-5">Review</th>
+                <th class="pl-5">Rating</th>
+              </tr>
+            </thead>
+            <tbody>
+              <?php echo $reviewsTable; ?>
+            </tbody>
+          </table> -->
         </div>
       </div>
     </main>
