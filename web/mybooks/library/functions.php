@@ -149,7 +149,7 @@ function displayReviews($reviews) {
       $count = $review['rating'];
       $reviewList = '<div>';
       $reviewList .= '<div><p>';
-         for ($i = 0; $i <= $count; $i++) {
+         for ($i = 0; $i < $count; $i++) {
             $reviewList .= '<i class="fa fa-star text-orange"></i>';
             //$i++;
          }
