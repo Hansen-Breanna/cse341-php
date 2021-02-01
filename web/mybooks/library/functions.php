@@ -148,14 +148,14 @@ function displayReviews($reviews) {
    $reviewList = '<div>';
    foreach ($reviews as $review) {
       $count = $review['rating'];
-      $reviewList .= '<div><p>';
+      $reviewList .= '<div><p class="text-orange>';
       for ($i = 0; $i < $count; $i++) {
-         $reviewList .= '<i class="fa fa-star text-orange"></i>';
+         $reviewList .= '<i class="fa fa-star"></i>';
       }
       if ($review['rating'] < 5) {
          $emptyStars = 5 - $count;
          for ($i = 0; $i < $emptyStars; $i++) {
-            $reviewList .= '<i class="far fa-star text-orange"></i>';
+            $reviewList .= '<i class="far fa-star"></i>';
          }
       }   
       $reviewList .= '(' . $review['rating'] . ')</p></div>';
