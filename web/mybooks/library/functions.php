@@ -95,7 +95,6 @@ function getDetails($book_title_id) {
    $stmt = $db->prepare('SELECT author.first_name, author.middle_name, author.last_name, book_title.title_of_book FROM author INNER JOIN book_title ON author.id = book_title.author_id WHERE book_title.id = :id');
    $stmt->execute(array(':id' => $book_title_id));
    $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
-   var_dump($row);
    return $row;
 }
 
@@ -170,7 +169,7 @@ function displayReviews($reviews) {
       }   
       $reviewList .= '(' . $review['rating'] . ')</p></div>';
       $reviewList .= '<h3>' . $review['book_title_id'] . '</h3>';
-      //$reviewList .= '<p>' . $details . '<p>';
+      $reviewList .= '<p>' . $details['first_name'] . ' ' . $details['middle_name'] . ' ' . $details['last_name'] . '<p>';
       $reviewList .= '<p>' . $review['review'] . '<p>';
       $reviewList .= '</div>';
    }
