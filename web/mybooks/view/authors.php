@@ -22,7 +22,7 @@
     </div>
     <div class="row d-md-flex justify-content-around">
       <div>
-        <table class="table table-dark table-striped text-light width-25">
+        <table class="table table-dark table-striped text-light">
           <thead>
             <tr>
               <th class="pl-5">All Authors</th>
