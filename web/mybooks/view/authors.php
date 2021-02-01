@@ -21,15 +21,15 @@
           <?php include 'common/search.php'; ?>
 
           <table class="table table-dark table-striped text-light">
-                <thead>
-                  <tr>
-                    <th class="pl-5">Author</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <?php //echo $authorsTable; ?>
-                </tbody>
-              </table>
+              <thead>
+                <tr>
+                  <th class="pl-5">Author</th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php //echo $authorsTable; ?>
+              </tbody>
+            </table>
         </div>
       </div>
     </main>
