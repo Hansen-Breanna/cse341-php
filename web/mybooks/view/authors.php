@@ -16,45 +16,44 @@
 
 <main class="mb-5">
   <div class="container">
-    <div class="row d-md-flex flex-column align-items-center">
+    <div class="row">
       <!-- Search Boxes -->
       <?php include 'common/search.php'; ?>
-
+    </div>
+    <div class="row d-md-flex justify-content-center">
       <div>
-        <div>
-          <table class="table table-dark table-striped text-light">
-            <thead>
-              <tr>
-                <th class="pl-5">All Authors</th>
-              </tr>
-            </thead>
-            <tbody>
-              <?php echo $authorsTable; ?>
-            </tbody>
-          </table>
-        </div>
-        <div>
-          <table class="table table-dark table-striped text-light">
-            <thead>
-              <tr>
-                <th class="pl-5">Favorite Authors</th>
-              </tr>
-            </thead>
-            <tbody>
-              <?php echo $favorites; ?>
-            </tbody>
-          </table>
-          <table class="table table-dark table-striped text-light">
-            <thead>
-              <tr>
-                <th class="pl-5">Blacklisted Authors</th>
-              </tr>
-            </thead>
-            <tbody>
-              <?php echo $blacklist; ?>
-            </tbody>
-          </table>
-        </div>
+        <table class="table table-dark table-striped text-light">
+          <thead>
+            <tr>
+              <th class="pl-5">All Authors</th>
+            </tr>
+          </thead>
+          <tbody>
+            <?php echo $authorsTable; ?>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <table class="table table-dark table-striped text-light">
+          <thead>
+            <tr>
+              <th class="pl-5">Favorite Authors</th>
+            </tr>
+          </thead>
+          <tbody>
+            <?php echo $favorites; ?>
+          </tbody>
+        </table>
+        <table class="table table-dark table-striped text-light">
+          <thead>
+            <tr>
+              <th class="pl-5">Blacklisted Authors</th>
+            </tr>
+          </thead>
+          <tbody>
+            <?php echo $blacklist; ?>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
