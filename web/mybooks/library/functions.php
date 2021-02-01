@@ -58,22 +58,22 @@ function getReadWishes() {
 
  // get favorite authors
  function getFavorites($authors) {
-   // $authorList = '<tbody>';
-   // $blacklist = array();
-   // foreach ($authors as $author) {
-   //    if($author[4] == TRUE) {
-   //       $blacklist[] = $author[4];
-   //    }
-   //    $authorList .= '<tr><td>' . $author['last_name'] . ', ' . $author['first_name'] . ' ' . $author['middle_name'] . '</td></tr>';
-   // }
-   // var_dump($blacklist);
-   // $authorList .= '</tbody>';
-   // return $authorList;
+   $authorList = '<tbody>';
+   $blacklist = array();
+   foreach ($authors as $author) {
+      if($author[4] == TRUE) {
+         $blacklist[] = $author[4];
+      }
+      $authorList .= '<tr><td>' . $author['last_name'] . ', ' . $author['first_name'] . ' ' . $author['middle_name'] . '</td></tr>';
+   }
+   var_dump($blacklist);
+   $authorList .= '</tbody>';
+   return $authorList;
  }
 
  // get blacklisted authors
 function getBlacklisted($authors) {
-   
+
 }
  // get loans
 
