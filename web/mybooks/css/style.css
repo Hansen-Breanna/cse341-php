@@ -53,6 +53,9 @@ input  {
 table {
     min-width: 325px;
 }
+.text-orange {
+    color: #fb8500;
+}
 
 @media only screen and (min-width: 568px) {
     .main-box {
