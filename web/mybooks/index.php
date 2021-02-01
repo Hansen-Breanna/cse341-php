@@ -30,10 +30,10 @@ switch ($action){
     case 'authors':
         $authors = getAuthors();
         $authorsTable = displayAuthors($authors);
-        $favorites = getFavorites();
-        $favoritesTable = displayFavorites($favorites);
-        $blacklist = getBlacklisted();
-        $blacklistedTable = displayBlacklisted($blacklist);
+        $favorites = getFavorites($authors);
+        //$favoritesTable = displayFavorites($favorites);
+        //$blacklist = getBlacklisted();
+        //$blacklistedTable = displayBlacklisted($blacklist);
         include 'view/authors.php';
     break;
     case 'loans':

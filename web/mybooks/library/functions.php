@@ -72,7 +72,9 @@ function getReadWishes() {
  }
 
  // get blacklisted authors
-
+function getBlacklisted($authors) {
+   
+}
  // get loans
 
  // get reviews
