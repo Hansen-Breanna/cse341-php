@@ -145,7 +145,21 @@ function displayLoans($loans) {
 }
 
 function displayReviews($reviews) {
-
+   foreach ($reviews as $review) {
+      $count = $review['rating'];
+      $reviewList = '<div>';
+      $reviewList .= '<div><p>';
+         for ($i = 0; $i <= $count; $i++) {
+            $reviewList .= '<i class="fas fa-star"></i>';
+            $i++;
+         }
+      $reviewList .= '</p></div>';
+      $reviewList .= '<h3>' . $review['book_title_id'] . '</h3>';
+      $reviewList .= '<p>' . $review['author_id'] . '<p>';
+      $reviewList .= '<p>' . $review['review'] . '<p>';
+      $reviewList .= '</div>';
+   }
+   return $reviewList;
 }
 
 ?>

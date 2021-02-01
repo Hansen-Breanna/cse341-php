@@ -17,7 +17,19 @@
     <main class="mb-5">
       <div class="container">
         <div class="row d-md-flex">
-            
+        <table class="table table-dark table-striped text-light">
+                <thead>
+                  <tr>
+                    <th class="pl-1">Book Title</th>
+                    <th class="pl-5">Author</th>
+                    <th class="pl-5">Review</th>
+                    <th class="pl-5">Rating</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <?php echo $reviewsTable; ?>
+                </tbody>
+              </table>
         </div>
       </div>
     </main>
