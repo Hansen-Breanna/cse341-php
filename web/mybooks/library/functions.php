@@ -113,8 +113,8 @@ function displayAuthors($authors) {
       if($author['is_blacklist'] == 't') {
          $authorList .= '<td>Yes</td></tr>';
       }
+   }
    $authorList .= '</tbody>';
    return $authorList;
 }
-
- ?>
+?>
