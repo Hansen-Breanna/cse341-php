@@ -17,7 +17,17 @@
     <main class="mb-5">
       <div class="container">
         <div class="row d-md-flex">
-            
+        <table class="table table-dark table-striped text-light">
+                <thead>
+                  <tr>
+                    <th class="pl-1">Book Title</th>
+                    <th class="pl-5">Author</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <?php echo $loansTable; ?>
+                </tbody>
+              </table>
         </div>
       </div>
     </main>
