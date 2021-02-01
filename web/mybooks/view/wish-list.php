@@ -20,7 +20,7 @@
       <!-- Search Boxes -->
       <?php include 'common/search.php'; ?>
       <div>
-        <div class="d-md-flex justify-content-around">
+        <div class="d-flex justify-content-around">
           <div>
             <h2 class="pt-4">Own Wish List</h2>
             <table class="table table-dark table-striped text-light m-2">
