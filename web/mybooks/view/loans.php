@@ -23,7 +23,11 @@
             <thead>
               <tr>
                 <th class="pl-1">Book Title</th>
-                <th class="pl-5">Author</th>
+                <th class="pl-5">Borrower</th>
+                <th class="pl-5">Borrowed</th>
+                <th class="pl-5">Overdue</th>
+                <th class="pl-5"></th>
+                <th class="pl-5"></th>
               </tr>
             </thead>
             <tbody>
