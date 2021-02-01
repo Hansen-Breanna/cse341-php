@@ -50,7 +50,7 @@ function getReadWishes() {
       echo "An error occurred.\n";
       exit;
    } else {
-      $statement = $db->query('SELECT * FROM authors ORDER BY last_name');
+      $statement = $db->query('SELECT * FROM author ORDER BY last_name');
       $results = $statement->fetchAll(PDO::FETCH_ASSOC);
       return $results;
    }

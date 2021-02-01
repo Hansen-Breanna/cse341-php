@@ -28,8 +28,8 @@ switch ($action){
         include 'view/catalog.php';
     break;
     case 'authors':
-        //$authors = getAuthors();
-        //$authorsTable = displayAuthors($authors);
+        $authors = getAuthors();
+        $authorsTable = displayAuthors($authors);
         include 'view/authors.php';
     break;
     case 'loans':
