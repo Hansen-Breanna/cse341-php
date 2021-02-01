@@ -29,7 +29,7 @@ switch ($action){
     break;
     case 'authors':
         $authors = getAuthors();
-        $authorsTable = displayAuthors($authors);
+        //$authorsTable = displayAuthors($authors);
         include 'view/authors.php';
     break;
     case 'loans':
