@@ -132,7 +132,8 @@ function displayAuthors($authors) {
 function displayLoans($loans) {
    $loanList = '<tbody>';
    foreach ($loans as $loan) {
-      $loanList .= '<tr><td>' . $loan['book_title_id'] . '</td>';
+      $details = getDetails($loan['book_title_id']);
+      $loanList .= '<tr><td>' . $details[0]['title_of_book'] . '</td>';
       $loanList .= '<td>' . $loan['borrower_id'] . '</td>';
       $loanList .= '<td>' . $loan['date_borrowed'] . '</td>';
       $loanList .= '<td>' . $loan['return_date'] . '</td>'; 
