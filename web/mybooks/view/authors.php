@@ -27,7 +27,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <?php echo //$authorsTable; ?>
+                  <?php //echo $authorsTable; ?>
                 </tbody>
               </table>
         </div>
