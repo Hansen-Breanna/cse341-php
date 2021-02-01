@@ -43,6 +43,19 @@ function getReadWishes() {
    }
 }
 
+ // get all authors
+ function getAuthors() {
+   $db = connectMyBooks();
+    if (!$db) {
+      echo "An error occurred.\n";
+      exit;
+   } else {
+      $statement = $db->query('SELECT * FROM authors ORDER BY last_name');
+      $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+      return $results;
+   }
+}
+
  // get favorite authors
 
  // get blacklisted authors
@@ -68,6 +81,16 @@ function displayCatalog($catalog) {
    }
    $bookList .= '</tbody>';
    return $bookList;
+}
+
+// Display authors
+function displayAuthors($authors) {
+   $authorList = '<tbody>';
+   foreach ($authors as $author) {
+      $authorList .= '<tr><td>' . $author['last_name'] . ', ' . $author['first_name'] . ' ' . $author['middle_name'] . '</td></tr>';
+   }
+   $authorList .= '</tbody>';
+   return $authorList;
 }
 
  ?>
