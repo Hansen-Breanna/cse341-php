@@ -20,16 +20,40 @@
           <!-- Search Boxes -->
           <?php include 'common/search.php'; ?>
 
-          <table class="table table-dark table-striped text-light">
+          <div>
+            <table class="table table-dark table-striped text-light">
               <thead>
                 <tr>
-                  <th class="pl-5">Author</th>
+                  <th class="pl-5">All Authors</th>
                 </tr>
               </thead>
               <tbody>
                 <?php echo $authorsTable; ?>
               </tbody>
             </table>
+          </div>
+          <div>
+          <table class="table table-dark table-striped text-light">
+              <thead>
+                <tr>
+                  <th class="pl-5">Favorite Authors</th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php echo $favoritesTable; ?>
+              </tbody>
+            </table>
+            <table class="table table-dark table-striped text-light">
+              <thead>
+                <tr>
+                  <th class="pl-5">Blacklisted Authors</th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php echo $blacklistedTable; ?>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </main>
