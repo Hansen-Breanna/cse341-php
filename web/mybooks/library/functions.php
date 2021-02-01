@@ -145,9 +145,10 @@ function displayLoans($loans) {
 }
 
 function displayReviews($reviews) {
+   $reviewList = 'div';
    foreach ($reviews as $review) {
       $count = $review['rating'];
-      $reviewList = '<div>';
+      $reviewList .= '<div>';
       $reviewList .= '<div><p>';
       for ($i = 0; $i < $count; $i++) {
          $reviewList .= '<i class="fa fa-star text-orange"></i>';
@@ -164,8 +165,8 @@ function displayReviews($reviews) {
       $reviewList .= '<p>' . $review['author_id'] . '<p>';
       $reviewList .= '<p>' . $review['review'] . '<p>';
       $reviewList .= '</div>';
-      echo $reviewList;
    }
+   return $reviewList;
 }
 
 ?>
