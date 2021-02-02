@@ -3,6 +3,15 @@
         <nav class="navbar navbar-expand-md bg-info navbar-dark border-bottom box-shadow mb-3">
             <div class="container">
                 <a class="navbar-brand" href="index.php">My Books</a>
+                <form method="post" action="index.php">
+                <label class="ml-1">Search by Title:</label><br>
+            <div class="d-flex flex-wrap mb-2">
+                <input class="rounded p-1 m-1" type="text" name="title" id="title" placeholder="Title">
+                <input type='hidden' id='session' name='session' value=''>
+                <input type="submit" class="btn btn-custom bg-info m-1">
+            </div>
+
+                </form>
                 <a href="index.php?action=login" class="btn bg-orange">Log In</a>
                 <button class="navbar-toggler" type="button">
                     <span class="navbar-toggler-icon"></span>
