@@ -3,7 +3,7 @@
 session_start ();
 
 // define variables and set to empty values
-$id = $username = $password = "";
+$username = $password = "";
  
 if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION))) {
     $_SESSION["username"] = array();   
@@ -12,8 +12,8 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION))) {
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = test_input($_POST["username"]);
     $password = test_input($_POST["password"]);
-    $id = getUserID($username, $password);
-    //echo $_SESSION['id'];
+    $_SESSION['ID'] = getUserID($username, $password);
+    echo $_SESSION['id'];
 }
 
 function test_input($data)
