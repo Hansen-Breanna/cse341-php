@@ -203,7 +203,7 @@ function getUserID($username, $password) {
       echo "An error occurred.\n";
       exit;
    } else {
-      $stmt = $db->query('SELECT id FROM library_user WHERE username = :username AND user_password = :user_password');
+      $stmt = $db->prepare('SELECT id FROM library_user WHERE username = :username AND user_password = :user_password');
       $stmt->bindValue(':username', $username, PDO::PARAM_STR);
       $stmt->bindValue(':user_password', $password, PDO::PARAM_STR);
       $stmt->execute();
