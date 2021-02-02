@@ -3,9 +3,9 @@
         <nav class="navbar navbar-expand-md bg-info navbar-dark border-bottom box-shadow mb-3">
             <div class="container">
                 <a class="navbar-brand" href="index.php">My Books</a>
-                <form method="post" action="index.php">
-                    <input class="rounded border-none p-1 m-1" type="text" name="username" placeholder="username">
-                    <input class="rounded border-none p-1 m-1" type='text' name="password" placeholder="password">
+                <form class="d-flex w-auto" method="post" action="index.php">
+                    <input class="rounded border-none m-1" type="text" name="username" placeholder="username">
+                    <input class="rounded border-none m-1" type='text' name="password" placeholder="password">
                     <input type="submit" class="btn btn-custom bg-info m-1">
                 </form>
                 <a href="index.php?action=login" class="btn bg-orange">Log In</a>
