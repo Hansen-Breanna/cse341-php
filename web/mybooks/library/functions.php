@@ -56,7 +56,10 @@ function getAuthors() {
  // get loans
  function getLoans($id) {
    $db = connectMyBooks();
-   $stmt = $db->prepare('SELECT b.title_of_book, bo.first_name, bo.last_name, bo.phone_number, l.date_borrowed, l.return_date, l.is_returned FROM loan l INNER JOIN book_title b ON l.book_title_id = b.id INNER JOIN borrower bo ON l.borrower_id = bo.id WHERE l.library_user_id = :id ORDER BY date_borrowed DESC');
+   $stmt = $db->prepare('SELECT b.title_of_book, bo.first_name, bo.last_name, bo.phone_number, l.date_borrowed, l.return_date, 
+   l.is_returned, lu.user_phone FROM loan l INNER JOIN book_title b ON l.book_title_id = b.id INNER JOIN library_user lu 
+   ON lu.id = l.library_user_id INNER JOIN borrower bo ON l.borrower_id = bo.id WHERE l.library_user_id = :id 
+   ORDER BY date_borrowed DESC;');
    $stmt->bindValue(':id', $id, PDO::PARAM_INT);
    $stmt->execute();
    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -137,7 +140,9 @@ function displayLoans($loans) {
       $loanList .= '<td>' . $loan['first_name'] . ' ' . $loan['last_name'] . '</td>';
       $loanList .= '<td>' . $loan['date_borrowed'] . '</td>';
       $loanList .= '<td>' . $loan['return_date'] . '</td>'; 
-      $loanList .= '<td><a class="btn btn-small bg-orange" href="sms:' . $loan['phone'] . '">SMS</a></td>';
+      $loanList .= '<td><a class="btn btn-small bg-orange" href="sms:' . $loan['phone'] . '&body=
+      Hi%2C%20' . $loan['first_name'] . '!%20The%20book%20you%20borrowed%2C%20' . $loan['title_of_book'] . '%2C%20is%20overdue.
+      %20Please%20contact%20me%20at%20' . $loan['user-phone'] . '%20to%20return%20it.%20Thanks!">SMS</a></td>';
       // if($loan['is_favorite'] == 't') {
       //    $loanList .= '<td class="text-center">Yes</td>';
       // } else {
