@@ -50,6 +50,5 @@ switch ($action){
         include 'view/wish-list.php';
     break;
     default:
-        $id = getUserID($username, $password);
         include 'view/home.php';
 }
