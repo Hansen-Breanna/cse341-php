@@ -14,7 +14,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = test_input($_POST["password"]);
     $id = getUserID($username, $password);
     //echo $_SESSION['id'];
-    echo $username . " " . $password;
 }
 
 function test_input($data)
