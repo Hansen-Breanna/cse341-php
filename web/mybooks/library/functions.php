@@ -140,7 +140,7 @@ function displayLoans($loans) {
       $loanList .= '<td>' . $loan['first_name'] . ' ' . $loan['last_name'] . '</td>';
       $loanList .= '<td>' . $loan['date_borrowed'] . '</td>';
       $loanList .= '<td>' . $loan['return_date'] . '</td>'; 
-      $loanList .= '<td><a class="btn btn-small bg-orange" href="sms:' . $loan['phone'] . '&body=
+      $loanList .= '<td><a class="btn btn-small bg-orange" href="sms:' . $loan['phone_number'] . '&body=
       Hi%2C%20' . $loan['first_name'] . '!%20The%20book%20you%20borrowed%2C%20' . $loan['title_of_book'] . '%2C%20is%20overdue.
       %20Please%20contact%20me%20at%20' . $loan['user-phone'] . '%20to%20return%20it.%20Thanks!">SMS</a></td>';
       // if($loan['is_favorite'] == 't') {
