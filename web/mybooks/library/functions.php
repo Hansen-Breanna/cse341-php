@@ -201,11 +201,12 @@ function getUserID($username, $password) {
       echo "An error occurred.\n";
       exit;
    } else {
-      $stmt = $db->query('SELECT * FROM library_user WHERE username = :username');
+      $stmt = $db->query('SELECT id FROM library_user WHERE username = :username');
       $stmt->execute(array(':username' => $username));
       //$stmt->execute(array(':user_password' => $password));
       $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-      return $results;
+      var_dump($results);
+      //return $results;
       //echo "hello";//$results;
    }
 }
