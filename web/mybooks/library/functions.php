@@ -204,7 +204,11 @@ function getUserID($username, $password) {
       exit;
    } else {
       $stmt = $db->query('SELECT id FROM library_user WHERE username = :username AND user_password = :user_password');
-      $stmt->execute(array(':username' => $username,':user_password' => $password));
+      $stmt->bindValue(':username', $username, PDO::PARAM_STR);
+      $stmt->bindValue(':user_password', $password, PDO::PARAM_INT);
+      $stmt->execute();
+      //$stmt->execute(array(':username' => $username));
+      //$stmt->execute(array(':user_password' => $password));
       $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
       return $results[0]['id'];
       //return $results[0]['id'];
