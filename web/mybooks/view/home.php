@@ -36,7 +36,7 @@
             <div id="box-2" class="main-box bg-orange shadow-lg rounded box p-5 w-25 mt-4 mx-2">
                 <h2 class="text-center p-3"><a href="index.php?action=loans" title="Loans">Loans</a></h2>
             </div>
-            <div id="box-3" class="main-box bg-primary shadow-lg rounded box p-5 w-25 mt-4 mx-2">
+            <div id="box-3" class="main-box bg-warning shadow-lg rounded box p-5 w-25 mt-4 mx-2">
                 <h2 class="text-center p-3"><a href="index.php?action=reviews" title="Book Reviews">Reviews</a></h2>
             </div>
         </div>
