@@ -45,8 +45,8 @@ switch ($action){
     case 'wish':
         $readWishes = getReadWishes();
         $ownWishes = getOwnWishes();
-        $ownTable = displayCatalog($ownWishes);
         $readTable = displayCatalog($readWishes);
+        $ownTable = displayCatalog($ownWishes);
         include 'view/wish-list.php';
     break;
     default:

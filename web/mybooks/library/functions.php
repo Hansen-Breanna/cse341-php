@@ -26,7 +26,6 @@
    } else {
       $statement = $db->query('SELECT * FROM user_book WHERE own_wish_list = TRUE');
       $results = $statement->fetchAll(PDO::FETCH_ASSOC);
-      var_dump($results);
       return $results;
    }
 }
@@ -40,7 +39,6 @@ function getReadWishes() {
    } else {
       $statement = $db->query('SELECT * FROM user_book WHERE read_wish_list = TRUE');
       $results = $statement->fetchAll(PDO::FETCH_ASSOC);
-      var_dump($results);
       return $results;
    }
 }
