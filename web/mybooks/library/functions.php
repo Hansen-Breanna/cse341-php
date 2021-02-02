@@ -59,9 +59,10 @@ function getReadWishes($id) {
       echo "An error occurred.\n";
       exit;
    } else {
-      $stmt = $db->prepare('SELECT * FROM user_book WHERE read_wish_list = TRUE');// WHERE own_wish_list = TRUE');
-      $stmt->bindValue(':id', $id, PDO::PARAM_INT);
-      $stmt->execute();
+      $stmt = $db->query('SELECT * FROM user_book WHERE read_wish_list = TRUE');// WHERE own_wish_list = TRUE');
+      $stmt->execute(array(':id' => $id));
+      //$stmt->bindValue(':id', $id, PDO::PARAM_INT);
+      //$stmt->execute();
       $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
       return $results;
    }
