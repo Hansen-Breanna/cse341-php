@@ -193,4 +193,21 @@ function displayReviews($reviews) {
    return $reviewList;
 }
 
+
+// get user id
+function getUserID($username, $password) {
+   $db = connectMyBooks();
+    if (!$db) {
+      echo "An error occurred.\n";
+      exit;
+   } else {
+      $stmt = $db->query('SELECT id FROM library_user WHERE user_name = :user_name AND user_password = :user_password');
+      $stmt->execute(array(':user_name' => $username));
+      $stmt->execute(array(':user_password' => $password));
+      $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+      echo $results;
+      return $results;
+   }
+}
+
 ?>
