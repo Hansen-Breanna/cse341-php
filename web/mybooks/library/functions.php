@@ -143,17 +143,6 @@ function displayLoans($loans) {
       $loanList .= '?&body=Hi%20' . $loan['first_name'] . '!%20The%20book%20you%20borrowed%20' . $loan['title_of_book'];
       $loanList .= '%20is%20overdue.%20Please%20contact%20me%20at%20' . $loan['user_phone'];
       $loanList .= '%20to%20return%20it.%20Thanks!">SMS</a></td>';
-      $loanList .= '<a href="sms:+12087162686&amp;body= I%27d%20like%20to%20set%20up%20an%20appointmen">SMS</a>';
-      // if($loan['is_favorite'] == 't') {
-      //    $loanList .= '<td class="text-center">Yes</td>';
-      // } else {
-      //    $loanList .= '<td></td>';
-      // }
-      // if($loan['is_blacklist'] == 't') {
-      //    $loanList .= '<td class="text-center">Yes</td></tr>';
-      // } else {
-      //    $loanList .= '<td></td>';
-      // }
    }
    $loanList .= '</tbody>';
    return $loanList;
