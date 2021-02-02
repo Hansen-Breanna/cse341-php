@@ -43,7 +43,6 @@ switch ($action){
         include 'view/reviews.php';
     break;
     case 'wish':
-        echo $_SESSION['id'];
         //$readWishes = getReadWishes($_SESSION['id']);
         $ownWishes = getOwnWishes($_SESSION['id']);
         //$readTable = displayCatalog($readWishes);
