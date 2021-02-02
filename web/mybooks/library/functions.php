@@ -201,9 +201,9 @@ function getUserID($username, $password) {
       echo "An error occurred.\n";
       exit;
    } else {
-      $stmt = $db->query('SELECT id FROM library_user WHERE username = :username AND user_password = :user_password');
+      $stmt = $db->query('SELECT id FROM library_user WHERE username = :username');
       $stmt->execute(array(':username' => $username));
-      $stmt->execute(array(':user_password' => $password));
+      //$stmt->execute(array(':user_password' => $password));
       $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
       echo $results[0];
       //return $results[0]['id'];
