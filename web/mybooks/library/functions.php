@@ -12,7 +12,7 @@
         exit;
      } else {
         $stmt = $db->query('SELECT b.title_of_book, a.first_name, a.middle_name, a.last_name FROM user_book u INNER JOIN book_title b ON u.book_title_id = b.id INNER JOIN author a ON a.id = b.author_id WHERE u.library_user_id = 1 ORDER BY b.title_of_book');
-        $stmt->execute(array(':id' => $id));
+        //$stmt->execute(array(':id' => $id));
         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $results;
      }
