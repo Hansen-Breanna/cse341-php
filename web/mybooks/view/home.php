@@ -5,9 +5,7 @@ session_start ();
 // define variables and set to empty values
 $username = $password = "";
  
-if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION))) {
-    $_SESSION["username"] = array();
-    echo $_SESSION['id'];   
+if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION))) {  
 } 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
