@@ -8,8 +8,6 @@
                 <input type='hidden' id='session' name='session' value=''>
             </div>
         </div>
-    </form>
-    <form method="post" action="index.php?action=catalog">
         <div class="p-2">
             <label class="ml-1">Search by Title:</label><br>
             <div class="d-flex flex-wrap mb-2">

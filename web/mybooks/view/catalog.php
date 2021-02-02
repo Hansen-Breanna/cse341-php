@@ -19,8 +19,7 @@
         <div class="row d-flex flex-column align-items-center">
           <div>
             <!-- Search Boxes -->
-            <?php include 'common/title.php'; ?>
-            <?php include 'common/author.php'; ?>
+            <?php include 'common/search.php'; ?>
           </div>
           <div>
             <table class="table table-dark table-striped text-light">
