@@ -7,6 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION))) {
 } else {
   echo "session set";
   echo $_SESSION['id'][0];
+  var_dump($_SESSION);
 }
 
 
