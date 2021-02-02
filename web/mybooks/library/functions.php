@@ -44,7 +44,7 @@ function getUserID($username, $password) {
       echo "An error occurred.\n";
       exit;
    } else {
-      $stmt = $db->prepare('SELECT * FROM user_book');// WHERE own_wish_list = TRUE');
+      $stmt = $db->prepare('SELECT * FROM user_book WHERE own_wish_list = TRUE');// WHERE own_wish_list = TRUE');
       //$stmt->bindValue(':id', $id, PDO::PARAM_INT);
       $stmt->execute();
       $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -59,8 +59,10 @@ function getReadWishes() {
       echo "An error occurred.\n";
       exit;
    } else {
-      $statement = $db->query('SELECT * FROM user_book WHERE read_wish_list = TRUE');
-      $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+      $stmt = $db->prepare('SELECT * FROM user_book');// WHERE own_wish_list = TRUE');
+      //$stmt->bindValue(':id', $id, PDO::PARAM_INT);
+      $stmt->execute();
+      $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
       return $results;
    }
 }
