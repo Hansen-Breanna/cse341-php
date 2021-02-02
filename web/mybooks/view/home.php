@@ -6,7 +6,6 @@ session_start ();
 $username = $password = "";
  
 if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION))) {  
-    echo "help!";
 } 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

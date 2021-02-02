@@ -3,10 +3,10 @@
 session_start ();
 
 if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION))) {
-  $_SESSION["id"] = array();   
+  //$_SESSION["id"] = array(); 
+  echo "help";  
 } else {
   echo $_SESSION['id'];
-  var_dump($_SESSION);
 }
 
 
