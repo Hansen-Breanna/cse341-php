@@ -3,7 +3,6 @@
         <nav class="navbar navbar-expand-md bg-info navbar-dark border-bottom box-shadow mb-3">
             <div class="container">
                 <a class="navbar-brand" href="index.php">My Books</a>
-                <a href="index.php?action=login" class="btn bg-orange">Log In</a>
                 <button class="navbar-toggler" type="button">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -30,8 +29,8 @@
                     </ul>
                 </div>
                 <form class="d-flex w-auto" method="post" action="index.php">
-                    <input class="rounded border-none m-1" type="text" name="username" placeholder="username">
-                    <input class="rounded border-none m-1" type='text' name="password" placeholder="password">
+                    <input class="rounded border-light m-1" type="text" name="username" placeholder="username">
+                    <input class="rounded border-light m-1" type='text' name="password" placeholder="password">
                     <input type="submit" class="btn btn-custom bg-orange m-1">
                 </form>
             </div>
