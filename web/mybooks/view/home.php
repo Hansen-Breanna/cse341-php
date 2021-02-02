@@ -17,6 +17,13 @@
     <main class="mb-5">
       <div class="container">
         <div class="row d-flex justify-content-around">
+        <div id="box-1" class="main-box bg-warning shadow-lg rounded box p-5 w-25 mt-4 mx-2">
+                <form method="post" action="index.php">
+                    <input class="rounded border-light m-1" type="text" name="username" placeholder="username"><br>
+                    <input class="rounded border-light m-1" type='text' name="password" placeholder="password"><br>
+                    <input type="submit" class="btn btn-custom bg-orange m-1" value="Log In">
+                </form>
+            </div>
             <div id="box-1" class="main-box bg-danger shadow-lg rounded box p-5 w-25 mt-4 mx-2">
                 <h2 class="text-center p-3"><a href="index.php?action=catalog" title="Catalog">Catalog</a></h2>
             </div>
@@ -25,13 +32,6 @@
             </div>
             <div id="box-3" class="main-box bg-success shadow-lg rounded box p-5 w-25 mt-4 mx-2">
                 <h2 class="text-center p-3"><a href="index.php?action=authors" title="Authors">Authors</a></h2>
-            </div>
-            <div id="box-1" class="main-box bg-warning shadow-lg rounded box p-5 w-25 mt-4 mx-2">
-            <form method="post" action="index.php">
-                <input class="rounded border-light m-1" type="text" name="username" placeholder="username"><br>
-                <input class="rounded border-light m-1" type='text' name="password" placeholder="password"><br>
-                <input type="submit" class="btn btn-custom bg-orange m-1" value="Log In">
-            </form>
             </div>
             <div id="box-2" class="main-box bg-orange shadow-lg rounded box p-5 w-25 mt-4 mx-2">
                 <h2 class="text-center p-3"><a href="index.php?action=loans" title="Loans">Loans</a></h2>
