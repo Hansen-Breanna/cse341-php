@@ -6,7 +6,7 @@ session_start ();
 $productName = $imageUrl = $price = $id = "";
  
 if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION))) {
-    $_SESSION["cart"] = array();   
+    $_SESSION["id"] = array();   
 } 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

@@ -2,11 +2,11 @@
 // start session
 session_start ();
 
-if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION))) {  
-  echo "help!";
+if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION))) {
+  $_SESSION["id"] = array();   
 } else {
   echo "session set";
-  echo $_SESSION['id'][0];
+  echo $_SESSION['id'];
   var_dump($_SESSION);
 }
 
