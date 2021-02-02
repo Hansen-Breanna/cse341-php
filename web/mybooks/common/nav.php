@@ -5,9 +5,9 @@
                 <a class="navbar-brand" href="index.php">My Books</a>
                 <form method="post" action="index.php">
                 <label class="ml-1">Search by Title:</label><br>
-            <div class="d-flex flex-wrap mb-2">
-                <input class="rounded p-1 m-1" type="text" name="username" placeholder="username">
-                <input class="rounded p-1 m-1" type='text' name="password" placeholder="password">
+            <div class="mb-2">
+                <input class="rounded border-none p-1 m-1" type="text" name="username" placeholder="username">
+                <input class="rounded border-none p-1 m-1" type='text' name="password" placeholder="password">
                 <input type="submit" class="btn btn-custom bg-info m-1">
             </div>
 
