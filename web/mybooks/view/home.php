@@ -2,8 +2,6 @@
 // start session
 session_start ();
 
-require_once 'library/functions.php';
-
 // define variables and set to empty values
 $id = $username = $password = "";
  
@@ -14,8 +12,8 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION))) {
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = test_input($_POST["username"]);
     $password = test_input($_POST["password"]);
-    $id = getUserID($username, $password);
-    echo $_SESSION['id'];
+    //$id = getUserID($username, $password);
+    //echo $_SESSION['id'];
     echo $username . " " . $password;
 }
 
