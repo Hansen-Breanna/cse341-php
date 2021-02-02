@@ -34,7 +34,7 @@ switch ($action){
     break;
     case 'loans':
         $loans = getLoans($_SESSION['id']);
-        //$loansTable = displayLoans($loans);
+        $loansTable = displayLoans($loans);
         include 'view/loans.php';
     break;
     case 'reviews':
