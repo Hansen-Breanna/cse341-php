@@ -23,7 +23,7 @@ $action = filter_input(INPUT_POST, 'action');
 // Switch case to choose page
 switch ($action){
     case 'catalog':
-        $catalog = getCatalog($_SESSION['id']);
+        $catalog = getCatalog(1);
         $catalogTable = displayCatalog($catalog);
         include 'view/catalog.php';
     break;
