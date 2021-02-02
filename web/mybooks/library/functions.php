@@ -207,13 +207,8 @@ function getUserID($username, $password) {
       $stmt->bindValue(':username', $username, PDO::PARAM_STR);
       $stmt->bindValue(':user_password', $password, PDO::PARAM_STR);
       $stmt->execute();
-      //$stmt->execute(array(':username' => $username));
-      //$stmt->execute(array(':user_password' => $password));
       $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-      var_dump($results);
-      //return $results[0]['id'];
-      //return $results[0]['id'];
-      //echo "hello";//$results;
+      return $results[0]['id'];
    }
 }
 
