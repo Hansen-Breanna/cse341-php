@@ -28,6 +28,7 @@
                         </li>
                     </ul>
                 </div>
+                <a href="index.php?action=login" class="btn btn-orange">Log In</a>
             </div>
         </nav>
 
