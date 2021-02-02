@@ -40,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION))) {
               </tr>
             </thead>
             <tbody>
-              <?php //echo $loansTable; ?>
+              <?php echo $loansTable; ?>
             </tbody>
           </table>
         </div>
