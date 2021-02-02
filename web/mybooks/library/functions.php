@@ -56,7 +56,7 @@ function getAuthors() {
  // get loans
  function getLoans($id) {
    $db = connectMyBooks();
-   $stmt = $db->query('SELECT b.title_of_book, bo.first_name, bo.last_name, bo.phone_number, l.date_borrowed, l.return_date, l.is_returned FROM loan l INNER JOIN book_title b ON l.book_title_id = b.id INNER JOIN borrower bo ON l.borrower_id = bo.id WHERE l.library_user_id = :id ORDER BY date_borrowed DESC');
+   $stmt = $db->prepare('SELECT b.title_of_book, bo.first_name, bo.last_name, bo.phone_number, l.date_borrowed, l.return_date, l.is_returned FROM loan l INNER JOIN book_title b ON l.book_title_id = b.id INNER JOIN borrower bo ON l.borrower_id = bo.id WHERE l.library_user_id = :id ORDER BY date_borrowed DESC');
    $stmt->bindValue(':id', $id, PDO::PARAM_INT);
    $stmt->execute();
    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
