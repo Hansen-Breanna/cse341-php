@@ -17,13 +17,16 @@
     <main class="mb-5">
       <div class="container">
         <div class="row d-flex flex-column align-items-center">
-          <!-- Search Boxes -->
-          <?php include 'common/search.php'; ?>
+          <div>
+            <!-- Search Boxes -->
+            <?php include 'common/title.php'; ?>
+            <?php include 'common/author.php'; ?>
+          </div>
           <div>
             <table class="table table-dark table-striped text-light">
                 <thead>
                   <tr>
-                    <th class="pl-1"><a href="">Book Title<i class="fas fa-sort"></i></a></th>
+                    <th class="pl-1">Book Title</th>
                     <th class="pl-5">Author</th>
                   </tr>
                 </thead>
