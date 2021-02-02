@@ -4,6 +4,22 @@
  * This is my helper functions file.
  */
 
+ // get user id
+function getUserID($username, $password) {
+   $db = connectMyBooks();
+    if (!$db) {
+      echo "An error occurred.\n";
+      exit;
+   } else {
+      $stmt = $db->prepare('SELECT id FROM library_user WHERE username = :username AND user_password = :user_password');
+      $stmt->bindValue(':username', $username, PDO::PARAM_STR);
+      $stmt->bindValue(':user_password', $password, PDO::PARAM_STR);
+      $stmt->execute();
+      $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+      return $results[0]['id'];
+   }
+}
+
  // get catalog list
  function getCatalog($id) {
      $db = connectMyBooks();
@@ -11,7 +27,7 @@
         echo "An error occurred.\n";
         exit;
      } else {
-        $stmt = $db->query('SELECT b.title_of_book, a.first_name, a.middle_name, a.last_name FROM user_book u INNER JOIN book_title b ON u.book_title_id = b.id INNER JOIN author a ON a.id = b.author_id WHERE u.library_user_id = :id ORDER BY b.title_of_book');
+        $stmt = $db->prepare('SELECT b.title_of_book, a.first_name, a.middle_name, a.last_name FROM user_book u INNER JOIN book_title b ON u.book_title_id = b.id INNER JOIN author a ON a.id = b.author_id WHERE u.library_user_id = :id ORDER BY b.title_of_book');
         $stmt->bindValue(':id', $id, PDO::PARAM_INT);
         $stmt->execute();
         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -194,23 +210,6 @@ function displayReviews($reviews) {
    }
    $reviewList .= '</div>';
    return $reviewList;
-}
-
-
-// get user id
-function getUserID($username, $password) {
-   $db = connectMyBooks();
-    if (!$db) {
-      echo "An error occurred.\n";
-      exit;
-   } else {
-      $stmt = $db->prepare('SELECT id FROM library_user WHERE username = :username AND user_password = :user_password');
-      $stmt->bindValue(':username', $username, PDO::PARAM_STR);
-      $stmt->bindValue(':user_password', $password, PDO::PARAM_STR);
-      $stmt->execute();
-      $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-      return $results[0]['id'];
-   }
 }
 
 ?>
