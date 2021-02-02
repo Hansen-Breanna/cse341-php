@@ -24,7 +24,7 @@
       echo "An error occurred.\n";
       exit;
    } else {
-      $statement = $db->query('SELECT * FROM user_book WHERE own_wish_list = TRUE ORDER BY title_of_book');
+      $statement = $db->query('SELECT * FROM user_book WHERE own_wish_list = TRUE');
       $results = $statement->fetchAll(PDO::FETCH_ASSOC);
       return $results;
    }
@@ -37,7 +37,7 @@ function getReadWishes() {
       echo "An error occurred.\n";
       exit;
    } else {
-      $statement = $db->query('SELECT * FROM user_book WHERE read_wish_list = TRUE ORDER BY title_of_book');
+      $statement = $db->query('SELECT * FROM user_book WHERE read_wish_list = TRUE');
       $results = $statement->fetchAll(PDO::FETCH_ASSOC);
       return $results;
    }
