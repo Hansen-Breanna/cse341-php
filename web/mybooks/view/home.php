@@ -1,3 +1,30 @@
+<?php
+// start session
+session_start ();
+
+// define variables and set to empty values
+$id = "";
+ 
+if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION))) {
+    $_SESSION["username"] = array();   
+} 
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $id = test_input($_POST["id"]);
+    $_SESSION['id'] = $id;
+    echo $_SESSION['id'];
+}
+
+function test_input($data)
+{
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}
+
+?>
+
 <!-- Head -->
 <?php include 'common/head.php'; ?>
 
@@ -18,7 +45,7 @@
       <div class="container">
         <div class="row d-flex justify-content-around">
             <div id="box-1" class="main-box p-5 w-25 mt-4 mx-2">
-                <form method="post" action="index.php">
+                <form method='post' action=" <?php htmlspecialchars($_SERVER["PHP_SELF"]) ?> ">
                     <input class="rounded border-light m-1" type="text" name="username" placeholder="username"><br>
                     <input class="rounded border-light m-1" type='text' name="password" placeholder="password"><br>
                     <input type="submit" class="btn btn-custom bg-orange m-1" value="Log In">

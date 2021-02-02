@@ -1,3 +1,9 @@
+<?php
+// start session
+session_start ();
+
+?>
+
 <!-- Head -->
 <?php include 'common/head.php'; ?>
 
