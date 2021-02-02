@@ -35,8 +35,8 @@
             </div>
             <div id="box-1" class="main-box bg-warning shadow-lg rounded box p-5 w-25 mt-4 mx-2">
             <form class="d-flex row-wrap" method="post" action="index.php">
-                <input class="rounded border-light m-1" type="text" name="username" placeholder="username">
-                <input class="rounded border-light m-1" type='text' name="password" placeholder="password">
+                <input class="rounded border-light m-1" type="text" name="username" placeholder="username"><br>
+                <input class="rounded border-light m-1" type='text' name="password" placeholder="password"><br>
                 <input type="submit" class="btn btn-custom bg-orange m-1" value="Log In">
             </form>
             </div>
