@@ -205,7 +205,7 @@ function getUserID($username, $password) {
       $stmt->execute(array(':username' => $username));
       $stmt->execute(array(':user_password' => $password));
       $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-      echo $results[0]['id'];
+      echo $results['id'];
       //return $results[0]['id'];
       //echo "hello";//$results;
    }
