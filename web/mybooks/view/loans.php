@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION))) {
 <!-- Head -->
 <?php include 'common/head.php'; ?>
 
-    <title>My Books - Personal Library Application</title>
+    <title>Loans - My Books</title>
 
 <!-- Nav -->
 <?php include 'common/nav.php'; ?>
@@ -36,8 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION))) {
                 <th class="pl-5">Borrower</th>
                 <th class="pl-5">Borrowed</th>
                 <th class="pl-5">Overdue</th>
-                <th class="pl-5"></th>
-                <th class="pl-5"></th>
+                <th class="pl-5">Contact</th>
               </tr>
             </thead>
             <tbody>

@@ -3,19 +3,16 @@
 session_start ();
 
 if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION))) {
-  //$_SESSION["id"] = array(); 
-  echo "help";  
 } else {
   echo $_SESSION['id'];
 }
-
 
 ?>
 
 <!-- Head -->
 <?php include 'common/head.php'; ?>
 
-    <title>My Books - Personal Library Application</title>
+    <title>Catalog - My Books</title>
 
 <!-- Nav -->
 <?php include 'common/nav.php'; ?>

@@ -33,7 +33,7 @@ switch ($action){
         include 'view/authors.php';
     break;
     case 'loans':
-        $loans = getLoans();
+        $loans = getLoans($_SESSION['id']);
         $loansTable = displayLoans($loans);
         include 'view/loans.php';
     break;

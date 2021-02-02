@@ -29,7 +29,7 @@ function test_input($data)
 <!-- Head -->
 <?php include 'common/head.php'; ?>
 
-    <title>My Books - Personal Library Application</title>
+    <title>Home - My Books</title>
 
 <!-- Nav -->
 <?php include 'common/nav.php'; ?>

@@ -27,7 +27,7 @@ CREATE TABLE library_user
 	user_email VARCHAR(50) NOT NULL,
 	PRIMARY KEY (id)
 );
-INSERT INTO library_user (first_name, last_name, username, user_password, user_email) VALUES ('Breanna', 'Hansen', 'hansen', 'test', 'test@email.com');
+INSERT INTO library_user (first_name, last_name, username, user_password, user_email) VALUES ('Breanna', 'Hansen', 'hansen', 'test', 'test@email.com'); 
 INSERT INTO library_user (first_name, last_name, username, user_password, user_email) VALUES ('Chase', 'Wilcox', 'wilcox', 'test', 'test@email.com');
 INSERT INTO library_user (first_name, last_name, username, user_password, user_email) VALUES ('Brother', 'Lyon', 'lyon', 'test', 'test@email.com');
 /* create user/author bridge table */
@@ -151,3 +151,10 @@ INSERT INTO loan (library_user_id, book_title_id, borrower_id, date_borrowed, is
 INSERT INTO loan (library_user_id, book_title_id, borrower_id, date_borrowed, is_returned) VALUES (2, 5, 3, DATE '01-22-2021', FALSE);
 INSERT INTO loan (library_user_id, book_title_id, borrower_id, date_borrowed, is_returned) VALUES (3, 6, 1, DATE '01-22-2021', FALSE);
 INSERT INTO loan (library_user_id, book_title_id, borrower_id, date_borrowed, is_returned) VALUES (3, 3, 2, DATE '01-22-2021', FALSE);
+
+
+SELECT b.title_of_book, a.first_name, a.middle_name, a.last_name FROM user_book u INNER JOIN book_title b ON u.book_title_id = b.id INNER JOIN author a ON a.id = b.author_id WHERE u.library_user_id = 1 ORDER BY b.title_of_book; 
+
+SELECT b.title_of_book, a.first_name, a.middle_name, a.last_name FROM user_book u INNER JOIN book_title b ON u.book_title_id = b.id INNER JOIN author a ON a.id = b.author_id WHERE u.library_user_id = 1 AND own_wish_list = TRUE ORDER BY b.title_of_book; 
+
+SELECT b.title_of_book, bo.first_name, bo.last_name, bo.phone_number, l.date_borrowed, l.return_date, l.is_returned FROM loan l INNER JOIN book_title b ON l.book_title_id = b.id INNER JOIN borrower bo ON l.borrower_id = bo.id;

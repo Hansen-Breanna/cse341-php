@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION))) {
 <!-- Head -->
 <?php include 'common/head.php'; ?>
 
-<title>My Books - Personal Library Application</title>
+<title>Wish List - My Books</title>
 
 <!-- Nav -->
 <?php include 'common/nav.php'; ?>
