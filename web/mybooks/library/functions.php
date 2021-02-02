@@ -116,7 +116,7 @@ function getDetails($book_title_id) {
 function displayCatalog($catalog) {
    $bookList = '<tbody>';
    foreach ($catalog as $book) {
-      $bookList .= '<tr><td>' . $book['title_of_book'] . '</td><td class="pl-5">' . $book['first_name'] . '</td></tr>';
+      $bookList .= '<tr><td>' . $book['title_of_book'] . '</td><td class="pl-5">' . $book['first_name'] . ' ' . $book['middle_name'] . ' ' . $book['last_name'] . '</td></tr>';
    }
    $bookList .= '</tbody>';
    return $bookList;
