@@ -45,7 +45,7 @@ function getUserID($username, $password) {
       exit;
    } else {
       $stmt = $db->prepare('SELECT * FROM user_book');// WHERE own_wish_list = TRUE');
-      $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+      //$stmt->bindValue(':id', $id, PDO::PARAM_INT);
       $stmt->execute();
       $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
       return $results;
