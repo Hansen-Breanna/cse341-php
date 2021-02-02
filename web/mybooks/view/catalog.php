@@ -4,9 +4,12 @@ session_start ();
 
 if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION))) {  
   echo "help!";
-} 
+} else {
+  echo "session set";
+  echo $_SESSION['id'];
+}
 
-echo $_SESSION['id'];
+
 ?>
 
 <!-- Head -->
