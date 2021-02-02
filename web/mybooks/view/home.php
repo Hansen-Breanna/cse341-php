@@ -31,10 +31,14 @@
                 <h2 class="text-center p-3"><a href="index.php?action=wish" title="Book Wish List">Wish List</a></h2>
             </div>
             <div id="box-3" class="main-box bg-success shadow-lg rounded box p-5 w-25 mt-4 mx-2">
-                <h2 class="text-center p-3"><a href="index.php?action=favorite" title="Favorite Authors">Favorite Authors</a></h2>
+                <h2 class="text-center p-3"><a href="index.php?action=authors" title="Authors">Authors</a></h2>
             </div>
             <div id="box-1" class="main-box bg-warning shadow-lg rounded box p-5 w-25 mt-4 mx-2">
-                <h2 class="text-center p-3"><a href="index.php?action=blacklist" title="Blacklisted Authors">Blacklisted Authors</a></h2>
+            <form class="d-flex row-wrap" method="post" action="index.php">
+                <input class="rounded border-light m-1" type="text" name="username" placeholder="username">
+                <input class="rounded border-light m-1" type='text' name="password" placeholder="password">
+                <input type="submit" class="btn btn-custom bg-orange m-1" value="Log In">
+            </form>
             </div>
             <div id="box-2" class="main-box bg-orange shadow-lg rounded box p-5 w-25 mt-4 mx-2">
                 <h2 class="text-center p-3"><a href="index.php?action=loans" title="Loans">Loans</a></h2>
