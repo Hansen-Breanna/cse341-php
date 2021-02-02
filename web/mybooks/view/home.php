@@ -6,7 +6,8 @@ session_start ();
 $username = $password = "";
  
 if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION))) {
-    $_SESSION["username"] = array();   
+    $_SESSION["username"] = array();
+    echo $_SESSION['id'];   
 } 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
