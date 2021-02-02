@@ -87,18 +87,18 @@ CREATE TABLE user_book
 	FOREIGN KEY (library_user_id) REFERENCES library_user(id),
 	FOREIGN KEY (book_title_id) REFERENCES book_title(id)	
 );
-INSERT INTO book_title (library_user_id, title_of_book, is_owned, own_wish_list, read_wish_list) VALUES (1, 'A Noble Masquerade', FALSE, TRUE, TRUE);
-INSERT INTO book_title (library_user_id, title_of_book, is_owned, own_wish_list, read_wish_list) VALUES (1, 'An Elegant Facade', FALSE, TRUE, TRUE);
-INSERT INTO book_title (library_user_id, title_of_book, is_owned, own_wish_list, read_wish_list) VALUES (1, 'A Lady of Esteem', FALSE, TRUE, TRUE);
-INSERT INTO book_title (library_user_id, title_of_book, is_owned) VALUES (1, 'Ranger''s Apprentice: The Battle of Hackham Heath', TRUE);
-INSERT INTO book_title (library_user_id, title_of_book, is_owned) VALUES (1, 'Pride and Prejudice', TRUE);
-INSERT INTO book_title (library_user_id, title_of_book, is_owned) VALUES (1, 'Sense and Sensibility', TRUE);
-INSERT INTO book_title (library_user_id, title_of_book, is_owned, read_wish_list) VALUES (2, 'Treasured Grace', FALSE, TRUE);
-INSERT INTO book_title (library_user_id, title_of_book, is_owned, read_wish_list) VALUES (2, 'In The Shadow of Denali', FALSE, TRUE);
-INSERT INTO book_title (library_user_id, title_of_book, is_owned, read_wish_list) VALUES (2, 'When You are Near', FALSE, TRUE);
-INSERT INTO book_title (library_user_id, title_of_book, is_owned, read_wish_list) VALUES (2, 'Treasured Grace', FALSE, TRUE);
-INSERT INTO book_title (library_user_id, title_of_book, is_owned, read_wish_list) VALUES (3, 'Unspoken', FALSE, TRUE);
-INSERT INTO book_title (library_user_id, title_of_book, is_owned, read_wish_list) VALUES (3, 'Undetected', FALSE, TRUE);
+INSERT INTO user_book (library_user_id, book_title_id, is_owned, own_wish_list, read_wish_list) VALUES (1, 1, FALSE, TRUE, TRUE);
+INSERT INTO user_book (library_user_id, book_title_id, is_owned, own_wish_list, read_wish_list) VALUES (1, 2, FALSE, TRUE, TRUE);
+INSERT INTO user_book (library_user_id, book_title_id, is_owned, own_wish_list, read_wish_list) VALUES (1, 3, FALSE, TRUE, TRUE);
+INSERT INTO user_book (library_user_id, book_title_id, is_owned) VALUES (1, 4, TRUE);
+INSERT INTO user_book (library_user_id, book_title_id, is_owned) VALUES (1, 5, TRUE);
+INSERT INTO user_book (library_user_id, book_title_id, is_owned) VALUES (1, 6, TRUE);
+INSERT INTO user_book (library_user_id, book_title_id, is_owned, read_wish_list) VALUES (2, 7, FALSE, TRUE);
+INSERT INTO user_book (library_user_id, book_title_id, is_owned, read_wish_list) VALUES (2, 8, FALSE, TRUE);
+INSERT INTO user_book (library_user_id, book_title_id, is_owned, read_wish_list) VALUES (2, 9, FALSE, TRUE);
+INSERT INTO user_book (library_user_id, book_title_id, is_owned, read_wish_list) VALUES (2, 'Treasured Grace', FALSE, TRUE);
+INSERT INTO user_book (library_user_id, book_title_id, is_owned, read_wish_list) VALUES (3, 'Unspoken', FALSE, TRUE);
+INSERT INTO user_book (library_user_id, book_title_id, is_owned, read_wish_list) VALUES (3, 'Undetected', FALSE, TRUE);
 /* create reviews table */
 CREATE TABLE reviews
 (
