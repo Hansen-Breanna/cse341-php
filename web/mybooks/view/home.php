@@ -17,7 +17,7 @@
     <main class="mb-5">
       <div class="container">
         <div class="row d-flex justify-content-around">
-        <div id="box-1" class="main-box bg-warning shadow-lg rounded box p-5 w-25 mt-4 mx-2">
+            <div id="box-1" class="main-box shadow-lg rounded box p-5 w-25 mt-4 mx-2">
                 <form method="post" action="index.php">
                     <input class="rounded border-light m-1" type="text" name="username" placeholder="username"><br>
                     <input class="rounded border-light m-1" type='text' name="password" placeholder="password"><br>
