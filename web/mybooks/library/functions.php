@@ -5,14 +5,15 @@
  */
 
  // get catalog list
- function getCatalog() {
+ function getCatalog($id) {
      $db = connectMyBooks();
       if (!$db) {
         echo "An error occurred.\n";
         exit;
      } else {
-        $statement = $db->query('SELECT b.title_of_book, a.first_name, a.middle_name, a.last_name FROM user_book u INNER JOIN book_title b ON u.book_title_id = b.id INNER JOIN author a ON a.id = b.author_id WHERE u.library_user_id = 1 ORDER BY b.title_of_book');
-        $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+        $stmt = $db->query('SELECT b.title_of_book, a.first_name, a.middle_name, a.last_name FROM user_book u INNER JOIN book_title b ON u.book_title_id = b.id INNER JOIN author a ON a.id = b.author_id WHERE u.library_user_id = :id ORDER BY b.title_of_book');
+        $stmt->execute(array(':id' => $id));
+        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $results;
      }
 }
@@ -116,7 +117,8 @@ function getDetails($book_title_id) {
 function displayCatalog($catalog) {
    $bookList = '<tbody>';
    foreach ($catalog as $book) {
-      $bookList .= '<tr><td>' . $book['title_of_book'] . '</td><td class="pl-5">' . $book['first_name'] . ' ' . $book['middle_name'] . ' ' . $book['last_name'] . '</td></tr>';
+      $bookList .= '<tr><td>' . $book['title_of_book'] . '</td>';
+      $bookList .= '<td class="pl-5">' . $book['first_name'] . ' ' . $book['middle_name'] . ' ' . $book['last_name'] . '</td></tr>';
    }
    $bookList .= '</tbody>';
    return $bookList;
