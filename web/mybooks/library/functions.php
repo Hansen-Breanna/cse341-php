@@ -63,7 +63,6 @@ function getAuthors() {
    $stmt->bindValue(':id', $id, PDO::PARAM_INT);
    $stmt->execute();
    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-   var_dump($results);
    return $results;
 }
 
