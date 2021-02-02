@@ -22,14 +22,14 @@ CREATE TABLE library_user
 	id serial,
 	first_name VARCHAR(100) NOT NULL,
 	last_name VARCHAR(100) NOT NULL,
-	user_name VARCHAR(40) NOT NULL,
+	username VARCHAR(40) NOT NULL,
 	user_password VARCHAR(40) NOT NULL,
 	user_email VARCHAR(50) NOT NULL,
 	PRIMARY KEY (id)
 );
-INSERT INTO library_user (first_name, last_name, user_name, user_password, user_email) VALUES ('Breanna', 'Hansen', 'hansen', 'test', 'test@email.com');
-INSERT INTO library_user (first_name, last_name, user_name, user_password, user_email) VALUES ('Chase', 'Wilcox', 'wilcox', 'test', 'test@email.com');
-INSERT INTO library_user (first_name, last_name, user_name, user_password, user_email) VALUES ('Brother', 'Lyon', 'lyon', 'test', 'test@email.com');
+INSERT INTO library_user (first_name, last_name, username, user_password, user_email) VALUES ('Breanna', 'Hansen', 'hansen', 'test', 'test@email.com');
+INSERT INTO library_user (first_name, last_name, username, user_password, user_email) VALUES ('Chase', 'Wilcox', 'wilcox', 'test', 'test@email.com');
+INSERT INTO library_user (first_name, last_name, username, user_password, user_email) VALUES ('Brother', 'Lyon', 'lyon', 'test', 'test@email.com');
 /* create user/author bridge table */
 CREATE TABLE user_author
 (
@@ -96,9 +96,9 @@ INSERT INTO user_book (library_user_id, book_title_id, is_owned) VALUES (1, 6, T
 INSERT INTO user_book (library_user_id, book_title_id, is_owned, read_wish_list) VALUES (2, 7, FALSE, TRUE);
 INSERT INTO user_book (library_user_id, book_title_id, is_owned, read_wish_list) VALUES (2, 8, FALSE, TRUE);
 INSERT INTO user_book (library_user_id, book_title_id, is_owned, read_wish_list) VALUES (2, 9, FALSE, TRUE);
-INSERT INTO user_book (library_user_id, book_title_id, is_owned, read_wish_list) VALUES (2, 'Treasured Grace', FALSE, TRUE);
-INSERT INTO user_book (library_user_id, book_title_id, is_owned, read_wish_list) VALUES (3, 'Unspoken', FALSE, TRUE);
-INSERT INTO user_book (library_user_id, book_title_id, is_owned, read_wish_list) VALUES (3, 'Undetected', FALSE, TRUE);
+INSERT INTO user_book (library_user_id, book_title_id, is_owned, read_wish_list) VALUES (2, 10, FALSE, TRUE);
+INSERT INTO user_book (library_user_id, book_title_id, is_owned, read_wish_list) VALUES (3, 11, FALSE, TRUE);
+INSERT INTO user_book (library_user_id, book_title_id, is_owned, read_wish_list) VALUES (3, 12, FALSE, TRUE);
 /* create reviews table */
 CREATE TABLE reviews
 (
