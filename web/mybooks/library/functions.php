@@ -4,121 +4,83 @@
  * This is my helper functions file.
  */
 
- // get user id
+// get user id
 function getUserID($username, $password) {
    $db = connectMyBooks();
-    if (!$db) {
-      echo "An error occurred.\n";
-      exit;
-   } else {
-      $stmt = $db->prepare('SELECT id FROM library_user WHERE username = :username AND user_password = :user_password');
-      $stmt->bindValue(':username', $username, PDO::PARAM_STR);
-      $stmt->bindValue(':user_password', $password, PDO::PARAM_STR);
-      $stmt->execute();
-      $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-      return $results[0]['id'];
-   }
+   $stmt = $db->prepare('SELECT id FROM library_user WHERE username = :username AND user_password = :user_password');
+   $stmt->bindValue(':username', $username, PDO::PARAM_STR);
+   $stmt->bindValue(':user_password', $password, PDO::PARAM_STR);
+   $stmt->execute();
+   $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+   return $results[0]['id'];
 }
 
- // get catalog list
- function getCatalog($id) {
-     $db = connectMyBooks();
-      if (!$db) {
-        echo "An error occurred.\n";
-        exit;
-     } else {
-        $stmt = $db->prepare('SELECT b.title_of_book, a.first_name, a.middle_name, a.last_name FROM user_book u INNER JOIN book_title b ON u.book_title_id = b.id INNER JOIN author a ON a.id = b.author_id WHERE u.library_user_id = :id ORDER BY b.title_of_book');
-        $stmt->bindValue(':id', $id, PDO::PARAM_INT);
-        $stmt->execute();
-        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        return $results;
-     }
+// get catalog list
+function getCatalog($id) {
+   $db = connectMyBooks();
+   $stmt = $db->prepare('SELECT b.title_of_book, a.first_name, a.middle_name, a.last_name FROM user_book u INNER JOIN book_title b ON u.book_title_id = b.id INNER JOIN author a ON a.id = b.author_id WHERE u.library_user_id = :id ORDER BY b.title_of_book');
+   $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+   $stmt->execute();
+   $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+   return $results;
 }
 
 // get own wish list 
- function getOwnWishes($id) {
+function getOwnWishes($id) {
    $db = connectMyBooks();
-    if (!$db) {
-      echo "An error occurred.\n";
-      exit;
-   } else {
-      $stmt = $db->prepare('SELECT b.title_of_book, a.first_name, a.middle_name, a.last_name FROM user_book u INNER JOIN book_title b ON u.book_title_id = b.id INNER JOIN author a ON a.id = b.author_id WHERE u.library_user_id = :id AND own_wish_list = TRUE ORDER BY b.title_of_book');
-      $stmt->bindValue(':id', $id, PDO::PARAM_INT);
-      $stmt->execute();
-      $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-      return $results;
-   }
+   $stmt = $db->prepare('SELECT b.title_of_book, a.first_name, a.middle_name, a.last_name FROM user_book u INNER JOIN book_title b ON u.book_title_id = b.id INNER JOIN author a ON a.id = b.author_id WHERE u.library_user_id = :id AND own_wish_list = TRUE ORDER BY b.title_of_book');
+   $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+   $stmt->execute();
+   $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+   return $results;
 }
 
 // get read wish list 
 function getReadWishes($id) {
    $db = connectMyBooks();
-    if (!$db) {
-      echo "An error occurred.\n";
-      exit;
-   } else {
-      $stmt = $db->prepare('SELECT b.title_of_book, a.first_name, a.middle_name, a.last_name FROM user_book u INNER JOIN book_title b ON u.book_title_id = b.id INNER JOIN author a ON a.id = b.author_id WHERE u.library_user_id = :id AND read_wish_list = TRUE ORDER BY b.title_of_book');
-      $stmt->bindValue(':id', $id, PDO::PARAM_INT);
-      $stmt->execute();
-      $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-      return $results;
-   }
+   $stmt = $db->prepare('SELECT b.title_of_book, a.first_name, a.middle_name, a.last_name FROM user_book u INNER JOIN book_title b ON u.book_title_id = b.id INNER JOIN author a ON a.id = b.author_id WHERE u.library_user_id = :id AND read_wish_list = TRUE ORDER BY b.title_of_book');
+   $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+   $stmt->execute();
+   $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+   return $results;
 }
 
- // get all authors
- function getAuthors() {
+// get all authors
+function getAuthors() {
    $db = connectMyBooks();
-    if (!$db) {
-      echo "An error occurred.\n";
-      exit;
-   } else {
-      $statement = $db->query('SELECT * FROM author ORDER BY last_name');
-      $results = $statement->fetchAll(PDO::FETCH_ASSOC);
-      return $results;
-   }
+   $statement = $db->query('SELECT * FROM author ORDER BY last_name');
+   $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+   return $results;
 }
 
  // get loans
  function getLoans($id) {
    $db = connectMyBooks();
-    if (!$db) {
-      echo "An error occurred.\n";
-      exit;
-   } else {
-      $stmt = $db->query('SELECT b.title_of_book, bo.first_name, bo.last_name, bo.phone_number, l.date_borrowed, l.return_date, l.is_returned FROM loan l INNER JOIN book_title b ON l.book_title_id = b.id INNER JOIN borrower bo ON l.borrower_id = bo.id WHERE l.library_user_id = :id ORDER BY date_borrowed DESC;');
-      $stmt->bindValue(':id', $id, PDO::PARAM_INT);
-      $stmt->execute();
-      $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-      return $results;
-   }
+   $stmt = $db->query('SELECT b.title_of_book, bo.first_name, bo.last_name, bo.phone_number, l.date_borrowed, l.return_date, l.is_returned FROM loan l INNER JOIN book_title b ON l.book_title_id = b.id INNER JOIN borrower bo ON l.borrower_id = bo.id WHERE l.library_user_id = :id ORDER BY date_borrowed DESC;');
+   $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+   $stmt->execute();
+   $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+   var_dump($results);
+   return $results;
 }
 
 // get borrower details 
 function getBorrower($borrower_id) {
    $db = connectMyBooks();
-    if (!$db) {
-      echo "An error occurred.\n";
-      exit;
-   } else {
-      $stmt = $db->query('SELECT * FROM borrower WHERE id = :id');
-      $stmt->execute(array(':id' => $borrower_id));
-      $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-      return $results;
-   }
+   $stmt = $db->query('SELECT * FROM borrower WHERE id = :id');
+   $stmt->execute(array(':id' => $borrower_id));
+   $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+   return $results;
 }
 
  // get reviews
  function getReviews() {
    $db = connectMyBooks();
-    if (!$db) {
-      echo "An error occurred.\n";
-      exit;
-   } else {
-      $statement = $db->query('SELECT * FROM reviews');
-      $results = $statement->fetchAll(PDO::FETCH_ASSOC);
-      return $results;
-   }
+   $statement = $db->query('SELECT * FROM reviews');
+   $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+   return $results;
 }
+
 // Get authors names
 function getAuthorName($author_id) {
    $db = connectMyBooks();
