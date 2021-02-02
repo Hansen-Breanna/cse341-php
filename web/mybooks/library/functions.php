@@ -35,15 +35,19 @@ function getUserID($username, $password) {
      }
 }
 
+
+
 // get own wish list 
- function getOwnWishes() {
+ function getOwnWishes($id) {
    $db = connectMyBooks();
     if (!$db) {
       echo "An error occurred.\n";
       exit;
    } else {
-      $statement = $db->query('SELECT * FROM user_book WHERE own_wish_list = TRUE');
-      $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+      $stmt = $db->prepare('SELECT * FROM user_book WHERE library_user_id = :id AND own_wish_list = TRUE');
+      $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+      $stmt->execute();
+      $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
       return $results;
    }
 }
