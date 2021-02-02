@@ -202,9 +202,10 @@ function getUserID($username, $password) {
       exit;
    } else {
       $stmt = $db->query('SELECT * FROM library_user');
-      $stmt->execute(array(':username' => $username));
+      //$stmt->execute(array(':username' => $username));
       //$stmt->execute(array(':user_password' => $password));
       $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+      echo $username;
       var_dump($results);
       //return $results;
       //echo "hello";//$results;
