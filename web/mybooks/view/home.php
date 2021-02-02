@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION))) {
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = test_input($_POST["username"]);
     $password = test_input($_POST["password"]);
-    $_SESSION['ID'] = getUserID($username, $password);
+    $_SESSION['id'] = getUserID($username, $password);
     echo $_SESSION['id'];
 }
 
