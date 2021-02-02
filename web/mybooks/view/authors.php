@@ -2,6 +2,9 @@
 // start session
 session_start ();
 
+if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION))) { 
+  $_SESSION['id'] = array(); 
+} 
 ?>
 
 <!-- Head -->
