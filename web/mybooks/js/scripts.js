@@ -6,9 +6,5 @@ $(document).ready(function(){
       $(".navbar-toggler").click(function(){
         $("#link-nav").toggle();
       });
-
-      $("#logout-button").click(function(){
-        $("#logout").show();
-      });
   });
 

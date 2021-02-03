@@ -14,6 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = test_input($_POST["password"]);
     $logout = test_input($_POST["logout"]);
     $_SESSION['id'] = getUserID($username, $password);
+    $_SESSION['username'] = $username;
     if ($logout == "logout") {
         session_destroy();
     }
@@ -47,9 +48,6 @@ function test_input($data)
     
     <main class="mb-5">
       <div class="container">
-        <div class="row">
-            <div id="logout" class="bg-success p-2 col-12 rounded">You have successfully logged out.</a>
-        </div>
         <div class="row d-flex justify-content-around">
             <div id="box-1" class="main-box p-5 w-25 mt-4 mx-2">
                 <form method='post' action=" <?php htmlspecialchars($_SERVER["PHP_SELF"]) ?> ">
