@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION))) {
       <!-- Search Boxes -->
       <?php include 'common/search.php'; ?>
     </div>
-    <div class="row d-flex flex-column align-items-center">
+    <div>
       <table class="table table-dark table-striped text-light">
         <thead>
           <tr>
