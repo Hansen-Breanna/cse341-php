@@ -1,7 +1,7 @@
 </div>
 
 <footer class="bg-info mt-3 p-3 border-top">
-    <div class="container">
+    <div class="container d-flex justify-content-between">
         <div class="row">
             <p class="mb-0">&copy;&nbsp; <?php echo date("Y") ;?> - Breanna Hansen</p>
         </div>
