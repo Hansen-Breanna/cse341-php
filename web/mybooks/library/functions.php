@@ -16,10 +16,9 @@ function getUserID($username, $password) {
 }
 
 // get catalog list
-function getTitle($title, $id) {
+function getCatalog($id) {
    $db = connectMyBooks();
-   $stmt = $db->prepare('SELECT b.title_of_book, a.first_name, a.middle_name, a.last_name FROM user_book u INNER JOIN book_title b ON u.book_title_id = b.id INNER JOIN author a ON a.id = b.author_id WHERE u.library_user_id = :id AND b.title_of_book = :title');
-   $stmt->bindValue(':title', $title, PDO::PARAM_STR);
+   $stmt = $db->prepare('SELECT b.title_of_book, a.first_name, a.middle_name, a.last_name FROM user_book u INNER JOIN book_title b ON u.book_title_id = b.id INNER JOIN author a ON a.id = b.author_id WHERE u.library_user_id = :id ORDER BY b.title_of_book');
    $stmt->bindValue(':id', $id, PDO::PARAM_INT);
    $stmt->execute();
    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -77,14 +76,14 @@ function getAuthors($id) {
    return $results;
 }
 
-// search by title
-function getCatalog($id) {
-   $db = connectMyBooks();
-   $stmt = $db->prepare('SELECT a.first_name, a.middle_name, a.last_name, u.is_blacklist, u.is_favorite FROM author a INNER JOIN user_author u ON a.id = u.author_id WHERE u.library_user_id = :id ORDER BY last_name');
-   $stmt->bindValue(':id', $id, PDO::PARAM_INT);
-   $stmt->execute();
-   $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-   return $results;
-}
+// // search by title
+// function getTitle($title) {
+//    $db = connectMyBooks();
+//    $stmt = $db->prepare('SELECT a.first_name, a.middle_name, a.last_name, u.is_blacklist, u.is_favorite FROM author a INNER JOIN user_author u ON a.id = u.author_id WHERE u.library_user_id = :id ORDER BY last_name');
+//    $stmt->bindValue(':title', $title, PDO::PARAM_INT);
+//    $stmt->execute();
+//    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+//    return $results;
+// }
 
 ?>
