@@ -43,8 +43,8 @@ function test_input($data)
     
     <main class="mb-5">
       <div class="container">
-        <div class="row d-flex justify-content-around">
-            <div id="logout" class="bg-success">You have successfully logged out.</a>
+        <div class="row">
+            <div id="logout" class="bg-success p-2 d-block">You have successfully logged out.</a>
         </div>
         <div class="row d-flex justify-content-around">
             <div id="box-1" class="main-box p-5 w-25 mt-4 mx-2">
