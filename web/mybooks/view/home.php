@@ -13,7 +13,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = test_input($_POST["username"]);
     $password = test_input($_POST["password"]);
     $_SESSION['id'] = getUserID($username, $password);
-    echo $_SESSION['id'];
 }
 
 function test_input($data)
@@ -47,9 +46,9 @@ function test_input($data)
         <div class="row d-flex justify-content-around">
             <div id="box-1" class="main-box p-5 w-25 mt-4 mx-2">
                 <form method='post' action=" <?php htmlspecialchars($_SERVER["PHP_SELF"]) ?> ">
-                    <input class="rounded border-light m-1" type="text" id="username" name="username" placeholder="username"><br>
-                    <input class="rounded border-light m-1" type='text' id="password" name="password" placeholder="password"><br>
-                    <input type="submit" class="btn btn-custom bg-orange m-1" value="Log In">
+                    <input class="rs-size rounded border-light m-1" type="text" id="username" name="username" placeholder="username"><br>
+                    <input class="rs-size rounded border-light m-1" type='text' id="password" name="password" placeholder="password"><br>
+                    <input type="submit" class=".rs-size btn btn-custom bg-orange m-1" value="Log In">
                 </form>
             </div>
             <div id="box-1" class="main-box bg-danger shadow-lg rounded box p-5 w-25 mt-4 mx-2">

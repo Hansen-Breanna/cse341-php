@@ -66,6 +66,10 @@ table {
     color: #17A2B8;
     font-weight: bold;
 }
+
+.rs-size {
+    width: 100px;
+}
 @media only screen and (min-width: 568px) {
     .main-box {
         height: 20vh;
