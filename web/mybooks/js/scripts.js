@@ -6,3 +6,7 @@ $(document).ready(function(){
         $("#link-nav").toggle();
       });
   });
+
+  function logout() {
+      session_destroy();
+  }
