@@ -27,8 +27,15 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION))) {
     <main class="mb-5">
       <div class="container">
       <div class="row d-flex flex-column align-items-center">
-                <!-- Search Boxes -->
-                <?php include 'common/search.php'; ?>
+      <div>
+        <!-- Search Title -->
+        <form method="post" action="index.php?action=reviews">
+        <?php include 'common/title.php'; ?>
+
+        <!-- Search Author -->
+        <form method="post" action="index.php?action=reviews">
+        <?php include 'common/author.php'; ?>
+      </div>
 
         <?php echo $reviewsTable; ?>
 

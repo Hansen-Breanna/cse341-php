@@ -1,8 +1,8 @@
 <?php
 // start session
-session_start ();
+session_start();
 
-if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION))) { 
+if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION))) {
   //$_SESSION['id'] = array(); 
 }
 
@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION))) {
 <!-- Head -->
 <?php include 'common/head.php'; ?>
 
-    <title>Loans - My Books</title>
+<title>Loans - My Books</title>
 
 <!-- Nav -->
 <?php include 'common/nav.php'; ?>
@@ -19,35 +19,41 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION))) {
 <!-- Header -->
 <?php include '../common/header.php'; ?>
 
-              <h1 class="offset-1 col-10 offset-md-0 col-md-12">Loaned Books</h1>
-          </div>
-      </div>
-    </header>
-    
-    <main class="mb-5">
-      <div class="container">
-      <div class="row d-flex flex-column align-items-center">
-                     <!-- Search Boxes -->
-                     <?php include 'common/search.php'; ?>
+<h1 class="offset-1 col-10 offset-md-0 col-md-12">Loaned Books</h1>
+</div>
+</div>
+</header>
 
-                     <p class="font-blue">SMS message reminders must be sent from a mobile device.</a>
-          <table class="table table-dark table-striped text-light">
-            <thead>
-              <tr>
-                <th class="pl-2">Book Title</th>
-                <th>Borrower</th>
-                <th>Borrow Date</th>
-                <th>Return Date</th>
-                <th>Contact</th>
-              </tr>
-            </thead>
-            <tbody>
-              <?php echo $loansTable; ?>
-            </tbody>
-          </table>
-        </div>
+<main class="mb-5">
+  <div class="container">
+    <div class="row d-flex flex-column align-items-center">
+      <div>
+        <!-- Search Title -->
+        <form method="post" action="index.php?action=loans">
+          <?php include 'common/title.php'; ?>
+
+        <!-- Search Borrowers -->
+        <form method="post" action="index.php?action=loans">
+        <?php include 'common/borrower.php'; ?>
       </div>
-    </main>
+      <p class="font-blue">SMS message reminders must be sent from a mobile device.</a>
+      <table class="table table-dark table-striped text-light">
+        <thead>
+          <tr>
+            <th class="pl-2">Book Title</th>
+            <th>Borrower</th>
+            <th>Borrow Date</th>
+            <th>Return Date</th>
+            <th>Contact</th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php echo $loansTable; ?>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</main>
 
 <!-- Footer -->
 <?php include 'common/footer.php'; ?>
