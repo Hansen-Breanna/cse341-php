@@ -28,8 +28,12 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION))) {
       <div class="container">
         <div class="row d-flex flex-column align-items-center">
           <div>
-            <!-- Search Boxes -->
+            <!-- Search Title -->
+            <form method="post" action="index.php?action=catalog">
             <?php include 'common/title.php'; ?>
+
+            <!-- Search Author -->
+            <form method="post" action="index.php?action=catalog">
             <?php include 'common/author.php'; ?>
           </div>
           <div>
