@@ -70,11 +70,19 @@ table {
 .rs-size {
     width: 100px;
 }
+
 @media only screen and (min-width: 568px) {
     .main-box {
         height: 20vh;
     }
     .review {
         width: 48vw;
+    }
+}
+
+@media only screen and (min-width: 768px){
+
+    .rs-size {
+        width: 200px;
     }
 }
