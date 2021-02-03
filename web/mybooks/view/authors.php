@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION))) {
   <div class="row d-flex flex-column align-items-center">
     <div>
       <!-- Search Author -->
-      <form method="post" action="index.php?action=catalog">
+      <form method="post" action="index.php?action=authors">
       <?php include 'common/author.php'; ?>
     </div>
     <div>
