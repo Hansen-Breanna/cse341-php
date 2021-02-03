@@ -3,7 +3,7 @@
 <footer class="bg-info mt-3 pb-3 border-top">
     <div class="container d-flex justify-content-between align-items-center">
         <div class="row d-flex justify-content-between align-items-bottom">
-            <p class="pt-2 pl-3">&copy;&nbsp; <?php echo date("Y") ;?> - Breanna Hansen</p>
+            <p class="mt-2 pl-3">&copy;&nbsp; <?php echo date("Y") ;?> - Breanna Hansen</p>
         </div>
         <div>
             <form method='post' action="index.php">
