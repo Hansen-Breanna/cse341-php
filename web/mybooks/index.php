@@ -26,7 +26,7 @@ switch ($action){
         $catalog = getCatalog($_SESSION['id']);
         $catalogTable = displayCatalog($catalog);
         $get_title = getTitle($title, $_SESSION['id']);
-        $display_title = $displayCatalog($get_title);
+        $display_title = displayCatalog($get_title);
         include 'view/catalog.php';
     break;
     case 'authors':
