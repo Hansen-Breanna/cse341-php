@@ -57,10 +57,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                       echo $catalogTable; 
                     } else if ($_SERVER["REQUEST_METHOD"] == "POST") {
                       echo $displayTitle;
+                      echo "hello";
                     } else if ($_SERVER["REQUEST_METHOD"] == "POST" && $first_name != "" && $last_name != "") {
                      // echo $display_books_by_author;
                     } else {
                       echo $catalogTable; 
+                      echo "last name";
                     }
                   ?>
                 </tbody>
