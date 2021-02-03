@@ -3,7 +3,7 @@
 session_start ();
 
 if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION))) { 
-  $_SESSION['id'] = array(); 
+ // $_SESSION['id'] = array(); 
 }
 
 ?>
@@ -31,19 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION))) {
                 <?php include 'common/search.php'; ?>
 
         <?php echo $reviewsTable; ?>
-          <!-- <table class="table table-dark table-striped text-light">
-            <thead>
-              <tr>
-                <th class="pl-1">Book Title</th>
-                <th class="pl-5">Author</th>
-                <th class="pl-5">Review</th>
-                <th class="pl-5">Rating</th>
-              </tr>
-            </thead>
-            <tbody>
 
-            </tbody>
-          </table> -->
         </div>
       </div>
     </main>
