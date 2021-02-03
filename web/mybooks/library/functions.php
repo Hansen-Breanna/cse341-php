@@ -77,7 +77,7 @@ function getAuthors($id) {
 }
 
 
-// get catalog list
+// get title
 function getTitle($title, $id) {
    $db = connectMyBooks();
    $stmt = $db->prepare('SELECT b.title_of_book, a.first_name, a.middle_name, a.last_name FROM user_book u INNER JOIN book_title b ON u.book_title_id = b.id INNER JOIN author a ON a.id = b.author_id WHERE u.library_user_id = :id AND b.title_of_book = :title');
@@ -85,6 +85,7 @@ function getTitle($title, $id) {
    $stmt->bindValue(':id', $id, PDO::PARAM_INT);
    $stmt->execute();
    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+   var_dump($results);
    return $results;
 }
 
