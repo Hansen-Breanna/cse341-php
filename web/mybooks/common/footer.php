@@ -8,7 +8,7 @@
         <div>
             <form method='post' action="index.php#logout">
                 <input type='hidden' id="logout" name="logout"><br>
-                <input type="submit" class="rs-size btn btn-custom bg-orange m-1" value="Log Out">
+                <input type="submit" class="btn bg-orange m-1 p-2" value="Log Out">
             </form>
         </div>
     </div>
