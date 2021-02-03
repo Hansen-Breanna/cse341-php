@@ -55,7 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                   <?php 
                     if ($_SERVER["REQUEST_METHOD"] == "GET") {
                       echo $catalogTable; 
-                    } else if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                    } else if ($_SERVER["REQUEST_METHOD"] == "POST" && $title != "") {
                       echo $displayTitle;
                       echo "title";
                     } else if ($_SERVER["REQUEST_METHOD"] == "POST" && $first_name != "" && $last_name != "") {
