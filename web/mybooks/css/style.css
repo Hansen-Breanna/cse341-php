@@ -64,6 +64,7 @@ table {
 
 .font-blue {
     color: #17A2B8;
+    font-weight: bold;
 }
 @media only screen and (min-width: 568px) {
     .main-box {
