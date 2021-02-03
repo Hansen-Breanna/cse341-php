@@ -49,6 +49,8 @@ switch ($action){
         $ownTable = displayCatalog($ownWishes);
         include 'view/wish-list.php';
     break;
-    default:
+    case 'home':
         include 'view/home.php';
+    default:
+        include 'view/loans.php';
 }
