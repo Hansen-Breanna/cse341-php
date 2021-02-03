@@ -86,6 +86,7 @@ function getTitle($title, $id) {
    $stmt->execute();
    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
    var_dump($results);
+   echo "hello";
    return $results;
 }
 
