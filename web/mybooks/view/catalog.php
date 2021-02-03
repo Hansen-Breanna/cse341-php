@@ -11,9 +11,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $title = test_input($_POST["title"]);
   $first_name = test_input($_POST["first_name"]);
   $last_name = test_input($_POST["last_name"]);
-  if ($title != "") {
-    $retrieved_title = $get_title;
-  } 
 }
 
 ?>
@@ -59,7 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     if ($_SERVER["REQUEST_METHOD"] == "GET") {
                       echo $catalogTable; 
                     } else if ($_SERVER["REQUEST_METHOD"] == "POST" && $title != "") {
-                      echo $display_title;
+                      echo $displayTitle;
                     } else if ($_SERVER["REQUEST_METHOD"] == "POST" && $first_name != "" && $last_name != "") {
                      // echo $display_books_by_author;
                     } else {

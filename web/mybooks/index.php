@@ -25,6 +25,8 @@ switch ($action){
     case 'catalog':
         $catalog = getCatalog($_SESSION['id']);
         $catalogTable = displayCatalog($catalog);
+        $retrieveTitle = getTitle($title, $_SESSION['id']);
+        $dispplayTitle = displayCatalog($retrieveTitle);
         include 'view/catalog.php';
     break;
     case 'authors':
