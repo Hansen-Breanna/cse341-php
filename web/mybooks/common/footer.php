@@ -1,7 +1,7 @@
 </div>
 
 <footer class="bg-info mt-3 pb-3 border-top">
-    <div class="container d-flex justify-content-between align-items-start">
+    <div class="container d-flex justify-content-between align-items-center">
         <div class="row d-flex justify-content-between align-items-bottom">
             <p class="">&copy;&nbsp; <?php echo date("Y") ;?> - Breanna Hansen</p>
         </div>
