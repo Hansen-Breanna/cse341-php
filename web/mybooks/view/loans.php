@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION))) {
             <thead>
               <tr>
                 <th class="pl-1">Book Title</th>
-                <th class="pl-5 text-left">Borrower</th>
+                <th class="pl-5">Borrower</th>
                 <th class="pl-5">Borrow Date</th>
                 <th class="pl-5">Return Date</th>
                 <th class="pl-5">Contact</th>
