@@ -2,8 +2,18 @@
 // start session
 session_start ();
 
+$title = $first_name = $last_name = "";
+
 if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION))) {
-} else {
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  $title = test_input($_POST["title"]);
+  $first_name = test_input($_POST["first_name"]);
+  $last_name = test_input($_POST["last_name"]);
+  if ($title != "") {
+      echo "title";
+  } 
 }
 
 ?>
