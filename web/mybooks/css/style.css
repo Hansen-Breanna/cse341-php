@@ -1,3 +1,8 @@
+a:hover {
+    color: #cecece;
+    text-decoration: none;
+}
+
 .bg-orange {
     background-color: #fb8500;
 }
@@ -80,8 +85,7 @@ table {
     }
 }
 
-@media only screen and (min-width: 768px){
-
+@media only screen and (min-width: 768px) {
     .rs-size {
         width: 200px;
     }
