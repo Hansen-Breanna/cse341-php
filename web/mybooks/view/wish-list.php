@@ -28,8 +28,13 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION))) {
 <main class="mb-5">
   <div class="container">
     <div class="row d-flex flex-column align-items-center">
-      <!-- Search Boxes -->
-      <?php include 'common/search.php'; ?>
+                  <!-- Search Title -->
+                  <form method="post" action="index.php?action=catalog">
+            <?php include 'common/title.php'; ?>
+
+            <!-- Search Author -->
+            <form method="post" action="index.php?action=catalog">
+            <?php include 'common/author.php'; ?>
       <div>
         <div class="d-flex justify-content-around">
           <div class="m-2">
