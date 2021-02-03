@@ -1,9 +1,9 @@
 </div>
 
-<footer class="bg-info mt-3 p-3 border-top">
+<footer class="bg-info mt-3 p-2 border-top">
     <div class="container d-flex justify-content-between align-items-start">
-        <div class="row d-flex justify-content-between align-items-center">
-            <p class="mb-0 pt-4">&copy;&nbsp; <?php echo date("Y") ;?> - Breanna Hansen</p>
+        <div class="row d-flex justify-content-between align-items-bottom">
+            <p class="mb-0">&copy;&nbsp; <?php echo date("Y") ;?> - Breanna Hansen</p>
 </div>
 <div>
             <form method='post' action="index.php">
