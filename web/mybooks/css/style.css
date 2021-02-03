@@ -76,6 +76,10 @@ table {
     width: 100px;
 }
 
+#logout {
+    display: none;
+}
+
 @media only screen and (min-width: 568px) {
     .main-box {
         height: 20vh;
