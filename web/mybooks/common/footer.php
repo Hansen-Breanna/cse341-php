@@ -1,12 +1,15 @@
 </div>
 
 <footer class="bg-info mt-3 p-3 border-top">
-    <div class="container d-flex justify-content-between align-items-start">
+    <div class="container d-flex justify-content-between align-items-center">
         <div class="row">
             <p class="mb-0">&copy;&nbsp; <?php echo date("Y") ;?> - Breanna Hansen</p>
         </div>
         <div>
-            <a href="index.php" class="btn bg-orange p-2" title="Log Out" onclick="logout()">Log Out</a>
+            <form method='post' action="index.php#logout">
+                <input type='hidden' id="logout" name="logout" value="logout"><br>
+                <input type="submit" class="btn bg-orange m-1 p-2 shadow" value="Log Out">
+            </form>
         </div>
     </div>
 </footer>

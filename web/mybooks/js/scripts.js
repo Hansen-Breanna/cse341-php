@@ -5,8 +5,7 @@ $(document).ready(function(){
       $(".navbar-toggler").click(function(){
         $("#link-nav").toggle();
       });
+
+      $("#logout").hide();
   });
 
-  function logout() {
-      session_destroy();
-  }
