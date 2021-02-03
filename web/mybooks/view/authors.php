@@ -26,6 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION))) {
 <main class="mb-5">
   <div class="container">
   <div class="row d-flex flex-column align-items-center">
+    <div>
       <!-- Search Boxes -->
       <?php include 'common/search.php'; ?>
     </div>
