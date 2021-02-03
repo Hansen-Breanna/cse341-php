@@ -67,10 +67,12 @@ function getReadWishes($id) {
 }
 
 // get all authors
-function getAuthors() {
-   $db = connectMyBooks();
-   $statement = $db->query('SELECT * FROM author ORDER BY last_name');
-   $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+function getAuthors($id, $db) {
+   //$db = connectMyBooks();
+   $stmt = $db->query('SELECT a.first_name, a.middle_name, a.last_name, u.is_blacklist, u.is_favorite FROM author a INNER JOIN user_author u ON a.id = u.author_id WHERE u.library_user_id = :id ORDER BY last_name');
+   $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+   $stmt->execute();
+   $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
    return $results;
 }
 
@@ -81,31 +83,15 @@ function getAuthors() {
 
 
 
-// // get borrower details 
-// function getBorrower($borrower_id) {
-//    $db = connectMyBooks();
-//    $stmt = $db->query('SELECT * FROM borrower WHERE id = :id');
-//    $stmt->execute(array(':id' => $borrower_id));
-//    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-//    return $results;
-// }
 
 
-// // Get authors names
-// function getAuthorName($author_id) {
-//    $db = connectMyBooks();
-//    $stmt = $db->prepare('SELECT first_name, middle_name, last_name FROM author WHERE id = :id');
-//    $stmt->execute(array(':id' => $author_id));
-//    $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
-//    return $row[0]['first_name'] . " " . $row[0]['middle_name'] . " " . $row[0]['last_name'];
-// }
+function getDetails($book_title_id) {
+   $db = connectMyBooks();
+   $stmt = $db->prepare('SELECT author.first_name, author.middle_name, author.last_name, book_title.title_of_book FROM author INNER JOIN book_title ON author.id = book_title.author_id WHERE book_title.id = :id');
+   $stmt->execute(array(':id' => $book_title_id));
+   $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
+   return $row;
+}
 
-// function getDetails($book_title_id) {
-//    $db = connectMyBooks();
-//    $stmt = $db->prepare('SELECT author.first_name, author.middle_name, author.last_name, book_title.title_of_book FROM author INNER JOIN book_title ON author.id = book_title.author_id WHERE book_title.id = :id');
-//    $stmt->execute(array(':id' => $book_title_id));
-//    $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
-//    return $row;
-// }
 
 ?>

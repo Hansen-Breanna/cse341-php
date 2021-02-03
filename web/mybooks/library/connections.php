@@ -22,4 +22,6 @@ function connectMyBooks() {
   }
 }
 
+$db = connectMyBooks();
+
 ?>
