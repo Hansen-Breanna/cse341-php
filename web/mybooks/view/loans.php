@@ -29,6 +29,8 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION))) {
       <div class="row d-flex flex-column align-items-center">
                      <!-- Search Boxes -->
                      <?php include 'common/search.php'; ?>
+
+                     <p>SMS message reminders must be sent from a mobile device.</a>
           <table class="table table-dark table-striped text-light">
             <thead>
               <tr>
