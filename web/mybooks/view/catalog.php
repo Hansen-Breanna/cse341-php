@@ -29,7 +29,8 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION))) {
         <div class="row d-flex flex-column align-items-center">
           <div>
             <!-- Search Boxes -->
-            <?php include 'common/search.php'; ?>
+            <?php include 'common/title.php'; ?>
+            <?php include 'common/author.php'; ?>
           </div>
           <div>
             <table class="table table-dark table-striped text-light">
