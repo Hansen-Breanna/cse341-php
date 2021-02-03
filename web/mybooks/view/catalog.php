@@ -11,6 +11,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $title = test_input($_POST["title"]);
   $first_name = test_input($_POST["first_name"]);
   $last_name = test_input($_POST["last_name"]);
+  $_SESSION['title'] = $title;
+  $_SESSION['first_name'] = $first_name;
+  $_SESSION['last_name'] = $last_name;
 }
 
 ?>
