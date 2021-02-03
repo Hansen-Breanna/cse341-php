@@ -34,8 +34,8 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION))) {
               <tr>
                 <th class="pl-1">Book Title</th>
                 <th class="pl-5">Borrower</th>
-                <th class="pl-5">Borrowed</th>
-                <th class="pl-5">Overdue</th>
+                <th class="pl-5">Borrow Date</th>
+                <th class="pl-5">Return Date</th>
                 <th class="pl-5">Contact</th>
               </tr>
             </thead>

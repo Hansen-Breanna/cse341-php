@@ -148,13 +148,6 @@ function displayLoans($loans) {
    return $loanList;
 }
 
-function overdue($date) {
-   echo $date;
-   if($date > date("Y-m-d")) {
-      echo "Yes";
-   }
-}
-
 function displayReviews($reviews) {
    $reviewList = '<div class="d-flex justify-content-center review">';
    foreach ($reviews as $review) {
