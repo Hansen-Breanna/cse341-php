@@ -3,7 +3,7 @@
 session_start ();
 
 if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION))) { 
-  $_SESSION['id'] = array(); 
+
 } 
 ?>
 
@@ -35,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION))) {
           <tr>
             <th>Authors</th>
             <th>Favorite</th>
-            <th">Blacklisted</th>
+            <th>Blacklisted</th>
           </tr>
         </thead>
         <tbody>
