@@ -150,6 +150,7 @@ function displayLoans($loans) {
 
 function overdue($date) {
    echo $date;
+   echo date("Y-m-d");
    if($date > date("Y-m-d")) {
       return "Yes";
    }
