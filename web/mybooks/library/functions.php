@@ -67,10 +67,12 @@ function getReadWishes($id) {
 }
 
 // get all authors
-function getAuthors() {
+function getAuthors($id) {
    $db = connectMyBooks();
-   $statement = $db->query('SELECT * FROM author ORDER BY last_name');
-   $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+   $stmt = $db->query('SELECT a.first_name, a.middle_name, a.last_name, u.is_blacklist, u.is_favorite FROM author a INNER JOIN user_author u ON a.id = u.author_id WHERE u.library_user_id = :id ORDER BY last_name');
+   $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+   $stmt->execute();
+   $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
    return $results;
 }
 

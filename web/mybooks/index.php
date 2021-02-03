@@ -28,7 +28,7 @@ switch ($action){
         include 'view/catalog.php';
     break;
     case 'authors':
-        $authors = getAuthors($id);
+        $authors = getAuthors($_SESSION['id']);
         $authorsTable = displayAuthors($authors);
         include 'view/authors.php';
     break;
