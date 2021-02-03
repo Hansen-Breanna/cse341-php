@@ -32,11 +32,11 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION))) {
           <table class="table table-dark table-striped text-light">
             <thead>
               <tr>
-                <th class="pl-1">Book Title</th>
-                <th class="pl-5">Borrower</th>
-                <th class="pl-5">Borrow Date</th>
-                <th class="pl-5">Return Date</th>
-                <th class="pl-5">Contact</th>
+                <th class="pl-2">Book Title</th>
+                <th>Borrower</th>
+                <th>Borrow Date</th>
+                <th>Return Date</th>
+                <th>Contact</th>
               </tr>
             </thead>
             <tbody>
