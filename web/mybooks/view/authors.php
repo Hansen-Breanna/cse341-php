@@ -33,9 +33,9 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION))) {
       <table class="table table-dark table-striped text-light">
         <thead>
           <tr>
-            <th class="pl-5">Authors</th>
-            <th class="pl-5">Favorite</th>
-            <th class="pl-5">Blacklisted</th>
+            <th>Authors</th>
+            <th>Favorite</th>
+            <th">Blacklisted</th>
           </tr>
         </thead>
         <tbody>
