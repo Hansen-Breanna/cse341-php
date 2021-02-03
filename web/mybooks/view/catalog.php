@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $first_name = test_input($_POST["first_name"]);
   $last_name = test_input($_POST["last_name"]);
   if ($title != "") {
-      echo "title";
+    $retrieved_title = $get_title;
   } 
 }
 
