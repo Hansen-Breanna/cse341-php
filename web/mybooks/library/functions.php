@@ -52,13 +52,13 @@ function getCatalog($id) {
    return $results;
 }
 
-//  // get reviews
-//  function getReviews() {
-//    $db = connectMyBooks();
-//    $statement = $db->query('SELECT * FROM reviews');
-//    $results = $statement->fetchAll(PDO::FETCH_ASSOC);
-//    return $results;
-// }
+ // get reviews
+ function getReviews() {
+   $db = connectMyBooks();
+   $statement = $db->query('SELECT * FROM reviews');
+   $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+   return $results;
+}
 
 // // get own wish list 
 // function getOwnWishes($id) {
