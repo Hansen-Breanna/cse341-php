@@ -35,6 +35,16 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION))) {
         <!-- Search Borrowers -->
         <form method="post" action="index.php?action=loans-borrower">
         <?php include 'common/borrower.php'; ?>
+
+        <div class="my-3 mx-2 py-2 border-secondary border-top border-bottom">
+          <a href="index.php?action=add-borrower" class="btn btn-custom bg-orange text-dark my-2 mr-2">Add Borrower</a>
+          <a href="index.php?action=remove-borrower" class="btn btn-custom bg-orange text-dark my-2">Remove Borrower</a>
+        </div>
+
+        <div class="my-3 mx-2 py-2 border-secondary border-top border-bottom">
+            <a href="index.php?action=add-loan" class="btn btn-custom bg-orange text-dark my-2 mr-2">Add Loan</a>
+            <a href="index.php?action=remove-loan" class="btn btn-custom bg-orange text-dark my-2">Remove Loan</a>
+        </div>
       </div>
       <p class="font-blue">SMS message reminders must be sent from a mobile device.</a>
       <table class="table table-dark table-striped text-light">
