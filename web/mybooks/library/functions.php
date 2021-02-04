@@ -64,7 +64,6 @@ function getOwnTitle($title, $id) {
    $stmt->bindValue(':title', $title, PDO::PARAM_STR);
    $stmt->execute();
    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-   var_dump($results);
    return $results;
 }
 
