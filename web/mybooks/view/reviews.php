@@ -37,7 +37,10 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION))) {
         <?php include 'common/author.php'; ?>
 
         <!-- Add/Remove -->
-        <?php include 'common/add-remove-title.php'; ?>
+        <div class="my-3 mx-2 py-2 border-secondary border-top border-bottom">
+    <a href="index.php?action=add-book" class="btn btn-custom bg-orange text-dark my-2 mr-2">Add Review</a>
+    <a href="index.php?action=remove-book" class="btn btn-custom bg-orange text-dark my-2">Remove Review</a>
+</div>
       </div>
 
         <?php echo $reviewsTable; ?>
