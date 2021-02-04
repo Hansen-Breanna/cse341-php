@@ -62,6 +62,7 @@ function getCatalog($id) {
 
  // get reviews by title
  function getReviewTitle($title) {
+    echo $title;
    $db = connectMyBooks();
    $stmt = $db->prepare('SELECT r.review, r.rating, a.first_name, a.middle_name, a.last_name, b.title_of_book, lu.username FROM reviews r INNER JOIN book_title b ON r.book_title_id = b.id INNER JOIN library_user lu ON r.library_user_id = lu.id INNER JOIN author a ON a.id = b.author_id WHERE b.title_of_book = :title');
    $stmt->bindValue(':title', $title, PDO::PARAM_STR);
