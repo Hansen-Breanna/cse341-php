@@ -40,9 +40,9 @@ switch ($action){
         // include 'view/catalog.php';
     break;
     case 'authors':
-        // $authors = getAuthors($_SESSION['id']);
-        // $authorsTable = displayAuthors($authors);
-        // include 'view/authors.php';
+        $authors = getAuthors($_SESSION['id']);
+        //$authorsTable = displayAuthors($authors);
+        include 'view/authors.php';
     break;
     case 'get-author':
         // $authors = getAuthors($_SESSION['id']);
@@ -60,11 +60,11 @@ switch ($action){
         $loansTable = displayLoans($loans);
         include 'view/loans.php';
     break;
-    case 'loans-borrower':
+    // case 'loans-borrower':
         // $loans = getLoans($_SESSION['id']);
         // $loansTable = displayLoans($loans);
         // include 'view/loans.php';
-    break;
+    // break;
     case 'reviews':
         $reviews = getReviews();
         $reviewsTable = displayReviews($reviews);
