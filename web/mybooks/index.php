@@ -81,13 +81,13 @@ switch ($action){
     //     // $reviewsTable = displayReviews($reviews);
     //     // include 'view/reviews.php';
     // break;
-    // case 'wish':
-    //     $readWishes = getReadWishes($_SESSION['id']);
-    //     $ownWishes = getOwnWishes($_SESSION['id']);
-    //     $readTable = displayCatalog($readWishes);
-    //     $ownTable = displayCatalog($ownWishes);
-    //     include 'view/wish-list.php';
-    // break;
+    case 'wish':
+        $readWishes = getReadWishes($_SESSION['id']);
+        $ownWishes = getOwnWishes($_SESSION['id']);
+        $readTable = displayCatalog($readWishes);
+        $ownTable = displayCatalog($ownWishes);
+        include 'view/wish-list.php';
+    break;
     // case 'wish-title':
     //     $title = test_input($_POST["title"]);
     //     $ownWishes = getOwnTitle($title, $_SESSION['id']);
