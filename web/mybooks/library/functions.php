@@ -112,7 +112,6 @@ function getAuthors($id) {
    return $results;
 }
 
-
 // // get catalog title
 // function getTitle($title, $id) {
 //    $db = connectMyBooks();
@@ -125,12 +124,12 @@ function getAuthors($id) {
 // }
 
  
-// function test_input($data)
-// {
-//     $data = trim($data);
-//     $data = stripslashes($data);
-//     $data = htmlspecialchars($data);
-//     return $data;
-// }
+function test_input($data)
+{
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}
 
 ?>
