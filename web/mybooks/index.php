@@ -60,8 +60,11 @@ switch ($action){
     break;
     case 'wish-title':
         $title = test_input($_POST["title"]);
-        $catalog = getTitle($title, $_SESSION['id']);
-        $catalogTable = displayCatalog($catalog);
+        $ownWishes = getOwnTitle($title, $_SESSION['id']);
+        $ownTable = displayCatalog($ownTitle);
+
+        $readWishes = getReadWishes($_SESSION['id']);
+        $readTable = displayCatalog($readWishes);
         include 'view/wish-list.php';
         break;
     default:
