@@ -29,7 +29,7 @@ switch ($action){
     break;
     case 'title':
         $catalog = getTitle($_SESSION['title'], $_SESSION['id']);
-        $catalogTable = displayCatalog($retrieveTitle);
+        $catalogTable = displayCatalog($catalog);
         include 'view/catalog.php';
     break;
     case 'authors':
