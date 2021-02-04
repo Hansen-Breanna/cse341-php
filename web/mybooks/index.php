@@ -29,6 +29,7 @@ switch ($action){
     break;
     case 'title':
         $catalog = getTitle($_SESSION['title'], $_SESSION['id']);
+        var_dump($catalog);
         $catalogTable = displayCatalog($catalog);
         include 'view/catalog.php';
     break;
