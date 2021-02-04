@@ -49,11 +49,11 @@ switch ($action){
     //     // $authorsTable = displayAuthors($authors);
     //     // include 'view/authors.php';
     // break;
-    // case 'loans':
-    //     $loans = getLoans($_SESSION['id']);
-    //     $loansTable = displayLoans($loans);
-    //     include 'view/loans.php';
-    // break;
+    case 'loans':
+        $loans = getLoans($_SESSION['id']);
+        $loansTable = displayLoans($loans);
+        include 'view/loans.php';
+    break;
     // case 'loans-title':
     //     $title = test_input($_POST["title"]);
     //     $loans = getLoansTitle($title, $_SESSION['id']);
