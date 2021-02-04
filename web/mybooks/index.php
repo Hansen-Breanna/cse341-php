@@ -37,8 +37,8 @@ switch ($action){
         $first_name = test_input($_POST["first_name"]);
         $last_name = test_input($_POST["last_name"]);
         $catalog = getCatalogAuthor($first_name, $last_name, $_SESSION['id']);
-        // $catalogTable = displayCatalog($catalog);
-        // include 'view/catalog.php';
+        $catalogTable = displayCatalog($catalog);
+        include 'view/catalog.php';
     break;
     case 'authors':
         $authors = getAuthors($_SESSION['id']);
