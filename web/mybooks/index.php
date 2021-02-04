@@ -41,7 +41,7 @@ switch ($action){
     break;
     case 'authors':
         $authors = getAuthors($_SESSION['id']);
-        //$authorsTable = displayAuthors($authors);
+        $authorsTable = displayAuthors($authors);
         include 'view/authors.php';
     break;
     case 'get-author':

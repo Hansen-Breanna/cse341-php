@@ -63,26 +63,26 @@ function getDetails($book_title_id) {
     return $row;
  }
 
-//  // Display authors
-// function displayAuthors($authors) {
-//     var_dump($authors);
-//     $authorList = '<tbody>';
-//     foreach ($authors as $author) {
-//        $authorList .= '<tr><td class="pr-2">' . $author['last_name'] . ', ' . $author['first_name'] . ' ' . $author['middle_name'] . '</td>';
-//        if($author['is_favorite'] == 't') {
-//           $authorList .= '<td>Yes</td>';
-//        } else {
-//           $authorList .= '<td></td>';
-//        }
-//        if($author['is_blacklist'] == 't') {
-//           $authorList .= '<td>Yes</td></tr>';
-//        } else {
-//           $authorList .= '<td></td>';
-//        }
-//     }
-//     $authorList .= '</tbody>';
-//     return $authorList;
-//  }
+ // Display authors
+function displayAuthors($authors) {
+    var_dump($authors);
+    $authorList = '<tbody>';
+    foreach ($authors as $author) {
+       $authorList .= '<tr><td class="pr-2">' . $author['last_name'] . ', ' . $author['first_name'] . ' ' . $author['middle_name'] . '</td>';
+       if($author['is_favorite'] == 't') {
+          $authorList .= '<td>Yes</td>';
+       } else {
+          $authorList .= '<td></td>';
+       }
+       if($author['is_blacklist'] == 't') {
+          $authorList .= '<td>Yes</td></tr>';
+       } else {
+          $authorList .= '<td></td></tr>';
+       }
+    }
+    $authorList .= '</tbody>';
+    return $authorList;
+ }
 
  function test_input($data)
 {
