@@ -29,11 +29,11 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION))) {
       <div class="row d-flex flex-column align-items-center">
       <div>
         <!-- Search Title -->
-        <form method="post" action="index.php?action=reviews">
+        <form method="post" action="index.php?action=reviews-title">
         <?php include 'common/title.php'; ?>
 
         <!-- Search Author -->
-        <form method="post" action="index.php?action=reviews">
+        <form method="post" action="index.php?action=reviews-author">
         <?php include 'common/author.php'; ?>
       </div>
 

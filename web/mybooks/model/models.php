@@ -29,10 +29,10 @@ function displayLoans($loans) {
  }
 
  function displayReviews($reviews) {
+     var_dump($reviews);
     $reviewList = '<div class="d-flex justify-content-center review">';
     foreach ($reviews as $review) {
        $count = $review['rating'];
-       $details = getDetails($review['book_title_id']);
        $reviewList .= '<div class="p-3 border border-secondary m-3"><p>';
        for ($i = 0; $i < $count; $i++) {
           $reviewList .= '<i class="fa fa-star text-orange"></i>';
@@ -43,9 +43,9 @@ function displayLoans($loans) {
              $reviewList .= '<i class="far fa-star text-orange"></i>';
           }
        }   
-       $reviewList .= ' (' . $review['rating'] . ')</p>';
-       $reviewList .= '<h3>' . $details[0]['title_of_book'] . '</h3>';
-       $reviewList .= '<p>by: ' . $details[0]['first_name'] . ' ' . $details[0]['middle_name'] . ' ' . $details[0]['last_name'] . '<p>';
+       $reviewList .= ' (' . $review['rating'] . ') by: '. $review['username'] . '</p>';
+       $reviewList .= '<h3>' . $review['title_of_book'] . '</h3>';
+       $reviewList .= '<p>by: ' . $review['first_name'] . ' ' . $review['middle_name'] . ' ' . $review['last_name'] . '<p>';
        $reviewList .= '<p>' . $review['review'] . '<p>';
        $reviewList .= '</div>';
     }
