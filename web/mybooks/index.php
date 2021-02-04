@@ -27,28 +27,28 @@ switch ($action){
         $catalogTable = displayCatalog($catalog);
         include 'view/catalog.php';
     break;
-    // case 'catalog-title':
-    //     $title = test_input($_POST["title"]);
-    //     $catalog = getTitle($title, $_SESSION['id']);
-    //     $catalogTable = displayCatalog($catalog);
-    //     include 'view/catalog.php';
-    // break;
-    // case 'catalog-author':
-    //     // $title = test_input($_POST["title"]);
-    //     // $catalog = getTitle($title, $_SESSION['id']);
-    //     // $catalogTable = displayCatalog($catalog);
-    //     // include 'view/catalog.php';
-    // break;
-    // case 'authors':
-    //     $authors = getAuthors($_SESSION['id']);
-    //     $authorsTable = displayAuthors($authors);
-    //     include 'view/authors.php';
-    // break;
-    // case 'get-author':
-    //     // $authors = getAuthors($_SESSION['id']);
-    //     // $authorsTable = displayAuthors($authors);
-    //     // include 'view/authors.php';
-    // break;
+    case 'catalog-title':
+        $title = test_input($_POST["title"]);
+        $catalog = getTitle($title, $_SESSION['id']);
+        $catalogTable = displayCatalog($catalog);
+        include 'view/catalog.php';
+    break;
+    case 'catalog-author':
+        // $title = test_input($_POST["title"]);
+        // $catalog = getTitle($title, $_SESSION['id']);
+        // $catalogTable = displayCatalog($catalog);
+        // include 'view/catalog.php';
+    break;
+    case 'authors':
+        // $authors = getAuthors($_SESSION['id']);
+        // $authorsTable = displayAuthors($authors);
+        // include 'view/authors.php';
+    break;
+    case 'get-author':
+        // $authors = getAuthors($_SESSION['id']);
+        // $authorsTable = displayAuthors($authors);
+        // include 'view/authors.php';
+    break;
     case 'loans':
         $loans = getLoans($_SESSION['id']);
         $loansTable = displayLoans($loans);
@@ -60,22 +60,22 @@ switch ($action){
         $loansTable = displayLoans($loans);
         include 'view/loans.php';
     break;
-    // case 'loans-borrower':
-    //     // $loans = getLoans($_SESSION['id']);
-    //     // $loansTable = displayLoans($loans);
-    //     // include 'view/loans.php';
-    // break;
+    case 'loans-borrower':
+        // $loans = getLoans($_SESSION['id']);
+        // $loansTable = displayLoans($loans);
+        // include 'view/loans.php';
+    break;
     case 'reviews':
         $reviews = getReviews();
         $reviewsTable = displayReviews($reviews);
         include 'view/reviews.php';
     break;
-    // case 'reviews-title':
-    //     // $title = test_input($_POST["title"]);
-    //     // $reviews = getReviews($title);
-    //     // $reviewsTable = displayReviews($reviews);
-    //     // include 'view/reviews.php';
-    // break;
+    case 'reviews-title':
+        // $title = test_input($_POST["title"]);
+        // $reviews = getReviews($title);
+        // $reviewsTable = displayReviews($reviews);
+        // include 'view/reviews.php';
+    break;
     // case 'reviews-author':
     //     // $reviews = getReviews();
     //     // $reviewsTable = displayReviews($reviews);
@@ -96,7 +96,6 @@ switch ($action){
         $readTable = displayCatalog($readWishes);
         include 'view/wish-list.php';
     break;
-    // default:
     // case 'wish-author':
     //     // $title = test_input($_POST["title"]);
     //     // $ownWishes = getOwnTitle($title, $_SESSION['id']);
