@@ -14,8 +14,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $_SESSION['title'] = $title;
   $_SESSION['first_name'] = $first_name;
   $_SESSION['last_name'] = $last_name;
-  $retrieveTitle = getTitle($_SESSION['title'], $_SESSION['id']);
-  $displayTitle = displayCatalog($retrieveTitle);
+  if ($title != "") {
+    $retrieveTitle = getTitle($_SESSION['title'], $_SESSION['id']);
+    $displayTitle = displayCatalog($retrieveTitle);
+  }
+  if ($first_name != "") {
+    
+  }
 }
 
 ?>
