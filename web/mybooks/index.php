@@ -28,6 +28,8 @@ switch ($action){
         include 'view/catalog.php';
     break;
     case 'title':
+        $title = test_input($_POST["title"]);
+        $_SESSION['title'] = $title;
         $catalog = getTitle($_SESSION['title'], $_SESSION['id']);
         var_dump($catalog);
         $catalogTable = displayCatalog($catalog);
