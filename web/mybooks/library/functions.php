@@ -124,6 +124,8 @@ function getAuthors($id) {
 
 // get author by name
 function getByAuthor($first_name, $last_name, $id) {
+   
+   echo $first_name . ' ' . $last_name . ' ' . $id;
    $db = connectMyBooks();
    $stmt = $db->prepare('SELECT a.first_name, a.middle_name, a.last_name, u.is_blacklist, u.is_favorite FROM author a INNER JOIN user_author u ON a.id = u.author_id WHERE u.library_user_id = :id WHERE a.first_name = :first_name AND a.last_name = :last_name');
    $stmt->bindValue(':first_name', $first_name, PDO::PARAM_STR);
