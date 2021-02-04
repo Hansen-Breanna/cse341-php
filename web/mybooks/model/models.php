@@ -44,10 +44,11 @@ function displayLoans($loans) {
             $reviewList .= '<i class="far fa-star text-orange"></i>';
          }
       }   
-      $reviewList .= ' (' . $review['rating'] . ') by: '. $review['username'] . '</p>';
+      $reviewList .= ' (' . $review['rating'] . ')</p>';
       $reviewList .= '<h3>' . $review['title_of_book'] . '</h3>';
       $reviewList .= '<p>by: ' . $review['first_name'] . ' ' . $review['middle_name'] . ' ' . $review['last_name'] . '<p>';
       $reviewList .= '<p>' . $review['review'] . '<p>';
+      $reviewList .= '<p>Review by: ' . $review['username'] . '</p>';
       $reviewList .= '</div>';
    }
    $reviewList .= '</div>';
