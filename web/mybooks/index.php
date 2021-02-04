@@ -71,10 +71,10 @@ switch ($action){
         include 'view/reviews.php';
     break;
     case 'reviews-title':
-        // $title = test_input($_POST["title"]);
-        // $reviews = getReviews($title);
-        // $reviewsTable = displayReviews($reviews);
-        // include 'view/reviews.php';
+        $title = test_input($_POST["title"]);
+        $reviews = getReviewTitle($title);
+        $reviewsTable = displayReviews($reviews);
+        include 'view/reviews.php';
     break;
     // case 'reviews-author':
     //     // $reviews = getReviews();

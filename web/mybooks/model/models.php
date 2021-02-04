@@ -30,7 +30,6 @@ function displayLoans($loans) {
 
  
  function displayReviews($reviews) {
-    var_dump($reviews);
    $reviewList = '<div class="d-flex justify-content-center review">';
    foreach ($reviews as $review) {
       $count = $review['rating'];
