@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $displayTitle = displayCatalog($retrieveTitle);
   }
   if ($first_name != "") {
-    
+
   }
 }
 
@@ -46,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="row d-flex flex-column align-items-center">
           <div>
             <!-- Search Title -->
-            <form method="post" action="index.php?action=catalog">
+            <form method="post" action="index.php?action=title">
             <?php include 'common/title.php'; ?>
 
             <!-- Search Author -->
@@ -63,17 +63,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </thead>
                 <tbody>
                   <?php 
-                    if ($_SERVER["REQUEST_METHOD"] == "GET") {
-                      echo $catalogTable; 
-                    } else if ($_SERVER["REQUEST_METHOD"] == "POST" && $title != "") {
-                      echo $displayTitle;
-                      echo "title";
-                    } else if ($_SERVER["REQUEST_METHOD"] == "POST" && $first_name != "" && $last_name != "") {
-                     // echo $display_books_by_author;
-                     echo "last name";
-                    } else {
-                      echo $catalogTable; 
-                    }
+
+                    echo $catalogTable; 
+                    // if ($_SERVER["REQUEST_METHOD"] == "GET") {
+                    //   echo $catalogTable; 
+                    // } else if ($_SERVER["REQUEST_METHOD"] == "POST" && $title != "") {
+                    //   echo $displayTitle;
+                    //   echo "title";
+                    // } else if ($_SERVER["REQUEST_METHOD"] == "POST" && $first_name != "" && $last_name != "") {
+                    //  // echo $display_books_by_author;
+                    //  echo "last name";
+                    // } else {
+                    //   echo $catalogTable; 
+                    // }
                   ?>
                 </tbody>
               </table>
