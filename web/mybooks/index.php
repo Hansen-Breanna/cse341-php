@@ -88,14 +88,14 @@ switch ($action){
         $ownTable = displayCatalog($ownWishes);
         include 'view/wish-list.php';
     break;
-    // case 'wish-title':
-    //     $title = test_input($_POST["title"]);
-    //     $ownWishes = getOwnTitle($title, $_SESSION['id']);
-    //     $ownTable = displayCatalog($ownWishes);
-    //     $readWishes = getReadTitle($title, $_SESSION['id']);
-    //     $readTable = displayCatalog($readWishes);
-    //     include 'view/wish-list.php';
-    // break;
+    case 'wish-title':
+        $title = test_input($_POST["title"]);
+        $ownWishes = getOwnTitle($title, $_SESSION['id']);
+        $ownTable = displayCatalog($ownWishes);
+        $readWishes = getReadTitle($title, $_SESSION['id']);
+        $readTable = displayCatalog($readWishes);
+        include 'view/wish-list.php';
+    break;
     // default:
     // case 'wish-author':
     //     // $title = test_input($_POST["title"]);
