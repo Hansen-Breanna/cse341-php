@@ -67,7 +67,7 @@ switch ($action){
     break;
     case 'reviews':
         $reviews = getReviews($_SESSION['id']);
-        //$reviewsTable = displayReviews($reviews);
+        $reviewsTable = displayReviews($reviews);
         include 'view/reviews.php';
     break;
     case 'reviews-title':
