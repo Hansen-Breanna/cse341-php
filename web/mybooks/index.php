@@ -61,10 +61,9 @@ switch ($action){
     case 'wish-title':
         $title = test_input($_POST["title"]);
         $ownWishes = getOwnTitle($title, $_SESSION['id']);
-        var_dump($ownWishes);
         $ownTable = displayCatalog($ownWishes);
 
-        $readWishes = getReadWishes($_SESSION['id']);
+        $readWishes = getReadTitle($title, $_SESSION['id']);
         $readTable = displayCatalog($readWishes);
         include 'view/wish-list.php';
         break;
