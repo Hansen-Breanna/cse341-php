@@ -1,15 +1,15 @@
 <?php
 
-// // Display book catalog
-// function displayCatalog($catalog) {
-//     $bookList = '<tbody>';
-//     foreach ($catalog as $book) {
-//        $bookList .= '<tr><td>' . $book['title_of_book'] . '</td>';
-//        $bookList .= '<td class="pl-5">' . $book['first_name'] . ' ' . $book['middle_name'] . ' ' . $book['last_name'] . '</td></tr>';
-//     }
-//     $bookList .= '</tbody>';
-//     return $bookList;
-//  }
+// Display book catalog
+function displayCatalog($catalog) {
+    $bookList = '<tbody>';
+    foreach ($catalog as $book) {
+       $bookList .= '<tr><td>' . $book['title_of_book'] . '</td>';
+       $bookList .= '<td class="pl-5">' . $book['first_name'] . ' ' . $book['middle_name'] . ' ' . $book['last_name'] . '</td></tr>';
+    }
+    $bookList .= '</tbody>';
+    return $bookList;
+ }
 
 //  // Display loans
 // function displayLoans($loans) {

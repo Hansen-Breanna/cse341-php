@@ -22,11 +22,11 @@ $action = filter_input(INPUT_POST, 'action');
 
 // Switch case to choose page
 switch ($action){
-    // case 'catalog':
-    //     $catalog = getCatalog($_SESSION['id']);
-    //     $catalogTable = displayCatalog($catalog);
-    //     include 'view/catalog.php';
-    // break;
+    case 'catalog':
+        $catalog = getCatalog($_SESSION['id']);
+        $catalogTable = displayCatalog($catalog);
+        include 'view/catalog.php';
+    break;
     // case 'catalog-title':
     //     $title = test_input($_POST["title"]);
     //     $catalog = getTitle($title, $_SESSION['id']);
