@@ -25,7 +25,7 @@ session_start ();
   <div class="row d-flex flex-column align-items-center">
     <div>
       <!-- Search Author -->
-      <form method="post" action="index.php?action=get-author">
+      <form method="post" action="index.php?action=wish-author">
       <?php include 'common/author.php'; ?>
     </div>
     <div>
