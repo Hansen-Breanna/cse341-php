@@ -65,11 +65,11 @@ switch ($action){
     //     // $loansTable = displayLoans($loans);
     //     // include 'view/loans.php';
     // break;
-    // case 'reviews':
-    //     $reviews = getReviews();
-    //     $reviewsTable = displayReviews($reviews);
-    //     include 'view/reviews.php';
-    // break;
+    case 'reviews':
+        $reviews = getReviews();
+        $reviewsTable = displayReviews($reviews);
+        include 'view/reviews.php';
+    break;
     // case 'reviews-title':
     //     // $title = test_input($_POST["title"]);
     //     // $reviews = getReviews($title);

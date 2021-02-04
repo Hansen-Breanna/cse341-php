@@ -28,39 +28,39 @@ function displayLoans($loans) {
     return $loanList;
  }
 
-//  function displayReviews($reviews) {
-//     $reviewList = '<div class="d-flex justify-content-center review">';
-//     foreach ($reviews as $review) {
-//        $count = $review['rating'];
-//        $details = getDetails($review['book_title_id']);
-//        $reviewList .= '<div class="p-3 border border-secondary m-3"><p>';
-//        for ($i = 0; $i < $count; $i++) {
-//           $reviewList .= '<i class="fa fa-star text-orange"></i>';
-//        }
-//        if ($review['rating'] < 5) {
-//           $emptyStars = 5 - $count;
-//           for ($i = 0; $i < $emptyStars; $i++) {
-//              $reviewList .= '<i class="far fa-star text-orange"></i>';
-//           }
-//        }   
-//        $reviewList .= ' (' . $review['rating'] . ')</p>';
-//        $reviewList .= '<h3>' . $details[0]['title_of_book'] . '</h3>';
-//        $reviewList .= '<p>by: ' . $details[0]['first_name'] . ' ' . $details[0]['middle_name'] . ' ' . $details[0]['last_name'] . '<p>';
-//        $reviewList .= '<p>' . $review['review'] . '<p>';
-//        $reviewList .= '</div>';
-//     }
-//     $reviewList .= '</div>';
-//     return $reviewList;
-//  }
+ function displayReviews($reviews) {
+    $reviewList = '<div class="d-flex justify-content-center review">';
+    foreach ($reviews as $review) {
+       $count = $review['rating'];
+       $details = getDetails($review['book_title_id']);
+       $reviewList .= '<div class="p-3 border border-secondary m-3"><p>';
+       for ($i = 0; $i < $count; $i++) {
+          $reviewList .= '<i class="fa fa-star text-orange"></i>';
+       }
+       if ($review['rating'] < 5) {
+          $emptyStars = 5 - $count;
+          for ($i = 0; $i < $emptyStars; $i++) {
+             $reviewList .= '<i class="far fa-star text-orange"></i>';
+          }
+       }   
+       $reviewList .= ' (' . $review['rating'] . ')</p>';
+       $reviewList .= '<h3>' . $details[0]['title_of_book'] . '</h3>';
+       $reviewList .= '<p>by: ' . $details[0]['first_name'] . ' ' . $details[0]['middle_name'] . ' ' . $details[0]['last_name'] . '<p>';
+       $reviewList .= '<p>' . $review['review'] . '<p>';
+       $reviewList .= '</div>';
+    }
+    $reviewList .= '</div>';
+    return $reviewList;
+ }
 
-//  // Do a join in reviews
-// function getDetails($book_title_id) {
-//     $db = connectMyBooks();
-//     $stmt = $db->prepare('SELECT author.first_name, author.middle_name, author.last_name, book_title.title_of_book FROM author INNER JOIN book_title ON author.id = book_title.author_id WHERE book_title.id = :id');
-//     $stmt->execute(array(':id' => $book_title_id));
-//     $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
-//     return $row;
-//  }
+ // Do a join in reviews
+function getDetails($book_title_id) {
+    $db = connectMyBooks();
+    $stmt = $db->prepare('SELECT author.first_name, author.middle_name, author.last_name, book_title.title_of_book FROM author INNER JOIN book_title ON author.id = book_title.author_id WHERE book_title.id = :id');
+    $stmt->execute(array(':id' => $book_title_id));
+    $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $row;
+ }
 
 //  // Display authors
 // function displayAuthors($authors) {
