@@ -4,16 +4,16 @@
  * This is my helper functions file.
  */
 
-// // get user id
-// function getUserID($username, $password) {
-//    $db = connectMyBooks();
-//    $stmt = $db->prepare('SELECT id FROM library_user WHERE username = :username AND user_password = :user_password');
-//    $stmt->bindValue(':username', $username, PDO::PARAM_STR);
-//    $stmt->bindValue(':user_password', $password, PDO::PARAM_STR);
-//    $stmt->execute();
-//    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-//    return $results[0]['id'];
-// }
+// get user id
+function getUserID($username, $password) {
+   $db = connectMyBooks();
+   $stmt = $db->prepare('SELECT id FROM library_user WHERE username = :username AND user_password = :user_password');
+   $stmt->bindValue(':username', $username, PDO::PARAM_STR);
+   $stmt->bindValue(':user_password', $password, PDO::PARAM_STR);
+   $stmt->execute();
+   $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+   return $results[0]['id'];
+}
 
 // // get catalog list
 // function getCatalog($id) {
