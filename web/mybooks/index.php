@@ -81,13 +81,13 @@ switch ($action){
         $reviewsTable = displayReviews($reviews);
         include 'view/reviews.php';
     break;
-    // case 'reviews-author':
+    case 'reviews-author':
         $first_name = test_input($_POST["first_name"]);
         $last_name = test_input($_POST["last_name"]);
-    //     // $reviews = getAuthorReviews($first_name, $last_name);
-    //     // $reviewsTable = displayReviews($reviews);
-    //     // include 'view/reviews.php';
-    // break;
+        $reviews = getAuthorReviews($first_name, $last_name);
+        $reviewsTable = displayReviews($reviews);
+        include 'view/reviews.php';
+    break;
     case 'wish':
         $readWishes = getReadWishes($_SESSION['id']);
         $ownWishes = getOwnWishes($_SESSION['id']);
