@@ -45,6 +45,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <!-- Search Author -->
             <form method="post" action="index.php?action=catalog-author">
             <?php include 'common/author.php'; ?>
+
+            <!-- Add/Remove -->
+            <?php include 'common/add-remove-title.php'; ?>
           </div>
           <div>
             <table class="table table-dark table-striped text-light">
