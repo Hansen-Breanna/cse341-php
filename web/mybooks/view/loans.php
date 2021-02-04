@@ -29,11 +29,11 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION))) {
     <div class="row d-flex flex-column align-items-center">
       <div>
         <!-- Search Title -->
-        <form method="post" action="index.php?action=loans">
+        <form method="post" action="index.php?action=loans-title">
           <?php include 'common/title.php'; ?>
 
         <!-- Search Borrowers -->
-        <form method="post" action="index.php?action=loans">
+        <form method="post" action="index.php?action=loans-borrower">
         <?php include 'common/borrower.php'; ?>
       </div>
       <p class="font-blue">SMS message reminders must be sent from a mobile device.</a>
