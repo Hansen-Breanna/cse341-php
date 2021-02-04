@@ -27,13 +27,15 @@ switch ($action){
         $catalogTable = displayCatalog($catalog);
         include 'view/catalog.php';
     break;
-    case 'title':
+    case 'catalog-title':
         $title = test_input($_POST["title"]);
         $_SESSION['title'] = $title;
         $catalog = getTitle($_SESSION['title'], $_SESSION['id']);
-        var_dump($catalog);
         $catalogTable = displayCatalog($catalog);
         include 'view/catalog.php';
+    break;
+    case 'catalog-author':
+
     break;
     case 'authors':
         $authors = getAuthors($_SESSION['id']);

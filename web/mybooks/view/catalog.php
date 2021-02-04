@@ -14,13 +14,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $_SESSION['title'] = $title;
   $_SESSION['first_name'] = $first_name;
   $_SESSION['last_name'] = $last_name;
-  if ($title != "") {
-    $retrieveTitle = getTitle($_SESSION['title'], $_SESSION['id']);
-    $displayTitle = displayCatalog($retrieveTitle);
-  }
-  if ($first_name != "") {
-
-  }
 }
 
 ?>
@@ -46,11 +39,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="row d-flex flex-column align-items-center">
           <div>
             <!-- Search Title -->
-            <form method="post" action="index.php?action=title">
+            <form method="post" action="index.php?action=catalog-title">
             <?php include 'common/title.php'; ?>
 
             <!-- Search Author -->
-            <form method="post" action="index.php?action=catalog">
+            <form method="post" action="index.php?action=catalog-author">
             <?php include 'common/author.php'; ?>
           </div>
           <div>
