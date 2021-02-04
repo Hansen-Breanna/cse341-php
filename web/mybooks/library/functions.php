@@ -53,12 +53,10 @@ function getCatalog($id) {
 }
 
  // get reviews
- function getReviews($id) {
+ function getReviews() {
    $db = connectMyBooks();
-   $stmt = $db->prepare('SELECT r.review, r.rating, a.first_name, a.middle_name, a.last_name, b.title_of_book, lu.username FROM reviews r INNER JOIN book_title b ON r.book_title_id = b.id INNER JOIN library_user lu ON r.library_user_id = lu.id INNER JOIN author a ON a.id = b.author_id WHERE r.library_user_id = :id ');
-   $stmt->bindValue(':id', $id, PDO::PARAM_INT);
-   $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-   var_dump($results);
+   $statement = $db->query('SELECT * FROM reviews');
+   $results = $statement->fetchAll(PDO::FETCH_ASSOC);
    return $results;
 }
 
