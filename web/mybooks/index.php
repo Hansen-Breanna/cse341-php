@@ -66,8 +66,8 @@ switch ($action){
         // include 'view/loans.php';
     break;
     case 'reviews':
-        $reviews = getReviews($_SESSION['id']);
-        $reviewsTable = displayReviews($reviews);
+        //$reviews = getReviews($_SESSION['id']);
+        //$reviewsTable = displayReviews($reviews);
         include 'view/reviews.php';
     break;
     case 'reviews-title':
