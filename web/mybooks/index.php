@@ -46,6 +46,17 @@ switch ($action){
         $loansTable = displayLoans($loans);
         include 'view/loans.php';
     break;
+    case 'loans-title':
+        $title = test_input($_POST["title"]);
+        $loans = getLoansTitle($title, $_SESSION['id']);
+        $loansTable = displayLoans($loans);
+        include 'view/loans.php';
+    break;
+    case 'loans-borrower':
+        $loans = getLoans($_SESSION['id']);
+        $loansTable = displayLoans($loans);
+        include 'view/loans.php';
+    break;
     case 'reviews':
         $reviews = getReviews();
         $reviewsTable = displayReviews($reviews);
@@ -62,7 +73,6 @@ switch ($action){
         $title = test_input($_POST["title"]);
         $ownWishes = getOwnTitle($title, $_SESSION['id']);
         $ownTable = displayCatalog($ownWishes);
-
         $readWishes = getReadTitle($title, $_SESSION['id']);
         $readTable = displayCatalog($readWishes);
         include 'view/wish-list.php';
