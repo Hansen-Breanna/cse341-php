@@ -25,6 +25,30 @@ function getCatalog($id) {
    return $results;
 }
 
+// get catalog title
+function getTitle($title, $id) {
+   $db = connectMyBooks();
+   $stmt = $db->prepare('SELECT b.title_of_book, a.first_name, a.middle_name, a.last_name FROM user_book u INNER JOIN book_title b ON u.book_title_id = b.id INNER JOIN author a ON a.id = b.author_id WHERE u.library_user_id = :id AND b.title_of_book = :title');
+   $stmt->bindValue(':title', $title, PDO::PARAM_STR);
+   $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+   $stmt->execute();
+   $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+   return $results;
+}
+
+// get catalog author
+function getCatalogAuthor($first_name, $last_name, $id) {
+   echo $first_name;
+   $db = connectMyBooks();
+   $stmt = $db->prepare('SELECT b.title_of_book, a.first_name, a.middle_name, a.last_name FROM user_book u INNER JOIN book_title b ON u.book_title_id = b.id INNER JOIN author a ON a.id = b.author_id WHERE u.library_user_id = :id AND a.first_name = :first_name AND a.last_name = :last_name');
+   $stmt->bindValue(':first_name', $first_name, PDO::PARAM_STR);
+   $stmt->bindValue(':last_name', $last_name, PDO::PARAM_STR);
+   $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+   $stmt->execute();
+   $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+   return $results;
+}
+
  // get loans
  function getLoans($id) {
    $db = connectMyBooks();
@@ -117,6 +141,19 @@ function getOwnTitle($title, $id) {
    return $results;
 }
 
+// get own wish list by author
+function getOwnAuthor($first_name, $last_name, $id) {
+   $db = connectMyBooks();
+   $stmt = $db->prepare('SELECT b.title_of_book, a.first_name, a.middle_name, a.last_name FROM user_book u INNER JOIN book_title b ON u.book_title_id = b.id INNER JOIN author a ON a.id = b.author_id WHERE u.library_user_id = :id AND own_wish_list = TRUE AND a.fist_name = :first_name AND a.last_name = :last_name');
+   $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+   $stmt->bindValue(':first_name', $first_name, PDO::PARAM_STR);
+   $stmt->bindValue(':last_name', $last_name, PDO::PARAM_STR);
+   $stmt->execute();
+   $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+   var_dump($results);
+   return $results;
+}
+
 // get read wish list 
 function getReadWishes($id) {
    $db = connectMyBooks();
@@ -152,30 +189,6 @@ function getAuthors($id) {
 function getByAuthor($first_name, $last_name, $id) {
    $db = connectMyBooks();
    $stmt = $db->prepare('SELECT a.first_name, a.middle_name, a.last_name, u.is_blacklist, u.is_favorite FROM author a INNER JOIN user_author u ON a.id = u.author_id WHERE u.library_user_id = :id AND a.first_name = :first_name AND a.last_name = :last_name');
-   $stmt->bindValue(':first_name', $first_name, PDO::PARAM_STR);
-   $stmt->bindValue(':last_name', $last_name, PDO::PARAM_STR);
-   $stmt->bindValue(':id', $id, PDO::PARAM_INT);
-   $stmt->execute();
-   $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-   return $results;
-}
-
-// get catalog title
-function getTitle($title, $id) {
-   $db = connectMyBooks();
-   $stmt = $db->prepare('SELECT b.title_of_book, a.first_name, a.middle_name, a.last_name FROM user_book u INNER JOIN book_title b ON u.book_title_id = b.id INNER JOIN author a ON a.id = b.author_id WHERE u.library_user_id = :id AND b.title_of_book = :title');
-   $stmt->bindValue(':title', $title, PDO::PARAM_STR);
-   $stmt->bindValue(':id', $id, PDO::PARAM_INT);
-   $stmt->execute();
-   $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-   return $results;
-}
-
-// get catalog author
-function getCatalogAuthor($first_name, $last_name, $id) {
-   echo $first_name;
-   $db = connectMyBooks();
-   $stmt = $db->prepare('SELECT b.title_of_book, a.first_name, a.middle_name, a.last_name FROM user_book u INNER JOIN book_title b ON u.book_title_id = b.id INNER JOIN author a ON a.id = b.author_id WHERE u.library_user_id = :id AND a.first_name = :first_name AND a.last_name = :last_name');
    $stmt->bindValue(':first_name', $first_name, PDO::PARAM_STR);
    $stmt->bindValue(':last_name', $last_name, PDO::PARAM_STR);
    $stmt->bindValue(':id', $id, PDO::PARAM_INT);

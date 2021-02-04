@@ -103,15 +103,15 @@ switch ($action){
         $readTable = displayCatalog($readWishes);
         include 'view/wish-list.php';
     break;
-    // case 'wish-author':
+    case 'wish-author':
         $first_name = test_input($_POST["first_name"]);
         $last_name = test_input($_POST["last_name"]);
-    //     // $ownWishes = getOwnAuthor($first_name, $last_name, $_SESSION['id']);
-    //     // $ownTable = displayCatalog($ownWishes);
-    //     // $readWishes = getReadAuthor($first_name, $last_name, $_SESSION['id']);
-    //     // $readTable = displayCatalog($readWishes);
-    //     // include 'view/wish-list.php';
-    // break;
+        $ownWishes = getOwnAuthor($first_name, $last_name, $_SESSION['id']);
+        // $ownTable = displayCatalog($ownWishes);
+        //$readWishes = getReadAuthor($first_name, $last_name, $_SESSION['id']);
+        // $readTable = displayCatalog($readWishes);
+        include 'view/wish-list.php';
+    break;
     default:
         include 'view/home.php';
 }

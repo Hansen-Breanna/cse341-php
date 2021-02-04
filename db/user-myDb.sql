@@ -115,6 +115,7 @@ CREATE TABLE reviews
 INSERT INTO reviews (library_user_id, book_title_id, review, rating) VALUES (1, 1, 'Loved the mystery and humor involved in the historical romance', 5);
 INSERT INTO reviews (library_user_id, book_title_id, review, rating) VALUES (2, 1, 'Deathly boring.', 5);
 INSERT INTO reviews (library_user_id, book_title_id, review, rating) VALUES (3, 2, 'Great read for my wife. Not so much for me.', 5);
+INSERT INTO reviews (library_user_id, book_title_id, review, rating) VALUES (3, 8, 'Fun to read.', 4);
 /* create borrowers */
 CREATE TABLE borrower
 (
@@ -171,4 +172,20 @@ SELECT a.first_name, a.middle_name, a.last_name, u.is_blacklist, u.is_favorite F
 	is_blacklist BOOLEAN,
 	is_favorite BOOLEAN,
     
-SELECT b.title_of_book, a.first_name, a.middle_name, a.last_name FROM user_book u INNER JOIN book_title b ON u.book_title_id = b.id INNER JOIN author a ON a.id = b.author_id WHERE u.library_user_id = :id AND b.book_title = "An Elegant Facade" ORDER BY b.title_of_book
+SELECT b.title_of_book, a.first_name, a.middle_name, a.last_name FROM user_book u INNER JOIN book_title b ON u.book_title_id = b.id INNER JOIN author a ON a.id = b.author_id WHERE u.library_user_id = 1 AND b.title_of_book = 'An Elegant Facade';
+
+SELECT b.title_of_book, a.first_name, a.middle_name, a.last_name FROM user_book u INNER JOIN book_title b ON u.book_title_id = b.id INNER JOIN author a ON a.id = b.author_id WHERE u.library_user_id = 1 ORDER BY b.title_of_book;
+
+
+SELECT a.first_name, a.middle_name, a.last_name, b.title_of_book, r.rating, r.review, u.username INNER JOIN review r 
+
+SELECT b.title_of_book, a.first_name, a.middle_name, a.last_name FROM user_book u INNER JOIN book_title b ON u.book_title_id = b.id INNER JOIN author a ON a.id = b.author_id WHERE u.library_user_id = 1 AND a.first_name = 'Jane' AND a.last_name = 'Austen';
+
+SELECT a.first_name, a.middle_name, a.last_name, u.is_blacklist, u.is_favorite FROM author a INNER JOIN user_author u ON a.id = u.author_id WHERE u.library_user_id = 1 AND a.first_name = 'Jane' AND a.last_name = 'Austen';
+
+SELECT b.title_of_book, bo.first_name, bo.last_name, bo.phone_number, l.date_borrowed, l.return_date, 
+   l.is_returned, lu.user_phone FROM loan l INNER JOIN book_title b ON l.book_title_id = b.id INNER JOIN library_user lu 
+   ON lu.id = l.library_user_id INNER JOIN borrower bo ON l.borrower_id = bo.id WHERE l.library_user_id = 1 
+   AND bo.first_name = 'Kayli' AND bo.last_name = 'Hansen';
+   
+   SELECT r.review, r.rating, a.first_name, a.middle_name, a.last_name, b.title_of_book, lu.username FROM reviews r INNER JOIN book_title b ON r.book_title_id = b.id INNER JOIN library_user lu ON r.library_user_id = lu.id INNER JOIN author a ON a.id = b.author_id WHERE a.first_name = :first_name AND a.last_name

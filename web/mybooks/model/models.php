@@ -33,7 +33,7 @@ function displayLoans($loans) {
    $reviewList = '<div class="d-flex justify-content-center review">';
    foreach ($reviews as $review) {
       $count = $review['rating'];
-      $reviewList .= '<div class="p-3 border border-secondary m-3"><p>';
+      $reviewList .= '<div class="p-3 border border-secondary m-3 w-25"><p>';
       for ($i = 0; $i < $count; $i++) {
          $reviewList .= '<i class="fa fa-star text-orange"></i>';
       }
