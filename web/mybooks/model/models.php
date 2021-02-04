@@ -65,7 +65,6 @@ function getDetails($book_title_id) {
 
  // Display authors
 function displayAuthors($authors) {
-    var_dump($authors);
     $authorList = '<tbody>';
     foreach ($authors as $author) {
        $authorList .= '<tr><td class="pr-2">' . $author['last_name'] . ', ' . $author['first_name'] . ' ' . $author['middle_name'] . '</td>';

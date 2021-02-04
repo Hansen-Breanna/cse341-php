@@ -34,8 +34,9 @@ switch ($action){
         include 'view/catalog.php';
     break;
     case 'catalog-author':
-        // $title = test_input($_POST["title"]);
-        // $catalog = getTitle($title, $_SESSION['id']);
+        $first_name = test_input($_POST["first_name"]);
+        $last_name = test_input($_POST["last_name"]);
+        $catalog = getCatalogAuthor($first_name, $last_name, $_SESSION['id']);
         // $catalogTable = displayCatalog($catalog);
         // include 'view/catalog.php';
     break;
