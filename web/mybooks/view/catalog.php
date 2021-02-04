@@ -55,21 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                   </tr>
                 </thead>
                 <tbody>
-                  <?php 
-
-                    echo $catalogTable; 
-                    // if ($_SERVER["REQUEST_METHOD"] == "GET") {
-                    //   echo $catalogTable; 
-                    // } else if ($_SERVER["REQUEST_METHOD"] == "POST" && $title != "") {
-                    //   echo $displayTitle;
-                    //   echo "title";
-                    // } else if ($_SERVER["REQUEST_METHOD"] == "POST" && $first_name != "" && $last_name != "") {
-                    //  // echo $display_books_by_author;
-                    //  echo "last name";
-                    // } else {
-                    //   echo $catalogTable; 
-                    // }
-                  ?>
+                  <?php echo $catalogTable; ?>
                 </tbody>
               </table>
           </div>

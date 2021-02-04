@@ -29,8 +29,7 @@ switch ($action){
     break;
     case 'catalog-title':
         $title = test_input($_POST["title"]);
-        $_SESSION['title'] = $title;
-        $catalog = getTitle($_SESSION['title'], $_SESSION['id']);
+        $catalog = getTitle($title, $_SESSION['id']);
         $catalogTable = displayCatalog($catalog);
         include 'view/catalog.php';
     break;
@@ -59,6 +58,12 @@ switch ($action){
         $ownTable = displayCatalog($ownWishes);
         include 'view/wish-list.php';
     break;
+    case 'wish-title':
+        $title = test_input($_POST["title"]);
+        $catalog = getTitle($title, $_SESSION['id']);
+        $catalogTable = displayCatalog($catalog);
+        include 'view/wish-list.php';
+        break;
     default:
         include 'view/home.php';
 }
