@@ -66,9 +66,9 @@ switch ($action){
     // case 'loans-borrower':
         $first_name = test_input($_POST["first_name"]);
         $last_name = test_input($_POST["last_name"]);
-        // $loans = getLoanAuthor($first_name, $last_name, $_SESSION['id']);
-        // $loansTable = displayLoans($loans);
-        // include 'view/loans.php';
+        $loans = getLoanAuthor($first_name, $last_name, $_SESSION['id']);
+        $loansTable = displayLoans($loans);
+        include 'view/loans.php';
     // break;
     case 'reviews':
         $reviews = getReviews();

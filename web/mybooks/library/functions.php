@@ -52,6 +52,21 @@ function getCatalog($id) {
    return $results;
 }
 
+ // get loans title
+ function getLoanAuthor($first_name, $last_name, $id) {
+   $db = connectMyBooks();
+   $stmt = $db->prepare('SELECT b.title_of_book, bo.first_name, bo.last_name, bo.phone_number, l.date_borrowed, l.return_date, 
+   l.is_returned, lu.user_phone FROM loan l INNER JOIN book_title b ON l.book_title_id = b.id INNER JOIN library_user lu 
+   ON lu.id = l.library_user_id INNER JOIN borrower bo ON l.borrower_id = bo.id WHERE l.library_user_id = :id 
+   AND a.first_name = :first_name AND a.last_name = :last_name');
+   $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+   $stmt->bindValue(':first_name', $first_name, PDO::PARAM_STR);
+   $stmt->bindValue(':last_name', $last_name, PDO::PARAM_STR);
+   $stmt->execute();
+   $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+   return $results;
+}
+
  // get reviews
  function getReviews() {
    $db = connectMyBooks();
@@ -131,7 +146,6 @@ function getByAuthor($first_name, $last_name, $id) {
    $stmt->bindValue(':id', $id, PDO::PARAM_INT);
    $stmt->execute();
    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-   var_dump($results);
    return $results;
 }
 
