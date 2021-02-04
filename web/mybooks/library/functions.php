@@ -150,7 +150,6 @@ function getOwnAuthor($first_name, $last_name, $id) {
    $stmt->bindValue(':last_name', $last_name, PDO::PARAM_STR);
    $stmt->execute();
    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-   var_dump($results);
    return $results;
 }
 
