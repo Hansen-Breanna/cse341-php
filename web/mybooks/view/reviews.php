@@ -35,6 +35,9 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION))) {
         <!-- Search Author -->
         <form method="post" action="index.php?action=reviews-author">
         <?php include 'common/author.php'; ?>
+
+        <!-- Add/Remove -->
+        <?php include 'common/add-remove-title.php'; ?>
       </div>
 
         <?php echo $reviewsTable; ?>

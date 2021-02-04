@@ -36,6 +36,9 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION))) {
         <!-- Search Author -->
         <form method="post" action="index.php?action=wish-author">
         <?php include 'common/author.php'; ?>
+
+        <!-- Add/Remove -->
+        <?php include 'common/add-remove-title.php'; ?>
       </div>
       <div>
         <div class="d-flex justify-content-around">
