@@ -46,9 +46,11 @@ switch ($action){
         include 'view/authors.php';
     break;
     case 'get-author':
-        // $authors = getAuthors($_SESSION['id']);
-        // $authorsTable = displayAuthors($authors);
-        // include 'view/authors.php';
+        $first_name = test_input($_POST["first_name"]);
+        $last_name = test_input($_POST["last_name"]);
+        $authors = getByAuthor($first_name, $last_name, $_SESSION['id']);
+        $authorsTable = displayAuthors($authors);
+        include 'view/authors.php';
     break;
     case 'loans':
         $loans = getLoans($_SESSION['id']);
@@ -62,7 +64,9 @@ switch ($action){
         include 'view/loans.php';
     break;
     // case 'loans-borrower':
-        // $loans = getLoans($_SESSION['id']);
+        $first_name = test_input($_POST["first_name"]);
+        $last_name = test_input($_POST["last_name"]);
+        // $loans = getLoanAuthor($first_name, $last_name, $_SESSION['id']);
         // $loansTable = displayLoans($loans);
         // include 'view/loans.php';
     // break;
@@ -78,7 +82,9 @@ switch ($action){
         include 'view/reviews.php';
     break;
     // case 'reviews-author':
-    //     // $reviews = getReviews();
+        $first_name = test_input($_POST["first_name"]);
+        $last_name = test_input($_POST["last_name"]);
+    //     // $reviews = getAuthorReviews($first_name, $last_name);
     //     // $reviewsTable = displayReviews($reviews);
     //     // include 'view/reviews.php';
     // break;
@@ -98,10 +104,11 @@ switch ($action){
         include 'view/wish-list.php';
     break;
     // case 'wish-author':
-    //     // $title = test_input($_POST["title"]);
-    //     // $ownWishes = getOwnTitle($title, $_SESSION['id']);
+        $first_name = test_input($_POST["first_name"]);
+        $last_name = test_input($_POST["last_name"]);
+    //     // $ownWishes = getOwnAuthor($first_name, $last_name, $_SESSION['id']);
     //     // $ownTable = displayCatalog($ownWishes);
-    //     // $readWishes = getReadTitle($title, $_SESSION['id']);
+    //     // $readWishes = getReadAuthor($first_name, $last_name, $_SESSION['id']);
     //     // $readTable = displayCatalog($readWishes);
     //     // include 'view/wish-list.php';
     // break;
