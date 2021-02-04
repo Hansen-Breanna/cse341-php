@@ -61,6 +61,7 @@ switch ($action){
     case 'wish-title':
         $title = test_input($_POST["title"]);
         $ownWishes = getOwnTitle($title, $_SESSION['id']);
+        var_dump($ownWishes);
         $ownTable = displayCatalog($ownWishes);
 
         $readWishes = getReadWishes($_SESSION['id']);
