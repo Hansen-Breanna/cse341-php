@@ -84,6 +84,7 @@ switch ($action){
         $title = test_input($_POST["title"]);
         $reviews = getReviewTitle($title);
         $reviewsTable = displayReviews($reviews);
+        $message = "<p class='px-4 py-3 bg-danger rounded'>No title selected.</p>";
         include 'view/reviews.php';
     break;
     case 'reviews-author':
@@ -91,6 +92,7 @@ switch ($action){
         $last_name = test_input($_POST["last_name"]);
         $reviews = getAuthorReviews($first_name, $last_name);
         $reviewsTable = displayReviews($reviews);
+        $message = "<p class='px-4 py-3 bg-danger rounded'>No author selected.</p>";
         include 'view/reviews.php';
     break;
     case 'wish':
