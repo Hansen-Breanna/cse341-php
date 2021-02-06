@@ -4,11 +4,11 @@ session_start ();
 
 // define variables and set to empty values
 $username = $password = $logout = "";
+
+($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION['id'])))  {
+    $message = "";
+}
  
-if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION))) { 
-
-} 
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = test_input($_POST["username"]);
     $password = test_input($_POST["password"]);
@@ -18,6 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($logout == "logout") {
         session_destroy();
     }
+    $message = "You are logged in as " . $_SESSION['username'];
 }
 
 ?>
@@ -40,6 +41,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     <main class="mb-5">
       <div class="container">
+      <div class="row">
+        <p><?php echo $message ?></p>
+      </div>
         <div class="row d-flex justify-content-around">
             <div id="box-1" class="main-box p-5 w-25 mt-4 mx-2">
                 <form method='post' action=" <?php htmlspecialchars($_SERVER["PHP_SELF"]) ?> ">
