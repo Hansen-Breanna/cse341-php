@@ -5,7 +5,7 @@ session_start ();
 // define variables and set to empty values
 $username = $password = $logout = "";
 
-($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION['id'])))  {
+if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION['id'])))  {
     $message = "";
 }
  
