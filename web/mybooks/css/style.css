@@ -89,6 +89,7 @@ table {
         width: 200px;
     }
     .single-review {
+        background-color: purple;
         max-width: 250px;
     }
 }
