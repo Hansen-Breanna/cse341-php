@@ -80,14 +80,16 @@ table {
         height: 20vh;
     }
     .single-review {
-        background-color: purple;
-        max-width: 250px;
+        max-width: 200px;
     }
 }
 
 @media only screen and (min-width: 768px) {
     .rs-size {
         width: 200px;
+    }
+    .single-review {
+        max-width: 250px;
     }
 
 }
