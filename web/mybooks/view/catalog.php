@@ -52,7 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               if ($_SERVER["REQUEST_METHOD"] == "GET") {
                 echo $message;
               }
-            ;?>
+            ?>
             <table class="table table-dark table-striped text-light">
                 <thead>
                   <tr>
