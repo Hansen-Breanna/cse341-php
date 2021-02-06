@@ -35,11 +35,11 @@ session_start();
           </div>
       </div>
       <div>
-        <?php 
-          if ($_SERVER["REQUEST_METHOD"] == "GET") {
-            echo $message;
-          }
-        ?>  
+        <?php
+        if ($_SERVER["REQUEST_METHOD"] == "GET") {
+          echo $message;
+        }
+        ?>
         <table class="table table-dark table-striped text-light">
           <thead>
             <tr>

@@ -43,10 +43,10 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION))) {
             </div>
       </div>
       <p class="font-blue mx-1">SMS message reminders must be sent from a mobile device.</a>
-      <?php 
-          if ($_SERVER["REQUEST_METHOD"] == "GET") {
-            echo $message;
-          }
+        <?php
+        if ($_SERVER["REQUEST_METHOD"] == "GET") {
+          echo $message;
+        }
         ?>
       <table class="table table-dark table-striped text-light">
         <thead>

@@ -1,14 +1,14 @@
 <?php
 // start session
-session_start ();
+session_start();
 
 // define variables and set to empty values
 $username = $password = $logout = "";
 
-if ($_SERVER["REQUEST_METHOD"] == "GET" && (isset($_SESSION['id'])))  {
+if ($_SERVER["REQUEST_METHOD"] == "GET" && (isset($_SESSION['id']))) {
     $message = "<p class='bg-success py-3 px-4 rounded'>You are logged in as: " . $_SESSION['username'] . '</p>';
 }
- 
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = test_input($_POST["username"]);
     $password = test_input($_POST["password"]);
@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     if (isset($_SESSION['id'])) {
         $message = "<p class='bg-success py-3 px-4 rounded'>You are logged in as: " . $_SESSION['username'] . '</p>';
-    }   
+    }
 }
 
 ?>
@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <!-- Head -->
 <?php include 'common/head.php'; ?>
 
-    <title>Home - My Books</title>
+<title>Home - My Books</title>
 
 <!-- Nav -->
 <?php include 'common/nav.php'; ?>
@@ -36,16 +36,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <!-- Header -->
 <?php include '../common/header.php'; ?>
 
-              <h1 class="offset-1 col-10 offset-md-0 col-md-12">My Books</h1>
-          </div>
-      </div>
-    </header>
-    
-    <main class="mb-5">
-      <div class="container">
-      <div class="row d-flex justify-content-center mt-2">
-        <?php echo $message ?>
-      </div>
+<h1 class="offset-1 col-10 offset-md-0 col-md-12">My Books</h1>
+</div>
+</div>
+</header>
+
+<main class="mb-5">
+    <div class="container">
+        <div class="row d-flex justify-content-center mt-2">
+            <?php echo $message ?>
+        </div>
         <div class="row d-flex justify-content-around">
             <div id="box-1" class="main-box p-5 w-25 mt-4 mx-2">
                 <form method='post' action=" <?php htmlspecialchars($_SERVER["PHP_SELF"]) ?> ">
@@ -70,8 +70,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <h2 class="text-center p-3"><a href="index.php?action=reviews" title="Book Reviews">Reviews</a></h2>
             </div>
         </div>
-      </div>
-    </main>
+    </div>
+</main>
 
 <!-- Footer -->
 <?php include 'common/footer.php'; ?>

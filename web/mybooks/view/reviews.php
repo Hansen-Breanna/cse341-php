@@ -43,10 +43,10 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION))) {
               <a href="index.php?action=reviews" title="See All Reviews" class="btn btn-custom bg-info my-2 ml-1">See All Reviews</a>
             </div>
       </div>
-      <?php 
-        if ($_SERVER["REQUEST_METHOD"] == "GET") {
-          echo $message;
-        }
+      <?php
+      if ($_SERVER["REQUEST_METHOD"] == "GET") {
+        echo $message;
+      }
       ?>
 
       <?php echo $reviewsTable; ?>
