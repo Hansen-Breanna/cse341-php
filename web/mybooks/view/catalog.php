@@ -38,7 +38,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <?php 
               include 'common/title.php'; 
             ?>
-            <a href="index.php?action=catalog" title="See All Titles" class="btn btn-custom bg-orange my-1 mx-2 py-2">See All Titles</a>
             
             <!-- Search Author -->
             <form method="post" action="index.php?action=catalog-author">
@@ -46,6 +45,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             <!-- Add/Remove -->
             <?php include 'common/add-remove-title.php'; ?>
+            <a href="index.php?action=catalog" title="See All Titles" class="btn btn-custom bg-orange my-1 mx-2 py-2">See All Titles</a>
+
           </div>
           <div>
             <?php 
