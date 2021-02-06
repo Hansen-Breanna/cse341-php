@@ -58,7 +58,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION))) {
               </tr>
             </thead>
             <?php
-            echo '<div>' . $ownTable . '</div>';
+            echo $ownTable;
             ?>
           </table>
         </div>
