@@ -64,8 +64,11 @@ table {
 
 .review {
     width: 80vw;
-    min-width: 350px;
-    max-width: 33%;
+}
+
+.single-review {
+    min-width: 325px;
+    max-width: 32%;
 }
 
 .font-blue {
