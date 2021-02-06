@@ -31,6 +31,7 @@ switch ($action){
         $title = test_input($_POST["title"]);
         $catalog = getTitle($title, $_SESSION['id']);
         $catalogTable = displayCatalog($catalog);
+        $message = "<p class='px-4 py-3 bg-danger rounded'>No title selected.</p>";
         include 'view/catalog.php';
     break;
     case 'catalog-author':

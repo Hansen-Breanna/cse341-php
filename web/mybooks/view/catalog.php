@@ -2,10 +2,6 @@
 // start session
 session_start ();
 
-if ($_SERVER["REQUEST_METHOD"] == "GET") {
-  $message = "<p class='px-4 py-3 bg-danger rounded'>No title selected.</p>";
-}
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $title = test_input($_POST["title"]);
   $first_name = test_input($_POST["first_name"]);
@@ -42,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <?php 
               include 'common/title.php'; 
             ?>
-            <a href="index.php?action=catalog" title="See All Titles" class="btn btn-custom bg-orange my-1 mx-3 py-2">See All Titles</a>
+            <a href="index.php?action=catalog" title="See All Titles" class="btn btn-custom bg-orange my-1 mx-2 py-2">See All Titles</a>
             
             <!-- Search Author -->
             <form method="post" action="index.php?action=catalog-author">
@@ -52,7 +48,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <?php include 'common/add-remove-title.php'; ?>
           </div>
           <div>
-            <?php echo $message;?>
+            <?php 
+              if ($_SERVER["REQUEST_METHOD"] == "GET") {
+                echo $message;
+              }
+            ;?>
             <table class="table table-dark table-striped text-light">
                 <thead>
                   <tr>
