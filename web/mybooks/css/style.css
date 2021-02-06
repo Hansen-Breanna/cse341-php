@@ -79,14 +79,15 @@ table {
     .main-box {
         height: 20vh;
     }
+    .single-review {
+        background-color: purple;
+        max-width: 250px;
+    }
 }
 
 @media only screen and (min-width: 768px) {
     .rs-size {
         width: 200px;
     }
-    .single-review {
-        background-color: purple;
-        max-width: 250px;
-    }
+
 }
