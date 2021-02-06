@@ -208,7 +208,4 @@ function getByAuthor($first_name, $last_name, $id) {
    return $results;
 }
 
-function message($id) {
-   echo "<p class='bg-success p-2 d-block'>You are logged in as " . $id . "</p>";
-}
 ?>
