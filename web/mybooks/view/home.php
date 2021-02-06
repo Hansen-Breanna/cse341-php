@@ -5,9 +5,9 @@ session_start ();
 // define variables and set to empty values
 $username = $password = $logout = "";
 
-// if ($_SERVER["REQUEST_METHOD"] == "GET" && (isset($_SESSION['id'])))  {
-//     //$message = "<p class='bg-success p-2'>You are logged in as " . $_SESSION['username'] . '.</p>';
-// }
+if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION['id'])))  {
+    $message = "";
+}
  
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = test_input($_POST["username"]);
@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         session_destroy();
     }
     if (isset($_SESSION['id']))) {
-        $message = "<p class='bg-success p-2'>You are logged in as " . $_SESSION['username'] . '.</p>';
+        $message = "<p class='bg-success p-2'>You are logged in as " . $_SESSION['username'] . '</p>';
     }   
 }
 
