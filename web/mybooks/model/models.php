@@ -30,7 +30,7 @@ function displayLoans($loans) {
 
  
  function displayReviews($reviews) {
-   $reviewList = '<div class="d-flex justify-content-center flex-wrap review">';
+   $reviewList = '<div class="d-flex flex-row justify-content-center flex-wrap review">';
    foreach ($reviews as $review) {
       $count = $review['rating'];
       $reviewList .= '<div class="p-3 border border-secondary m-3 single-review"><p>';
