@@ -79,9 +79,6 @@ table {
     .main-box {
         height: 20vh;
     }
-    .review {
-        width: 48vw;
-    }
 }
 
 @media only screen and (min-width: 768px) {
