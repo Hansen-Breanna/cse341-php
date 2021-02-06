@@ -64,6 +64,7 @@ switch ($action){
         $title = test_input($_POST["title"]);
         $loans = getLoansTitle($title, $_SESSION['id']);
         $loansTable = displayLoans($loans);
+        $message = "<p class='px-4 py-3 bg-danger rounded'>No title selected.</p>";
         include 'view/loans.php';
     break;
     case 'loans-borrower':
@@ -71,6 +72,7 @@ switch ($action){
         $last_name = test_input($_POST["last_name"]);
         $loans = getLoanAuthor($first_name, $last_name, $_SESSION['id']);
         $loansTable = displayLoans($loans);
+        $message = "<p class='px-4 py-3 bg-danger rounded'>No borrower selected.</p>";
         include 'view/loans.php';
     break;
     case 'reviews':

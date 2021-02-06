@@ -32,16 +32,22 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION))) {
         <form method="post" action="index.php?action=loans-title">
           <?php include 'common/title.php'; ?>
 
-        <!-- Search Borrowers -->
-        <form method="post" action="index.php?action=loans-borrower">
-        <?php include 'common/borrower.php'; ?>
+          <!-- Search Borrowers -->
+          <form method="post" action="index.php?action=loans-borrower">
+            <?php include 'common/borrower.php'; ?>
 
-        <div class="my-3 mx-2 py-2 border-secondary border-top border-bottom">
-          <a href="index.php?action=add-borrower" class="btn btn-custom bg-orange text-dark my-2 mr-2">Add Borrower</a>
-          <a href="index.php?action=add-loan" class="btn btn-custom bg-orange text-dark my-2 mr-1">Add Loan</a>
-        </div>
+            <div class="my-3 mx-2 py-2 border-secondary border-top border-bottom">
+              <a href="index.php?action=add-borrower" class="btn btn-custom bg-orange my-2 ml-1 ">Add Borrower</a>
+              <a href="index.php?action=add-loan" class="btn btn-custom bg-orange my-2 ml-1 ">Add Loan</a><br>
+              <a href="index.php?action=loans" title="See All Loans" class="btn btn-custom my-2 ml-1 bg-info">See All Loans</a>
+            </div>
       </div>
       <p class="font-blue">SMS message reminders must be sent from a mobile device.</a>
+      <?php 
+          if ($_SERVER["REQUEST_METHOD"] == "GET") {
+            echo $message;
+          }
+        ?>
       <table class="table table-dark table-striped text-light">
         <thead>
           <tr>
