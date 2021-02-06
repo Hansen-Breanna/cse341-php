@@ -32,6 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION))) {
         <!-- Search Title -->
         <form method="post" action="index.php?action=wish-title">
         <?php include 'common/title.php'; ?>
+        <a href="index.php?action=wish" title="See All Titles" class="btn btn-custom bg-orange my-1 mx-2 py-2">See All Titles</a>
 
         <!-- Search Author -->
         <form method="post" action="index.php?action=wish-author">
