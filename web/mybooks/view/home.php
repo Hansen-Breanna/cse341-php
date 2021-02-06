@@ -6,7 +6,7 @@ session_start ();
 $username = $password = $logout = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "GET" && (isset($_SESSION['id'])))  {
-    $message($_SESSION['id']);
+    echo $message($_SESSION['id']);
 }
  
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         session_destroy();
     }
     if (isset($_SESSION['id'])) {
-        $message($_SESSION['id']);
+        echo $message($_SESSION['id']);
     }   
 }
 
