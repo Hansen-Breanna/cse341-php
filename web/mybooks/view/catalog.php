@@ -3,7 +3,7 @@
 session_start ();
 
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
-  $message = "<p>No title selected.</p>";
+  $message = "<p class='ml-1'>No title selected.</p>";
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -41,10 +41,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <form method="post" action="index.php?action=catalog-title">
             <?php 
               include 'common/title.php'; 
-              echo $message;
             ?>
-
+            <?php echo $message;?> 
             <a href="index.php?action=catalog" title="See All Titles" class="btn btn-custom bg-orange m-1">See All Titles</a>
+            
             <!-- Search Author -->
             <form method="post" action="index.php?action=catalog-author">
             <?php include 'common/author.php'; ?>
