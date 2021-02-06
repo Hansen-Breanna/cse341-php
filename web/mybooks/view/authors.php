@@ -15,9 +15,9 @@ session_start();
 <!-- Header -->
 <?php include '../common/header.php'; ?>
 
-<h1 class="offset-1 col-10 offset-md-0 col-md-12">Authors</h1>
-</div>
-</div>
+      <h1 class="offset-1 col-10 offset-md-0 col-md-12">Authors</h1>
+    </div>
+  </div>
 </header>
 
 <main class="mb-5">
@@ -48,12 +48,11 @@ session_start();
               <th>Blacklisted</th>
             </tr>
           </thead>
-          <tbody>
             <?php echo $authorsTable; ?>
-          </tbody>
         </table>
       </div>
     </div>
+  </div>
 </main>
 
 <!-- Footer -->
