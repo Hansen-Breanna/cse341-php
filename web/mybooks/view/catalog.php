@@ -42,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <?php 
               include 'common/title.php'; 
             ?>
-            <p class='ml-1'><?php echo $message;?> <a href="index.php?action=catalog" title="See All Titles" class="btn btn-custom bg-orange m-1 py-1">See All Titles</a></p>
+            <p class='m-2'><?php echo $message;?> <a href="index.php?action=catalog" title="See All Titles" class="btn btn-custom bg-orange m-1 py-1">See All Titles</a></p>
             
             <!-- Search Author -->
             <form method="post" action="index.php?action=catalog-author">
