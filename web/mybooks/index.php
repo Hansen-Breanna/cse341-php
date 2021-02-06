@@ -52,6 +52,7 @@ switch ($action){
         $last_name = test_input($_POST["last_name"]);
         $authors = getByAuthor($first_name, $last_name, $_SESSION['id']);
         $authorsTable = displayAuthors($authors);
+        $message = "<p class='px-4 py-3 bg-danger rounded'>No author selected.</p>";
         include 'view/authors.php';
     break;
     case 'loans':
