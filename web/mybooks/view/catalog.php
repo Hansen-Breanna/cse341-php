@@ -3,7 +3,7 @@
 session_start ();
 
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
-  $message = "<p class='px-4 py-2 bg-danger'>No title selected.</p>";
+  $message = "<p class='px-4 py-3 bg-danger rounded'>No title selected.</p>";
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -42,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <?php 
               include 'common/title.php'; 
             ?>
-            <a href="index.php?action=catalog" title="See All Titles" class="btn btn-custom bg-orange m-1 py-3">See All Titles</a>
+            <a href="index.php?action=catalog" title="See All Titles" class="btn btn-custom bg-orange my-1 mx-2 py-2">See All Titles</a>
             
             <!-- Search Author -->
             <form method="post" action="index.php?action=catalog-author">
