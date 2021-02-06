@@ -18,7 +18,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($logout == "logout") {
         session_destroy();
     }
-    $message = "You are logged in as " . $_SESSION['username'];
+    if (isset($_SESSION['id']))) {
+        $message = "<p class='bg-success p-2'>You are logged in as " . $_SESSION['username'] . '</p>';
+    }   
 }
 
 ?>
@@ -42,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <main class="mb-5">
       <div class="container">
       <div class="row">
-        <p><?php echo $message ?></p>
+        <?php echo $message ?>
       </div>
         <div class="row d-flex justify-content-around">
             <div id="box-1" class="main-box p-5 w-25 mt-4 mx-2">
