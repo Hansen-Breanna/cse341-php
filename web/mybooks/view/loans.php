@@ -51,9 +51,9 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION))) {
       <table class="table table-dark table-striped text-light">
         <thead>
           <tr>
-            <th class="pl-2">Book Title</th>
+            <th class="pl-2 d-none d-lg-inline">Book Title</th>
             <th>Borrower</th>
-            <th>Borrow Date</th>
+            <th class="d-none d-md-inline">Borrow Date</th>
             <th>Due Date</th>
             <th>Contact</th>
           </tr>
