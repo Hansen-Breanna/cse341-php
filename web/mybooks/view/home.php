@@ -6,7 +6,7 @@ session_start ();
 $username = $password = $logout = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "GET" && (isset($_SESSION['id'])))  {
-    $message = "<p class='bg-success p-2 d-block'>You are logged in as d-block " . $_SESSION['username'] . '</p>';
+    $message = "<p class='bg-success p-2'>You are logged in as d-block " . $_SESSION['username'] . '</p>';
 }
  
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         session_destroy();
     }
     if (isset($_SESSION['id'])) {
-        $message = "<p class='bg-success py-3 px-4 rounded d-block'>You are logged in as " . $_SESSION['username'] . '</p>';
+        $message = "<p class='bg-success py-3 px-4 rounded'>You are logged in as " . $_SESSION['username'] . '</p>';
     }   
 }
 
@@ -43,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     <main class="mb-5">
       <div class="container">
-      <div class="row">
+      <div class="row d-flex justify-content-center">
         <?php echo $message ?>
       </div>
         <div class="row d-flex justify-content-around">
