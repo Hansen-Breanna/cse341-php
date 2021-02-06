@@ -103,6 +103,7 @@ switch ($action){
         $ownTable = displayCatalog($ownWishes);
         $readWishes = getReadTitle($title, $_SESSION['id']);
         $readTable = displayCatalog($readWishes);
+        $message = "<p class='px-4 py-3 bg-danger rounded'>No title selected.</p>";
         include 'view/wish-list.php';
     break;
     case 'wish-author':
@@ -112,6 +113,7 @@ switch ($action){
         $ownTable = displayCatalog($ownWishes);
         $readWishes = getReadAuthor($first_name, $last_name, $_SESSION['id']);
         $readTable = displayCatalog($readWishes);
+        $message = "<p class='px-4 py-3 bg-danger rounded'>No author selected.</p>";
         include 'view/wish-list.php';
     break;
     default:
