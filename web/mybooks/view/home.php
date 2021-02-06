@@ -44,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <main class="mb-5">
       <div class="container">
       <div class="row">
-        <?php echo $message ?>
+        <p><?php echo $message ?></p>
       </div>
         <div class="row d-flex justify-content-around">
             <div id="box-1" class="main-box p-5 w-25 mt-4 mx-2">
