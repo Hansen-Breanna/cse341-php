@@ -42,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION))) {
               <a href="index.php?action=loans" title="See All Loans" class="btn btn-custom my-2 ml-1 bg-info">See All Loans</a>
             </div>
       </div>
-      <p class="font-blue mx-1">SMS message reminders must be sent from a mobile device.</a>
+      <p class="font-blue mx-1">SMS message reminders must be sent from a mobile device.</p>
         <?php
         if ($_SERVER["REQUEST_METHOD"] == "GET") {
           echo $message;
@@ -58,9 +58,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION))) {
             <th>Contact</th>
           </tr>
         </thead>
-        <tbody>
           <?php echo $loansTable; ?>
-        </tbody>
       </table>
     </div>
   </div>
