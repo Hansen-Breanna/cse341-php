@@ -53,8 +53,8 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION))) {
           <table class="table table-dark table-striped text-light m-2">
             <thead>
               <tr>
-                <th class="pl-1">Book Title</th>
-                <th class="pl-5">Author</th>
+                <th class="pl-1 col-lg-6">Book Title</th>
+                <th class="pl-5 col-lg-6">Author</th>
               </tr>
             </thead>
             <?php
