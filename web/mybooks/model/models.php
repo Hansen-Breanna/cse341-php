@@ -90,9 +90,5 @@ function displayAuthors($authors) {
     $data = htmlspecialchars($data);
     return $data;
 }
-
-function message($id) {
-   echo "<p class='bg-success p-2 d-block'>You are logged in as " . $id . "</p>";
-}
  
 ?>
