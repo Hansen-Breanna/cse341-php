@@ -32,7 +32,6 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION))) {
         <!-- Search Title -->
         <form method="post" action="index.php?action=wish-title">
         <?php include 'common/title.php'; ?>
-        <a href="index.php?action=wish" title="See All Wishes" class="btn btn-custom bg-orange my-1 mx-2 py-2">See All Wishes</a>
 
         <!-- Search Author -->
         <form method="post" action="index.php?action=wish-author">
@@ -40,6 +39,8 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION))) {
 
         <!-- Add/Remove -->
         <?php include 'common/add-remove-title.php'; ?>
+        <a href="index.php?action=wish" title="See All Wishes" class="btn btn-custom bg-orange my-1 mx-2 py-2">See All Wishes</a>
+        </div>
       </div>
       <div>
           <?php 
