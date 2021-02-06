@@ -2,9 +2,8 @@
 // start session
 session_start ();
 
-$title = $first_name = $last_name = "";
-
-if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION))) {
+if ($_SERVER["REQUEST_METHOD"] == "GET") {
+  echo $catalogTable;
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
