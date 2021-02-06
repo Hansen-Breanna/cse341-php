@@ -72,7 +72,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION))) {
               </tr>
             </thead>
             <?php
-            echo '<div' . $readTable . '</div>';
+            echo $readTable;
             ?>
           </table>
         </div>
