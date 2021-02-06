@@ -38,15 +38,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <?php 
               include 'common/title.php'; 
             ?>
-            
+                        
             <!-- Search Author -->
             <form method="post" action="index.php?action=catalog-author">
             <?php include 'common/author.php'; ?>
 
             <!-- Add/Remove -->
             <?php include 'common/add-remove-title.php'; ?>
-            <a href="index.php?action=catalog" title="See All Titles" class="btn btn-custom bg-orange my-1 mx-2 py-2">See All Titles</a>
-
+            <a href="index.php?action=catalog" title="See All Titles" class="btn btn-custom bg-info my-1 mx-2 py-2">See All Titles</a>
+            </div>
           </div>
           <div>
             <?php 
