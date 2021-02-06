@@ -54,7 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION))) {
             <th class="pl-2">Book Title</th>
             <th>Borrower</th>
             <th>Borrow Date</th>
-            <th>Return Date</th>
+            <th>Due Date</th>
             <th>Contact</th>
           </tr>
         </thead>
