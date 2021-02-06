@@ -41,6 +41,11 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION))) {
         <?php include 'common/add-remove-title.php'; ?>
       </div>
       <div>
+          <?php 
+            if ($_SERVER["REQUEST_METHOD"] == "GET") {
+              echo $message;
+            }
+          ?>
         <div class="d-flex justify-content-around">
           <div class="m-2">
             <h2 class="pt-4">Own Wish List</h2>
