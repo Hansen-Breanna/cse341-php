@@ -2,10 +2,6 @@
 // start session
 session_start ();
 
-if ($_SERVER["REQUEST_METHOD"] == "GET") {
-  echo $catalogTable;
-}
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $title = test_input($_POST["title"]);
   $first_name = test_input($_POST["first_name"]);
@@ -57,7 +53,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                   </tr>
                 </thead>
                 <tbody>
-                  <?php echo $catalogTable; ?>
+                  <?php 
+                  if ($_SERVER["REQUEST_METHOD"] == "GET") {
+                    echo $catalogTable;
+                  } else {
+                    echo $catalogTable;
+                  }
+                 ?>
                 </tbody>
               </table>
           </div>
