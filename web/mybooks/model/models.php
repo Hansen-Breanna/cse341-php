@@ -27,7 +27,6 @@ function displayLoans($loans) {
     $loanList .= '</tbody>';
     return $loanList;
  }
-
  
  function displayReviews($reviews) {
    $reviewList = '<div class="d-flex flex-row justify-content-center flex-wrap review">';
