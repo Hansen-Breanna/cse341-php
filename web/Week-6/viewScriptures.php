@@ -19,6 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $verse = test_input($_POST["verse"]);
     $content = test_input($_POST["content"]);
     $topic = test_input($_POST["topic"]);
+    echo $topic;
 
    // echo $book . ' ' . $chapter . ':' . $verse . ' - ' . $content;
 
@@ -123,7 +124,6 @@ function test_input($data)
             $stmt = $db->prepare('SELECT * FROM topic');
             $stmt->execute();
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            var_dump($rows);
                 foreach($rows as $topic) {
                    echo '<br><label>' . $topic['topic'] . '</label>';
                     echo '<input type="checkbox" id="' . $topic['topic'] . '" name="topic" value="' . $topic['id'] . '"><br>';
