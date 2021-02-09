@@ -35,12 +35,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
         // Get last topic id
         $newTopicID = $db->lastInsertId('topic_id_seq');        
-    } //else {
+    }else {
 
             // Insert into scripture_topic
     $stmt = $db->prepare('INSERT INTO scripture_topic (scripture_id, topic_id) VALUES (:newScriptureID, :newTopicID)');
-    $stmt->execute(array(':topic' => $newTopicID, 'newScriptureID' => $newScriptureID));
-    //}
+    $stmt->execute(array(':topic' => $topic, 'newScriptureID' => $newScriptureID));
+    }
 
 }
     
