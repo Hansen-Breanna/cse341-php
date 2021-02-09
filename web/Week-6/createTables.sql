@@ -40,6 +40,11 @@ CREATE TABLE scripture_topic
     id SERIAL PRIMARY KEY NOT NULL,
     scripture_id INT NOT NULL,
     topic_id INT NOT NULL,
-    FOREIGN KEY (scripture_id) REFERENCES scripture(id),
-    FOREIGN KEY (topic_id) REFERENCES topic(id)
+    CONSTRAINT fk_scripture FOREIGN KEY (scripture_id) REFERENCES scripture(id) ON DELETE CASCADE,
+    CONSTRAINT fk_topic FOREIGN KEY (topic_id) REFERENCES topic(id) ON DELETE CASCADE
 );
+
+INSERT INTO scripture_topic (scripture_id, topic_id) VALUES (1, 2);
+INSERT INTO scripture_topic (scripture_id, topic_id) VALUES (2, 3);
+INSERT INTO scripture_topic (scripture_id, topic_id) VALUES (3, 1);
+INSERT INTO scripture_topic (scripture_id, topic_id) VALUES (1, 2);

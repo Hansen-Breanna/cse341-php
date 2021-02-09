@@ -57,7 +57,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <form method="post" action="viewScriptures.php">
       <div>
-      <div class="book">
+          <!-- Author -->
+      <div>
           <p>Author name:
                 <label for="first-name">First name:</label>
                 <input type="text" name="first-name" id="first-name"><br>
