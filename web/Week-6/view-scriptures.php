@@ -11,39 +11,42 @@
 require "dbConnect.php";
 $db = get_db();
 
-$book = $chapter = $verse = $content = $topic = $newTopicID = "";
+$book = $chapter = $verse = $content = $topicID = $topicName = $newTopicID = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $book = test_input($_POST["book"]);
     $chapter = test_input($_POST["chapter"]);
     $verse = test_input($_POST["verse"]);
     $content = test_input($_POST["content"]);
-    $topic = test_input($_POST["topic"]);
-       echo $topic;
+    $topicID = test_input($_POST["topicID"]);
+    $topicName = test_input($_POST["topicName"]);
+    echo $topic;
 
     // Insert into scripture
-    $stmt= $db->prepare('INSERT INTO scripture (book, chapter, verse, content) VALUES (:book, :chapter, :verse, :content)');
+    $stmt = $db->prepare('INSERT INTO scripture (book, chapter, verse, content) VALUES (:book, :chapter, :verse, :content)');
     $stmt->execute(array(':book' => $book, ':chapter' => $chapter, ':verse' => $verse, ':content' => $content));
 
     // Get last scripture id
     $newScriptureID = $db->lastInsertId('scripture_id_seq');
 
-    if (!preg_match('~[0-9]+~', $topic)) {
+    if (isset($topicName)) {
         // Insert into topic
-        $stmt= $db->prepare('INSERT INTO topic (topic) VALUES (:topic)');
+        $stmt = $db->prepare('INSERT INTO topic (topic) VALUES (:topic)');
         $stmt->execute(array(':topic' => $topic));
-    
+
         // Get last topic id
-        $newTopicID = $db->lastInsertId('topic_id_seq');        
-    }else {
+        $newTopicID = $db->lastInsertId('topic_id_seq');
+        // Insert into scripture_topic
+        $stmt = $db->prepare('INSERT INTO scripture_topic (scripture_id, topic_id) VALUES (:newScriptureID, :newTopicID)');
+        $stmt->execute(array(':topic' => $newTopicID, 'newScriptureID' => $newScriptureID));
+    } else {
 
-            // Insert into scripture_topic
-    $stmt = $db->prepare('INSERT INTO scripture_topic (scripture_id, topic_id) VALUES (:newScriptureID, :newTopicID)');
-    $stmt->execute(array(':topic' => $topic, 'newScriptureID' => $newScriptureID));
+        // Insert into scripture_topic
+        $stmt = $db->prepare('INSERT INTO scripture_topic (scripture_id, topic_id) VALUES (:newScriptureID, :newTopicID)');
+        $stmt->execute(array(':topic' => $topic, 'newScriptureID' => $newScriptureID));
     }
-
 }
-    
+
 function test_input($data)
 {
     $data = trim($data);
@@ -52,7 +55,7 @@ function test_input($data)
     return $data;
 }
 
-    ?>
+?>
 
 <!DOCTYPE html>
 <html>
@@ -121,18 +124,18 @@ function test_input($data)
                 <textarea rows="4" columns="50" name="content" id="content"></textarea>
             </div>
             <div class="topic">
-            <?php
-            $stmt = $db->prepare('SELECT * FROM topic');
-            $stmt->execute();
-            $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-                foreach($rows as $topic) {
-                   echo '<br><label>' . $topic['topic'] . '</label>';
-                    echo '<input type="checkbox" id="' . $topic['topic'] . '" name="topic" value="' . $topic['id'] . '"><br>';
+                <?php
+                $stmt = $db->prepare('SELECT * FROM topic');
+                $stmt->execute();
+                $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                foreach ($rows as $topic) {
+                    echo '<br><label>' . $topic['topic'] . '</label>';
+                    echo '<input type="checkbox" id="' . $topic['topic'] . '" name="topicID" value="' . $topic['id'] . '"><br>';
                 }
 
-            ?>
-            <label>New topic:</label>
-                <input type="checkbox" id="topicName" name="topic">
+                ?>
+                <label>New topic:</label>
+                <input type="checkbox" id="topicName" name="topicName">
                 <input type="text" id="newTopic" name="topic">
             </div>
             <div class="submit">
