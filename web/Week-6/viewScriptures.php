@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $content = test_input($_POST["content"]);
     $topic = test_input($_POST["topic"]);
 
-    echo $book . ' ' . $chapter . ':' . $verse . ' - ' . $content;
+   // echo $book . ' ' . $chapter . ':' . $verse . ' - ' . $content;
 
         $stmt= $db->prepare('INSERT INTO scripture (book, chapter, verse, content) VALUES (:book, :chapter, :verse, :content)');
         // $stmt->bindValue(':book', $book, PDO::PARAM_STR);
@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // $stmt->execute();
         $stmt->execute(array(':book' => $book, ':chapter' => $chapter, ':verse' => $verse, ':content' => $content));
 
-    $newScriptureID = $pdo->lastInsertId('scripture_id_sq');
+    $newScriptureID = $pdo->lastInsertId();
     echo $newScriptureID;
 
     // function scriptureTopic($db, $newScriptureID, $topic) {
