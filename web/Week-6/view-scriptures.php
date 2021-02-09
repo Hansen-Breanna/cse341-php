@@ -101,7 +101,7 @@ function test_input($data)
 
         ?>
 
-        <form method="post" action="viewScriptures.php">
+        <form method="post" action="view-scriptures.php">
             <div class="book">
                 <label for="book">Book:</label>
                 <input type="text" name="book" id="book"><br>
