@@ -75,7 +75,7 @@ table {
     width: 100px;
 }
 
-i::before {
+i {
     color: #fff;
 }
 
