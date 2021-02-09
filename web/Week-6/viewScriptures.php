@@ -63,31 +63,31 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 <form method="post" action="confirmation.php">
                     <div class="name">
                         <label for="name">Name:</label> 
-                        <input class="w-75" type="text" name="name" id="name"><br>
+                        <input type="text" name="name" id="name"><br>
                     </div>
                     <div class="email">
                         <label for="email">Street:</label>
-                        <input class="w-75" type="text" name="street" id="street"><br>
+                        <input type="text" name="street" id="street"><br>
                     </div>
                     <div class="email">
                         <label for="email">City:</label>
-                        <input class="w-75" type="text" name="city" id="city"><br>
+                        <input type="text" name="city" id="city"><br>
                     </div>
                     <div class="state">
                         <label for="state">State:</label>
-                        <input class="w-75" type="text" name="state" id="state" placeholder="ID"><br>
+                        <input type="text" name="state" id="state" placeholder="ID"><br>
                     </div>
                     <div class="zip">
                         <label for="zip">Zip:</label>
-                        <input class="w-75" type="number" name="zip" id="zip"><br>
+                        <input type="number" name="zip" id="zip"><br>
                     </div>
                     <div class="email">
                         <label for="email">Email:</label>
-                        <input class="w-75" type="email" name="email" id="email"><br>
+                        <input type="email" name="email" id="email"><br>
                     </div>
                     <div class="submit">
                         <input type='hidden' id='session' name='session' value='<?php var_dump($_SESSION); ?>'>
-                        <input type="submit" class="btn btn-custom bg-green text-dark my-2">
+                        <input type="submit">
                     </div>
                 </form>
 
