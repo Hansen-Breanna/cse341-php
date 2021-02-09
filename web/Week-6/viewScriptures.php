@@ -78,6 +78,14 @@ $db = get_db();
                 <label for="content">Content:</label>
                 <textarea rows="4" columns="50" name="content" id="content"></textarea>
             </div>
+            <div class="topic">
+            <?php
+                foreach($topic as $name) {
+                    echo '<label for="vehicle1">I have a bike</label><br>';
+                    echo '<input type="checkbox" id="vehicle2" name="vehicle2" value="Car">';
+                }
+            ?>
+            </div>
             <div class="submit">
                 <input type='hidden' id='session' name='session' value='<?php var_dump($_SESSION); ?>'>
                 <input type="submit">

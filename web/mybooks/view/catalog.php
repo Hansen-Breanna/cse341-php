@@ -1,6 +1,7 @@
 <?php
 // start session
 session_start();
+$title = $first_name = $last_name = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $title = test_input($_POST["title"]);
