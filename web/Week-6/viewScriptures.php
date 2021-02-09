@@ -90,8 +90,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Notice that we avoid using "SELECT *" here. This is considered
         // good practice so we don't inadvertently bring back data we don't
         // want, especially if the database changes later.
-        //$statement = $db->prepare("SELECT book, chapter, verse, content FROM scripture");
-        //$statement->execute();
+        $statement = $db->prepare("SELECT book, chapter, verse, content FROM scripture");
+        $statement->execute();
 
         // Go through each result
         while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
