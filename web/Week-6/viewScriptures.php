@@ -60,30 +60,22 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 
 ?>
 
-<form method="post" action="confirmation.php">
-                    <div class="name">
-                        <label for="name">Name:</label> 
-                        <input type="text" name="name" id="name"><br>
+<form method="post" action="viewScripturse.php">
+                    <div class="book">
+                        <label for="book">Book:</label> 
+                        <input type="text" name="book" id="book"><br>
                     </div>
-                    <div class="email">
-                        <label for="email">Street:</label>
-                        <input type="text" name="street" id="street"><br>
+                    <div class="chapter">
+                        <label for="chapter">Chapter:</label>
+                        <input type="text" name="chapter" id="chapter"><br>
                     </div>
-                    <div class="email">
-                        <label for="email">City:</label>
-                        <input type="text" name="city" id="city"><br>
+                    <div class="verse">
+                        <label for="verse">Verse:</label>
+                        <input type="text" name="verse" id="verse"><br>
                     </div>
-                    <div class="state">
-                        <label for="state">State:</label>
-                        <input type="text" name="state" id="state" placeholder="ID"><br>
-                    </div>
-                    <div class="zip">
-                        <label for="zip">Zip:</label>
-                        <input type="number" name="zip" id="zip"><br>
-                    </div>
-                    <div class="email">
-                        <label for="email">Email:</label>
-                        <input type="email" name="email" id="email"><br>
+                    <div class="content">
+                        <label for="content">Content:</label>
+                        <textarea rows="4" columns="50" name="content" id="content">
                     </div>
                     <div class="submit">
                         <input type='hidden' id='session' name='session' value='<?php var_dump($_SESSION); ?>'>

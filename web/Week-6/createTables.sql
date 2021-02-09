@@ -28,7 +28,7 @@ INSERT INTO scripture (book, chapter, verse, content)
 CREATE TABLE topic
 (
     id SERIAL PRIMARY KEY NOT NULL,
-    topic VARCHAR(255) NOT NULL,
+    topic VARCHAR(255) NOT NULL
 );
 
 INSERT INTO topic (topic) VALUES ('Faith');
