@@ -43,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Insert into scripture_topic
         $stmt = $db->prepare('INSERT INTO scripture_topic (scripture_id, topic_id) VALUES (:newScriptureID, :newTopicID)');
-        $stmt->execute(array(':topic' => $topic, 'newScriptureID' => $newScriptureID));
+        $stmt->execute(array(':topic' => $topicID, 'newScriptureID' => $newScriptureID));
     //}
 }
 
