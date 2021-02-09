@@ -54,6 +54,43 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo $message;
       }
       ?>
+
+<form method="post" action="viewScriptures.php">
+      <div>
+      <div class="book">
+          <p>Author name:
+                <label for="first-name">First name:</label>
+                <input type="text" name="first-name" id="first-name"><br>
+            </div>
+            <div class="middle-name">
+                <label for="chapter">Middle Name:</label>
+                <input type="text" name="middle-name" id="middle-name"><br>
+            </div>
+            <div class="last-name">
+                <label for="verse">Last name:</label>
+                <input type="text" name="last-name" id="last-name"><br>
+            </div>
+      </div>
+  
+            <div class="content">
+                <label for="content">Content:</label>
+                <textarea rows="4" columns="50" name="content" id="content"></textarea>
+            </div>
+            <div class="topic">
+            <?php
+            $stmt = $db->prepare('SELECT * FROM topic');
+            $stmt->execute();
+            $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                foreach($rows as $topic) {
+                   echo '<br><label>' . $topic['topic'] . '</label>';
+                    echo '<input type="checkbox" id="' . $topic['topic'] . '" name="topic" value="' . $topic['id'] . '"><br>';
+                }
+            ?>
+            </div>
+            <div class="submit">
+                <input type="submit">
+            </div>
+        </form>
       
     </div>
   </div>
