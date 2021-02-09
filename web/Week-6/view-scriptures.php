@@ -11,7 +11,7 @@
 require "dbConnect.php";
 $db = get_db();
 
-$book = $chapter = $verse = $content = $topicID = $topicName = $newTopicID = "";
+$book = $chapter = $verse = $content = $topicID = $topicName = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $book = test_input($_POST["book"]);
@@ -135,7 +135,7 @@ function test_input($data)
 
                 ?>
                 <label>New topic:</label>
-                <input type="checkbox" id="topicName" name="topicName">
+                <input type="checkbox" id="topicName" name="topicName" value="text">
                 <input type="text" id="newTopic" name="topic">
             </div>
             <div class="submit">

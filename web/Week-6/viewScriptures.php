@@ -77,7 +77,7 @@ function test_input($data)
         // Notice that we avoid using "SELECT *" here. This is considered
         // good practice so we don't inadvertently bring back data we don't
         // want, especially if the database changes later.
-        $statement = $db->prepare("SELECT book, chapter, verse, content FROM scripture");
+        $statement = $db->prepare("SELECT s.book, s.chapter, s.verse, s.content, t.topic FROM scripture_topic st INNER JOIN scripture s ON st.scripture_id = s.id INNER JOIN topic t ON st.topic_id = t.id");
         $statement->execute();
 
         // Go through each result
@@ -89,8 +89,9 @@ function test_input($data)
             $chapter = $row['chapter'];
             $verse = $row['verse'];
             $content = $row['content'];
+            $topic = $row['topic'];
 
-            echo "<p><strong>$book $chapter:$verse</strong> - \"$content\"<p>";
+            echo "<p>$topic - <strong>$book $chapter:$verse</strong> - \"$content\"<p>";
         }
 
         ?>
