@@ -11,7 +11,7 @@
 require "dbConnect.php";
 $db = get_db();
 
-$book = $chapter = $verse = $content = $topic = "";
+$book = $chapter = $verse = $content = $topic = $topicName = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $book = test_input($_POST["book"]);
@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $verse = test_input($_POST["verse"]);
     $content = test_input($_POST["content"]);
     $topic = test_input($_POST["topic"]);
-    echo $topic;
+    echo $topicName;
 
    // echo $book . ' ' . $chapter . ':' . $verse . ' - ' . $content;
 
