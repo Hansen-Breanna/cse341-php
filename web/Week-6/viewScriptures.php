@@ -33,15 +33,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $newScriptureID = $db->lastInsertId('scripture_id_seq');
     echo $newScriptureID;
 
-    // function scriptureTopic($db, $newScriptureID, $topic) {
-    //     $stmt = $db->prepare('INSERT INTO scripture_topic (scripture_id, topic_id) VALUES (:newScriptureID, :topic)');
-    //     $stmt->bindValue(':topic', $topic, PDO::PARAM_INT);
-    //     $stmt->bindValue(':newScriptureID', $newScriptureID, PDO::PARAM_INT);
-    //     $stmt->execute();
-    //     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    //     return $results;
-    // }
     
+        $stmt = $db->prepare('INSERT INTO scripture_topic (scripture_id, topic_id) VALUES (:newScriptureID, :topic)');
+        $stmt->bindValue(':topic', $topic, PDO::PARAM_INT);
+        $stmt->bindValue(':newScriptureID', $newScriptureID, PDO::PARAM_INT);
+        $stmt->execute();    
 }
     
 function test_input($data)
