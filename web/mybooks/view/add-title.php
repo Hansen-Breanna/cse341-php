@@ -72,7 +72,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <input type="text" name="last-name" id="last-name"><br>
             </div>
       </div>
-  
+      <!-- Title -->
+      <div>
+
+      </div>
             <div class="content">
                 <label for="content">Content:</label>
                 <textarea rows="4" columns="50" name="content" id="content"></textarea>
