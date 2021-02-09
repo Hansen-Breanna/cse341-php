@@ -11,7 +11,7 @@
 require "dbConnect.php";
 $db = get_db();
 
-$book = $chapter = $verse = $content = $topic = $topicName = "";
+$book = $chapter = $verse = $content = $topic = $newTopicID = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $book = test_input($_POST["book"]);
@@ -19,8 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $verse = test_input($_POST["verse"]);
     $content = test_input($_POST["content"]);
     $topic = test_input($_POST["topic"]);
-    $topicName = test_input($_POST["topicName"]);
-    echo $topicName;
+       echo $topic;
 
     // Insert into scripture
     $stmt= $db->prepare('INSERT INTO scripture (book, chapter, verse, content) VALUES (:book, :chapter, :verse, :content)');
@@ -29,16 +28,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Get last scripture id
     $newScriptureID = $db->lastInsertId('scripture_id_seq');
 
-    // Insert into topic
-    $stmt= $db->prepare('INSERT INTO topic (topic) VALUES (:topic)');
-    $stmt->execute(array(':topic' => $topicName));
+    if (!preg_match('~[0-9]+~', $topic)) {
+        // Insert into topic
+        $stmt= $db->prepare('INSERT INTO topic (topic) VALUES (:topic)');
+        $stmt->execute(array(':topic' => $topic));
+    
+        // Get last topic id
+        $newTopicID = $db->lastInsertId('topic_id_seq');        
+    } //else {
 
-    // Get last topic id
-    $newTopicID = $db->lastInsertId('topic_id_seq');
-
-    // Insert into scripture_topic
+            // Insert into scripture_topic
     $stmt = $db->prepare('INSERT INTO scripture_topic (scripture_id, topic_id) VALUES (:newScriptureID, :newTopicID)');
-    $stmt->execute(array(':newTopicID' => $newTopicID, 'newScriptureID' => $newTopicID));
+    $stmt->execute(array(':topic' => $newTopicID, 'newScriptureID' => $newScriptureID));
+    //}
 
 }
     
@@ -130,8 +132,8 @@ function test_input($data)
 
             ?>
             <label>New topic:</label>
-                <input type="checkbox" id="topicName" name="topicName">
-                <input type="text" id="newTopic" name="topicName">
+                <input type="checkbox" id="topicName" name="topic">
+                <input type="text" id="newTopic" name="topic">
             </div>
             <div class="submit">
                 <input type="submit">
