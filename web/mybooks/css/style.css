@@ -75,7 +75,7 @@ table {
     width: 100px;
 }
 
-a .icon {
+.far::before, .fas::before, .fa::before {
     color: #fff;
     width: 25px;
 }
