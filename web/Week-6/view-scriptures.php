@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Insert into topic
     $stmt= $db->prepare('INSERT INTO topic (topic) VALUES (:topic)');
-    $stmt->execute(array(':topic' => $topic));
+    $stmt->execute(array(':topic' => $topicName));
 
     // Get last topic id
     $newTopicID = $db->lastInsertId('topic_id_seq');
