@@ -1,5 +1,15 @@
 <?php function get_db() {
-	$db = NULL;
+
+    /**********************************************************
+* File: dbConnect.php
+* Author: Br. Burton
+* 
+* Description: Shows how to connect using either local
+* OR Heroku credentials, depending on whether the code
+* is executing at heroku.
+***********************************************************/
+
+$db = NULL;
 
 	try {
 		// default Heroku Postgres configuration URL

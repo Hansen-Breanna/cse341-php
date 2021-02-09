@@ -1,11 +1,12 @@
 <?php
+
 /**********************************************************
-* File: viewScriptures.php
-* Author: Br. Burton
-* 
-* Description: This file shows an example of how to query a
-*   PostgreSQL database from PHP.
-***********************************************************/
+ * File: viewScriptures.php
+ * Author: Br. Burton
+ * 
+ * Description: This file shows an example of how to query a
+ *   PostgreSQL database from PHP.
+ ***********************************************************/
 
 require "dbConnect.php";
 $db = get_db();
@@ -13,77 +14,78 @@ $db = get_db();
 ?>
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title>Scripture List</title>
+    <title>Scripture List</title>
 </head>
 
 <body>
-<div>
+    <div>
 
-<h1>Scripture Resources</h1>
+        <h1>Scripture Resources</h1>
 
-<?php
+        <?php
 
-// In this example, for simplicity, the query is executed
-// right here and the data echoed out as we iterate the query.
+        // In this example, for simplicity, the query is executed
+        // right here and the data echoed out as we iterate the query.
 
-// You could imagine that in a more involved application, we
-// would likely query the database in a completely separate file / function
-// and build a list of objects that held the components of each
-// scripture. Then, here on the page, we could simply call that 
-// function, and iterate through the list that was returned and
-// print each component.
+        // You could imagine that in a more involved application, we
+        // would likely query the database in a completely separate file / function
+        // and build a list of objects that held the components of each
+        // scripture. Then, here on the page, we could simply call that 
+        // function, and iterate through the list that was returned and
+        // print each component.
 
 
 
-// First, prepare the statement
+        // First, prepare the statement
 
-// Notice that we avoid using "SELECT *" here. This is considered
-// good practice so we don't inadvertently bring back data we don't
-// want, especially if the database changes later.
-$statement = $db->prepare("SELECT book, chapter, verse, content FROM scripture");
-$statement->execute();
+        // Notice that we avoid using "SELECT *" here. This is considered
+        // good practice so we don't inadvertently bring back data we don't
+        // want, especially if the database changes later.
+        $statement = $db->prepare("SELECT book, chapter, verse, content FROM scripture");
+        $statement->execute();
 
-// Go through each result
-while ($row = $statement->fetch(PDO::FETCH_ASSOC))
-{
-	// The variable "row" now holds the complete record for that
-	// row, and we can access the different values based on their
-	// name
-	$book = $row['book'];
-	$chapter = $row['chapter'];
-	$verse = $row['verse'];
-	$content = $row['content'];
+        // Go through each result
+        while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+            // The variable "row" now holds the complete record for that
+            // row, and we can access the different values based on their
+            // name
+            $book = $row['book'];
+            $chapter = $row['chapter'];
+            $verse = $row['verse'];
+            $content = $row['content'];
 
-	echo "<p><strong>$book $chapter:$verse</strong> - \"$content\"<p>";
-}
+            echo "<p><strong>$book $chapter:$verse</strong> - \"$content\"<p>";
+        }
 
-?>
+        ?>
 
-<form method="post" action="viewScriptures.php">
-                    <div class="book">
-                        <label for="book">Book:</label> 
-                        <input type="text" name="book" id="book"><br>
-                    </div>
-                    <div class="chapter">
-                        <label for="chapter">Chapter:</label>
-                        <input type="text" name="chapter" id="chapter"><br>
-                    </div>
-                    <div class="verse">
-                        <label for="verse">Verse:</label>
-                        <input type="text" name="verse" id="verse"><br>
-                    </div>
-                    <div class="content">
-                        <label for="content">Content:</label>
-                        <textarea rows="4" columns="50" name="content" id="content">
-                    </div>
-                    <div class="submit">
-                        <input type='hidden' id='session' name='session' value='<?php var_dump($_SESSION); ?>'>
-                        <input type="submit">
-                    </div>
-                </form>
+        <form method="post" action="viewScriptures.php">
+            <div class="book">
+                <label for="book">Book:</label>
+                <input type="text" name="book" id="book"><br>
+            </div>
+            <div class="chapter">
+                <label for="chapter">Chapter:</label>
+                <input type="text" name="chapter" id="chapter"><br>
+            </div>
+            <div class="verse">
+                <label for="verse">Verse:</label>
+                <input type="text" name="verse" id="verse"><br>
+            </div>
+            <div class="content">
+                <label for="content">Content:</label>
+                <textarea rows="4" columns="50" name="content" id="content"></textarea>
+            </div>
+            <div class="submit">
+                <input type='hidden' id='session' name='session' value='<?php var_dump($_SESSION); ?>'>
+                <input type="submit">
+            </div>
+        </form>
 
-</div>
+    </div>
 
 </body>
+
 </html>
