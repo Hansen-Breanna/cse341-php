@@ -166,7 +166,7 @@ if (str.length == 0) {
 document.querySelector("#submitScripture").addEventListener("click", function(event) {
          document.getElementById("scriptures").innerHTML += "Sorry! <code>preventDefault()</code> won't let you check this!<br>";
          event.preventDefault();
-}, false);
+}, true);
             </script>
 
             <div class="submit">
