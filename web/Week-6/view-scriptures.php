@@ -29,17 +29,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Get last scripture id
     $newScriptureID = $db->lastInsertId('scripture_id_seq');
 
-    if (isset($topicName)) {
-        // Insert into topic
-        $stmt = $db->prepare('INSERT INTO topic (topic) VALUES (:topic)');
-        $stmt->execute(array(':topic' => $topic));
+    // if (isset($topicName)) {
+    //     // Insert into topic
+    //     $stmt = $db->prepare('INSERT INTO topic (topic) VALUES (:topic)');
+    //     $stmt->execute(array(':topic' => $topic));
 
-        // Get last topic id
-        $newTopicID = $db->lastInsertId('topic_id_seq');
-        // Insert into scripture_topic
-        $stmt = $db->prepare('INSERT INTO scripture_topic (scripture_id, topic_id) VALUES (:newScriptureID, :newTopicID)');
-        $stmt->execute(array(':topic' => $newTopicID, 'newScriptureID' => $newScriptureID));
-    } else {
+    //     // Get last topic id
+    //     $newTopicID = $db->lastInsertId('topic_id_seq');
+    //     // Insert into scripture_topic
+    //     $stmt = $db->prepare('INSERT INTO scripture_topic (scripture_id, topic_id) VALUES (:newScriptureID, :newTopicID)');
+    //     $stmt->execute(array(':topic' => $newTopicID, 'newScriptureID' => $newScriptureID));
+    // } else {
 
         // Insert into scripture_topic
         $stmt = $db->prepare('INSERT INTO scripture_topic (scripture_id, topic_id) VALUES (:newScriptureID, :newTopicID)');
