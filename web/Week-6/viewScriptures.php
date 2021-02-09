@@ -125,8 +125,8 @@ function test_input($data)
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
             var_dump($rows);
                 foreach($rows as $topic) {
-                   echo '<label>' . $topic['topic'] . '</label>';
-                    echo '<input type="checkbox" id="' . $topic['topic'] . '" name="' . $topic['topic'] . '" value="' . ['id'] . '"><br>';
+                   echo '<br><label>' . $topic['topic'] . '</label>';
+                    echo '<input type="checkbox" id="' . $topic['topic'] . '" name="topic" value="' . $topic['id'] . '"><br>';
                 }
             ?>
             </div>
