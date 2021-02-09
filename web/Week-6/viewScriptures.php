@@ -11,6 +11,53 @@
 require "dbConnect.php";
 $db = get_db();
 
+$book = $chapter = $verse = $content = $topic = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $book = test_input($_POST["book"]);
+    $chapter = test_input($_POST["chapter"]);
+    $verse = test_input($_POST["verse"]);
+    $content = test_input($_POST["content"]);
+    $topic = test_input($_POST["topic"]);
+
+    $insert = insertScripture($db, $book, $chapter, $verse, $content);
+
+    function insertScripture($db, $book, $chapter, $verse, $content) {
+        $stmt= $db->prepare('INSERT INTO scripture (book, chapter, verse, content) VALUES (:book, :chapter, :verse, :content)');
+        $stmt->bindValue(':book', $book, PDO::PARAM_STR);
+        $stmt->bindValue(':chapter', $chapter, PDO::PARAM_INT);
+        $stmt->bindValue(':verse', $verse, PDO::PARAM_INT);
+        $stmt->bindValue(':content', $content, PDO::PARAM_STR);
+        $stmt->execute();
+        $stmt->execute(array(':book' => $book, ':chapter' => $chapter, ':verse' => $verse, ':content' => $content));
+        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $results;
+    }
+
+    $newScriptureID = $pdo->lastInsertId('scripture_id_sq');
+    echo $newScriptureID;
+
+    // function scriptureTopic($db, $newScriptureID, $topic) {
+    //     $stmt = $db->prepare('INSERT INTO scripture_topic (scripture_id, topic_id) VALUES (:newScriptureID, :topic)');
+    //     $stmt->bindValue(':topic', $topic, PDO::PARAM_INT);
+    //     $stmt->bindValue(':newScriptureID', $newScriptureID, PDO::PARAM_INT);
+    //     $stmt->execute();
+    //     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    //     return $results;
+    // }
+
+    function test_input($data)
+{
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}
+
+}
+
+
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -43,8 +90,8 @@ $db = get_db();
         // Notice that we avoid using "SELECT *" here. This is considered
         // good practice so we don't inadvertently bring back data we don't
         // want, especially if the database changes later.
-        $statement = $db->prepare("SELECT book, chapter, verse, content FROM scripture");
-        $statement->execute();
+        //$statement = $db->prepare("SELECT book, chapter, verse, content FROM scripture");
+        //$statement->execute();
 
         // Go through each result
         while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
@@ -80,14 +127,14 @@ $db = get_db();
             </div>
             <div class="topic">
             <?php
-                foreach($topic as $name) {
-                    echo '<label for="vehicle1">I have a bike</label><br>';
-                    echo '<input type="checkbox" id="vehicle2" name="vehicle2" value="Car">';
-                }
+                // foreach($topic as $name) {
+                   // echo '<label for="vehicle1">I have a bike</label><br>';
+                    //echo '<input type="checkbox" id="vehicle2" name="vehicle2" value="Car">';
+                //}
             ?>
             </div>
             <div class="submit">
-                <input type='hidden' id='session' name='session' value='<?php var_dump($_SESSION); ?>'>
+                <input type='hidden' id='session' name='session' value=''>
                 <input type="submit">
             </div>
         </form>
