@@ -19,6 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $verse = test_input($_POST["verse"]);
     $content = test_input($_POST["content"]);
     $topic = test_input($_POST["topic"]);
+    $topicName = test_input($_POST["topicName"]);
     echo $topicName;
 
    // echo $book . ' ' . $chapter . ':' . $verse . ' - ' . $content;
@@ -125,9 +126,9 @@ function test_input($data)
                 
             ?>
 
-<!--             
+            
                 <input type="checkbox" onclick="var input = document.getElementById('topicName'); if(this.checked){ input.disabled = false; input.focus();}else{input.disabled=true;}" />Other...
-        <input id="topicName" name="topicName" disabled="disabled"/> -->
+        <input id="topicName" name="topicName" disabled="disabled"/>
                 <!-- <input type="checkbox" id="newTopic" for="topicName">
                 <input id="topicName" name="topicName"> -->
             </div>
