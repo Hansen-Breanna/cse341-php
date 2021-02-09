@@ -120,10 +120,13 @@ function test_input($data)
             </div>
             <div class="topic">
             <?php
+            $topic = $db->prepare("SELECT * FROM topic");
+            $statement->execute();
+            var_dump($topic);
                 // foreach($topic as $name) {
-                   // echo '<label for="vehicle1">I have a bike</label><br>';
-                    //echo '<input type="checkbox" id="vehicle2" name="vehicle2" value="Car">';
-                //}
+                //    echo '<label for="vehicle1">I have a bike</label><br>';
+                //     echo '<input type="checkbox" id="vehicle2" name="vehicle2" value="Car">';
+                // }
             ?>
             </div>
             <div class="submit">
