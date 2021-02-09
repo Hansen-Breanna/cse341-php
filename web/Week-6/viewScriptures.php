@@ -28,11 +28,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->execute(array(':book' => $book, ':chapter' => $chapter, ':verse' => $verse, ':content' => $content));
 
         $newScriptureID = $db->lastInsertId('scripture_id_seq');
-    
+
+        if ($topicName != "") {
+                echo "new topic";
+        } else {
+                
         $stmt = $db->prepare('INSERT INTO scripture_topic (scripture_id, topic_id) VALUES (:newScriptureID, :topic)');
         $stmt->bindValue(':topic', $topic, PDO::PARAM_INT);
         $stmt->bindValue(':newScriptureID', $newScriptureID, PDO::PARAM_INT);
-        $stmt->execute();    
+        $stmt->execute(); 
+        }   
 }
     
 function test_input($data)
