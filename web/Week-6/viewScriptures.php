@@ -162,10 +162,15 @@ if (str.length == 0) {
     xmlhttp.send();
   }
 }
+
+document.querySelector("#submitScripturex").addEventListener("click", function(event) {
+         document.getElementById("scriptures").innerHTML += "Sorry! <code>preventDefault()</code> won't let you check this!<br>";
+         event.preventDefault();
+}, false);
             </script>
 
             <div class="submit">
-                <input type="submit" onclick="addScripture(this.value)">
+                <input type="submit" id="submitScripture" onclick="addScripture(this.value)">
             </div>
         </form>
 
