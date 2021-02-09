@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // $stmt->execute();
         $stmt->execute(array(':book' => $book, ':chapter' => $chapter, ':verse' => $verse, ':content' => $content));
 
-    $newScriptureID = $pdo->lastInsertId();
+    $newScriptureID = $pdo->lastInsertId('scripture_id_seq');
     echo $newScriptureID;
 
     // function scriptureTopic($db, $newScriptureID, $topic) {
