@@ -47,8 +47,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
     //     return $results;
     // }
-
-    function test_input($data)
+    
+}
+    
+function test_input($data)
 {
     $data = trim($data);
     $data = stripslashes($data);
@@ -56,7 +58,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     return $data;
 }
 
-}
 
 
 
