@@ -20,22 +20,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $content = test_input($_POST["content"]);
     $topic = test_input($_POST["topic"]);
 
-    $insert = insertScripture($db, $book, $chapter, $verse, $content);
+    echo $book . ' ' . $chapter . ':' . $verse . ' - ' . $content;
 
-    function insertScripture($db, $book, $chapter, $verse, $content) {
-        $stmt= $db->prepare('INSERT INTO scripture (book, chapter, verse, content) VALUES (:book, :chapter, :verse, :content)');
-        $stmt->bindValue(':book', $book, PDO::PARAM_STR);
-        $stmt->bindValue(':chapter', $chapter, PDO::PARAM_INT);
-        $stmt->bindValue(':verse', $verse, PDO::PARAM_INT);
-        $stmt->bindValue(':content', $content, PDO::PARAM_STR);
-        $stmt->execute();
-        $stmt->execute(array(':book' => $book, ':chapter' => $chapter, ':verse' => $verse, ':content' => $content));
-        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        return $results;
-    }
+    //$insert = insertScripture($db, $book, $chapter, $verse, $content);
 
-    $newScriptureID = $pdo->lastInsertId('scripture_id_sq');
-    echo $newScriptureID;
+    // function insertScripture($db, $book, $chapter, $verse, $content) {
+    //     $stmt= $db->prepare('INSERT INTO scripture (book, chapter, verse, content) VALUES (:book, :chapter, :verse, :content)');
+    //     $stmt->bindValue(':book', $book, PDO::PARAM_STR);
+    //     $stmt->bindValue(':chapter', $chapter, PDO::PARAM_INT);
+    //     $stmt->bindValue(':verse', $verse, PDO::PARAM_INT);
+    //     $stmt->bindValue(':content', $content, PDO::PARAM_STR);
+    //     $stmt->execute();
+    //     $stmt->execute(array(':book' => $book, ':chapter' => $chapter, ':verse' => $verse, ':content' => $content));
+    //     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    //     return $results;
+    // }
+
+    // $newScriptureID = $pdo->lastInsertId('scripture_id_sq');
+    // echo $newScriptureID;
 
     // function scriptureTopic($db, $newScriptureID, $topic) {
     //     $stmt = $db->prepare('INSERT INTO scripture_topic (scripture_id, topic_id) VALUES (:newScriptureID, :topic)');
@@ -134,7 +136,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             ?>
             </div>
             <div class="submit">
-                <input type='hidden' id='session' name='session' value=''>
                 <input type="submit">
             </div>
         </form>
