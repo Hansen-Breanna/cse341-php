@@ -57,9 +57,6 @@ function test_input($data)
     return $data;
 }
 
-
-
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -72,6 +69,8 @@ function test_input($data)
     <div>
 
         <h1>Scripture Resources</h1>
+
+        <div id="scriptures">
 
         <?php
 
@@ -111,7 +110,8 @@ function test_input($data)
 
         ?>
 
-        <form method="post" action="viewScriptures.php">
+    </div>
+        <form method="post" action="">
             <div class="book">
                 <label for="book">Book:</label>
                 <input type="text" name="book" id="book"><br>
@@ -143,11 +143,29 @@ function test_input($data)
             
                 <input type="checkbox" onclick="var input = document.getElementById('topicName'); if(this.checked){ input.disabled = false; input.focus();}else{input.disabled=true;}" />Other...
         <input id="topicName" name="topicName" disabled="disabled"/>
-                <!-- <input type="checkbox" id="newTopic" for="topicName">
-                <input id="topicName" name="topicName"> -->
+             
             </div>
+
+            <script>
+                function addScripture(str) {
+if (str.length == 0) {
+    document.getElementById("scriptures").innerHTML = "";
+    return;
+  } else {
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        document.getElementById("scriptures").innerHTML = this.responseText;
+      }
+    };
+    xmlhttp.open("GET", "viewScriptures.php", true);
+    xmlhttp.send();
+  }
+}
+            </script>
+
             <div class="submit">
-                <input type="submit">
+                <input type="submit" onclick="addScripture(this.value)">
             </div>
         </form>
 
