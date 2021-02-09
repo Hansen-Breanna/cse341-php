@@ -5,7 +5,8 @@ function displayCatalog($catalog) {
     $bookList = '<tbody>';
     foreach ($catalog as $book) {
        $bookList .= '<tr><td>' . $book['title_of_book'] . '</td>';
-       $bookList .= '<td class="pl-5">' . $book['first_name'] . ' ' . $book['middle_name'] . ' ' . $book['last_name'] . '</td></tr>';
+       $bookList .= '<td class="pl-5">' . $book['first_name'] . ' ' . $book['middle_name'] . ' ' . $book['last_name'] . '</td>';
+       $bookList .= '<td class="pl-5><a href="" <i class="far fa-edit" data-toggle="tooltip" data-placement="top" title="Edit"></i></a></tr>';
     }
     $bookList .= '</tbody>';
     return $bookList;

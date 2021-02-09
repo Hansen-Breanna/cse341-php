@@ -59,6 +59,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <tr>
             <th class="pl-1">Book Title</th>
             <th class="pl-5">Author</th>
+            <th class="pl-5"></th>
           </tr>
         </thead>
         <?php
