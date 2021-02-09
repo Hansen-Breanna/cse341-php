@@ -36,8 +36,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $newTopicID = $db->lastInsertId('topic_id_seq');
 
     // Insert into scripture_topic
-    $stmt = $db->prepare('INSERT INTO scripture_topic (scripture_id, newTopicID) VALUES (:newScriptureID, :newTopicID)');
+    $stmt = $db->prepare('INSERT INTO scripture_topic (scripture_id, topic_id) VALUES (:newScriptureID, :newTopicID)');
     $stmt->execute(array(':newTopicID' => $newTopicID, 'newScriptureID' => $newTopicID));
+
 }
     
 function test_input($data)
