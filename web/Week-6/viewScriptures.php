@@ -121,6 +121,7 @@ function test_input($data)
             <div class="topic">
             <?php
             $stmt = $db->prepare('SELECT * FROM topic');
+            $stmt->execute();
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
             var_dump($rows);
                 // foreach($topic as $name) {
