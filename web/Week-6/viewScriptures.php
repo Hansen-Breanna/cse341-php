@@ -163,7 +163,7 @@ if (str.length == 0) {
   }
 }
 
-document.querySelector("#submitScripturex").addEventListener("click", function(event) {
+document.querySelector("#submitScripture").addEventListener("click", function(event) {
          document.getElementById("scriptures").innerHTML += "Sorry! <code>preventDefault()</code> won't let you check this!<br>";
          event.preventDefault();
 }, false);
