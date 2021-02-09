@@ -124,10 +124,10 @@ function test_input($data)
             $stmt->execute();
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
             var_dump($rows);
-                // foreach($topic as $name) {
-                //    echo '<label for="vehicle1">I have a bike</label><br>';
-                //     echo '<input type="checkbox" id="vehicle2" name="vehicle2" value="Car">';
-                // }
+                foreach($rows as $topic) {
+                   echo '<label>' . $topic['topic'] . '</label><br>';
+                    echo '<input type="checkbox" id="' . $topic['topic'] . '" name="' . $topic['topic'] . '" value="' . ['id'] . '">';
+                }
             ?>
             </div>
             <div class="submit">
