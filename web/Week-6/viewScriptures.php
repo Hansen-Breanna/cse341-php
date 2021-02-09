@@ -60,7 +60,7 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 
 ?>
 
-<form method="post" action="viewScripturse.php">
+<form method="post" action="viewScriptures.php">
                     <div class="book">
                         <label for="book">Book:</label> 
                         <input type="text" name="book" id="book"><br>
