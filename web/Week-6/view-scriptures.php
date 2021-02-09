@@ -11,7 +11,7 @@
 require "dbConnect.php";
 $db = get_db();
 
-$book = $chapter = $verse = $content = $topic = "";
+$book = $chapter = $verse = $content = $topic = $topicName = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $book = test_input($_POST["book"]);
@@ -19,6 +19,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $verse = test_input($_POST["verse"]);
     $content = test_input($_POST["content"]);
     $topic = test_input($_POST["topic"]);
+    $topicName = test_input($_POST["topicName"]);
+
+    // Insert into scripture
+    $stmt= $db->prepare('INSERT INTO scripture (book, chapter, verse, content) VALUES (:book, :chapter, :verse, :content)');
+    $stmt->execute(array(':book' => $book, ':chapter' => $chapter, ':verse' => $verse, ':content' => $content));
+
+    // Get last scripture id
+    $newScriptureID = $db->lastInsertId('scripture_id_seq');
+
+    // Insert into topic
+    $stmt= $db->prepare('INSERT INTO topic (topic) VALUES (:topic)');
+    $stmt->execute(array(':topic' => $topic));
+
+    // Get last topic id
+    $newTopicID = $db->lastInsertId('topic_id_seq');
+
+    // Insert into scripture_topic
+    $stmt = $db->prepare('INSERT INTO scripture_topic (scripture_id, newTopicID) VALUES (:newScriptureID, :newTopicID)');
+    $stmt->execute(array(':newTopicID' => $newTopicID, 'newScriptureID' => $newTopicID));
 }
     
 function test_input($data)
@@ -106,7 +125,11 @@ function test_input($data)
                    echo '<br><label>' . $topic['topic'] . '</label>';
                     echo '<input type="checkbox" id="' . $topic['topic'] . '" name="topic" value="' . $topic['id'] . '"><br>';
                 }
+
             ?>
+            <label>New topic:</label>
+                <input type="checkbox" id="topicName" name="topicName">
+                <input type="text" id="newTopic" name="topicName">
             </div>
             <div class="submit">
                 <input type="submit">
