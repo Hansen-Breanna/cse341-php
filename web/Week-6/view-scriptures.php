@@ -20,6 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $content = test_input($_POST["content"]);
     $topic = test_input($_POST["topic"]);
     $topicName = test_input($_POST["topicName"]);
+    echo $topicName;
 
     // Insert into scripture
     $stmt= $db->prepare('INSERT INTO scripture (book, chapter, verse, content) VALUES (:book, :chapter, :verse, :content)');
@@ -28,12 +29,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Get last scripture id
     $newScriptureID = $db->lastInsertId('scripture_id_seq');
 
-    // Insert into topic
-    $stmt= $db->prepare('INSERT INTO topic (topic) VALUES (:topic)');
-    $stmt->execute(array(':topic' => $topic));
+    // // Insert into topic
+    // $stmt= $db->prepare('INSERT INTO topic (topic) VALUES (:topic)');
+    // $stmt->execute(array(':topic' => $topic));
 
-    // Get last topic id
-    $newTopicID = $db->lastInsertId('topic_id_seq');
+    // // Get last topic id
+    // $newTopicID = $db->lastInsertId('topic_id_seq');
 
     // Insert into scripture_topic
     $stmt = $db->prepare('INSERT INTO scripture_topic (scripture_id, topic_id) VALUES (:newScriptureID, :newTopicID)');
