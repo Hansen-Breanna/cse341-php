@@ -121,6 +121,12 @@ switch ($action){
         $message = "<p class='px-4 py-3 bg-danger rounded'>No author selected.</p>";
         include 'view/wish-list.php';
     break;
+    case 'add-title':
+        include 'view/add-title.php';
+    break;
+    case 'remove-title':
+        include 'view/remove-title.php';
+    break;
     default:
         include 'view/home.php';
 }
