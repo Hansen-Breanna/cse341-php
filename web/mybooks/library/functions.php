@@ -216,20 +216,21 @@ function insertAuthor($db, $first_name, $middle_name, $last_name) {
 
 // Insert user_author
 function insertUserAuthor($db, $userID, $authorID, $blacklist, $favorite) {
+   echo "hello";
   $stmt = $db->prepare('INSERT INTO user_author (library_user_id, author_id, is_blacklist, is_favorite) VALUES (:userID, :authorID, :blacklist, :favorite)');
   $stmt->execute(array(':userID '=> $userID, ':authorID' => $authorID, ':blacklist' => $blacklist, ':favorite' => $favorite));
 }
 
 // Insert book
 function insertTitle($db, $authorID, $title) {
-   $stmt = $db->prepare('INSERT INTO book_title (author_id, title_of_book) VALUES (:authorID, :title)');
-   $stmt->execute(array(':authorID' => $authorID, ':title' => $title));
+   // $stmt = $db->prepare('INSERT INTO book_title (author_id, title_of_book) VALUES (:authorID, :title)');
+   // $stmt->execute(array(':authorID' => $authorID, ':title' => $title));
 }
 
 // Insert user-book
 function  insertUserBook($db, $userID, $titleID, $own, $own_wish, $read_wish) {
-   $stmt = $db->prepare('INSERT INTO user_book (library_user_id, book_title_id, is_owned, own_wish_list, read_wish_list) VALUES (:userID, titleID, :owned, :own_wish, :read_wish)');
-   $stmt->execute(array(':userID' => $userID, ':titleID' => $titleID, ':owned' => $own, ':own_wish' => $own_wish, ':read_wish' => $read_wish));
+   // $stmt = $db->prepare('INSERT INTO user_book (library_user_id, book_title_id, is_owned, own_wish_list, read_wish_list) VALUES (:userID, titleID, :owned, :own_wish, :read_wish)');
+   // $stmt->execute(array(':userID' => $userID, ':titleID' => $titleID, ':owned' => $own, ':own_wish' => $own_wish, ':read_wish' => $read_wish));
 }
 
 ?>
