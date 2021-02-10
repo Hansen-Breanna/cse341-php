@@ -95,5 +95,9 @@ function displayAuthors($authors) {
     $data = htmlspecialchars($data);
     return $data;
 }
+
+function removeQuotes($data) {
+   return str_replace('"', "", $data);
+}
  
 ?>
