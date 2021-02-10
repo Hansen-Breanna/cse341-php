@@ -77,7 +77,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                         $statement->execute();
                                         
                                         foreach ($statement as $first_name) {
-                                        echo($first_name);
+                                        echo"hello";
                                             echo "<option value='$first_name'>$first_name</option>";
                                         }?>
                                     </select>
