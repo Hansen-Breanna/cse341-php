@@ -24,7 +24,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     insertAuthor($db, $first_name, $middle_name, $last_name);
     $newAuthorID = $db->lastInsertId('author_id_seq');
 
-    if (isset($favorite)) 
     //user_author
     insertUserAuthor($db, $_SESSION['id'], $newAuthorID, $blacklist, $favorite);
     
