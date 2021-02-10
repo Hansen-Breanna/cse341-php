@@ -71,7 +71,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <table>
                             <tbody>
                                 <tr>
-                                    <td><select>
+                                    <td><select class="p-2">
                                         <?php 
                                         $statement = $db->prepare("SELECT first_name FROM author");
                                         $statement->execute();
@@ -79,10 +79,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                         while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
                                             echo '<option value=' . $row['first_name'] . '>' . $row['first_name'] . '</option>'; 
                                         }
-                                        foreach ($statement[0] as $first_name) {
-                                        echo"hello";
-                                            echo "<option value='$first_name'>$first_name</option>";
-                                        }?>
+                                        ?>
                                     </select>
                                     <td><label for="first-name">First name:</label></td>
                                     <td><input type="text" class="rounded mb-1" name="first_name" id="first_name"></td>
