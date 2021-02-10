@@ -92,15 +92,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <!-- Title -->
                     <div class="book-title">
                         <h2 class="mt-2">Title</h2>
-                        <div class="title">
-                            <label>Book title:</label>
-                            <input type="text" class="rounded" id="title" name="title">
-                        </div>
-                        <div class="user-title">
-                            <span class="d-flex align-items-center"><input type="checkbox" class="rounded mr-1" id="own" name="own" value="TRUE">Currently Own</span>
-                            <span class="d-flex align-items-center"><input type="checkbox" class="rounded mr-1" id="ownWish" name="own_wish" value="TRUE">Own Wish List</span>
-                            <span class="d-flex align-items-center"><input type="checkbox" class="rounded mr-1" id="readWish" name="read_wish" value="TRUE">Read Wish List</span>
-                        </div>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td><label>Book title:</label></td>
+                                    <td><input type="text" class="rounded" id="title" name="title"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="d-flex align-items-center"><input type="checkbox" class="rounded mr-1" id="own" name="own" value="TRUE">Currently Own</span>
+                                        <span class="d-flex align-items-center"><input type="checkbox" class="rounded mr-1" id="ownWish" name="own_wish" value="TRUE">Own Wish List</span>
+                                        <span class="d-flex align-items-center"><input type="checkbox" class="rounded mr-1" id="readWish" name="read_wish" value="TRUE">Read Wish List</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                     <div class="submit">
                         <input type="submit">
