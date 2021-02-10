@@ -68,22 +68,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <div>
                         <!-- Author -->
                         <h2 class="author-name mt-2">Author</h2>
-                        <div class="author">
-                            <label for="first-name">First name:</label>
-                            <input type="text" class="rounded mb-1 pr-2" name="first_name" id="first-name"><br>
-                            <!-- </div>
-                        <div class="middle-name"> -->
-                            <label for="chapter">Middle Name:</label>
-                            <input type="text" class="rounded mb-1" name="middle_name" id="middle-name"><br>
-                            <!-- </div>
-                        <div class="last-name"> -->
-                            <label for="verse">Last name:</label>
-                            <input type="text" class="rounded mb-1 pr-2" name="last_name" id="last-name"><br>
-                        </div>
-                        <div>
-                            <span class="d-flex align-items-center"><input type="checkbox" class="rounded mr-1" id="favorite" name="favorite" value="TRUE">Favorite</span>
-                            <span class="d-flex align-items-center"><input type="checkbox" class="rounded mr-1" id="blacklist" name="blacklist" value="TRUE">Blacklist</span>
-                        </div>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td><label for="first-name">First name:</label></td>
+                                    <td><input type="text" class="rounded mb-1" name="first_name" id="first-name"></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="chapter">Middle Name:</label></td>
+                                    <td><input type="text" class="rounded mb-1" name="middle_name" id="middle-name"></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="verse">Last name:</label></td>
+                                    <td><input type="text" class="rounded mb-1" name="last_name" id="last-name"><br></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="d-flex align-items-center"><input type="checkbox" class="rounded mr-1" id="favorite" name="favorite" value="TRUE">Favorite</span></td>
+                                    <td><span class="d-flex align-items-center"><input type="checkbox" class="rounded mr-1" id="blacklist" name="blacklist" value="TRUE">Blacklist</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                     <!-- Title -->
                     <div class="book-title">
