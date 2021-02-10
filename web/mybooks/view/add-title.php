@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $middle_name = test_input($_POST["middle_name"]);
     $last_name = test_input($_POST["last_name"]);
     $favorite = test_input($_POST["favorite"]);
-    if (isset($_POST['favorite'])) {
+    if ($favorite != FALSE) {
         $favorite = TRUE;
     }
     $blacklist = test_input($_POST["blacklist"]);
