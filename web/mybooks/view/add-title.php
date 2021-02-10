@@ -35,52 +35,51 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div>
                 <a href="index.php?action=catalog" title="See All Titles" class="btn btn-custom bg-info my-2 ml-1">See All Titles</a>
             </div>
-        </div>
-        <div>
-            <?php
-            if ($_SERVER["REQUEST_METHOD"] == "GET") {
-                echo $message;
-            }
-            ?>
+            <div>
+                <?php
+                if ($_SERVER["REQUEST_METHOD"] == "GET") {
+                    echo $message;
+                }
+                ?>
 
-            <form method="post" action="">
-                <div>
-                    <!-- Author -->
-                    <p class="author-name">Author name</p>
-                    <div class="author">
-                        <label for="first-name">First name:</label>
-                        <input type="text" name="first-name" id="first-name"><br>
-                    </div>
-                    <div class="middle-name">
-                        <label for="chapter">Middle Name:</label>
-                        <input type="text" name="middle-name" id="middle-name"><br>
-                    </div>
-                    <div class="last-name">
-                        <label for="verse">Last name:</label>
-                        <input type="text" name="last-name" id="last-name"><br>
-                    </div>
+                <form method="post" action="">
                     <div>
-                        <input type="checkbox" id="favorite" name="favorite">Favorite
-                        <input type="checkbox" id="blacklist" name="blacklist">Blacklist<br>
+                        <!-- Author -->
+                        <p class="author-name">Author name</p>
+                        <div class="author">
+                            <label for="first-name">First name:</label>
+                            <input type="text" name="first-name" id="first-name"><br>
+                        </div>
+                        <div class="middle-name">
+                            <label for="chapter">Middle Name:</label>
+                            <input type="text" name="middle-name" id="middle-name"><br>
+                        </div>
+                        <div class="last-name">
+                            <label for="verse">Last name:</label>
+                            <input type="text" name="last-name" id="last-name"><br>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="favorite" name="favorite">Favorite
+                            <input type="checkbox" id="blacklist" name="blacklist">Blacklist<br>
+                        </div>
                     </div>
-                </div>
-                <!-- Title -->
-                <div class="title">
-                    <label>Book title:</label>
-                    <input type="text" id="title" name="title">
-                </div>
-                <div class="user-title">
-                    <!-- library_user_id
+                    <!-- Title -->
+                    <div class="title">
+                        <label>Book title:</label>
+                        <input type="text" id="title" name="title">
+                    </div>
+                    <div class="user-title">
+                        <!-- library_user_id
           book_title_id
           owned
           own Wish
           read wish -->
-                    <input type="checkbox" id="own" name="own">Currently Own<br>
-                    <input type="checkbox" id="ownWish" name="ownWish">Own Wish List<br>
-                    <input type="checkbox" id="readWish" name="readWish">Read Wish List<br>
-                </div>
+                        <input type="checkbox" id="own" name="own">Currently Own<br>
+                        <input type="checkbox" id="ownWish" name="ownWish">Own Wish List<br>
+                        <input type="checkbox" id="readWish" name="readWish">Read Wish List<br>
+                    </div>
 
-                <!-- author
+                    <!-- author
           first, middle, last
 
           user-Author
@@ -100,13 +99,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           own Wish
           read wish -->
 
-                <div class="submit">
-                    <input type="submit">
-                </div>
-            </form>
+                    <div class="submit">
+                        <input type="submit">
+                    </div>
+                </form>
 
+            </div>
         </div>
-    </div>
     </div>
 </main>
 
