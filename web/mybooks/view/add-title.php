@@ -11,31 +11,52 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (isset($_POST["favorite"])) {
         $favorite = test_input($_POST["favorite"]);
-        $favorite = t;
+    } else {
+        $favorite = 'f';
     }
-    $blacklist = test_input($_POST["blacklist"]);
+    if (isset($_POST["blacklist"])) {
+        $favorite = test_input($_POST["blacklist"]);
+    } else {
+        $favorite = 'f';
+    }
+    if (isset($_POST["own"])) {
+        $favorite = test_input($_POST["own"]);
+    } else {
+        $favorite = 'f';
+    }
+    if (isset($_POST["own_wish"])) {
+        $favorite = test_input($_POST["own_wish"]);
+    } else {
+        $favorite = 'f';
+    }
+    if (isset($_POST["read_wish"])) {
+        $favorite = test_input($_POST["read_wish"]);
+    } else {
+        $favorite = 'f';
+    }
+    // $blacklist = test_input($_POST["blacklist"]);
     $title = test_input($_POST["title"]);
-    $own = test_input($_POST["own"]);
-    $own_wish = test_input($_POST["own_wish"]);
-    $read_wish = test_input($_POST["read_wish"]);
+    // $own = test_input($_POST["own"]);
+    // $own_wish = test_input($_POST["own_wish"]);
+    // $read_wish = test_input($_POST["read_wish"]);
     $_SESSION['title'] = $title;
     //echo "$first_name $middle_name $last_name $favorite $blacklist $title $own $own_wish $read_wish";
 
     echo $favorite;
     //author
-    // insertAuthor($db, $first_name, $middle_name, $last_name);
-    // $newAuthorID = $db->lastInsertId('author_id_seq');
+    insertAuthor($db, $first_name, $middle_name, $last_name);
+    $newAuthorID = $db->lastInsertId('author_id_seq');
 
-    // if (isset($favorite)) 
-    // //user_author
-    // insertUserAuthor($db, $_SESSION['id'], $newAuthorID, $blacklist, $favorite);
+    if (isset($favorite)) 
+    //user_author
+    insertUserAuthor($db, $_SESSION['id'], $newAuthorID, $blacklist, $favorite);
     
-    // //book
-    // insertTitle($db, $newAuthorID, $title);
-    // $newTitleID = $db->lastInsertId('book_title_id_seq');
+    //book
+    insertTitle($db, $newAuthorID, $title);
+    $newTitleID = $db->lastInsertId('book_title_id_seq');
     
-    // //user-book
-    // insertUserBook($db, $_SESSION['id'], $newTitleID, $own, $own_wish, $read_wish);
+    //user-book
+    insertUserBook($db, $_SESSION['id'], $newTitleID, $own, $own_wish, $read_wish);
 }
 
 ?>
@@ -86,8 +107,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <input type="text" name="last_name" id="last-name"><br>
                         </div>
                         <div>
-                            <input type="checkbox" id="favorite" name="favorite" value="TRUE">Favorite
-                            <input type="checkbox" id="blacklist" name="blacklist" value="TRUE">Blacklist<br>
+                            <input type="checkbox" id="favorite" name="favorite" value="t">Favorite
+                            <input type="checkbox" id="blacklist" name="blacklist" value="t">Blacklist<br>
                         </div>
                     </div>
                     <!-- Title -->
@@ -102,8 +123,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           own Wish
           read wish -->
                         <input type="checkbox" id="own" name="own" value="TRUE">Currently Own<br>
-                        <input type="checkbox" id="ownWish" name="own_wish" value="TRUE">Own Wish List<br>
-                        <input type="checkbox" id="readWish" name="read_wish" value="TRUE">Read Wish List<br>
+                        <input type="checkbox" id="ownWish" name="own_wish" value="t">Own Wish List<br>
+                        <input type="checkbox" id="readWish" name="read_wish" value="t">Read Wish List<br>
                     </div>
 
                     <!-- author
