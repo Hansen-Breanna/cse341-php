@@ -9,9 +9,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $middle_name = test_input($_POST["middle_name"]);
     $last_name = test_input($_POST["last_name"]);
 
-    if (isset(test_input($_POST["favorite"]))) {
-        $favorite = 1;
-    }
+    // if (isset(test_input($_POST["favorite"]))) {
+    //     $favorite = 1;
+    // }
     $blacklist = test_input($_POST["blacklist"]);
     $title = test_input($_POST["title"]);
     $own = test_input($_POST["own"]);
