@@ -10,9 +10,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $middle_name = test_input($_POST["middle_name"]);
     $last_name = test_input($_POST["last_name"]);
     $favorite = test_input($_POST["favorite"]);
-    if ($favorite != FALSE) {
-        $favorite = TRUE;
-    }
     $blacklist = test_input($_POST["blacklist"]);
     $title = test_input($_POST["title"]);
     $own = test_input($_POST["own"]);
@@ -26,14 +23,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $newAuthorID = $db->lastInsertId('author_id_seq');
 
     //user_author
-    //insertUserAuthor($db, $_SESSION['id'], $newAuthorID, $blacklist, $favorite);
+    insertUserAuthor($db, $_SESSION['id'], $newAuthorID, $blacklist, $favorite);
     
     //book
     insertTitle($db, $newAuthorID, $title);
     $newTitleID = $db->lastInsertId('book_title_id_seq');
     
     // //user-book
-    // insertUserBook($db, $_SESSION['id'], $newTitleID, $own, $own_wish, $read_wish);
+    insertUserBook($db, $_SESSION['id'], $newTitleID, $own, $own_wish, $read_wish);
 }
 
 ?>
@@ -84,8 +81,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <input type="text" name="last_name" id="last-name"><br>
                         </div>
                         <div>
-                            <input type="checkbox" id="favorite" name="favorite" value="t">Favorite
-                            <input type="checkbox" id="blacklist" name="blacklist" value="t">Blacklist<br>
+                            <input type="checkbox" id="favorite" name="favorite" value="TRUE">Favorite
+                            <input type="checkbox" id="blacklist" name="blacklist" value="TRUE">Blacklist<br>
                         </div>
                     </div>
                     <!-- Title -->
@@ -99,9 +96,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           owned
           own Wish
           read wish -->
-                        <input type="checkbox" id="own" name="own" value="t">Currently Own<br>
-                        <input type="checkbox" id="ownWish" name="own_wish" value="t">Own Wish List<br>
-                        <input type="checkbox" id="readWish" name="read_wish" value="t">Read Wish List<br>
+                        <input type="checkbox" id="own" name="own" value="TRUE">Currently Own<br>
+                        <input type="checkbox" id="ownWish" name="own_wish" value="TRUE">Own Wish List<br>
+                        <input type="checkbox" id="readWish" name="read_wish" value="TRUE">Read Wish List<br>
                     </div>
 
                     <!-- author
