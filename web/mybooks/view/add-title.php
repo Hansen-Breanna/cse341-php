@@ -67,35 +67,35 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <form method="post" action="">
                     <div>
                         <!-- Author -->
-                        <h2 class="author-name">Author</h2>
+                        <h2 class="author-name mt-2">Author</h2>
                         <div class="author">
                             <label for="first-name">First name:</label>
-                            <input type="text" name="first_name" id="first-name"><br>
+                            <input type="text" class="rounded mb-1" name="first_name" id="first-name"><br>
                             <!-- </div>
                         <div class="middle-name"> -->
                             <label for="chapter">Middle Name:</label>
-                            <input type="text" name="middle_name" id="middle-name"><br>
+                            <input type="text" class="rounded mb-1" name="middle_name" id="middle-name"><br>
                             <!-- </div>
                         <div class="last-name"> -->
                             <label for="verse">Last name:</label>
-                            <input type="text" name="last_name" id="last-name"><br>
+                            <input type="text" class="rounded mb-1" name="last_name" id="last-name"><br>
                         </div>
                         <div>
-                            <input type="checkbox" id="favorite" name="favorite" value="TRUE">Favorite
-                            <input type="checkbox" id="blacklist" name="blacklist" value="TRUE">Blacklist<br>
+                            <input type="checkbox" class="rounded" id="favorite" name="favorite" value="TRUE">Favorite
+                            <input type="checkbox" class="rounded" id="blacklist" name="blacklist" value="TRUE">Blacklist<br>
                         </div>
                     </div>
                     <!-- Title -->
                     <div class="book-title">
-                        <h2>Title</h2>
+                        <h2 class="mt-2">Title</h2>
                         <div class="title">
                             <label>Book title:</label>
-                            <input type="text" id="title" name="title">
+                            <input type="text" class="rounded" id="title" name="title">
                         </div>
                         <div class="user-title">
-                            <input type="checkbox" id="own" name="own" value="TRUE">Currently Own<br>
-                            <input type="checkbox" id="ownWish" name="own_wish" value="TRUE">Own Wish List<br>
-                            <input type="checkbox" id="readWish" name="read_wish" value="TRUE">Read Wish List<br>
+                            <input type="checkbox" class="rounded" id="own" name="own" value="TRUE">Currently Own<br>
+                            <input type="checkbox" class="rounded" id="ownWish" name="own_wish" value="TRUE">Own Wish List<br>
+                            <input type="checkbox" class="rounded" id="readWish" name="read_wish" value="TRUE">Read Wish List<br>
                         </div>
                     </div>
                     <div class="submit">
