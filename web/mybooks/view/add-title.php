@@ -71,6 +71,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <table>
                             <tbody>
                                 <tr>
+                                    <td><label for="first-name">First name:</label></td>
                                     <td><select class="p-2">
                                         <?php 
                                         $statement = $db->prepare("SELECT first_name FROM author");
@@ -81,7 +82,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                         }
                                         ?>
                                     </select>
-                                    <td><label for="first-name">First name:</label></td>
                                     <td><input type="text" class="rounded mb-1" name="first_name" id="first_name"></td>
                                 </tr>
                                 <tr>
