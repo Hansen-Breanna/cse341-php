@@ -9,14 +9,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $first_name = test_input($_POST["first_name"]);
     $middle_name = test_input($_POST["middle_name"]);
     $last_name = test_input($_POST["last_name"]);
+    
     $favorite = test_input($_POST["favorite"]);
     $newFavorite = removeQuotes($favorite);
+    
     $blacklist = test_input($_POST["blacklist"]);
     $newBlacklist = removeQuotes($blacklist);
+    
     $title = test_input($_POST["title"]);
+    $newTitle = removeQuotes($title);
+    
     $own = test_input($_POST["own"]);
+    $newOwn = removeQuotes($own);
+    
     $own_wish = test_input($_POST["own_wish"]);
+    $newOwn_wish = removeQuotes($own_wish);
+    
     $read_wish = test_input($_POST["read_wish"]);
+    $newRead_wish = removeQuotes($read_wish);
+    
     $_SESSION['title'] = $title;
     //echo "$first_name $middle_name $last_name $favorite $blacklist $title $own $own_wish $read_wish";
 
@@ -32,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $newTitleID = $db->lastInsertId('book_title_id_seq');
 
     // //user-book
-    insertUserBook($db, $_SESSION['id'], $newTitleID, $own, $own_wish, $read_wish);
+    insertUserBook($db, $_SESSION['id'], $newTitleID, $newOwn, $newOwn_wish, $newRead_wish);
 }
 
 ?>
