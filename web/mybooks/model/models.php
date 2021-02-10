@@ -22,12 +22,12 @@ function displayLoans($loans) {
        $loanList .= '<td>' . $loan['first_name'] . ' ' . $loan['last_name'] . '</td>';
        $loanList .= '<td class="d-none d-lg-table-cell">' . $loan['date_borrowed'] . '</td>';
        $loanList .= '<td>' . $loan['return_date'] . '</td>'; 
-       $loanList .= '<td><a class="btn btn-small bg-orange" href="sms://+1' . $loan['phone_number'];
+       $loanList .= '<td><a class="btn btn-small bg-orange mr-1" href="sms://+1' . $loan['phone_number'];
        $loanList .= '?&body=Hi%20' . $loan['first_name'] . '!%20The%20book%20you%20borrowed%2C%20' . $loan['title_of_book'];
        $loanList .= '%2C%20is%20overdue.%20Please%20contact%20me%20at%20' . $loan['user_phone'];
        $loanList .= '%20to%20return%20it.%20Thanks!">SMS</a>';
-       $loanList .= '<a href="" title="Edit"><i class="mr-1 rounded far fa-edit bg-info p-2" data-toggle="tooltip" data-placement="top" title="Edit"></i></a>';
-       $loanList .= '<a href=""  title="Delete"><i class="rounded far fa-trash-alt bg-danger p-2" data-toggle="tooltip" data-placement="top" title="Delete"></i></a></td>';
+       $loanList .= '<a href="" title="Edit"><i class="btn btn-small mr-1 rounded far fa-edit bg-info p-2" data-toggle="tooltip" data-placement="top" title="Edit"></i></a>';
+       $loanList .= '<a href="" title="Delete"><i class="rounded far fa-trash-alt bg-danger p-2" data-toggle="tooltip" data-placement="top" title="Delete"></i></a></td>';
        $loanList .= '</tr>';
     }
     $loanList .= '</tbody>';
