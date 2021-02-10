@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $middle_name = test_input($_POST["middle_name"]);
     $last_name = test_input($_POST["last_name"]);
     $favorite = test_input($_POST["favorite"]);
-    if ($favorite == "") {
+    if ($favorite != 't') {
         $favorite = 'f';
     }
     $blacklist = test_input($_POST["blacklist"]);
@@ -27,12 +27,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //user_author
     insertUserAuthor($db, $_SESSION['id'], $newAuthorID, $blacklist, $favorite);
     
-    //book
-    insertTitle($db, $newAuthorID, $title);
-    $newTitleID = $db->lastInsertId('book_title_id_seq');
+    // //book
+    // insertTitle($db, $newAuthorID, $title);
+    // $newTitleID = $db->lastInsertId('book_title_id_seq');
     
-    //user-book
-    insertUserBook($db, $_SESSION['id'], $newTitleID, $own, $own_wish, $read_wish);
+    // //user-book
+    // insertUserBook($db, $_SESSION['id'], $newTitleID, $own, $own_wish, $read_wish);
 }
 
 ?>
