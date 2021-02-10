@@ -80,9 +80,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <label for="verse">Last name:</label>
                             <input type="text" class="rounded mb-1" name="last_name" id="last-name"><br>
                         </div>
-                        <div class="d-flex align-items-center">
-                            <input type="checkbox" class="rounded" id="favorite" name="favorite" value="TRUE">Favorite
-                            <input type="checkbox" class="rounded" id="blacklist" name="blacklist" value="TRUE">Blacklist<br>
+                        <div class="d-flex flex-column justify-content-center">
+                            <input type="checkbox" class="rounded mr-1" id="favorite" name="favorite" value="TRUE">Favorite
+                            <input type="checkbox" class="rounded mr-1" id="blacklist" name="blacklist" value="TRUE">Blacklist<br>
                         </div>
                     </div>
                     <!-- Title -->
@@ -92,10 +92,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <label>Book title:</label>
                             <input type="text" class="rounded" id="title" name="title">
                         </div>
-                        <div class="user-title d-flex align-items-center">
-                            <input type="checkbox" class="rounded" id="own" name="own" value="TRUE">Currently Own<br>
-                            <input type="checkbox" class="rounded" id="ownWish" name="own_wish" value="TRUE">Own Wish List<br>
-                            <input type="checkbox" class="rounded" id="readWish" name="read_wish" value="TRUE">Read Wish List<br>
+                        <div class="user-title d-flex flex-column justify-content-center">
+                            <input type="checkbox" class="rounded mr-1" id="own" name="own" value="TRUE">Currently Own<br>
+                            <input type="checkbox" class="rounded mr-1" id="ownWish" name="own_wish" value="TRUE">Own Wish List<br>
+                            <input type="checkbox" class="rounded mr-1" id="readWish" name="read_wish" value="TRUE">Read Wish List<br>
                         </div>
                     </div>
                     <div class="submit">
