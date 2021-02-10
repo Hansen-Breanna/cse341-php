@@ -52,8 +52,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <!-- </div>
                         <div class="middle-name"> -->
                             <label for="chapter">Middle Name:</label>
-                            <!-- <input type="text" name="middle-name" id="middle-name"><br>
-                        </div>
+                            <input type="text" name="middle-name" id="middle-name"><br>
+                        <!-- </div>
                         <div class="last-name"> -->
                             <label for="verse">Last name:</label>
                             <input type="text" name="last-name" id="last-name"><br>
