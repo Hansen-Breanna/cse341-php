@@ -70,7 +70,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <h2 class="author-name mt-2">Author</h2>
                         <div class="author">
                             <label for="first-name">First name:</label>
-                            <input type="text" class="rounded mb-1" name="first_name" id="first-name"><br>
+                            <input type="text" class="rounded mb-1 mr-2" name="first_name" id="first-name"><br>
                             <!-- </div>
                         <div class="middle-name"> -->
                             <label for="chapter">Middle Name:</label>
@@ -78,7 +78,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <!-- </div>
                         <div class="last-name"> -->
                             <label for="verse">Last name:</label>
-                            <input type="text" class="rounded mb-1" name="last_name" id="last-name"><br>
+                            <input type="text" class="rounded mb-1 mr-2" name="last_name" id="last-name"><br>
                         </div>
                         <div>
                             <span class="d-flex align-items-center"><input type="checkbox" class="rounded mr-1" id="favorite" name="favorite" value="TRUE">Favorite</span>
