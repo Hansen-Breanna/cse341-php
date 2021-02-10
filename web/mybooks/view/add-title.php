@@ -26,11 +26,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $newAuthorID = $db->lastInsertId('author_id_seq');
 
     //user_author
-    insertUserAuthor($db, $_SESSION['id'], $newAuthorID, $blacklist, $favorite);
+    //insertUserAuthor($db, $_SESSION['id'], $newAuthorID, $blacklist, $favorite);
     
-    // //book
-    // insertTitle($db, $newAuthorID, $title);
-    // $newTitleID = $db->lastInsertId('book_title_id_seq');
+    //book
+    insertTitle($db, $newAuthorID, $title);
+    $newTitleID = $db->lastInsertId('book_title_id_seq');
     
     // //user-book
     // insertUserBook($db, $_SESSION['id'], $newTitleID, $own, $own_wish, $read_wish);
