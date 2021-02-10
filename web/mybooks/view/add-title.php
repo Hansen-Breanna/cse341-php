@@ -73,7 +73,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <tr>
                                     <td><select>
                                         <?php 
-                                        $statement = $db->prepare("SELECT a.first_name FROM author");
+                                        $statement = $db->prepare("SELECT first_name FROM author");
                                         $statement->execute();
                                         foreach ($statement as $first_name) {
                                             echo "<option value='$first_name'>$first_name</option>";
