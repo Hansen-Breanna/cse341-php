@@ -122,6 +122,7 @@ switch ($action){
         include 'view/wish-list.php';
     break;
     case 'add-title':
+        $message = "<p class='px-4 py-3 bg-danger rounded'>Title added. Please add another or return to the catalog.</p>";
         include 'view/add-title.php';
     break;
     case 'remove-title':
