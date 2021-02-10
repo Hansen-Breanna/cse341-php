@@ -12,6 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $favorite = test_input($_POST["favorite"]);
     $newFavorite = removeQuotes($function);
     $blacklist = test_input($_POST["blacklist"]);
+    $newBlacklist = removeQuotes($blacklist);
     $title = test_input($_POST["title"]);
     $own = test_input($_POST["own"]);
     $own_wish = test_input($_POST["own_wish"]);
@@ -24,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $newAuthorID = $db->lastInsertId('author_id_seq');
 
     //user_author
-    insertUserAuthor($db, $_SESSION['id'], $newAuthorID, $blacklist, $newFavorite);
+    insertUserAuthor($db, $_SESSION['id'], $newAuthorID, $newBlacklist, $newFavorite);
 
     //book
     insertTitle($db, $newAuthorID, $title);
