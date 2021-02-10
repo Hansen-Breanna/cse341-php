@@ -2,13 +2,20 @@
 // start session
 session_start();
 
+$first_name = $middle_name = $last_name = $favorite = $blacklist = $title = $own = $own_wish = $read_wish = "";
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $title = test_input($_POST["title"]);
     $first_name = test_input($_POST["first_name"]);
+    $middle_name = test_input($_POST["middle_name"]);
     $last_name = test_input($_POST["last_name"]);
+    $favorite = test_input($_POST["favorite"]);
+    $blacklist = test_input($_POST["blacklist"]);
+    $title = test_input($_POST["title"]);
+    $own = test_input($_POST["own"]);
+    $own_wish = test_input($_POST["own_wish"]);
+    $read_wish = test_input($_POST["read_wish"]);
     $_SESSION['title'] = $title;
-    $_SESSION['first_name'] = $first_name;
-    $_SESSION['last_name'] = $last_name;
+    echo "$first_name $middle_name $last_name $favorite $blacklist $title $own $own_wish $read_wish";
 }
 
 ?>
@@ -48,15 +55,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <p class="author-name">Author name</p>
                         <div class="author">
                             <label for="first-name">First name:</label>
-                            <input type="text" name="first-name" id="first-name"><br>
+                            <input type="text" name="first_name" id="first-name"><br>
                         <!-- </div>
                         <div class="middle-name"> -->
                             <label for="chapter">Middle Name:</label>
-                            <input type="text" name="middle-name" id="middle-name"><br>
+                            <input type="text" name="middle_name" id="middle-name"><br>
                         <!-- </div>
                         <div class="last-name"> -->
                             <label for="verse">Last name:</label>
-                            <input type="text" name="last-name" id="last-name"><br>
+                            <input type="text" name="last_name" id="last-name"><br>
                         </div>
                         <div>
                             <input type="checkbox" id="favorite" name="favorite">Favorite
@@ -75,8 +82,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           own Wish
           read wish -->
                         <input type="checkbox" id="own" name="own">Currently Own<br>
-                        <input type="checkbox" id="ownWish" name="ownWish">Own Wish List<br>
-                        <input type="checkbox" id="readWish" name="readWish">Read Wish List<br>
+                        <input type="checkbox" id="ownWish" name="own_wish">Own Wish List<br>
+                        <input type="checkbox" id="readWish" name="read_wish">Read Wish List<br>
                     </div>
 
                     <!-- author
