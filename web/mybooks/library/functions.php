@@ -207,4 +207,28 @@ function getByAuthor($first_name, $last_name, $id) {
    return $results;
 }
 
+
+// Insert author
+function insertAuthor($db, $first_name, $middle_name, $last_name) {
+   $stmt = $db->prepare('INSERT INTO author (first_name, middle_name, last_name) VALUES (:first_name, :middle_name, $last_name)');
+   $stmt->execute(array(':first_name' => $first_name, ':middle_name' => $middle_name, ':last_name' => $last_name));
+}
+
+// Insert user_author
+function insertUserAuthor($db, $userID, $authorID, $blacklist, $favorite) {
+  // $stmt = $db->prepare('INSERT INTO user_author (library_user_id, author_id, is_blacklist, is_favorite) VALUES (:userID, :authorID, :blacklist, :favorite');
+  // $stmt->execute(array(':userID => $first_name, :authorID, :blacklist, :favorite'));
+}
+
+// Insert book
+function insertTitle($db, $newAuthorID, $title) {
+   //$stmt = $db->prepare();
+   //$stmt->execute(array());
+}
+
+// Insert user-book
+function  insertUserBook($db, $userID, $titleID, $own, $own_wish, $read_wish) {
+//$stmt = $db->prepare();
+//$stmt->execute(array());
+}
 ?>

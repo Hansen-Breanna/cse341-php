@@ -16,6 +16,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $read_wish = test_input($_POST["read_wish"]);
     $_SESSION['title'] = $title;
     echo "$first_name $middle_name $last_name $favorite $blacklist $title $own $own_wish $read_wish";
+
+    //author
+    insertAuthor($db, $first_name, $middle_name, $last_name);
+    $newAuthorID = $db->lastInsertId('author_id_seq');
+
+    //user_author
+    insertUserAuthor($db, $_SESSION['id'], $newAuthorID, $blacklist, $favorite);
+    
+    //book
+    insertTitle($db, $newAuthorID, $title);
+    $newTitleID = $db->lastInsertId('book_title_id_seq');
+    
+    //user-book
+    insertUserBook($db, $_SESSION['id'], $newTitleID, $own, $own_wish, $read_wish);
 }
 
 ?>
