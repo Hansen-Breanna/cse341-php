@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $own_wish = test_input($_POST["own_wish"]);
     $read_wish = test_input($_POST["read_wish"]);
     $_SESSION['title'] = $title;
-    echo "$first_name $middle_name $last_name $favorite $blacklist $title $own $own_wish $read_wish";
+    //echo "$first_name $middle_name $last_name $favorite $blacklist $title $own $own_wish $read_wish";
 
     //author
     insertAuthor($db, $first_name, $middle_name, $last_name);

@@ -211,9 +211,9 @@ function getByAuthor($first_name, $last_name, $id) {
 // Insert author
 function insertAuthor($db, $first_name, $middle_name, $last_name) {
    
-   echo "hello";
+   //echo "hello";
 
-   $stmt = $db->prepare('INSERT INTO author (first_name, middle_name, last_name) VALUES (:first_name, :middle_name, $last_name)');
+   $stmt = $db->prepare('INSERT INTO author (first_name, middle_name, last_name) VALUES (:first_name, :middle_name, :last_name)');
    $stmt->execute(array(':first_name' => $first_name, ':middle_name' => $middle_name, ':last_name' => $last_name));
 }
 
