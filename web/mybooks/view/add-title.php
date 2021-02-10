@@ -2,15 +2,16 @@
 // start session
 session_start();
 
-$first_name = $middle_name = $last_name = $favorite = $blacklist = $title = $own = $own_wish = $read_wish = "";
+$first_name = $middle_name = $last_name =  $title = "";
+$favorite = $blacklist = $own = $own_wish = $read_wish = FALSE;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $first_name = test_input($_POST["first_name"]);
     $middle_name = test_input($_POST["middle_name"]);
     $last_name = test_input($_POST["last_name"]);
     $favorite = test_input($_POST["favorite"]);
-    if ($favorite != 't') {
-        $favorite = 'f';
+    if (isset($_POST['favorite'])) {
+        $favorite = TRUE;
     }
     $blacklist = test_input($_POST["blacklist"]);
     $title = test_input($_POST["title"]);
