@@ -80,8 +80,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <input type="text" name="last_name" id="last-name"><br>
                         </div>
                         <div>
-                            <input type="checkbox" id="favorite" name="favorite" value="true">Favorite
-                            <input type="checkbox" id="blacklist" name="blacklist" value="true">Blacklist<br>
+                            <input type="checkbox" id="favorite" name="favorite" value="TRUE">Favorite
+                            <input type="checkbox" id="blacklist" name="blacklist" value="TRUE">Blacklist<br>
                         </div>
                     </div>
                     <!-- Title -->
@@ -95,9 +95,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           owned
           own Wish
           read wish -->
-                        <input type="checkbox" id="own" name="own" value="true">Currently Own<br>
-                        <input type="checkbox" id="ownWish" name="own_wish" value="true">Own Wish List<br>
-                        <input type="checkbox" id="readWish" name="read_wish" value="true">Read Wish List<br>
+                        <input type="checkbox" id="own" name="own" value="TRUE">Currently Own<br>
+                        <input type="checkbox" id="ownWish" name="own_wish" value="TRUE">Own Wish List<br>
+                        <input type="checkbox" id="readWish" name="read_wish" value="TRUE">Read Wish List<br>
                     </div>
 
                     <!-- author
