@@ -76,6 +76,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                         $statement = $db->prepare("SELECT first_name FROM author");
                                         $statement->execute();
                                         
+                                        while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+                                            echo '<option value=' . $row['first_name'] . '>' . $row['first_name'] . '</option>'; 
+                                        }
                                         foreach ($statement[0] as $first_name) {
                                         echo"hello";
                                             echo "<option value='$first_name'>$first_name</option>";
