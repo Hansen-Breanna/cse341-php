@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $newTitleID = $db->lastInsertId('book_title_id_seq');
     
     // //user-book
-    //insertUserBook($db, $_SESSION['id'], $newTitleID, $own, $own_wish, $read_wish);
+    insertUserBook($db, $_SESSION['id'], $newTitleID, $own, $own_wish, $read_wish);
 }
 
 ?>

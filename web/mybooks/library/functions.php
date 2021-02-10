@@ -227,11 +227,13 @@ function insertTitle($db, $authorID, $title) {
    // echo "hello";
    $stmt = $db->prepare('INSERT INTO book_title (author_id, title_of_book) VALUES (:authorID, :title)');
    $stmt->execute(array(':authorID' => $authorID, ':title' => $title));
+   echo "title";
 }
 
 // Insert user-book
 function  insertUserBook($db, $userID, $titleID, $own, $own_wish, $read_wish) {
    $stmt = $db->prepare('INSERT INTO user_book (library_user_id, book_title_id, is_owned, own_wish_list, read_wish_list) VALUES (:userID, titleID, :owned, :own_wish, :read_wish)');
+   echo "insert user";
    $stmt->execute(array(':userID' => $userID, ':titleID' => $titleID, ':owned' => $own, ':own_wish' => $own_wish, ':read_wish' => $read_wish));
 }
 
