@@ -55,10 +55,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       }
       ?>
 
-<form method="post" action="viewScriptures.php">
+<form method="post" action="">
       <div>
           <!-- Author -->
-      <div>
+      <div class="author">
           <p>Author name:
                 <label for="first-name">First name:</label>
                 <input type="text" name="first-name" id="first-name"><br>
@@ -71,26 +71,47 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <label for="verse">Last name:</label>
                 <input type="text" name="last-name" id="last-name"><br>
             </div>
+            <div>
+                <input type="checkbox" id="favorite" name="favorite">Favorite<br>
+                <input type="checkbox" id="blacklist" name="blacklist">Blacklist<br>
+            </div>
       </div>
       <!-- Title -->
-      <div>
-
+      <div class="title">
+          <label>Book title:</label>
+          <input type="text" id="title" name="title">
       </div>
-            <div class="content">
-                <label for="content">Content:</label>
-                <textarea rows="4" columns="50" name="content" id="content"></textarea>
-            </div>
-            <div class="topic">
-            <?php
-            $stmt = $db->prepare('SELECT * FROM topic');
-            $stmt->execute();
-            $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-                foreach($rows as $topic) {
-                   echo '<br><label>' . $topic['topic'] . '</label>';
-                    echo '<input type="checkbox" id="' . $topic['topic'] . '" name="topic" value="' . $topic['id'] . '"><br>';
-                }
-            ?>
-            </div>
+      <div class="user-title">
+            <!-- library_user_id
+          book_title_id
+          owned
+          own Wish
+          read wish -->
+          <input type="checkbox" id="own" name="own">Own<br>
+          <input type="checkbox" id="ownWish" name="ownWish">Own Wish List<br>
+          <input type="checkbox" id="readWish" name="readWish">Read Wish List<br>
+      </div>
+          
+          <!-- author
+          first, middle, last
+
+          user-Author
+          library_user_id
+          author_id
+          Blacklisted
+          Favorite
+          
+          book
+          --title
+          author id
+
+          user-book
+          library_user_id
+          book_title_id
+          owned
+          own Wish
+          read wish -->
+
             <div class="submit">
                 <input type="submit">
             </div>
