@@ -46,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <!-- Header -->
 <?php include '../common/header.php'; ?>
 
-<h1 class="offset-1 col-10 offset-md-0 col-md-12">Book Catalog</h1>
+<h1 class="offset-1 col-10 offset-md-0 col-md-12">Add Title</h1>
 </div>
 </div>
 </header>
@@ -71,6 +71,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <table>
                             <tbody>
                                 <tr>
+                                    <td><select>
+                                        <?php 
+                                        $statement = $db->prepare("SELECT a.first_name FROM author");
+                                        $statement->execute();
+                                        foreach ($statement as $first_name) {
+                                            echo "<option value='$first_name'>$first_name</option>";
+                                        }?>
+                                    </select>
                                     <td><label for="first-name">First name:</label></td>
                                     <td><input type="text" class="rounded mb-1" name="first_name" id="first_name"></td>
                                 </tr>
