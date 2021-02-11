@@ -106,14 +106,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <table>
                             <tbody>
                                 <tr>
-                                    <td><label for="first-name">First name:</label></td>
+                                    <td><label for="first-name">Author name:</label></td>
                                     <td><select class="p-2">
                                         <?php 
-                                        $statement = $db->prepare("SELECT first_name FROM author");
+                                        $statement = $db->prepare("SELECT first_name, middle_name, last_name FROM author");
                                         $statement->execute();
                                         
                                         while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-                                            echo '<option value=' . $row['first_name'] . '>' . $row['first_name'] . '</option>'; 
+                                            echo '<option value=' . $row['last_name'] . '>' . $row['last_name'] . ', ' . $row['first_name'] . ' ' . $row['middle_name'] . '</option>'; 
                                         }
                                         ?>
                                     </select>

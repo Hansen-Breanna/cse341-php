@@ -125,8 +125,8 @@ switch ($action){
         $message = "<p class='px-4 py-3 bg-danger rounded'>Title added. Please add another or return to the catalog.</p>";
         include 'view/add-title.php';
     break;
-    case 'remove-title':
-        include 'view/remove-title.php';
+    case 'add-author':
+        include 'view/add-author.php';
     break;
     default:
         include 'view/home.php';
