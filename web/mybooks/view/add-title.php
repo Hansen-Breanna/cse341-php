@@ -105,8 +105,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <h2 class="author-name mt-2">Author</h2>
                         <p>Select a current author or add a new author.</p>
                         <p>
-                            <button type="button" class="btn bg-orange p-1" onclick="enableAddAuthor()">Add New Author</button>
-                            <button type="button" class="btn bg-orange p-1" onclick="enableSelectAuthor()">Use Existing Author</button>
+                            <button type="button" class="btn bg-orange p-1" id="enableAddAuthor" onclick="enableAddAuthor()">Add New Author</button>
+                            <button type="button" class="btn bg-orange p-1" id="enableSelectAuthor" onclick="enableSelectAuthor()">Use Existing Author</button>
                         </p>
                         <table>
                             <tbody>
