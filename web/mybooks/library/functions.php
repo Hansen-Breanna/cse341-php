@@ -204,7 +204,7 @@ function getByAuthor($first_name, $last_name, $id) {
    $stmt->bindValue(':id', $id, PDO::PARAM_INT);
    $stmt->execute();
    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-   return $results;
+  return $results;
 }
 
 
@@ -217,6 +217,7 @@ function insertAuthor($db, $first_name, $middle_name, $last_name) {
 
 // Insert user_author
 function insertUserAuthor($db, $userID, $authorID, $blacklist, $favorite) {
+   var_dump($blacklist);
   $stmt = $db->prepare('INSERT INTO user_author (library_user_id, author_id, is_blacklist, is_favorite) VALUES (:userID, :authorID, :blacklist, :favorite)');
   $stmt->execute(array(':userID' => $userID, ':authorID' => $authorID, ':blacklist' => $blacklist, ':favorite' => $favorite));
   echo "author";
