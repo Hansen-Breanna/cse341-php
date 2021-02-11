@@ -110,8 +110,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </p>
                         <table>
                             <tbody>
-                                <tr>
-                                    <?php echo $author ?>
+                                <?php echo $author ?>
+                                <!-- <tr>
                                     <td><label for="first-name">First name:</label></td>
                                     <td><input type="text" class="rounded mb-1" name="first_name" id="first_name"></td>
                                 </tr>
@@ -122,7 +122,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <tr>
                                     <td><label for="last_name">Last name:</label></td>
                                     <td><input type="text" class="rounded mb-1" name="last_name" id="last_name"><br></td>
-                                </tr>
+                                </tr> -->
                                 <tr>
                                     <td><span class="d-flex align-items-center"><input type="checkbox" class="rounded mr-1" id="favorite" name="favorite" value="TRUE">Favorite</span></td>
                                     <td><span class="d-flex align-items-center"><input type="checkbox" class="rounded mr-1" id="blacklist" name="blacklist" value="TRUE">Blacklist</span></td>
