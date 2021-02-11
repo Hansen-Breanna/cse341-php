@@ -129,7 +129,6 @@ switch ($action){
         include 'view/add-author.php';
     break;
     case 'existing-author';
-        $author = addAuthor();
         include 'view/add-author.php';
     break;
     default:
