@@ -129,7 +129,7 @@ switch ($action){
         include 'view/add-author.php';
     break;
     case 'existing-author';
-        include 'view/add-author.php';
+    include 'view/add-title.php';
     break;
     default:
         include 'view/home.php';
