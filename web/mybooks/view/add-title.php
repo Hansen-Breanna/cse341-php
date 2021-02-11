@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['authorID'])) {
         $newAuthorID = $authorID;
     } else {
-        $checkList = getAuthors)$_SESSION['id'];
+        $checkList = getAuthors($_SESSION['id']);
         $first_name = test_input($_POST["first_name"]);
         $middle_name = test_input($_POST["middle_name"]);
         $last_name = test_input($_POST["last_name"]);
