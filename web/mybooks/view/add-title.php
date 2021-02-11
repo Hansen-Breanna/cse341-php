@@ -109,7 +109,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <tr>
                                     <td>Current author:</td>
                                     <td>
-                                    <select class="p-2">
+                                    <select class="p-2 rounded mb-1" id="authorList" onclick="enableSelectAuthor()">
                                         <?php 
                                         $statement = $db->prepare("SELECT first_name, middle_name, last_name, id FROM author ORDER BY last_name");
                                         $statement->execute();
@@ -122,15 +122,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td><label for="first-name">First name:</label></td>
+                                    <td><label for="first-name" onclick="enableAddAuthor()">First name:</label></td>
                                     <td><input type="text" class="rounded mb-1" name="first_name" id="first_name"></td>
                                 </tr>
                                 <tr>
-                                    <td><label for="middle_name">Middle Name:</label></td>
+                                    <td><label for="middle_name" onclick="enableAddAuthor()">Middle Name:</label></td>
                                     <td><input type="text" class="rounded mb-1" name="middle_name" id="middle_name"></td>
                                 </tr>
                                 <tr>
-                                    <td><label for="last_name">Last name:</label></td>
+                                    <td><label for="last_name" onclick="enableAddAuthor()">Last name:</label></td>
                                     <td><input type="text" class="rounded mb-1" name="last_name" id="last_name"><br></td>
                                 </tr>
                                 <tr>
@@ -168,6 +168,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
     </div>
 </main>
-
+<script src="scripts/script.js"></script>
 <!-- Footer -->
 <?php include 'common/footer.php'; ?>
