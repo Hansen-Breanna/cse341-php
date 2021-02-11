@@ -131,6 +131,7 @@ switch ($action){
     break;
     case 'existing-author';
         $author = selectAuthor($db);
+        $message = "<p class='px-4 py-3 bg-danger rounded'>Title added. Please add another or return to the catalog.</p>";
         include 'view/add-title.php';
     break;
     default:

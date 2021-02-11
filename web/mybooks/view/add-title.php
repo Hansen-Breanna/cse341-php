@@ -11,26 +11,34 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['authorID'])) {
         $newAuthorID = $authorID;
     } else {
+        $checkList = getAuthors)$_SESSION['id'];
         $first_name = test_input($_POST["first_name"]);
         $middle_name = test_input($_POST["middle_name"]);
         $last_name = test_input($_POST["last_name"]);
+        $newName = $first_name . ' ' . $middle_name . ' ' . $last_name;
+        foreach ($checklist as $author) {
+            $name = $author['first_name'] . ' ' . $author['middle_name'] . ' ' . $author['last_name'];
+            if ($name == $newName) {
+                $author_message = "<p class='px-4 py-3 bg-danger rounded'>Author already exists. Please use existing author.</p>";
+            }
+        }
 
         //author
         insertAuthor($db, $first_name, $middle_name, $last_name);
         $newAuthorID = $db->lastInsertId('author_id_seq');
     }
     $favorite = test_input($_POST["favorite"]);
-    
+
     if (isset($_POST['favorite'])) {
-        $favorite = "TRUE"; 
+        $favorite = "TRUE";
     } else {
         $favorite = "FALSE";
     }
     $newFavorite = removeQuotes($favorite);
-  
+
     $blacklist = test_input($_POST["blacklist"]);
     if (isset($_POST['blacklist'])) {
-        $blacklist = "TRUE"; 
+        $blacklist = "TRUE";
     } else {
         $blacklist = "FALSE";
     }
@@ -39,15 +47,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $title = test_input($_POST["title"]);
     $own = test_input($_POST["own"]);
     if (isset($_POST['own'])) {
-        $own = "TRUE"; 
+        $own = "TRUE";
     } else {
         $own = "FALSE";
     }
     $newOwn = removeQuotes($own);
-    
+
     $own_wish = test_input($_POST["own_wish"]);
     if (isset($_POST['own_wish'])) {
-        $own_wish = "TRUE"; 
+        $own_wish = "TRUE";
     } else {
         $own_wish = "FALSE";
     }
@@ -55,12 +63,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $read_wish = test_input($_POST["read_wish"]);
     if (isset($_POST['read_wish'])) {
-        $read_wish = "TRUE"; 
+        $read_wish = "TRUE";
     } else {
         $read_wish = "FALSE";
     }
     $newRead_wish = removeQuotes($read_wish);
-    
+
     $_SESSION['title'] = $title;
 
     //user_author
@@ -110,10 +118,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <!-- Author -->
                         <h2 class="author-name mt-2">Author</h2>
                         <p>Enter name for a new or existing author.</p>
+                        <?php
+                        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                            echo $author_message;
+                        }
+                        ?>
                         <p>
                             <a href="index.php?action=existing-author" class="btn bg-orange p-2" title="Add title by existing author">Use Existing</a>
                             <a href="index.php?action=add-title" class="btn bg-orange p-2" title="Add title by with new author">Add New</a>
-                    </p>
+                        </p>
                         <table>
                             <tbody>
                                 <?php echo $author ?>
@@ -127,6 +140,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <!-- Title -->
                     <div class="book-title">
                         <h2 class="mt-2">Title</h2>
+                        <?php
+                        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                            echo $title_message;
+                        }
+                        ?>
                         <table>
                             <tbody>
                                 <tr>
