@@ -108,6 +108,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <table>
                             <tbody>
                                 <tr>
+                                    <?php echo $author ?>
                                     <td><label for="first-name">First name:</label></td>
                                     <td><input type="text" class="rounded mb-1" name="first_name" id="first_name"></td>
                                 </tr>

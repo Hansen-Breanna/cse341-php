@@ -129,7 +129,8 @@ switch ($action){
         include 'view/add-author.php';
     break;
     case 'existing-author';
-    include 'view/add-title.php';
+        $author = selectAuthor($db);
+        include 'view/add-title.php';
     break;
     default:
         include 'view/home.php';
