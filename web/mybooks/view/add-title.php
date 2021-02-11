@@ -11,8 +11,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $last_name = test_input($_POST["last_name"]);
     
     $favorite = test_input($_POST["favorite"]);
-    $newFavorite = removeQuotes($favorite);
-    
+    if ($favorite == "TRUE") {
+        $favorite = TRUE;
+    }
     $blacklist = test_input($_POST["blacklist"]);
     $newBlacklist = removeQuotes($blacklist);
     
