@@ -10,10 +10,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $middle_name = test_input($_POST["middle_name"]);
     $last_name = test_input($_POST["last_name"]);
     $favorite = test_input($_POST["favorite"]);
+    
+    if (isset($_POST['favorite'])) {
+        $favorite = "TRUE"; 
+    } else {
+        $favorite = "FALSE";
+    }
     $newFavorite = removeQuotes($favorite);
-    echo $blacklist;
+
     
-    
+    $newFavorite = removeQuotes($favorite);    
     $blacklist = test_input($_POST["blacklist"]);
     $newBlacklist = removeQuotes($blacklist);
     $title = test_input($_POST["title"]);
