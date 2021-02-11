@@ -16,7 +16,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $newBlacklist = removeQuotes($blacklist);
     
     $title = test_input($_POST["title"]);
-    $newTitle = removeQuotes($title);
     
     $own = test_input($_POST["own"]);
     $newOwn = removeQuotes($own);
