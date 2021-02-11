@@ -115,7 +115,7 @@ function selectAuthor($db) {
 
 // Add new select
 function addAuthor() {
-   echo 
+   $author = 
    '<tr>
       <td><label for="first-name">First name:</label></td>
       <td><input type="text" class="rounded mb-1" name="first_name" id="first_name"></td>
@@ -128,6 +128,7 @@ function addAuthor() {
       <td><label for="last_name">Last name:</label></td>
       <td><input type="text" class="rounded mb-1" name="last_name" id="last_name"><br></td>
    </tr>';
+   return $author;
 }
 
 ?>

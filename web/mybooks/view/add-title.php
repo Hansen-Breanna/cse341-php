@@ -106,7 +106,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <p>Enter name for a new or existing author.</p>
                         <p>
                             <a href="index.php?action=existing-author" class="btn bg-orange p-2" title="Add title by existing author">Use Existing</a>
-                            <a href="index.php?action=add-author" class="btn bg-orange p-2" title="Add title by with new author">Add New</a>
+                            <a href="index.php?action=add-title" class="btn bg-orange p-2" title="Add title by with new author">Add New</a>
                     </p>
                         <table>
                             <tbody>
