@@ -102,14 +102,15 @@ function removeQuotes($data) {
 
 // Select author from list
 function selectAuthor($db) {
-   echo '<select class="p-2 rounded mb-1" id="authorList">';
+   $author = '<select class="p-2 rounded mb-1" id="authorList">';
    $statement = $db->prepare("SELECT first_name, middle_name, last_name, id FROM author ORDER BY last_name");
    $statement->execute();
    
    while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-       echo '<option value=' . $row['id'] . '>' . $row['last_name'] . ', ' . $row['first_name'] . ' ' . $row['middle_name'] . '</option>'; 
+       $author .= '<option value=' . $row['id'] . '>' . $row['last_name'] . ', ' . $row['first_name'] . ' ' . $row['middle_name'] . '</option>'; 
    }
-   echo '</select>';
+   $author .= '</select>';
+   return $author;
 }
 
 // Add new select
