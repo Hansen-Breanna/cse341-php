@@ -109,7 +109,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <tr>
                                     <td>Current author:</td>
                                     <td>
-                                    <button onclick="enableSelectAuthor()">Disable the text field</button>
                                     <select class="p-2 rounded mb-1" id="authorList" onchange="enableSelectAuthor()">
                                         <?php 
                                         $statement = $db->prepare("SELECT first_name, middle_name, last_name, id FROM author ORDER BY last_name");
