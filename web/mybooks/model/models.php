@@ -99,6 +99,34 @@ function displayAuthors($authors) {
 function removeQuotes($data) {
    return str_replace('"', "", $data);
 }
- 
+
+// Select author from list
+function selectAuthor() {
+   echo '<select class="p-2 rounded mb-1" id="authorList">';
+   $statement = $db->prepare("SELECT first_name, middle_name, last_name, id FROM author ORDER BY last_name");
+   $statement->execute();
+   
+   while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+       echo '<option value=' . $row['id'] . '>' . $row['last_name'] . ', ' . $row['first_name'] . ' ' . $row['middle_name'] . '</option>'; 
+   }
+   echo '</select>';
+}
+
+// Add new select
+function addAuthor() {
+   echo 
+   '<tr>
+      <td><label for="first-name">First name:</label></td>
+      <td><input type="text" class="rounded mb-1" name="first_name" id="first_name"></td>
+   </tr>
+   <tr>
+      <td><label for="middle_name">Middle Name:</label></td>
+      <td><input type="text" class="rounded mb-1" name="middle_name" id="middle_name"></td>
+   </tr>
+   <tr>
+      <td><label for="last_name">Last name:</label></td>
+      <td><input type="text" class="rounded mb-1" name="last_name" id="last_name"><br></td>
+   </tr>';
+}
 
 ?>

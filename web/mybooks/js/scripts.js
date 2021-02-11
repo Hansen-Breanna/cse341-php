@@ -6,15 +6,6 @@ $(document).ready(function(){
       $(".navbar-toggler").click(function(){
         $("#link-nav").toggle();
       });
-
-          // Nav toggle
-          $("#enableSelectAuthor").click(function(){
-            $("#authorList").toggle();
-          });
-
-              // Nav toggle
-      $("#enableAddAuthor").click(function(){
-        $("#first_name").toggle();
-      });
+      
   });
 

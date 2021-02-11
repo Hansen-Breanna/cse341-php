@@ -126,6 +126,11 @@ switch ($action){
         include 'view/add-title.php';
     break;
     case 'add-author':
+        $author = selectAuthor();
+        include 'view/add-author.php';
+    break;
+    case 'existing-author';
+        $author = addAuthor();
         include 'view/add-author.php';
     break;
     default:

@@ -103,11 +103,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <div>
                         <!-- Author -->
                         <h2 class="author-name mt-2">Author</h2>
-                        <p>Select a current author or add a new author.</p>
-                        <p>
-                            <button type="button" class="btn bg-orange p-1" id="enableAddAuthor" onclick="enableAddAuthor()">Add New Author</button>
-                            <button type="button" class="btn bg-orange p-1" id="enableSelectAuthor" onclick="enableSelectAuthor()">Use Existing Author</button>
-                        </p>
+                        <p>Select an existing author or add a new author.</p>
+                        <p><a href="index.php?action=existing-author" class="btn bg-orange p-1">Existing Author</a></p>
                         <table>
                             <tbody>
                                 <tr>
