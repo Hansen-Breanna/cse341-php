@@ -3,7 +3,7 @@
 session_start();
 
 $first_name = $middle_name = $last_name =  $title = "";
-$favorite = $blacklist = $own = $own_wish = $read_wish = removeQuotes("FALSE");
+$favorite = $blacklist = $own = $own_wish = $read_wish = FALSE;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $first_name = test_input($_POST["first_name"]);
@@ -11,6 +11,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $last_name = test_input($_POST["last_name"]);
     $favorite = test_input($_POST["favorite"]);
     $newFavorite = removeQuotes($favorite);
+    echo $blacklist;
+    
+    
     $blacklist = test_input($_POST["blacklist"]);
     $newBlacklist = removeQuotes($blacklist);
     $title = test_input($_POST["title"]);
