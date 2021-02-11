@@ -17,17 +17,38 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $favorite = "FALSE";
     }
     $newFavorite = removeQuotes($favorite);
-
-    
-    $newFavorite = removeQuotes($favorite);    
+  
     $blacklist = test_input($_POST["blacklist"]);
+    if (isset($_POST['blacklist'])) {
+        $blacklist = "TRUE"; 
+    } else {
+        $blacklist = "FALSE";
+    }
     $newBlacklist = removeQuotes($blacklist);
+
     $title = test_input($_POST["title"]);
     $own = test_input($_POST["own"]);
+    if (isset($_POST['own'])) {
+        $own = "TRUE"; 
+    } else {
+        $own = "FALSE";
+    }
     $newOwn = removeQuotes($own);
+    
     $own_wish = test_input($_POST["own_wish"]);
+    if (isset($_POST['own_wish'])) {
+        $own_wish = "TRUE"; 
+    } else {
+        $own_wish = "FALSE";
+    }
     $newOwn_wish = removeQuotes($own_wish);
+
     $read_wish = test_input($_POST["read_wish"]);
+    if (isset($_POST['read_wish'])) {
+        $read_wish = "TRUE"; 
+    } else {
+        $read_wish = "FALSE";
+    }
     $newRead_wish = removeQuotes($read_wish);
     
     $_SESSION['title'] = $title;
