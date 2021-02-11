@@ -103,11 +103,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <div>
                         <!-- Author -->
                         <h2 class="author-name mt-2">Author</h2>
+                        <p>Select a current author or add a new author.</p>
                         <table>
                             <tbody>
                                 <tr>
-                                    <td><label for="first-name">First name:</label></td>
-                                    <td><select class="p-2">
+                                    <td>Current author:</td>
+                                    <td>
+                                    <select class="p-2">
                                         <?php 
                                         $statement = $db->prepare("SELECT first_name, middle_name, last_name, id FROM author ORDER BY last_name");
                                         $statement->execute();
@@ -117,6 +119,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                         }
                                         ?>
                                     </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><label for="first-name">First name:</label></td>
                                     <td><input type="text" class="rounded mb-1" name="first_name" id="first_name"></td>
                                 </tr>
                                 <tr>
