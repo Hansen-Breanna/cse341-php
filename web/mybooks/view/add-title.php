@@ -168,6 +168,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
     </div>
 </main>
-<script src="scripts/script.js"></script>
+
 <!-- Footer -->
 <?php include 'common/footer.php'; ?>
