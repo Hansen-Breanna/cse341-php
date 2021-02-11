@@ -2,13 +2,23 @@
 // start session
 session_start();
 
-$first_name = $middle_name = $last_name =  $title = "";
+$first_name = $middle_name = $last_name =  $title = $authorID = "";
 $favorite = $blacklist = $own = $own_wish = $read_wish = FALSE;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $first_name = test_input($_POST["first_name"]);
-    $middle_name = test_input($_POST["middle_name"]);
-    $last_name = test_input($_POST["last_name"]);
+    $authorID = test_input($_POST['authorID']);
+
+    if (isset($_POST['authorID'])) {
+        $newAuthorID = $authorID;
+    } else {
+        $first_name = test_input($_POST["first_name"]);
+        $middle_name = test_input($_POST["middle_name"]);
+        $last_name = test_input($_POST["last_name"]);
+
+        //author
+        insertAuthor($db, $first_name, $middle_name, $last_name);
+        $newAuthorID = $db->lastInsertId('author_id_seq');
+    }
     $favorite = test_input($_POST["favorite"]);
     
     if (isset($_POST['favorite'])) {
@@ -52,10 +62,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $newRead_wish = removeQuotes($read_wish);
     
     $_SESSION['title'] = $title;
-
-    //author
-    insertAuthor($db, $first_name, $middle_name, $last_name);
-    $newAuthorID = $db->lastInsertId('author_id_seq');
 
     //user_author
     insertUserAuthor($db, $_SESSION['id'], $newAuthorID, $newBlacklist, $newFavorite);
@@ -111,18 +117,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <table>
                             <tbody>
                                 <?php echo $author ?>
-                                <!-- <tr>
-                                    <td><label for="first-name">First name:</label></td>
-                                    <td><input type="text" class="rounded mb-1" name="first_name" id="first_name"></td>
-                                </tr>
-                                <tr>
-                                    <td><label for="middle_name">Middle Name:</label></td>
-                                    <td><input type="text" class="rounded mb-1" name="middle_name" id="middle_name"></td>
-                                </tr>
-                                <tr>
-                                    <td><label for="last_name">Last name:</label></td>
-                                    <td><input type="text" class="rounded mb-1" name="last_name" id="last_name"><br></td>
-                                </tr> -->
                                 <tr>
                                     <td><span class="d-flex align-items-center"><input type="checkbox" class="rounded mr-1" id="favorite" name="favorite" value="TRUE">Favorite</span></td>
                                     <td><span class="d-flex align-items-center"><input type="checkbox" class="rounded mr-1" id="blacklist" name="blacklist" value="TRUE">Blacklist</span></td>

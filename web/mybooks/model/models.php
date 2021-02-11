@@ -102,7 +102,7 @@ function removeQuotes($data) {
 
 // Select author from list
 function selectAuthor($db) {
-   $author = '<select class="p-2 rounded mb-1" id="authorList">';
+   $author = '<select class="p-2 rounded mb-1" name="authorID" id="authorList">';
    $statement = $db->prepare("SELECT first_name, middle_name, last_name, id FROM author ORDER BY last_name");
    $statement->execute();
    
