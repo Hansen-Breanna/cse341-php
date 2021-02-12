@@ -185,6 +185,9 @@ switch ($action){
         // }
         // include 'view/add-title.php';
     break;
+    case 'add-review':
+        include 'view/add-review.php';
+    break;
     default:
         include 'view/home.php';
 }
