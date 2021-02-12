@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (isset($_POST['favorite'])) {
             $favorite = "TRUE";
         } else {
-             $favorite = "FALSE";
+            $favorite = "FALSE";
         }
         $newFavorite = removeQuotes($favorite);
 
@@ -99,7 +99,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <main class="mb-5">
     <div class="container">
         <div class="row d-flex flex-column align-items-center">
-            <div>
+            <div class="my-3 mx-2 py-2 border-secondary border-top border-bottom">
                 <a href="index.php?action=catalog" title="See All Titles" class="btn btn-custom bg-info my-2 ml-1">See Catalog</a>
                 <a href="index.php?action=wish" title="See All Wishes" class="btn btn-custom bg-info my-2 ml-1">See Wish List</a>
             </div>

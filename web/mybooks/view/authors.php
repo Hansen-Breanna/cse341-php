@@ -84,32 +84,34 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo $authorExists;
         ?>
         <div class="d-flex flex-row flex-wrap justify-content-center">
-          <form class="mb-2" method="post" action="index.php?action=authors">
-            <!-- Author -->
-            <h2 class="author-name mt-2">Add Author</h2>
-            <table>
-              <tbody>
-                <?php echo $author . $choice; ?>
-              </tbody>
-            </table>
-            <div class="submit">
-              <input type="submit" class="rounded btn btm-lg bg-orange mb-2">
+          <div class="my-3 mx-2 py-2 border-secondary border-top border-bottom">
+            <form class="mb-2" method="post" action="index.php?action=authors">
+              <!-- Author -->
+              <h2 class="author-name mt-2">Add Author</h2>
+              <table>
+                <tbody>
+                  <?php echo $author . $choice; ?>
+                </tbody>
+              </table>
+              <div class="submit">
+                <input type="submit" class="rounded btn btm-lg bg-orange mb-2">
+              </div>
+            </form>
+            <div class="my-3 mx-2 py-2 border-secondary border-top border-bottom">
+              <table class="table table-dark table-striped text-light">
+                <thead>
+                  <tr>
+                    <th>Authors</th>
+                    <th>Favorite</th>
+                    <th>Blacklisted</th>
+                  </tr>
+                </thead>
+                <?php echo $authorsTable; ?>
+              </table>
             </div>
-          </form>
-          <table class="table table-dark table-striped text-light">
-            <thead>
-              <tr>
-                <th>Authors</th>
-                <th>Favorite</th>
-                <th>Blacklisted</th>
-              </tr>
-            </thead>
-            <?php echo $authorsTable; ?>
-          </table>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
 </main>
 
 <!-- Footer -->

@@ -21,14 +21,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } else {
             $newAuthorID = $authorID;
         }
-        
+
         //book
         insertTitle($db, $newAuthorID, $title);
         $newTitleID = $db->lastInsertId('book_title_id_seq');
 
         // insert review
         insertReview($db, $_SESSION['id'], $newTitleID, $review, $rating);
-
     } catch (Exception $e) {
         echo $e;
         $message = "<p class='px-4 py-3 bg-danger rounded'>Review was not added. Please try again.</p>";
@@ -56,7 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <main class="mb-5">
     <div class="container">
         <div class="row d-flex flex-column align-items-center">
-            <div>
+            <div class="my-3 mx-2 py-2 border-secondary border-top border-bottom">
                 <a href="index.php?action=reviews" title="See All Reviews" class="btn btn-custom bg-info my-2 ml-1">See Reviews</a>
             </div>
             <div>
