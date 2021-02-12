@@ -38,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION))) {
 
             <!-- Add/Remove -->
             <div class="my-3 mx-2 py-2 border-secondary border-top border-bottom">
-              <a href="index.php?action=add-book" class="btn btn-custom bg-orange my-2 ml-1">Add Review</a>
+              <a href="index.php?action=add-review" class="btn btn-custom bg-orange my-2 ml-1">Add Review</a>
             </div>
       </div>
       <?php
