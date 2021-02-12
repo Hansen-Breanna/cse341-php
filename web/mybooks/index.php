@@ -199,6 +199,9 @@ switch ($action){
         $author = selectAuthor($db);
         include 'view/add-review.php';
     break;
+    case 'add-loan':
+        include 'view/add-loan.php';
+    break;
     default:
         include 'view/home.php';
 }
