@@ -243,6 +243,5 @@ function deleteUserAuthor($id) {
    $db = $db = connectMyBooks();
    $stmt = $db->prepare('DELETE FROM user_author WHERE author_id = :id)');
    $stmt->execute(array(':id' => $id));
-   deleteAuthor($id);
 }
 ?>
