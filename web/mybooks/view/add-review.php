@@ -65,7 +65,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 }
                 ?>
 
-                <form method="post" action="" id="reviewForm">
+                <form method="post" action="index.php?action=reviews">
                     <div>
                         <!-- Author -->
                         <h2 class="author-name mt-2">Author</h2>
@@ -90,7 +90,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <p>Add review content and rating of 1-5, with 5 being the best.</p>
                     <div class="d-flex justify-content-start pb-2">
                         <label class="mr-2">Content:</label>
-                        <textarea class="rounded" cols="45" rows="4" id="review" name="review" form="reviewForm"></textarea>
+                        <textarea class="rounded" cols="45" rows="4" id="review" name="review"></textarea>
                     </div>
                     <div class="pb-1">
                         <label class="mr-2">Rating:</label>
