@@ -73,27 +73,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             <!-- Loan Form -->
             <form method="post" action="" id="loanForm">
-            <div>
-                <!-- Borrower -->
-                <h2 class="mt-2">Borrower</h2>
-                <p>Enter name for a new or existing borrower.</p>
-                <p>
-                    <a href="index.php?action=add-loan" class="btn bg-orange p-2" title="Add title by with new author">Add New</a>
-                    <a href="index.php?action=existing-borrower" class="btn bg-orange p-2" title="Add title by existing author">Use Existing</a>
-                </p>
-                <table>
-              <tbody>
-                <?php echo $addBorrower; ?>
-              </tbody>
-            </table>
-  
-            </div>
-            <!-- Title -->
-            <h2 class="mt-2">Title</h2>
-                    <div class="book-title">
-                        <label class="mr-1">Book title:</label>
-                        <input type="text" class="rounded" id="title" name="title">
-                    </div>
+                <div>
+                    <!-- Borrower -->
+                    <h2 class="mt-2">Borrower</h2>
+                    <p>Enter name for a new or existing borrower.</p>
+                    <p>
+                        <a href="index.php?action=add-loan" class="btn bg-orange p-2" title="Add title by with new author">Add New</a>
+                        <a href="index.php?action=existing-borrower" class="btn bg-orange p-2" title="Add title by existing author">Use Existing</a>
+                    </p>
+                    <table>
+                        <tbody>
+                            <?php echo $addBorrower . $choice; ?>
+                        </tbody>
+                    </table>
+
+                </div>
+                <!-- Title -->
+                <h2 class="mt-2">Title</h2>
+                <div class="book-title">
+                    <label class="mr-1">Book title:</label>
+                    <input type="text" class="rounded" id="title" name="title">
+                </div>
             </form>
         </div>
     </div>

@@ -200,10 +200,6 @@ switch ($action){
         include 'view/add-review.php';
     break;
     case 'add-loan':
-        $author = addAuthor();
-        include 'view/add-loan.php';
-    break;
-    case 'existing-borrower':
         $addBorrower = addBorrower();
         include 'view/add-loan.php';
     break;
