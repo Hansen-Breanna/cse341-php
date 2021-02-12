@@ -30,14 +30,14 @@ session_start();
       </div>
       <div>
         <?php
-        if ($_SERVER["REQUEST_METHOD"] == "GET") {
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
           echo $message;
         }
         ?>
         <div class="d-flex flex-row flex-wrap justify-content-center">
           <form class="mb-2" method="post" action="">
             <!-- Author -->
-            <p class="author-name mt-2">Add Author</p>
+            <h2 class="author-name mt-2">Add Author</h2>
             <?php
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
               echo $author_message;

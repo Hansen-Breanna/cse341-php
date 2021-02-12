@@ -50,6 +50,8 @@ switch ($action){
         $authors = getAuthors($_SESSION['id']);
         $authorsTable = displayAuthors($authors);
         $author = addAuthor();
+        $message = "<p class='px-4 py-3 bg-danger rounded'>Author added.</p>";
+        //$message-2 = "<p class='px-4 py-3 bg-danger rounded'>Author already exists.</p>";
         include 'view/authors.php';
     break;
     // search author page by name
@@ -142,10 +144,6 @@ switch ($action){
         $author = addAuthor();
         include 'view/add-title.php';
     break;
-    // add 
-    // case 'add-author':
-    //     include 'view/add-author.php';
-    // break;
     // add a full book with an existing author
     case 'existing-author';
         $author = selectAuthor($db);
