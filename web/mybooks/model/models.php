@@ -144,6 +144,7 @@ function addAuthor() {
 }
 
 function updateAuthor($data) {
+   var_dump($data);
    $author = 
    '<tr>
       <td><label for="first-name">First name:</label></td>
