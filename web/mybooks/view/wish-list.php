@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION))) {
             <a href="index.php?action=wish" title="See All Wishes" class="btn btn-custom bg-info my-2 ml-1">See All Wishes</a>
       </div>
     </div>
-    <div>
+    <div class="d-flex justify-content-center">
       <?php
       if ($_SERVER["REQUEST_METHOD"] == "GET") {
         echo $message;
@@ -58,7 +58,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION))) {
           </p>
           <?php echo $author ?>
           <div class="d-flex row-wrap">
-            <span class="d-flex align-items-center"><input type="checkbox" class="rounded mr-1" id="ownWish" name="own_wish" value="TRUE">Own Wish List</span>
+            <span class="d-flex align-items-center mr-5"><input type="checkbox" class="rounded mr-1" id="ownWish" name="own_wish" value="TRUE">Own Wish List</span>
             <span class="d-flex align-items-center"><input type="checkbox" class="rounded mr-1" id="readWish" name="read_wish" value="TRUE">Read Wish List</span>
           </div>
           <div class="submit">
