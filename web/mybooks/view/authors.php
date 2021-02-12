@@ -3,7 +3,7 @@
 session_start();
 
 $first_name = $middle_name = $last_name = $delete = $update = "";
-$favorite = $blacklist = "FALSE";
+$favorite = $blacklist = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $first_name = test_input($_POST["first_name"]);
