@@ -15,25 +15,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $returnDate = test_input($_POST['returnDate']);
     $isReturned = test_input($_POST['isReturned']);
 
-    try {
-        if (!isset($_POST['borrowerID'])) {
-            //author
-            insertBorrower($db, $first_name, $middle_name, $last_name, $phone);
-            $newBorrowerID = $db->lastInsertId('borrower_id_seq');
-            echo $newBorrowerID . $first_name;
-        } else {
-            $newBorrowerID = $borrowerID;
-            echo $newBorrowerID;
-        }
+var_dump($_POST);
+    // try {
+    //     if (!isset($_POST['borrowerID'])) {
+    //         //author
+    //         insertBorrower($db, $first_name, $middle_name, $last_name, $phone);
+    //         $newBorrowerID = $db->lastInsertId('borrower_id_seq');
+    //     } else {
+    //         $newBorrowerID = $borrowerID;
+    //     }
 
-        if (isset($_POST['isReturned'])) {
-            $isReturned = "TRUE";
-        } else {
-            $isReturned = "FALSE";
-        }
-        $returned = removeQuotes($isReturned);
+    //     if (isset($_POST['isReturned'])) {
+    //         $isReturned = "TRUE";
+    //     } else {
+    //         $isReturned = "FALSE";
+    //     }
+    //     $returned = removeQuotes($isReturned);
 
-        insertLoan($db, $_SESSION['id'], $titleID, $newBorrowerID, $dateBorrowed, $returnDate, $returned);
+    //     insertLoan($db, $_SESSION['id'], $titleID, $newBorrowerID, $dateBorrowed, $returnDate, $returned);
 
     } catch (Exception $e) {
         echo $e;
