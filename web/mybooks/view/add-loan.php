@@ -79,7 +79,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <h2 class="mt-2">Borrower</h2>
           <p>Enter name for a new or existing borrower.</p>
           <p>
-              <a href="index.php?action=loans" class="btn bg-orange p-2" title="Add title by with new author">Add New</a>
+              <a href="index.php?action=add-loan" class="btn bg-orange p-2" title="Add title by with new author">Add New</a>
               <a href="index.php?action=existing-borrower" class="btn bg-orange p-2" title="Add title by existing author">Use Existing</a>
           </p>
           <table>
