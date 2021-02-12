@@ -2,42 +2,12 @@
 // start session
 session_start();
 
-$first_name = $middle_name = $last_name =  $title = $authorID = "";
-$favorite = $blacklist = $own = $own_wish = $read_wish = "";
+$titleID = $own = $own_wish = $read_wish = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $authorID = test_input($_POST['authorID']);
+    $titleID = test_input($_POST['titleID']);
 
     try {
-        if (isset($_POST['authorID'])) {
-            $newAuthorID = $authorID;
-        } else {
-            $first_name = test_input($_POST["first_name"]);
-            $middle_name = test_input($_POST["middle_name"]);
-            $last_name = test_input($_POST["last_name"]);
-
-            //author
-            insertAuthor($db, $first_name, $middle_name, $last_name);
-            $newAuthorID = $db->lastInsertId('author_id_seq');
-        }
-        $favorite = test_input($_POST["favorite"]);
-
-        if (isset($_POST['favorite'])) {
-            $favorite = "TRUE";
-        } else {
-            $favorite = "FALSE";
-        }
-        $newFavorite = removeQuotes($favorite);
-
-        $blacklist = test_input($_POST["blacklist"]);
-        if (isset($_POST['blacklist'])) {
-            $blacklist = "TRUE";
-        } else {
-            $blacklist = "FALSE";
-        }
-        $newBlacklist = removeQuotes($blacklist);
-
-        $title = test_input($_POST["title"]);
         $own = test_input($_POST["own"]);
         if (isset($_POST['own'])) {
             $own = "TRUE";
@@ -62,17 +32,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
         $newRead_wish = removeQuotes($read_wish);
 
-        $_SESSION['title'] = $title;
-
-        //user_author
-        insertUserAuthor($db, $_SESSION['id'], $newAuthorID, $newBlacklist, $newFavorite);
-
-        //book
-        insertTitle($db, $newAuthorID, $title);
-        $newTitleID = $db->lastInsertId('book_title_id_seq');
-
         // //user-book
-        insertUserBook($db, $_SESSION['id'], $newTitleID, $newOwn, $newOwn_wish, $newRead_wish);
+        insertUserBook($db, $_SESSION['id'], $titleID, $newOwn, $newOwn_wish, $newRead_wish);
     } catch (Exception $e) {
         $message = "<p class='px-4 py-3 bg-danger rounded'>Title was not added. Please try again.</p>";
     }
@@ -104,12 +65,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <a href="index.php?action=wish" title="See All Wishes" class="btn btn-custom bg-info my-2 ml-1">See Wish List</a>
             </div>
             <div>
-                <?php
-                if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                    echo $message;
-                }
-                ?>
-
                 <form method="post" action="">
                     <div>
                         <!-- Author -->
@@ -124,7 +79,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <div class="book-title">
                         <h2 class="mt-2">Title</h2>
                         <?php echo $bookTitle; ?>
-
                         <div>
                             <span class="d-flex align-items-center"><input type="checkbox" class="rounded mr-3" id="own" name="own" value="TRUE">Currently Own</span>
                             <span class="d-flex align-items-center"><input type="checkbox" class="rounded mr-3" id="ownWish" name="own_wish" value="TRUE">Own Wish List</span>
@@ -135,7 +89,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <input type="submit" class="rounded btn btm-lg bg-orange">
                     </div>
                 </form>
-
             </div>
         </div>
     </div>
