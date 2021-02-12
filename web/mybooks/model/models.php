@@ -83,7 +83,8 @@ function displayAuthors($authors) {
        } else {
           $authorList .= '<td></td>';
        }
-       $authorList .= '<td class="pl-2"><a href="index.php?action=authors" title="Edit"><i class="mr-1 rounded far fa-edit bg-info p-2" data-toggle="tooltip" data-placement="top" title="Edit"></i></a>';
+       $authorList .= '<td class="pl-2"><button type="button" onclick="deleteAuthor(' . $author['id'] . ')">Delete</button>';
+       $authorList .= '<a href="index.php?action=authors" title="Edit"><i class="mr-1 rounded far fa-edit bg-info p-2" data-toggle="tooltip" data-placement="top" title="Edit"></i></a>';
        $authorList .= '<a href="index.php?action=authors"  title="Delete"><i class="rounded far fa-trash-alt bg-danger p-2" data-toggle="tooltip" data-placement="top" title="Delete"></i></a></td>';
        $authorList .= '</tr>';
     }
