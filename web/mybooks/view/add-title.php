@@ -3,7 +3,7 @@
 session_start();
 
 $first_name = $middle_name = $last_name =  $title = $authorID = "";
-$favorite = $blacklist = $own = $own_wish = $read_wish = FALSE;
+$favorite = $blacklist = $own = $own_wish = $read_wish = "FALSE";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $authorID = test_input($_POST['authorID']);
@@ -23,17 +23,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (isset($_POST['favorite'])) {
         $favorite = "TRUE";
-    } else {
-        $favorite = "FALSE";
-    }
+    // } else {
+    //     $favorite = "FALSE";
+    // }
     $newFavorite = removeQuotes($favorite);
 
     $blacklist = test_input($_POST["blacklist"]);
     if (isset($_POST['blacklist'])) {
         $blacklist = "TRUE";
-    } else {
-        $blacklist = "FALSE";
-    }
+    // } else {
+    //     $blacklist = "FALSE";
+    // }
     $newBlacklist = removeQuotes($blacklist);
 
     $title = test_input($_POST["title"]);
@@ -122,10 +122,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <table>
                             <tbody>
                                 <?php echo $author ?>
-                                <tr>
-                                    <td><span class="d-flex align-items-center"><input type="checkbox" class="rounded mr-1" id="favorite" name="favorite" value="TRUE">Favorite</span></td>
-                                    <td><span class="d-flex align-items-center"><input type="checkbox" class="rounded mr-1" id="blacklist" name="blacklist" value="TRUE">Blacklist</span></td>
-                                </tr>
                             </tbody>
                         </table>
                     </div>

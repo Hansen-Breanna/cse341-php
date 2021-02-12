@@ -24,6 +24,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $author = updateAuthor($authorData);
   } else {
     try {
+      if (isset($_POST['favorite'])) {
+        $favorite = "TRUE";
+    } else {
+        $favorite = "FALSE";
+    }
+    $newFavorite = removeQuotes($favorite);
+
+    $blacklist = test_input($_POST["blacklist"]);
+    if (isset($_POST['blacklist'])) {
+        $blacklist = "TRUE";
+    } else {
+        $blacklist = "FALSE";
+    }
+    $newBlacklist = removeQuotes($blacklist);
+    
       // author
       insertAuthor($db, $first_name, $middle_name, $last_name);
       $newAuthorID = $db->lastInsertId('author_id_seq');
