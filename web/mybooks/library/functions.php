@@ -245,6 +245,7 @@ function deleteUserAuthor($id) {
    $stmt = $db->prepare('DELETE FROM user_author WHERE author_id = :id');
    echo "book";
    $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+   echo "cookie";
    $stmt->execute();
 }
 ?>
