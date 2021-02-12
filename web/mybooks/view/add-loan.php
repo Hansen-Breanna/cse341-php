@@ -87,11 +87,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </table>
 
                 </div>
-                <!-- Title -->
-                <h2 class="mt-2">Title</h2>
                 <div class="book-title">
+                    <!-- Title -->
+                    <h2 class="mt-2">Title</h2>
                     <label class="mr-1">Book title:</label>
                     <?php echo $addTitle; ?>
+                </div>
+                <div>
+                    <!-- Dates -->
+                    <h2 class="mt-2">Dates</h2>
+                    <label for="dateBorrowed">Date borrowed:</label>
+                    <input type="date" id="dateBorrowed" name="dateBorrowed">
+                    
+                    <label for="returnDate">Date borrowed:</label>
+                    <input type="date" id="returnDate" name="returnDate">
+                </div>
+                <div>
+                <!-- Is returned -->
+                    <input type="checkbox" id="isReturned" name="isReturned">
+                </div>
+                <div class="submit">
+                    <input type="submit" class="rounded btn btm-lg bg-orange">
                 </div>
             </form>
         </div>

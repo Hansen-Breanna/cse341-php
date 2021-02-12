@@ -234,10 +234,8 @@ function selectBorrower($db) {
 function selectTitleByUser($db, $id) {
    $title = '<select class="p-2 rounded mb-1" name="authorID" id="authorList">';
    $statement = $db->prepare("SELECT b.title_of_book, b.id FROM user_book ub INNER JOIN book_title b ON ub.book_title_id = b.id WHERE ub.library_user_id = :id ORDER BY title_of_book");
-   echo "blue";
    $statement->execute(array(':id' => $id));
    while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-      var_dump($row);
        $title .= '<option value=' . $row['id'] . '>' . $row['title_of_book'] . '</option>'; 
    }
    $title .= '</select>';
