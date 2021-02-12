@@ -83,10 +83,10 @@ function displayAuthors($authors) {
        } else {
           $authorList .= '<td></td>';
        }
-       $authorList .= '<td class="pl-2"> 
+       $authorList .= '<td class="pl-2 d-flex flex-row row-nowrap"> 
        <form method="post" action="index.php?action=authors">
          <input type="hidden" name="delete" value="' . $author['id'] . '"/>
-         <input type="submit" class="bg=info" value="&#x270E;"/>
+         <input type="submit" class="bg=info" value="&#9998;"/>
        </form>
        <form method="post" action="index.php?action=authors">
          <input type="hidden" name="delete" value="' . $author['id'] . '"/>
