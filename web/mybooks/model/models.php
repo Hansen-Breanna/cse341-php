@@ -152,10 +152,10 @@ function updateAuthor($data) {
    echo $data[0]['is_favorite'];
    $checkedBlacklist = "";
    $checkedFavorite = "";
-   if ($data[0]['is_blacklist'] == '1') {
+   if ($data[0]['is_blacklist'] == 't') {
       $checkedBlacklist = 'checked="checked"';
    }
-   if ($data[0]['is_favorite'] == '1') {
+   if ($data[0]['is_favorite'] == 't') {
       $checkedFavorite = 'checked="checked"';
    } 
    $author = 
