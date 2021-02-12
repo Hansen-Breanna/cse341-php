@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $newTitleID = $db->lastInsertId('book_title_id_seq');
 
         // insert review
-        insertReview($db, $_SESSION['id'], $newTitleID, $content, $rating);
+        insertReview($db, $_SESSION['id'], $newTitleID, $review, $rating);
 
     } catch (Exception $e) {
         echo $e;
