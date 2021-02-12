@@ -32,7 +32,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $returned = removeQuotes($isReturned);
 
         insertLoan($db, $_SESSION['id'], $titleID, $newBorrowerID, $dateBorrowed, $returnDate, $returned);
-        header('Location: index.php?action=loans');
     } catch (Exception $e) {
         echo $e;
         $message = "<p class='px-4 py-3 bg-danger rounded'>Borrower already exists.</p>";
