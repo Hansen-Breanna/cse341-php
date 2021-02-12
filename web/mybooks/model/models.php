@@ -219,7 +219,7 @@ function addBorrower() {
 
 // Select borrower from list
 function selectBorrower($db) {
-   $borrower = '<select class="p-2 rounded mb-1" name="authorID" id="authorList">';
+   $borrower = '<select class="p-2 rounded mb-1" name="borrowerID" id="borrowerList">';
    $statement = $db->prepare("SELECT first_name, middle_name, last_name, id FROM borrower ORDER BY last_name");
    $statement->execute();
    

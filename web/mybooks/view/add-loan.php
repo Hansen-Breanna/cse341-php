@@ -15,7 +15,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $returnDate = test_input($_POST['returnDate']);
     $isReturned = test_input($_POST['isReturned']);
 
-    var_dump($_POST);
     try {
         if (!isset($_POST['borrowerID'])) {
             //author
