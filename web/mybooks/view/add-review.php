@@ -127,14 +127,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <!-- Title -->
                     <h2 class="mt-2">Title</h2>
                     <div class="book-title">
-                        <label>Book title:</label>
+                        <label class="mr-1">Book title:</label>
                         <input type="text" class="rounded" id="title" name="title">
                     </div>
                     <h2 class="mt-2">Review</h2>
                     <p>Add review content and rating of 1-5, with 5 being the best.</p>
                     <div class="d-flex justify-content-start pb-2">
                         <label class="mr-1">Content:</label>
-                        <textarea class="rounded" col="140" rows="4" id="review-content" name="review"></textarea>
+                        <textarea class="rounded" col="200" rows="3" id="review-content" name="review"></textarea>
                     </div>
                     <div class="pb-1">
                         <label class="mr-1">Rating:</label>
