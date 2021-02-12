@@ -231,4 +231,18 @@ function  insertUserBook($db, $userID, $titleID, $own, $own_wish, $read_wish) {
    $stmt->execute(array(':userID' => $userID, ':titleID' => $titleID, ':owned' => $own, ':own_wish' => $own_wish, ':read_wish' => $read_wish));
 }
 
+// Delete author
+function deleteAuthor($id) {
+   $db = $db = connectMyBooks();
+   $stmt = $db->prepare('DELETE FROM author WHERE id = :id)');
+   $stmt->execute(array(':id' => $id));
+}
+
+// Delete user_author
+function deleteUserAuthor($id) {
+   $db = $db = connectMyBooks();
+   $stmt = $db->prepare('DELETE FROM user_author WHERE author_id = :id)');
+   $stmt->execute(array(':id' => $id));
+   deleteAuthor($id);
+}
 ?>
