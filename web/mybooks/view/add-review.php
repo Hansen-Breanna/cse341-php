@@ -133,8 +133,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <h2 class="mt-2">Review</h2>
                     <p>Add review content and rating of 1-5, with 5 being the best.</p>
                     <div class="d-flex justify-content-start pb-2">
-                        <label class="mr-1">Content:</label>
-                        <textarea class="rounded" col="200" rows="3" id="review-content" name="review"></textarea>
+                        <label class="pr-1">Content:</label>
+                        <textarea class="rounded" col="300" rows="3" id="review-content" name="review"></textarea>
                     </div>
                     <div class="pb-1">
                         <label class="mr-1">Rating:</label>
