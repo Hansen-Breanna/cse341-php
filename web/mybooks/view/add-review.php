@@ -68,7 +68,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 }
                 ?>
 
-                <form method="post" action="index.php?action=reviews" id="reviewForm">
+                <form method="post" action="" id="reviewForm">
                     <div>
                         <!-- Author -->
                         <h2 class="author-name mt-2">Author</h2>
