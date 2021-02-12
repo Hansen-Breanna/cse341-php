@@ -196,13 +196,14 @@ function selectTitle($db) {
 
 // Select borrower from list
 function selectBorrower($db) {
-   $author = '<select class="p-2 rounded mb-1" name="authorID" id="authorList">';
+   $borrower = '<select class="p-2 rounded mb-1" name="authorID" id="authorList">';
+   echo "purple";
    $statement = $db->prepare("SELECT first_name, middle_name, last_name, id FROM borrower ORDER BY last_name");
    $statement->execute();
    
    while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-       $author .= '<option value=' . $row['id'] . '>' . $row['last_name'] . ', ' . $row['first_name'] . ' ' . $row['middle_name'] . '</option>'; 
+       $borrower .= '<option value=' . $row['id'] . '>' . $row['last_name'] . ', ' . $row['first_name'] . ' ' . $row['middle_name'] . '</option>'; 
    }
-   $author .= '</select>';
-   return $author;
+   $borrower .= '</select>';
+   return $borrower;
 }
