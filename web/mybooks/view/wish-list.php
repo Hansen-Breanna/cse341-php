@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION))) {
             <a href="index.php?action=wish" title="See All Wishes" class="btn btn-custom bg-info my-2 ml-1">See All Wishes</a>
       </div>
     </div>
-    <div>
+    <div class="d-flex flex-column">
       <div class="d-flex justify-content-center">
         <?php
         if ($_SERVER["REQUEST_METHOD"] == "GET") {
