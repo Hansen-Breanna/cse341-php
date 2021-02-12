@@ -25,6 +25,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $newBorrowerID = $borrowerID;
             echo $newBorrowerID;
         }
+
+        if (isset($_POST['isReturned'])) {
+            $isReturned = "TRUE";
+        } else {
+            $isReturned = "FALSE";
+        }
+        $returned = removeQuotes($isReturned);
+
+        insertLoan($_SESSION['id'], $titleID, $newBorrowerID, $dateBorrowed, $returnDate, $returned);
+
     } catch (Exception $e) {
         echo $e;
     }
