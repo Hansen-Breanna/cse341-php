@@ -231,26 +231,26 @@ function  insertUserBook($db, $userID, $titleID, $own, $own_wish, $read_wish) {
    $stmt->execute(array(':userID' => $userID, ':titleID' => $titleID, ':owned' => $own, ':own_wish' => $own_wish, ':read_wish' => $read_wish));
 }
 
-// Delete user_book by author_id
-function deleteUserBooks($id) {
-   $db = connectMyBooks();
-   $stmt = $db->prepare('DELETE FROM user_book WHERE author_id = :id');
-   $stmt->execute(array(':id' => $id));
-}
+// // Delete user_book by author_id
+// function deleteUserBooks($id) {
+//    $db = connectMyBooks();
+//    $stmt = $db->prepare('DELETE FROM user_book WHERE author_id = :id');
+//    $stmt->execute(array(':id' => $id));
+// }
 
-// Delete book_title by author_id
-function deleteBooks($id) {
-   $db = connectMyBooks();
-   $stmt = $db->prepare('DELETE FROM book_title WHERE author_id = :id');
-   $stmt->execute(array(':id' => $id));
-}
+// // Delete book_title by author_id
+// function deleteBooks($id) {
+//    $db = connectMyBooks();
+//    $stmt = $db->prepare('DELETE FROM book_title WHERE author_id = :id');
+//    $stmt->execute(array(':id' => $id));
+// }
 
-// Delete user_author
-function deleteUserAuthor($id) {
-   $db = connectMyBooks();
-   $stmt = $db->prepare('DELETE FROM user_author WHERE author_id = :id');
-   $stmt->execute(array(':id' => $id));
-}
+// // Delete user_author
+// function deleteUserAuthor($id) {
+//    $db = connectMyBooks();
+//    $stmt = $db->prepare('DELETE FROM user_author WHERE author_id = :id');
+//    $stmt->execute(array(':id' => $id));
+// }
 
 // Delete author
 function deleteAuthor($id) {
@@ -259,4 +259,12 @@ function deleteAuthor($id) {
    $stmt->execute(array(':id' => $id));
 }
 
+function getAuthor($id) {
+   $db = connectMyBooks();
+   $stmt = $db->prepare('SELECT a.first_name, a.middle_name, a.last_name, ua.is_blacklist, ua.is_favorite FROM author a INNER JOIN user_author ua ON ua.author_id = a.id WHERE a.id = :id');
+   $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+   $stmt->execute();
+   $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+   return $results;
+}
 ?>

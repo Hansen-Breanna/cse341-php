@@ -2,7 +2,7 @@
 // start session
 session_start();
 
-$first_name = $middle_name = $last_name = $delete = "";
+$first_name = $middle_name = $last_name = $delete = $update = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $first_name = test_input($_POST["first_name"]);
@@ -10,20 +10,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $last_name = test_input($_POST["last_name"]);
 
   if (isset($_POST['delete'])) {
-    echo $_POST['delete'];
     try {
     $deleteID = test_input($_POST['delete']);
-    //deleteUserBooks($deleteID);
-    //deleteBooks($deleteID);
-    //deleteUserAuthor($deleteID);
     deleteAuthor($deleteID);
-    echo "black";
     header('Location: index.php?action=delete-author');
     } catch (Exception $e) {
       echo $e;
       $message = "<p class='px-4 py-3 bg-danger rounded'>Delete failed.</p>";
     }
   } else if (isset($_POST['update'])) {
+    $updateID = test_input($_POST['update']);
+    $authorData = getAuthor($updateID);
+    var_dump($authorData);
   } else {
     try {
       // author
