@@ -135,7 +135,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <p>Add review content and rating of 1-5, with 5 being the best.</p>
                     <div class="review-content">
                         <label>Content:</label>
-                        <textarea class="rounded" col="40" rows="8" id="review-content" name="review">
+                        <textarea class="rounded" col="40" rows="8" id="review-content" name="review"></textarea>
                     </div>
                     <div class="rating">
                         <label>Rating:</label>
