@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     insertUserAuthor($db, $_SESSION['id'], $newAuthorID, $newBlacklist, $newFavorite);
 
     $message = "<p class='px-4 py-3 bg-danger rounded'>$first_name $middle_name $last_name was successfully added to the author list.</p>";
-    //header('Location: index.php?action=authors');
+    header('Location: index.php?action=authors');
   } 
   catch (Exception $e) {
     $authorExists = "<p class='px-4 py-3 bg-danger rounded'>Author already exists. Edit author instead.</p>";
