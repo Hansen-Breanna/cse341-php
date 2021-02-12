@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $returnDate = test_input($_POST['returnDate']);
     $isReturned = test_input($_POST['isReturned']);
 
-var_dump($_POST);
+    var_dump($_POST);
     // try {
     //     if (!isset($_POST['borrowerID'])) {
     //         //author
@@ -34,10 +34,10 @@ var_dump($_POST);
 
     //     insertLoan($db, $_SESSION['id'], $titleID, $newBorrowerID, $dateBorrowed, $returnDate, $returned);
 
-    } catch (Exception $e) {
-        echo $e;
-        $message = "<p class='px-4 py-3 bg-danger rounded'>Borrower already exists.</p>";
-    }
+    // } catch (Exception $e) {
+    //     echo $e;
+    //     $message = "<p class='px-4 py-3 bg-danger rounded'>Borrower already exists.</p>";
+    // }
 }
 
 ?>
