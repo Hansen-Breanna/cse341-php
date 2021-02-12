@@ -200,6 +200,8 @@ switch ($action){
         include 'view/add-review.php';
     break;
     case 'add-loan':
+        $author = addAuthor();
+        echo "hello";
         include 'view/add-loan.php';
     break;
     default:
