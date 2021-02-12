@@ -49,7 +49,7 @@ session_start();
           <p>
             <a href="index.php?action=add-title" class="btn bg-orange p-2" title="Add title by with new author">Add New Title & Author</a>
             <a href="index.php?action=existing-author" class="btn bg-orange p-2" title="Add title by existing author">Add New Title & Existing Author</a>
-            <a href="index.php?action=wish-existing-title" class="btn bg-orange p-2" title="Add title by existing author">Add Existing Title & Author</a>
+            <a href="index.php?action=update-title" class="btn bg-orange p-2" title="Add title by existing author">Edit Current Title</a>
           </p>
         </div>
       </div>
