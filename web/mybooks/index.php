@@ -174,6 +174,10 @@ switch ($action){
         $message = "<p class='px-4 py-3 bg-danger rounded'>Author was successfully deleted.</p>";
         include 'view/authors.php';
     break;
+    // Add wish list item with existing title
+    case 'wish-existing-title':
+    
+    break;
     default:
         include 'view/home.php';
 }

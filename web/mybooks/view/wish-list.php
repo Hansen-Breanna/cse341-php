@@ -47,8 +47,9 @@ session_start();
           <h2 class="author-name mt-2">Add to Wish List</h2>
           <p>Add a wish list item with for a new or existing title.</p>
           <p>
-            <a href="index.php?action=add-title" class="btn bg-orange p-2" title="Add title by with new author">Add New</a>
-            <a href="index.php?action=existing-author" class="btn bg-orange p-2" title="Add title by existing author">Use Existing</a>
+            <a href="index.php?action=add-title" class="btn bg-orange p-2" title="Add title by with new author">Add New Title & Author</a>
+            <a href="index.php?action=existing-author" class="btn bg-orange p-2" title="Add title by existing author">Add New Title & Existing Author</a>
+            <a href="index.php?action=wish-existing-title" class="btn bg-orange p-2" title="Add title by existing author">Add Existing Title & Author</a>
           </p>
         </div>
       </div>
