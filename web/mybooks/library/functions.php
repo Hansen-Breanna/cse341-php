@@ -234,6 +234,7 @@ function  insertUserBook($db, $userID, $titleID, $own, $own_wish, $read_wish) {
 // Delete author
 function deleteAuthor($id) {
    $db = connectMyBooks();
+   echo "purple";
    $stmt = $db->prepare('DELETE FROM author WHERE id = :id)');
    $stmt->execute(array(':id' => $id));
 }
@@ -243,7 +244,6 @@ function deleteUserAuthor($id) {
    $db = connectMyBooks();
    $stmt = $db->prepare('DELETE FROM user_author WHERE author_id = :id');
    $stmt->execute(array(':id' => $id));
-   echo "cookie";
 }
 
 ?>
