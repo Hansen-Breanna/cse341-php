@@ -176,7 +176,10 @@ switch ($action){
     break;
     // Add wish list item with existing title
     case 'wish-existing-title':
-    
+        $author = selectAuthor($db);
+        $title = selectTitle($db);
+        $message = "<p class='px-4 py-3 bg-danger rounded'>Title added. Please add another or return to the catalog.</p>";
+        include 'view/add-title.php';
     break;
     default:
         include 'view/home.php';
