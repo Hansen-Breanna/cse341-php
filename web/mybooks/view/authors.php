@@ -18,8 +18,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     insertUserAuthor($db, $_SESSION['id'], $newAuthorID, $newBlacklist, $newFavorite);
 
     $message = "<p class='px-4 py-3 bg-danger rounded'>$first_name $middle_name $last_name was successfully added to the author list.</p>";
-    $authors;
-    $authorsTable;
   } 
   catch (Exception $e) {
     $authorExists = "<p class='px-4 py-3 bg-danger rounded'>Author already exists. Edit author instead.</p>";
@@ -57,7 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           echo $authorExists;
         ?>
         <div class="d-flex flex-row flex-wrap justify-content-center">
-          <form class="mb-2" method="post" action="">
+          <form class="mb-2" method="post" action="authors.php">
             <!-- Author -->
             <h2 class="author-name mt-2">Add Author</h2>
             <table>
