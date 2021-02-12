@@ -8,6 +8,7 @@ $favorite = $blacklist = $own = $own_wish = $read_wish = "FALSE";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $authorID = test_input($_POST['authorID']);
 
+    try {
     if (isset($_POST['authorID'])) {
         $newAuthorID = $authorID;
     } else {
@@ -72,6 +73,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // //user-book
     insertUserBook($db, $_SESSION['id'], $newTitleID, $newOwn, $newOwn_wish, $newRead_wish);
+} catch (Exception $e) {
+    echo $e;
+}
 }
 
 ?>
