@@ -10,6 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $last_name = test_input($_POST["last_name"]);
 
   if (isset($_POST['delete'])) {
+    echo $$_POST['delete'];
     try {
     $deletID = test_input($_POST['delete']);
     echo $deleteID;
