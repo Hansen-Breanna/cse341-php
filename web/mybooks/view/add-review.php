@@ -11,6 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $title = test_input($_POST['title']);
     $content = test_input($_POST['content']);
     $rating = test_input($_POST['rating']);
+    echo "$first_name $middle_name $last_name $title $content $rating";
 
     try {
         //author
@@ -61,7 +62,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 }
                 ?>
 
-                <form method="post" action="index.php?action=reviews">
+                <form method="post" action="">
                     <div>
                         <!-- Author -->
                         <h2 class="author-name mt-2">Author</h2>
