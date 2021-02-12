@@ -208,6 +208,10 @@ function addBorrower() {
    <tr>
       <td><label for="last_name">Last name:</label></td>
       <td><input type="text" class="rounded mb-1" name="last_name" id="last_name"><br></td>
+   </tr>
+   <tr>
+      <td><label for="phone">Phone number:</label></td>
+      <td><input type="text" class="rounded mb-1" name="phone" id="phone"><br></td>
    </tr>';
    return $borrowerForm;
 }
