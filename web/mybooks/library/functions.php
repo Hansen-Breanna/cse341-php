@@ -235,7 +235,7 @@ function  insertUserBook($db, $userID, $titleID, $own, $own_wish, $read_wish) {
 function deleteAuthor($id) {
    $db = connectMyBooks();
    echo "purple";
-   $stmt = $db->prepare('DELETE FROM author WHERE id = :id)');
+   $stmt = $db->prepare('DELETE FROM author WHERE id = :id');
    $stmt->execute(array(':id' => $id));
 }
 
