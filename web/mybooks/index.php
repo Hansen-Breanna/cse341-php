@@ -154,7 +154,7 @@ switch ($action){
         $authors = getAuthors($_SESSION['id']);
         $authorsTable = displayAuthors($authors);
         $author = addAuthor();
-        $message = "<p class='px-4 py-3 bg-danger rounded'>$first_name $middle_name $last_name was successfully added to the author list.</p>";
+        $message = "<p class='px-4 py-3 bg-danger rounded'>Author was successfully added.</p>";
         include 'view/authors.php';
     break;
     default:
