@@ -203,6 +203,10 @@ switch ($action){
         $addBorrower = addBorrower();
         include 'view/add-loan.php';
     break;
+    case 'existing-borrower':
+        $addBorrwer = selectBorrower($db);
+        include 'view/add-loan.php';
+    break;
     default:
         include 'view/home.php';
 }
