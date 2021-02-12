@@ -240,8 +240,7 @@ function deleteAuthor($id) {
 
 // Delete user_author
 function deleteUserAuthor($id) {
-   echo "hello";
-   $db = $db = connectMyBooks();
+   $db = connectMyBooks();
    $stmt = $db->prepare('DELETE FROM user_author WHERE author_id = :id');
    $stmt->execute(array(':id' => $id));
    echo "cookie";
