@@ -152,11 +152,11 @@ function updateAuthor($data) {
    echo $data[0]['is_favorite'];
    $checkedBlacklist = "";
    $checkedFavorite = "";
-   if ($data[0]['is_blacklist'] == 't') {
-      $checkedBlacklist = 'checked="checked"';
+   if ($data[0]['is_blacklist'] == '1') {
+      $checkedBlacklist = 'checked';
    }
-   if ($data[0]['is_favorite'] == 't') {
-      $checkedFavorite = 'checked="checked"';
+   if ($data[0]['is_favorite'] == '1') {
+      $checkedFavorite = 'checked';
    } 
    $author = 
    '<tr>
@@ -172,8 +172,8 @@ function updateAuthor($data) {
       <td><input type="text" class="rounded mb-1" name="last_name" value="' . $data[0]['last_name'] . '" id="last_name"><br></td>
    </tr>
    <tr>
-      <td><span class="d-flex align-items-center"><input type="checkbox" class="rounded mr-1" id="favorite" name="favorite" value="' . $checkedFavorite . '">Favorite</span></td>
-      <td><span class="d-flex align-items-center"><input type="checkbox" class="rounded mr-1" id="blacklist" name="blacklist" value="' . $checkedBlacklist . '">Blacklist</span></td>
+      <td><span class="d-flex align-items-center"><input type="checkbox" class="rounded mr-1" id="favorite" name="favorite" value="TRUE" ' . $checkedFavorite . '>Favorite</span></td>
+      <td><span class="d-flex align-items-center"><input type="checkbox" class="rounded mr-1" id="blacklist" name="blacklist" value="TRUE" ' . $checkedBlacklist . '>Blacklist</span></td>
    </tr>';
    return $author;
 }
