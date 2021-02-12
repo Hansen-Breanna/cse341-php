@@ -2,9 +2,10 @@
 // start session
 session_start();
 
-$first_name = $middle_name = $last_name =  $title = $review = $rating = "";
+$first_name = $middle_name = $last_name =  $title = $review = $rating = $authorID = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $authorID = test_input($_POST['authorID']);
     $first_name = test_input($_POST['first_name']);
     $middle_name = test_input($_POST['middle_name']);
     $last_name = test_input($_POST['last_name']);
@@ -13,9 +14,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $rating = test_input($_POST['rating']);
 
     try {
-        //author
-        insertAuthor($db, $first_name, $middle_name, $last_name);
-        $newAuthorID = $db->lastInsertId('author_id_seq');
+        if (!isset($_POST['authorID'])) {
+            //author
+            insertAuthor($db, $first_name, $middle_name, $last_name);
+            $newAuthorID = $db->lastInsertId('author_id_seq');
+        } else {
+            $newAuthorID = $authorID;
+        }
         
         //book
         insertTitle($db, $newAuthorID, $title);
