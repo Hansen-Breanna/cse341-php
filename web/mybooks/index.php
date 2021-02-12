@@ -149,14 +149,6 @@ switch ($action){
         $message = "<p class='px-4 py-3 bg-danger rounded'>Title added. Please add another or return to the catalog.</p>";
         include 'view/add-title.php';
     break;
-    // Add new author
-    case'add-author':
-        $authors = getAuthors($_SESSION['id']);
-        $authorsTable = displayAuthors($authors);
-        $author = addAuthor();
-        $message = "<p class='px-4 py-3 bg-danger rounded'>$first_name $middle_name $last_name was successfully added to the author list.</p>";
-        include 'view/authors.php';
-    break;
     default:
         include 'view/home.php';
 }
