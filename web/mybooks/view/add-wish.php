@@ -137,7 +137,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <tbody>
                                 <tr>
                                     <td><label>Book title:</label></td>
-                                    <td><?php echo $title; ?></td>
+                                    <td><?php echo $bookTitle; ?></td>
                                 </tr>
                                 <tr>
                                     <td>

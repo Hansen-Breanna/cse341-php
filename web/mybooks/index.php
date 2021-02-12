@@ -178,7 +178,7 @@ switch ($action){
     case 'wish-existing-title':
         try {
         $author = selectAuthor($db);
-        $title = selectTitle($db);
+        $bookTitle = selectTitle($db);
         $message = "<p class='px-4 py-3 bg-danger rounded'>Title added. Please add another or return to the catalog.</p>";
         } catch (Exception $e) {
             echo $e;
