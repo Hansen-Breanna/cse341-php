@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (isset($_POST['favorite'])) {
             $favorite = "TRUE";
         } else {
-             $favorite = "FALSE";
+            $favorite = "FALSE";
         }
         $newFavorite = removeQuotes($favorite);
 
@@ -128,26 +128,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <!-- Title -->
                     <div class="book-title">
                         <h2 class="mt-2">Title</h2>
-                        <?php
-                        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                            echo $title_message;
-                        }
-                        ?>
-                        <table>
-                            <tbody>
-                                <tr>
-                                    <td><label>Book title:</label></td>
-                                    <td><?php echo $bookTitle; ?></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="d-flex align-items-center"><input type="checkbox" class="rounded mr-1" id="own" name="own" value="TRUE">Currently Own</span>
-                                        <span class="d-flex align-items-center"><input type="checkbox" class="rounded mr-1" id="ownWish" name="own_wish" value="TRUE">Own Wish List</span>
-                                        <span class="d-flex align-items-center"><input type="checkbox" class="rounded mr-1" id="readWish" name="read_wish" value="TRUE">Read Wish List</span>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <?php echo $bookTitle; ?>
+
+                        <div>
+                            <span class="d-flex align-items-center"><input type="checkbox" class="rounded mr-3" id="own" name="own" value="TRUE">Currently Own</span>
+                            <span class="d-flex align-items-center"><input type="checkbox" class="rounded mr-3" id="ownWish" name="own_wish" value="TRUE">Own Wish List</span>
+                            <span class="d-flex align-items-center"><input type="checkbox" class="rounded mr-3" id="readWish" name="read_wish" value="TRUE">Read Wish List</span>
+                        </div>
                     </div>
                     <div class="submit">
                         <input type="submit" class="rounded btn btm-lg bg-orange">
