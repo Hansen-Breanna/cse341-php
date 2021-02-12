@@ -139,12 +139,17 @@ function addAuthor() {
    <tr>
       <td><label for="last_name">Last name:</label></td>
       <td><input type="text" class="rounded mb-1" name="last_name" id="last_name"><br></td>
-   </tr>
-   <tr>
-      <td><span class="d-flex align-items-center"><input type="checkbox" class="rounded mr-1" id="favorite" name="favorite" value="TRUE">Favorite</span></td>
-      <td><span class="d-flex align-items-center"><input type="checkbox" class="rounded mr-1" id="blacklist" name="blacklist" value="TRUE">Blacklist</span></td>
    </tr>';
    return $author;
+}
+
+function addFavBlack() {
+   $choice = 
+      '<tr>
+         <td><span class="d-flex align-items-center"><input type="checkbox" class="rounded mr-1" id="favorite" name="favorite" value="TRUE">Favorite</span></td>
+         <td><span class="d-flex align-items-center"><input type="checkbox" class="rounded mr-1" id="blacklist" name="blacklist" value="TRUE">Blacklist</span></td>
+      </tr>';
+   return $choice;
 }
 
 function updateAuthor($data) {

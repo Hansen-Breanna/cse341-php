@@ -121,7 +121,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </p>
                         <table>
                             <tbody>
-                                <?php echo $author ?>
+                                <?php echo $author . $choice; ?>
                             </tbody>
                         </table>
                     </div>

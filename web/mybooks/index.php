@@ -50,6 +50,7 @@ switch ($action){
         $authors = getAuthors($_SESSION['id']);
         $authorsTable = displayAuthors($authors);
         $author = addAuthor();
+        $choice = addFavBlack();
         //$message-2 = "<p class='px-4 py-3 bg-danger rounded'>Author already exists.</p>";
         include 'view/authors.php';
     break;
@@ -142,6 +143,7 @@ switch ($action){
     case 'add-title':
         $message = "<p class='px-4 py-3 bg-danger rounded'>Title added. Please add another or return to the catalog.</p>";
         $author = addAuthor();
+        $choice = addFavBlack();
         include 'view/add-title.php';
     break;
     // add a full book with an existing author
@@ -155,6 +157,7 @@ switch ($action){
         $authors = getAuthors($_SESSION['id']);
         $authorsTable = displayAuthors($authors);
         $author = addAuthor();
+        $choice = addFavBlack();
         $message = "<p class='px-4 py-3 bg-danger rounded'>Author was successfully added.</p>";
         include 'view/authors.php';
     break;
@@ -163,6 +166,7 @@ switch ($action){
         $authors = getAuthors($_SESSION['id']);
         $authorsTable = displayAuthors($authors);
         $author = addAuthor();
+        $choice = addFavBlack();
         $message = "<p class='px-4 py-3 bg-danger rounded'>Author was successfully deleted.</p>";
         include 'view/authors.php';
     break;
@@ -171,6 +175,7 @@ switch ($action){
         $authors = getAuthors($_SESSION['id']);
         $authorsTable = displayAuthors($authors);
         $author = addAuthor();
+        $choice = addFavBlack();
         $message = "<p class='px-4 py-3 bg-danger rounded'>Author was successfully deleted.</p>";
         include 'view/authors.php';
     break;

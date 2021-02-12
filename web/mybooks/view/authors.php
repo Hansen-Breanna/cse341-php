@@ -89,7 +89,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <h2 class="author-name mt-2">Add Author</h2>
             <table>
               <tbody>
-                <?php echo $author ?>
+                <?php echo $author . $choice; ?>
               </tbody>
             </table>
             <div class="submit">
