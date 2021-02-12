@@ -100,7 +100,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <tbody>
                             <tr class="mb-1">
                                 <td><label for="dateBorrowed">Date borrowed:</label></td>
-                                <td><input type="date" id="dateBorrowed" name="dateBorrowed"><br></td>
+                                <td><input type="date" class="rounded" id="dateBorrowed" name="dateBorrowed"><br></td>
                             </tr>
                             <tr class="mb-1">
                                 <td><label for="returnDate">Return date:</label></td>
