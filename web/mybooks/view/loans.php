@@ -48,6 +48,24 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION))) {
           echo $message;
         }
         ?>
+
+        <!-- Loan Form -->
+        <div>
+          <!-- Borrower -->
+          <h2 class="mt-2">Borrower</h2>
+          <p>Enter name for a new or existing borrower.</p>
+          <p>
+              <a href="index.php?action=loans" class="btn bg-orange p-2" title="Add title by with new author">Add New</a>
+              <a href="index.php?action=existing-borrower" class="btn bg-orange p-2" title="Add title by existing author">Use Existing</a>
+          </p>
+          <table>
+              <tbody>
+                  <?php echo $author; ?>
+              </tbody>
+          </table>
+      </div>
+
+
       <table class="table table-dark table-striped text-light">
         <thead>
           <tr>

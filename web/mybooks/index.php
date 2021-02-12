@@ -67,6 +67,7 @@ switch ($action){
     case 'loans':
         $loans = getLoans($_SESSION['id']);
         $loansTable = displayLoans($loans);
+        $author = addAuthor();
         include 'view/loans.php';
     break;
     // search loans page by title

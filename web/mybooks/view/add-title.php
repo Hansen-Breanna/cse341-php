@@ -110,7 +110,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 }
                 ?>
 
-                <form method="post" action="">
+                <form method="post" action="index.php?action=add-title">
                     <div>
                         <!-- Author -->
                         <h2 class="author-name mt-2">Author</h2>
