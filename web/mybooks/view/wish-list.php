@@ -41,30 +41,32 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION))) {
             <a href="index.php?action=wish" title="See All Wishes" class="btn btn-custom bg-info my-2 ml-1">See All Wishes</a>
       </div>
     </div>
-    <div class="d-flex justify-content-center">
-      <?php
-      if ($_SERVER["REQUEST_METHOD"] == "GET") {
-        echo $message;
-      }
-      ?>
+    <div>
+      <div class="d-flex justify-content-center">
+        <?php
+        if ($_SERVER["REQUEST_METHOD"] == "GET") {
+          echo $message;
+        }
+        ?>
 
-      <form method="post" action="">
-        <div>
-          <h2 class="author-name mt-2">Add to Wish List</h2>
-          <p>Enter name for a new or existing author.</p>
-          <p>
-            <a href="index.php?action=add-title" class="btn bg-orange p-2" title="Add title by with new author">Add New</a>
-            <a href="index.php?action=existing-author" class="btn bg-orange p-2" title="Add title by existing author">Use Existing</a>
-          </p>
-          <?php echo $author ?>
-          <div class="d-flex row-wrap">
-            <span class="d-flex align-items-center mr-5"><input type="checkbox" class="rounded mr-1" id="ownWish" name="own_wish" value="TRUE">Own Wish List</span>
-            <span class="d-flex align-items-center"><input type="checkbox" class="rounded mr-1" id="readWish" name="read_wish" value="TRUE">Read Wish List</span>
-          </div>
-          <div class="submit">
-            <input type="submit" class="rounded btn btm-lg bg-orange">
-          </div>
-      </form>
+        <form method="post" action="">
+          <div>
+            <h2 class="author-name mt-2">Add to Wish List</h2>
+            <p>Enter name for a new or existing author.</p>
+            <p>
+              <a href="index.php?action=add-title" class="btn bg-orange p-2" title="Add title by with new author">Add New</a>
+              <a href="index.php?action=existing-author" class="btn bg-orange p-2" title="Add title by existing author">Use Existing</a>
+            </p>
+            <?php echo $author ?>
+            <div class="d-flex row-wrap">
+              <span class="d-flex align-items-center mr-5"><input type="checkbox" class="rounded mr-1" id="ownWish" name="own_wish" value="TRUE">Own Wish List</span>
+              <span class="d-flex align-items-center"><input type="checkbox" class="rounded mr-1" id="readWish" name="read_wish" value="TRUE">Read Wish List</span>
+            </div>
+            <div class="submit">
+              <input type="submit" class="rounded btn btm-lg bg-orange">
+            </div>
+        </form>
+      </div>
       <div class="d-flex flex-row flex-wrap justify-content-around">
         <div class="m-2">
           <h2 class="pt-4">Own Wish List</h2>
