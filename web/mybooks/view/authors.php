@@ -27,12 +27,6 @@ session_start();
         <!-- Search Author -->
         <form method="post" action="index.php?action=get-author">
           <?php include 'common/author.php'; ?>
-
-          <div class="my-3 mx-2 py-2 border-secondary border-top border-bottom">
-            <a href="index.php?action=add-book" class="btn btn-custom bg-orange my-2 ml-1">Add Author</a>
-            <a href="index.php?action=remove-book" class="btn btn-custom bg-orange my-2 ml-1">Remove Author</a>
-            <a href="index.php?action=authors" title="See All Authors" class="btn btn-custom my-2 ml-1 bg-info">See All Authors</a>
-          </div>
       </div>
       <div>
         <?php
@@ -43,7 +37,7 @@ session_start();
         <div class="d-flex flex-row flex-wrap justify-content-center">
           <form class="mb-2" method="post" action="">
             <!-- Author -->
-            <h2 class="author-name mt-2">Author</h2>
+            <p class="author-name mt-2">Add Author</p>
             <?php
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
               echo $author_message;
