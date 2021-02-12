@@ -18,10 +18,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             //author
             insertAuthor($db, $first_name, $middle_name, $last_name);
             $newAuthorID = $db->lastInsertId('author_id_seq');
-            echo $newAuthorID . $first_name;
         } else {
             $newAuthorID = $authorID;
-            echo $newAuthorID;
         }
         
         //book

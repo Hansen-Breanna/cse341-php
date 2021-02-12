@@ -269,9 +269,14 @@ function getAuthor($id) {
 }
 
 // insert review
-// Insert book
 function insertReview($db, $id, $titleID, $review, $rating) {
    $stmt = $db->prepare('INSERT INTO reviews (library_user_id, book_title_id, review, rating) VALUES (:id, :titleID, :review, :rating)');
    $stmt->execute(array(':id' => $id, ':titleID' => $titleID, ':review' => $review, ':rating' => $rating));
+}
+
+// insert borrower
+function insertBorrower($db, $first_name, $middle_name, $last_name, $phone) {
+   $stmt = $db->prepare('INSERT INTO borrower (first_name, middle_name, last_name, phone_number) VALUES (:first_name, :middle_name, :last_name, :phone)');
+   $stmt->execute(array(':first_name' => $first_name, ':middle_name' => $middle_name, ':last_name' => $last_name, ':phone' => $phone));
 }
 ?>
