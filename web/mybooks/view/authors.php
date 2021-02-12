@@ -18,6 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo "black";
     header('Location: index.php?action=delete-author');
     } catch (Exception $e) {
+      echo $e;
       $message = "<p class='px-4 py-3 bg-danger rounded'>Delete failed.</p>";
     }
   } else if (isset($_POST['update'])) {
