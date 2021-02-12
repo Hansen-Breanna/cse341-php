@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (isset($_POST['delete'])) {
     echo $_POST['delete'];
     try {
-    $deletID = test_input($_POST['delete']);
+    $deleteID = test_input($_POST['delete']);
     deleteUserAuthor($deleteID);
     deleteAuthor($deleteID);
     echo "black";
