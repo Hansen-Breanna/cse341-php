@@ -280,7 +280,7 @@ function insertBorrower($db, $first_name, $middle_name, $last_name, $phone) {
    $stmt->execute(array(':first_name' => $first_name, ':middle_name' => $middle_name, ':last_name' => $last_name, ':phone' => $phone));
 }
 
-function insertLoan($_SESSION['id'], $titleID, $newBorrowerID, $dateBorrowed, $returnDate, $returned) {
+function insertLoan($db, $userID, $titleID, $borrowerID, $dateBorrowed, $returnDate, $returned) {
    $stmt = $db->prepare('INSERT INTO loan (library_user_id, book_title_id, borrower_id, date_borrowed, return_date, is_returned) VALUES (:userID, :titleID, :borrowerID, :dateBorrowed, :returnDate, :returned)');
    $stmt->execute(array(':userID' => $userID, ':titleID' => $titleID, ':borrowerID' => $borrowerID, ':dateBorrowed' => $dateBorrowed, ':returnDate' => $returnDate, ':returned' => $returned)); 
 }

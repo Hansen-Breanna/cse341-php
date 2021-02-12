@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
         $returned = removeQuotes($isReturned);
 
-        insertLoan($_SESSION['id'], $titleID, $newBorrowerID, $dateBorrowed, $returnDate, $returned);
+        insertLoan($db, $_SESSION['id'], $titleID, $newBorrowerID, $dateBorrowed, $returnDate, $returned);
 
     } catch (Exception $e) {
         echo $e;
