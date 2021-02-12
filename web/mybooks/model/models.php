@@ -139,24 +139,39 @@ function addAuthor() {
    <tr>
       <td><label for="last_name">Last name:</label></td>
       <td><input type="text" class="rounded mb-1" name="last_name" id="last_name"><br></td>
+   </tr>
+   <tr>
+      <td><span class="d-flex align-items-center"><input type="checkbox" class="rounded mr-1" id="favorite" name="favorite" value="TRUE">Favorite</span></td>
+      <td><span class="d-flex align-items-center"><input type="checkbox" class="rounded mr-1" id="blacklist" name="blacklist" value="TRUE">Blacklist</span></td>
    </tr>';
    return $author;
 }
 
 function updateAuthor($data) {
-   var_dump($data);
+   $checkedBlacklist = "";
+   $checkedFavorite = "";
+   if ($$data[0]['is_blacklist'] == 't') {
+      $checkedBlacklist = 'checked="checked"';
+   }
+   if ($$data[0]['is_favorite'] == 't') {
+      $checkedFavorite = 'checked="checked"';
+   } 
    $author = 
    '<tr>
       <td><label for="first-name">First name:</label></td>
-      <td><input type="text" class="rounded mb-1" name="first_name" value="' . $data[0]['first_name'] . 'id="first_name"></td>
+      <td><input type="text" class="rounded mb-1" name="first_name" value="' . $data[0]['first_name'] . '" id="first_name"></td>
    </tr>
    <tr>
       <td><label for="middle_name">Middle Name:</label></td>
-      <td><input type="text" class="rounded mb-1" name="middle_name" value="' . $data[0]['middle_name'] . 'id="middle_name"></td>
+      <td><input type="text" class="rounded mb-1" name="middle_name" value="' . $data[0]['middle_name'] . '" id="middle_name"></td>
    </tr>
    <tr>
       <td><label for="last_name">Last name:</label></td>
-      <td><input type="text" class="rounded mb-1" name="last_name" value="' . $data[0]['last_name'] . 'id="last_name"><br></td>
+      <td><input type="text" class="rounded mb-1" name="last_name" value="' . $data[0]['last_name'] . '" id="last_name"><br></td>
+   </tr>
+   <tr>
+      <td><span class="d-flex align-items-center"><input type="checkbox" class="rounded mr-1" id="favorite" name="favorite" value="' . $checkedFavorite . '">Favorite</span></td>
+      <td><span class="d-flex align-items-center"><input type="checkbox" class="rounded mr-1" id="blacklist" name="blacklist" value="' . $checkedBlacklist . '">Blacklist</span></td>
    </tr>';
    return $author;
 }

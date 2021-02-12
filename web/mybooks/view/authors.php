@@ -74,10 +74,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <table>
               <tbody>
                 <?php echo $author ?>
-                <tr>
-                  <td><span class="d-flex align-items-center"><input type="checkbox" class="rounded mr-1" id="favorite" name="favorite" value="TRUE">Favorite</span></td>
-                  <td><span class="d-flex align-items-center"><input type="checkbox" class="rounded mr-1" id="blacklist" name="blacklist" value="TRUE">Blacklist</span></td>
-                </tr>
               </tbody>
             </table>
             <div class="submit">
