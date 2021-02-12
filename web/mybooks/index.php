@@ -45,6 +45,7 @@ switch ($action){
     case 'authors':
         $authors = getAuthors($_SESSION['id']);
         $authorsTable = displayAuthors($authors);
+        $author = addAuthor();
         include 'view/authors.php';
     break;
     case 'get-author':
@@ -134,6 +135,11 @@ switch ($action){
         $message = "<p class='px-4 py-3 bg-danger rounded'>Title added. Please add another or return to the catalog.</p>";
         include 'view/add-title.php';
     break;
+    case 'add-existing-author':
+        $author = selectAuthor($db);
+        include 'view/authors.php';    
+    break;
+
     default:
         include 'view/home.php';
 }
