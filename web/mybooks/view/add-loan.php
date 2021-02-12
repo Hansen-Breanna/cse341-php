@@ -79,7 +79,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             ?>
 
             <!-- Loan Form -->
-            <form method="post" action="index.php?action=loans">
+            <form method="post" action="index.php?action=add-loan">
                 <div>
                     <!-- Borrower -->
                     <h2 class="mt-2">Borrower</h2>
