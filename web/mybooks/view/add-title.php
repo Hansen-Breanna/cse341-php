@@ -11,17 +11,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['authorID'])) {
         $newAuthorID = $authorID;
     } else {
-        $checkList = getAuthors($_SESSION['id']);
         $first_name = test_input($_POST["first_name"]);
         $middle_name = test_input($_POST["middle_name"]);
         $last_name = test_input($_POST["last_name"]);
-        $newName = $first_name . ' ' . $middle_name . ' ' . $last_name;
-        foreach ($checklist as $author) {
-            $name = $author['first_name'] . ' ' . $author['middle_name'] . ' ' . $author['last_name'];
-            if ($name == $newName) {
-                $author_message = "<p class='px-4 py-3 bg-danger rounded'>Author already exists. Please use existing author.</p>";
-            }
-        }
 
         //author
         insertAuthor($db, $first_name, $middle_name, $last_name);

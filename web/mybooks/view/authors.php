@@ -15,9 +15,9 @@ session_start();
 <!-- Header -->
 <?php include '../common/header.php'; ?>
 
-      <h1 class="offset-1 col-10 offset-md-0 col-md-12">Authors</h1>
-    </div>
-  </div>
+<h1 class="offset-1 col-10 offset-md-0 col-md-12">Authors</h1>
+</div>
+</div>
 </header>
 
 <main class="mb-5">
@@ -40,6 +40,33 @@ session_start();
           echo $message;
         }
         ?>
+        <div class="d-flex flex-row flex-wrap justify-content-center">
+        <form method="post" action="">
+          <!-- Author -->
+          <h2 class="author-name mt-2">Author</h2>
+          <p>Enter name for a new or existing author.</p>
+          <?php
+          if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            echo $author_message;
+          }
+          ?>
+          <p>
+            <a href="index.php?action=existing-author" class="btn bg-orange p-2" title="Add title by existing author">Use Existing</a>
+            <a href="index.php?action=add-title" class="btn bg-orange p-2" title="Add title by with new author">Add New</a>
+          </p>
+          <table>
+            <tbody>
+              <?php echo $author ?>
+              <tr>
+                <td><span class="d-flex align-items-center"><input type="checkbox" class="rounded mr-1" id="favorite" name="favorite" value="TRUE">Favorite</span></td>
+                <td><span class="d-flex align-items-center"><input type="checkbox" class="rounded mr-1" id="blacklist" name="blacklist" value="TRUE">Blacklist</span></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="submit">
+            <input type="submit" class="rounded btn btm-lg bg-orange">
+          </div>
+        </form>
         <table class="table table-dark table-striped text-light">
           <thead>
             <tr>
@@ -48,8 +75,9 @@ session_start();
               <th>Blacklisted</th>
             </tr>
           </thead>
-            <?php echo $authorsTable; ?>
+          <?php echo $authorsTable; ?>
         </table>
+        </div>
       </div>
     </div>
   </div>
