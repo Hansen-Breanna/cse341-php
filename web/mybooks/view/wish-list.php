@@ -37,7 +37,6 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION))) {
             <?php include 'common/author.php'; ?>
 
             <!-- Add/Remove -->
-            <?php include 'common/add-remove-title.php'; ?>
             <a href="index.php?action=wish" title="See All Wishes" class="btn btn-custom bg-info my-2 ml-1">See All Wishes</a>
       </div>
     </div>
@@ -65,6 +64,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION))) {
             <div class="submit">
               <input type="submit" class="rounded btn btm-lg bg-orange">
             </div>
+          </div>
         </form>
       </div>
       <div class="d-flex flex-row flex-wrap justify-content-around">
