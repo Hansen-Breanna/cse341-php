@@ -16,28 +16,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $isReturned = test_input($_POST['isReturned']);
 
     var_dump($_POST);
-    // try {
-    //     if (!isset($_POST['borrowerID'])) {
-    //         //author
-    //         insertBorrower($db, $first_name, $middle_name, $last_name, $phone);
-    //         $newBorrowerID = $db->lastInsertId('borrower_id_seq');
-    //     } else {
-    //         $newBorrowerID = $borrowerID;
-    //     }
+    try {
+        if (!isset($_POST['borrowerID'])) {
+            //author
+            insertBorrower($db, $first_name, $middle_name, $last_name, $phone);
+            $newBorrowerID = $db->lastInsertId('borrower_id_seq');
+        } else {
+            $newBorrowerID = $borrowerID;
+        }
 
-    //     if (isset($_POST['isReturned'])) {
-    //         $isReturned = "TRUE";
-    //     } else {
-    //         $isReturned = "FALSE";
-    //     }
-    //     $returned = removeQuotes($isReturned);
+        if (isset($_POST['isReturned'])) {
+            $isReturned = "TRUE";
+        } else {
+            $isReturned = "FALSE";
+        }
+        $returned = removeQuotes($isReturned);
 
-    //     insertLoan($db, $_SESSION['id'], $titleID, $newBorrowerID, $dateBorrowed, $returnDate, $returned);
+        insertLoan($db, $_SESSION['id'], $titleID, $newBorrowerID, $dateBorrowed, $returnDate, $returned);
 
-    // } catch (Exception $e) {
-    //     echo $e;
-    //     $message = "<p class='px-4 py-3 bg-danger rounded'>Borrower already exists.</p>";
-    // }
+    } catch (Exception $e) {
+        echo $e;
+        $message = "<p class='px-4 py-3 bg-danger rounded'>Borrower already exists.</p>";
+    }
 }
 
 ?>
