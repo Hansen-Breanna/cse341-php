@@ -27,12 +27,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     try {
       if (isset($_POST['favorite'])) {
         $favorite = "TRUE";
+      } else {
+        $favorite = "FALSE";
       }
       $newFavorite = removeQuotes($favorite);
 
       $blacklist = test_input($_POST["blacklist"]);
       if (isset($_POST['blacklist'])) {
         $blacklist = "TRUE";
+      } else {
+        $favorite = "FALSE";
       }
       $newBlacklist = removeQuotes($blacklist);
 
