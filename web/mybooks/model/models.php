@@ -83,12 +83,15 @@ function displayAuthors($authors) {
        } else {
           $authorList .= '<td></td>';
        }
-       $authorList .= '<td class="pl-2">
-       
+       $authorList .= '<td class="pl-2"> 
        <form method="post" action="index.php?action=authors">
          <input type="hidden" name="delete" value="' . $author['id'] . '"/>
-         <input type="submit" class="bg=info" value="Delete"/>
-       </form>';
+         <input type="submit" class="bg=info" value="U+0270E"/>
+       </form>
+       <form method="post" action="index.php?action=authors">
+         <input type="hidden" name="delete" value="' . $author['id'] . '"/>
+         <input type="submit" class="bg=info" value="&#x1F5D1"/>
+      </form>';
        $authorList .= '<a href="index.php?action=authors" title="Edit"><i class="mr-1 rounded far fa-edit bg-info p-2" data-toggle="tooltip" data-placement="top" title="Edit"></i></a>';
        $authorList .= '<a href="index.php?action=authors"  title="Delete"><i class="rounded far fa-trash-alt bg-danger p-2" data-toggle="tooltip" data-placement="top" title="Delete"></i></a></td>';
        $authorList .= '</tr>';
@@ -139,5 +142,3 @@ function addAuthor() {
    </tr>';
    return $author;
 }
-
-?>
