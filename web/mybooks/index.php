@@ -157,6 +157,14 @@ switch ($action){
         $message = "<p class='px-4 py-3 bg-danger rounded'>Author was successfully added.</p>";
         include 'view/authors.php';
     break;
+    // Delete user_author and author
+    case 'delete-author':
+        $authors = getAuthors($_SESSION['id']);
+        $authorsTable = displayAuthors($authors);
+        $author = addAuthor();
+        $message = "<p class='px-4 py-3 bg-danger rounded'>Author was successfully deleted.</p>";
+        include 'view/authors.php';
+    break;
     default:
         include 'view/home.php';
 }

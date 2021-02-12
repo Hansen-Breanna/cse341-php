@@ -233,7 +233,7 @@ function  insertUserBook($db, $userID, $titleID, $own, $own_wish, $read_wish) {
 
 // Delete author
 function deleteAuthor($id) {
-   $db = $db = connectMyBooks();
+   $db = connectMyBooks();
    $stmt = $db->prepare('DELETE FROM author WHERE id = :id)');
    $stmt->execute(array(':id' => $id));
 }
