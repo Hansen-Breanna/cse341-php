@@ -49,45 +49,54 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </header>
 
 <main class="mb-5">
-  <div class="container">
-    <div class="row d-flex flex-column align-items-center">
-      <div>
-        <!-- Search Title -->
-        <form method="post" action="index.php?action=loans-title">
-          <?php include 'common/title.php'; ?>
+    <div class="container">
+        <div class="row d-flex flex-column align-items-center">
+            <div>
+                <!-- Search Title -->
+                <form method="post" action="index.php?action=loans-title">
+                    <?php include 'common/title.php'; ?>
 
-          <!-- Search Borrowers -->
-          <form method="post" action="index.php?action=loans-borrower">
-            <?php include 'common/borrower.php'; ?>
+                    <!-- Search Borrowers -->
+                    <form method="post" action="index.php?action=loans-borrower">
+                        <?php include 'common/borrower.php'; ?>
 
-            <div class="my-3 mx-2 py-2 border-secondary border-top border-bottom">
-              <a href="index.php?action=loans" title="See All Borrowers" class="btn btn-custom my-2 ml-1 bg-info">See All Borrowers</a>
+                        <div class="my-3 mx-2 py-2 border-secondary border-top border-bottom">
+                            <a href="index.php?action=loans" title="See All Borrowers" class="btn btn-custom my-2 ml-1 bg-info">See All Borrowers</a>
+                        </div>
             </div>
-      </div>
-      <p class="font-blue mx-1">SMS message reminders must be sent from a mobile device.</p>
-        <?php
-        if ($_SERVER["REQUEST_METHOD"] == "GET") {
-          echo $message;
-        }
-        ?>
+            <p class="font-blue mx-1">SMS message reminders must be sent from a mobile device.</p>
+            <?php
+            if ($_SERVER["REQUEST_METHOD"] == "GET") {
+                echo $message;
+            }
+            ?>
 
-        <!-- Loan Form -->
-        <div>
-          <!-- Borrower -->
-          <h2 class="mt-2">Borrower</h2>
-          <p>Enter name for a new or existing borrower.</p>
-          <p>
-              <a href="index.php?action=add-loan" class="btn bg-orange p-2" title="Add title by with new author">Add New</a>
-              <a href="index.php?action=existing-borrower" class="btn bg-orange p-2" title="Add title by existing author">Use Existing</a>
-          </p>
-          <table>
+            <!-- Loan Form -->
+            <form method="post" action="" id="loanForm">
+            <div>
+                <!-- Borrower -->
+                <h2 class="mt-2">Borrower</h2>
+                <p>Enter name for a new or existing borrower.</p>
+                <p>
+                    <a href="index.php?action=add-loan" class="btn bg-orange p-2" title="Add title by with new author">Add New</a>
+                    <a href="index.php?action=existing-borrower" class="btn bg-orange p-2" title="Add title by existing author">Use Existing</a>
+                </p>
+                <table>
               <tbody>
-                  <?php echo $borrower; ?>
+                <?php echo $addBorrower; ?>
               </tbody>
-          </table>
-      </div>
+            </table>
+  
+            </div>
+            <!-- Title -->
+            <h2 class="mt-2">Title</h2>
+                    <div class="book-title">
+                        <label class="mr-1">Book title:</label>
+                        <input type="text" class="rounded" id="title" name="title">
+                    </div>
+            </form>
+        </div>
     </div>
-  </div>
 </main>
 
 <!-- Footer -->

@@ -125,7 +125,7 @@ function selectAuthor($db) {
    return $author;
 }
 
-// Add new select
+// Add new author
 function addAuthor() {
    $author = 
    '<tr>
@@ -192,6 +192,24 @@ function selectTitle($db) {
    }
    $title .= '</select>';
    return $title;
+}
+
+// Add new borrower
+function addBorrower() {
+   $borrowerForm = 
+   '<tr>
+      <td><label for="first-name">First name:</label></td>
+      <td><input type="text" class="rounded mb-1" name="first_name" id="first_name"></td>
+   </tr>
+   <tr>
+      <td><label for="middle_name">Middle Name:</label></td>
+      <td><input type="text" class="rounded mb-1" name="middle_name" id="middle_name"></td>
+   </tr>
+   <tr>
+      <td><label for="last_name">Last name:</label></td>
+      <td><input type="text" class="rounded mb-1" name="last_name" id="last_name"><br></td>
+   </tr>';
+   return $borrowerForm;
 }
 
 // Select borrower from list
