@@ -5,7 +5,6 @@ session_start();
 $first_name = $middle_name = $last_name =  $title = $review = $rating = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    var_dump($_POST);
     $first_name = test_input($_POST['first_name']);
     $middle_name = test_input($_POST['middle_name']);
     $last_name = test_input($_POST['last_name']);
@@ -62,7 +61,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 }
                 ?>
 
-                <form method="post" action="" id="reviewForm">
+                <form method="post" action="index.php?action=reviews" id="reviewForm">
                     <div>
                         <!-- Author -->
                         <h2 class="author-name mt-2">Author</h2>

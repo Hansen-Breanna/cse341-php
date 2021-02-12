@@ -194,6 +194,10 @@ switch ($action){
         $author = addAuthor();
         include 'view/add-review.php';
     break;
+    case 'review-existing-author':
+        $author = selectAuthor($db);
+        include 'view/add-review.php';
+    break;
     default:
         include 'view/home.php';
 }
