@@ -186,6 +186,7 @@ switch ($action){
         // include 'view/add-title.php';
     break;
     case 'add-review':
+        $author = addAuthor();
         include 'view/add-review.php';
     break;
     default:
