@@ -231,11 +231,17 @@ function  insertUserBook($db, $userID, $titleID, $own, $own_wish, $read_wish) {
    $stmt->execute(array(':userID' => $userID, ':titleID' => $titleID, ':owned' => $own, ':own_wish' => $own_wish, ':read_wish' => $read_wish));
 }
 
-// Delete author
-function deleteAuthor($id) {
+// Delete user_book by author_id
+function deleteUserBooks($id) {
    $db = connectMyBooks();
-   echo "purple";
-   $stmt = $db->prepare('DELETE FROM author WHERE id = :id');
+   $stmt = $db->prepare('DELETE FROM user_book WHERE author_id = :id');
+   $stmt->execute(array(':id' => $id));
+}
+
+// Delete book_title by author_id
+function deleteBooks($id) {
+   $db = connectMyBooks();
+   $stmt = $db->prepare('DELETE FROM book_title WHERE author_id = :id');
    $stmt->execute(array(':id' => $id));
 }
 
@@ -243,6 +249,13 @@ function deleteAuthor($id) {
 function deleteUserAuthor($id) {
    $db = connectMyBooks();
    $stmt = $db->prepare('DELETE FROM user_author WHERE author_id = :id');
+   $stmt->execute(array(':id' => $id));
+}
+
+// Delete author
+function deleteAuthor($id) {
+   $db = connectMyBooks();
+   $stmt = $db->prepare('DELETE FROM author WHERE id = :id');
    $stmt->execute(array(':id' => $id));
 }
 
