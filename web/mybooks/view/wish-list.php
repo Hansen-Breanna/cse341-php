@@ -31,9 +31,6 @@ session_start();
           <!-- Search Author -->
           <form method="post" action="index.php?action=wish-author">
             <?php include 'common/author.php'; ?>
-
-            <!-- Add/Remove -->
-            <a href="index.php?action=wish" title="See All Wishes" class="btn btn-custom bg-info my-2 ml-1">See All Wishes</a>
       </div>
     </div>
     <div>

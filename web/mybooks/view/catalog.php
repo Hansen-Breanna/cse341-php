@@ -46,7 +46,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             <!-- Add/Remove -->
             <?php include 'common/add-remove-title.php'; ?>
-            <a href="index.php?action=catalog" title="See All Titles" class="btn btn-custom bg-info my-2 ml-1">See All Titles</a>
       </div>
     </div>
     <div>
