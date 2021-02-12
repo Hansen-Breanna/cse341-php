@@ -12,9 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (isset($_POST['delete'])) {
     echo $_POST['delete'];
     try {
-      echo "hello";
     $deletID = test_input($_POST['delete']);
-    echo $deleteID;
     deleteUserAuthor($deleteID);
     } catch (Exception $e) {
       $message = "<p class='px-4 py-3 bg-danger rounded'>Delete failed.</p>";
