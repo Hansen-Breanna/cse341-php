@@ -184,7 +184,7 @@ function updateAuthor($data) {
 
 // Select title from list
 function selectTitle($db) {
-   $title = '<select class="p-2 rounded mb-1" name="authorID" id="authorList">';
+   $title = '<select class="p-2 rounded mb-1" name="title" id="titleList">';
    $statement = $db->prepare("SELECT title_of_book, id FROM book_title ORDER BY title_of_book");
    $statement->execute();
    
