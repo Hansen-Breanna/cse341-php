@@ -114,11 +114,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <!-- Author -->
                         <h2 class="author-name mt-2">Author</h2>
                         <p>Enter name for a new or existing author.</p>
-                        <?php
-                        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                            echo $author_message;
-                        }
-                        ?>
                         <p>
                             <a href="index.php?action=add-title" class="btn bg-orange p-2" title="Add title by with new author">Add New</a>
                             <a href="index.php?action=existing-author" class="btn bg-orange p-2" title="Add title by existing author">Use Existing</a>

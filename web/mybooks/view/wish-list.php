@@ -47,6 +47,49 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION))) {
         echo $message;
       }
       ?>
+
+                <form method="post" action="">
+                    <div>
+                        <h2 class="author-name mt-2">Add to Wish List</h2>
+                        <p>Enter name for a new or existing author.</p>
+                        <p>
+                            <a href="index.php?action=add-title" class="btn bg-orange p-2" title="Add title by with new author">Add New</a>
+                            <a href="index.php?action=existing-author" class="btn bg-orange p-2" title="Add title by existing author">Use Existing</a>
+                        </p>
+                        <table>
+                            <tbody>
+                                <?php echo $author ?>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- Title -->
+                    <div class="book-title">
+                        <h2 class="mt-2">Title</h2>
+                        <?php
+                        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                            echo $title_message;
+                        }
+                        ?>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td><label>Book title:</label></td>
+                                    <td><input type="text" class="rounded" id="title" name="title"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="d-flex align-items-center"><input type="checkbox" class="rounded mr-1" id="own" name="own" value="TRUE">Currently Own</span>
+                                        <span class="d-flex align-items-center"><input type="checkbox" class="rounded mr-1" id="ownWish" name="own_wish" value="TRUE">Own Wish List</span>
+                                        <span class="d-flex align-items-center"><input type="checkbox" class="rounded mr-1" id="readWish" name="read_wish" value="TRUE">Read Wish List</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="submit">
+                        <input type="submit" class="rounded btn btm-lg bg-orange">
+                    </div>
+                </form>
       <div class="d-flex flex-row flex-wrap justify-content-around">
         <div class="m-2">
           <h2 class="pt-4">Own Wish List</h2>
