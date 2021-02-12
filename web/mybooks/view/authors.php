@@ -13,10 +13,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo $_POST['delete'];
     try {
     $deleteID = test_input($_POST['delete']);
-    deleteUserBooks($deleteID);
-    echo "blue";
-    deleteBooks($deleteID);
-    deleteUserAuthor($deleteID);
+    //deleteUserBooks($deleteID);
+    //deleteBooks($deleteID);
+    //deleteUserAuthor($deleteID);
     deleteAuthor($deleteID);
     echo "black";
     header('Location: index.php?action=delete-author');

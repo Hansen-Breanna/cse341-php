@@ -39,8 +39,8 @@ CREATE TABLE user_author
 	is_blacklist BOOLEAN,
 	is_favorite BOOLEAN,
 	PRIMARY KEY (id),
-	FOREIGN KEY (library_user_id) REFERENCES library_user(id),
-	FOREIGN KEY (author_id) REFERENCES author(id)
+	ADD CONSTRAINT FK_UserAuthor_User FOREIGN KEY (library_user_id) REFERENCES library_user(id) ON DELETE CASCADE,
+	ADD CONSTRAINT FK_UserAuthor_Author FOREIGN KEY (author_id) REFERENCES author(id) ON DELETE CASCADE
 );
 INSERT INTO user_author (library_user_id, author_id, is_blacklist, is_favorite) VALUES (1, 1, FALSE, TRUE);
 INSERT INTO user_author (library_user_id, author_id, is_blacklist, is_favorite) VALUES (1, 2, FALSE, TRUE);
@@ -57,7 +57,7 @@ CREATE TABLE book_title
 	author_id INT NOT NULL,
 	title_of_book VARCHAR(100) NOT NULL,
 	PRIMARY KEY (id),
-	FOREIGN KEY (author_id) REFERENCES author(id)
+	ADD CONSTRAINT FK_BookTitle_Author FOREIGN KEY (author_id) REFERENCES author(id) ON DELETE CASCADE
 );
 /* book title inserts */
 INSERT INTO book_title (author_id, title_of_book) VALUES (4, 'A Noble Masquerade');
@@ -84,8 +84,8 @@ CREATE TABLE user_book
 	own_wish_list BOOLEAN,
 	read_wish_list BOOLEAN,
 	PRIMARY KEY (id),
-	FOREIGN KEY (library_user_id) REFERENCES library_user(id),
-	FOREIGN KEY (book_title_id) REFERENCES book_title(id)	
+	ADD CONSTRAINT FK_UserBook_User FOREIGN KEY (library_user_id) REFERENCES library_user(id) ON DELETE CASCADE,
+	ADD CONSTRAINT FK_UserBook_BookTitle FOREIGN KEY (book_title_id) REFERENCES book_title(id) ON DELETE CASCADE	
 );
 INSERT INTO user_book (library_user_id, book_title_id, is_owned, own_wish_list, read_wish_list) VALUES (1, 1, FALSE, TRUE, TRUE);
 INSERT INTO user_book (library_user_id, book_title_id, is_owned, own_wish_list, read_wish_list) VALUES (1, 2, FALSE, TRUE, TRUE);
@@ -108,8 +108,8 @@ CREATE TABLE reviews
 	review TEXT NOT NULL,
 	rating INT,
 	PRIMARY KEY (id),
-    FOREIGN KEY (library_user_id) REFERENCES library_user(id),
-	FOREIGN KEY (book_title_id) REFERENCES book_title(id)
+    ADD CONSTRAINT FK_Reviews_User FOREIGN KEY (library_user_id) REFERENCES library_user(id) ON DELETE CASCADE,
+	ADD CONSTRAINT FK_Reviews_BookTitle FOREIGN KEY (book_title_id) REFERENCES book_title(id) ON DELETE CASCADE
 );
 /* insert reviews */
 INSERT INTO reviews (library_user_id, book_title_id, review, rating) VALUES (1, 1, 'Loved the mystery and humor involved in the historical romance', 5);
@@ -140,9 +140,9 @@ CREATE TABLE loan
 	return_date DATE,
 	is_returned BOOLEAN NOT NULL,
 	PRIMARY KEY (id),
-	FOREIGN KEY (library_user_id) REFERENCES library_user(id),
-	FOREIGN KEY (book_title_id) REFERENCES book_title(id),
-	FOREIGN KEY (borrower_id) REFERENCES borrower(id)
+	ADD CONSTRAINT FK_Loan_User FOREIGN KEY (library_user_id) REFERENCES library_user(id) ON DELETE CASCADE,
+	ADD CONSTRAINT FK_Loan_BookTitle FOREIGN KEY (book_title_id) REFERENCES book_title(id) ON DELETE CASCADE,
+	ADD CONSTRAINT FK_Loan_Borrower FOREIGN KEY (borrower_id) REFERENCES borrower(id) ON DELETE CASCADE
 );
 /* insert loans */
 INSERT INTO loan (library_user_id, book_title_id, borrower_id, date_borrowed, is_returned) VALUES (1, 4, 2, DATE '01-23-2021', FALSE);
