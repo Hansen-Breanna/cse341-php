@@ -9,7 +9,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $middle_name = test_input($_POST["middle_name"]);
   $last_name = test_input($_POST["last_name"]);
 
-
   try {
     // author
     insertAuthor($db, $first_name, $middle_name, $last_name);
@@ -17,9 +16,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     //user_author
     insertUserAuthor($db, $_SESSION['id'], $newAuthorID, $newBlacklist, $newFavorite);
+
+    $message = "$first_name $middle_name $last_name was successfully added to the author list.";
   } 
   catch (Exception $e) {
-    $messageExists = "<p class='px-4 py-3 bg-danger rounded'>Author already exists.</p>";
+    $authorExists = "<p class='px-4 py-3 bg-danger rounded'>Author already exists. Edit author instead.</p>";
   }
 }
 ?>
@@ -49,21 +50,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <?php include 'common/author.php'; ?>
       </div>
       <div>
-        <?php
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        <?php 
           echo $message;
-        }
+          echo $authorExists;
         ?>
         <div class="d-flex flex-row flex-wrap justify-content-center">
           <form class="mb-2" method="post" action="">
             <!-- Author -->
             <h2 class="author-name mt-2">Add Author</h2>
-            <?php
-            if ($_SERVER["REQUEST_METHOD"] == "POST") {
-              echo $author_message;
-            }
-            echo $messageExists;
-            ?>
             <table>
               <tbody>
                 <?php echo $author ?>
