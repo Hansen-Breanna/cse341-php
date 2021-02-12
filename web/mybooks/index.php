@@ -183,7 +183,7 @@ switch ($action){
         } catch (Exception $e) {
             echo $e;
         }
-        include 'view/add-title.php';
+        include 'view/add-wish.php';
     break;
     default:
         include 'view/home.php';
