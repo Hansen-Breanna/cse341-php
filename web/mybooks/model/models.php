@@ -148,6 +148,8 @@ function addAuthor() {
 }
 
 function updateAuthor($data) {
+   echo $data[0]['is_blacklist'];
+   echo $data[0]['is_favorite'];
    $checkedBlacklist = "";
    $checkedFavorite = "";
    if ($$data[0]['is_blacklist'] == 't') {
