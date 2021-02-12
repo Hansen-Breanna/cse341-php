@@ -143,7 +143,7 @@ function addAuthor() {
    return $author;
 }
 
-function editAuthor($data) {
+function updateAuthor($data) {
    $author = 
    '<tr>
       <td><label for="first-name">First name:</label></td>

@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   } else if (isset($_POST['update'])) {
     $updateID = test_input($_POST['update']);
     $authorData = getAuthor($updateID);
-    var_dump($authorData);
+    $author = updateAuthor($authorData);
   } else {
     try {
       // author
