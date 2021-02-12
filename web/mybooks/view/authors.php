@@ -18,6 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     insertUserAuthor($db, $_SESSION['id'], $newAuthorID, $newBlacklist, $newFavorite);
 
     $message = "<p class='px-4 py-3 bg-danger rounded'>$first_name $middle_name $last_name was successfully added to the author list.</p>";
+    header('Location: index.php?action=authors');
   } 
   catch (Exception $e) {
     $authorExists = "<p class='px-4 py-3 bg-danger rounded'>Author already exists. Edit author instead.</p>";
@@ -68,7 +69,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               </tbody>
             </table>
             <div class="submit">
-              <input type="submit" class="rounded btn btm-lg bg-orange">
+              <input type="submit" class="rounded btn btm-lg bg-orange mb-2">
             </div>
           </form>
           <table class="table table-dark table-striped text-light">
