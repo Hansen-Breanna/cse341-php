@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (isset($_POST['favorite'])) {
             $favorite = "TRUE";
         } else {
-             $favorite = "FALSE";
+            $favorite = "FALSE";
         }
         $newFavorite = removeQuotes($favorite);
 
@@ -126,15 +126,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </table>
                     </div>
                     <!-- Title -->
+                    <h2 class="mt-2">Title</h2>
                     <div class="book-title">
-                        <table>
-                            <tbody>
-                                <tr>
-                                    <td><label>Book title:</label></td>
-                                    <td><input type="text" class="rounded" id="title" name="title"></td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <label>Book title:</label>
+                        <input type="text" class="rounded" id="title" name="title">
+                    </div>
+                    <h2 class="mt-2">Review</h2>
+                    <p>Add review content and rating of 1-5, with 5 being the best.</p>
+                    <div class="review-content">
+                        <label>Content:</label>
+                        <textarea class="rounded" col="40" rows="8" id="review-content" name="review">
+                    </div>
+                    <div class="rating">
+                        <label>Rating:</label>
+                        <select name="rating" id="rating">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
                     </div>
                     <div class="submit">
                         <input type="submit" class="rounded btn btm-lg bg-orange">
