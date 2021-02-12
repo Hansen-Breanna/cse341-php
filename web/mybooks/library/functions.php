@@ -267,4 +267,11 @@ function getAuthor($id) {
    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
    return $results;
 }
+
+// insert review
+// Insert book
+function insertReview($db, $id, $titleID, $review, $rating) {
+   $stmt = $db->prepare('INSERT INTO reviews (library_user_id, book_title_id, review, rating) VALUES (:id, :titleID, :review, :rating)');
+   $stmt->execute(array(':id' => $id, ':titleID' => $titleID, ':review' => $review, ':rating' => $rating));
+}
 ?>
