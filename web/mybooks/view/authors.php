@@ -2,6 +2,26 @@
 // start session
 session_start();
 
+$first_name = $middle_name = $last_name = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  $first_name = test_input($_POST["first_name"]);
+  $middle_name = test_input($_POST["middle_name"]);
+  $last_name = test_input($_POST["last_name"]);
+
+
+  try {
+    // author
+    insertAuthor($db, $first_name, $middle_name, $last_name);
+    $newAuthorID = $db->lastInsertId('author_id_seq');
+
+    //user_author
+    insertUserAuthor($db, $_SESSION['id'], $newAuthorID, $newBlacklist, $newFavorite);
+  } 
+  catch (Exception $e) {
+    $messageExists = "<p class='px-4 py-3 bg-danger rounded'>Author already exists.</p>";
+  }
+}
 ?>
 
 <!-- Head -->
@@ -42,6 +62,7 @@ session_start();
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
               echo $author_message;
             }
+            echo $messageExists;
             ?>
             <table>
               <tbody>
