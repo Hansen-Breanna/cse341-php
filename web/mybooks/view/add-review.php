@@ -2,17 +2,17 @@
 // start session
 session_start();
 
-$first_name = $middle_name = $last_name =  $title = $content = $rating = "";
+$first_name = $middle_name = $last_name =  $title = $review = $rating = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    echo $content;
+    echo $review;
     $first_name = test_input($_POST['first_name']);
     $middle_name = test_input($_POST['middle_name']);
     $last_name = test_input($_POST['last_name']);
     $title = test_input($_POST['title']);
-    $content = test_input($_POST['content']);
+    $review = test_input($_POST['review']);
     $rating = test_input($_POST['rating']);
-    echo "$first_name $middle_name $last_name $title $content $rating";
+    echo "$first_name $middle_name $last_name $title $review $rating";
 
     try {
         //author
