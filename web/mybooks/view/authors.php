@@ -2,7 +2,7 @@
 // start session
 session_start();
 
-$first_name = $middle_name = $last_name = "";
+$first_name = $middle_name = $last_name = $delete = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $first_name = test_input($_POST["first_name"]);
