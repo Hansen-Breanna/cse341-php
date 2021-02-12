@@ -179,7 +179,7 @@ function updateAuthor($data) {
 // Select author from list
 function selectTitle($db) {
    $title = '<select class="p-2 rounded mb-1" name="authorID" id="authorList">';
-   $statement = $db->prepare("SELECT b.title, b.id FROM book_title ORDER BY title_of_book");
+   $statement = $db->prepare("SELECT title_of_book, id FROM book_title ORDER BY title_of_book");
    $statement->execute();
    
    while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
