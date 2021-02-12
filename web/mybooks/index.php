@@ -151,7 +151,9 @@ switch ($action){
     break;
     // Add new author
     case'add-author':
-        $author = selectAuthor($db);
+        $authors = getAuthors($_SESSION['id']);
+        $authorsTable = displayAuthors($authors);
+        $author = addAuthor();
         $message = "<p class='px-4 py-3 bg-danger rounded'>$first_name $middle_name $last_name was successfully added to the author list.</p>";
         include 'view/authors.php';
     break;
