@@ -34,6 +34,7 @@ function displayLoans($loans) {
     return $loanList;
  }
  
+ // Display reviews
  function displayReviews($reviews) {
    $reviewList = '<div class="d-flex flex-row justify-content-center flex-wrap review">';
    foreach ($reviews as $review) {
@@ -59,14 +60,14 @@ function displayLoans($loans) {
    return $reviewList;
 }
 
- // Do a join in reviews
-function getDetails($book_title_id) {
-    $db = connectMyBooks();
-    $stmt = $db->prepare('SELECT author.first_name, author.middle_name, author.last_name, book_title.title_of_book FROM author INNER JOIN book_title ON author.id = book_title.author_id WHERE book_title.id = :id');
-    $stmt->execute(array(':id' => $book_title_id));
-    $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    return $row;
- }
+//  // Do a join in reviews
+// function getDetails($book_title_id) {
+//     $db = connectMyBooks();
+//     $stmt = $db->prepare('SELECT author.first_name, author.middle_name, author.last_name, book_title.title_of_book FROM author INNER JOIN book_title ON author.id = book_title.author_id WHERE book_title.id = :id');
+//     $stmt->execute(array(':id' => $book_title_id));
+//     $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
+//     return $row;
+//  }
 
  // Display authors
 function displayAuthors($authors) {
@@ -181,7 +182,7 @@ function updateAuthor($data) {
    return $author;
 }
 
-// Select author from list
+// Select title from list
 function selectTitle($db) {
    $title = '<select class="p-2 rounded mb-1" name="authorID" id="authorList">';
    $statement = $db->prepare("SELECT title_of_book, id FROM book_title ORDER BY title_of_book");
@@ -228,4 +229,17 @@ function selectBorrower($db) {
    }
    $borrower .= '</select>';
    return $borrower;
+}
+
+// Select title from list by user
+function selectTitleByUser($db, $id) {
+   $title = '<select class="p-2 rounded mb-1" name="authorID" id="authorList">';
+   $statement = $db->prepare("SELECT b.title_of_book, b.id FROM user_book ub INNER JOIN book_title b ON ub.book_title_id = b.id WHERE ub.library_user_id = :id ORDER BY title_of_book");
+   $statement->execute(array(':id' => $id));
+   
+   while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+       $title .= '<option value=' . $row['id'] . '>' . $row['title_of_book'] . '</option>'; 
+   }
+   $title .= '</select>';
+   return $title;
 }

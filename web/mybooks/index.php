@@ -205,6 +205,7 @@ switch ($action){
     break;
     case 'existing-borrower':
         $addBorrower = selectBorrower($db);
+        $addTitle = selectTitleByUser($db, $id);
         include 'view/add-loan.php';
     break;
     default:
