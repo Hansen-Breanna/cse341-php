@@ -3,6 +3,7 @@
 session_start();
 
 $first_name = $middle_name = $last_name = $delete = $update = "";
+$favorite = $blacklist = "FALSE";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $first_name = test_input($_POST["first_name"]);
@@ -26,19 +27,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     try {
       if (isset($_POST['favorite'])) {
         $favorite = "TRUE";
-    } else {
-        $favorite = "FALSE";
-    }
+    } 
     $newFavorite = removeQuotes($favorite);
 
     $blacklist = test_input($_POST["blacklist"]);
     if (isset($_POST['blacklist'])) {
         $blacklist = "TRUE";
-    } else {
-        $blacklist = "FALSE";
-    }
+    } 
     $newBlacklist = removeQuotes($blacklist);
-    
+
       // author
       insertAuthor($db, $first_name, $middle_name, $last_name);
       $newAuthorID = $db->lastInsertId('author_id_seq');
