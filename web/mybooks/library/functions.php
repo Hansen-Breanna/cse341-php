@@ -242,7 +242,7 @@ function deleteAuthor($id) {
 function deleteUserAuthor($id) {
    echo "hello";
    $db = $db = connectMyBooks();
-   $stmt = $db->prepare('DELETE FROM user_author WHERE author_id = :id)');
+   $stmt = $db->prepare('DELETE FROM user_author WHERE author_id = :id');
    $stmt->bindValue(':id', $id, PDO::PARAM_INT);
    $stmt->execute();
 }
