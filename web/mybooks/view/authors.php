@@ -56,7 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           echo $authorExists;
         ?>
         <div class="d-flex flex-row flex-wrap justify-content-center">
-          <form class="mb-2" method="post" action="index.php?action=add-author">
+          <form class="mb-2" method="post" action="">
             <!-- Author -->
             <h2 class="author-name mt-2">Add Author</h2>
             <table>
