@@ -25,6 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         insertReview($db, $_SESSION['id'], $newTitleID, $content, $rating);
 
     } catch (Exception $e) {
+        echo $e;
         $message = "<p class='px-4 py-3 bg-danger rounded'>Title was not added. Please try again.</p>";
     }
 }
