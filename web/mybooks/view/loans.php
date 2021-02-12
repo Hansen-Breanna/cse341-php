@@ -33,7 +33,6 @@ session_start();
             <?php include 'common/borrower.php'; ?>
 
             <div class="my-3 mx-2 py-2 border-secondary border-top border-bottom">
-              <a href="index.php?action=add-loan" class="btn btn-custom bg-orange my-2 ml-1 ">Add Borrower</a>
               <a href="index.php?action=add-loan" class="btn btn-custom bg-orange my-2 ml-1 ">Add Loan</a>
               <a href="index.php?action=loans" title="See All Borrowers" class="btn btn-custom my-2 ml-1 bg-info">See All Borrowers</a>
             </div>
