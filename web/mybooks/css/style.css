@@ -75,6 +75,9 @@ table {
     width: 100px;
 }
 
+td {
+    width: auto;
+}
 @media only screen and (min-width: 568px) {
     .main-box {
         height: 20vh;
