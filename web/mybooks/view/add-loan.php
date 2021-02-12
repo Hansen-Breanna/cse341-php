@@ -96,14 +96,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div>
                     <!-- Dates -->
                     <h2 class="mt-2">Dates</h2>
-                    <label for="dateBorrowed">Date borrowed:</label>
-                    <input type="date" id="dateBorrowed" name="dateBorrowed"><br>
-                    
-                    <label for="returnDate">Return date:</label>
-                    <input type="date" id="returnDate" name="returnDate">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td><label for="dateBorrowed">Date borrowed:</label></td>
+                                <td><input type="date" id="dateBorrowed" name="dateBorrowed"><br></td>
+                            </tr>
+                            <tr>
+                                <td><label for="returnDate">Return date:</label></td>
+                                <td><input type="date" id="returnDate" name="returnDate"></td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
                 <div>
-                <!-- Is returned -->
+                    <!-- Is returned -->
                     <input type="checkbox" id="isReturned" name="isReturned" class="mr-2">Returned
                 </div>
                 <div class="submit">
