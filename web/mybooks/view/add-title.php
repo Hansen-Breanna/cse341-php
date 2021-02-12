@@ -74,7 +74,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // //user-book
         insertUserBook($db, $_SESSION['id'], $newTitleID, $newOwn, $newOwn_wish, $newRead_wish);
     } catch (Exception $e) {
-        echo $e;
         $message = "<p class='px-4 py-3 bg-danger rounded'>Title was not added. Please try again.</p>";
     }
 }

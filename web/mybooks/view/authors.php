@@ -12,9 +12,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   if (isset($_POST['delete'])) {
     try {
-    $deleteID = test_input($_POST['delete']);
-    deleteAuthor($deleteID);
-    header('Location: index.php?action=delete-author');
+      $deleteID = test_input($_POST['delete']);
+      deleteAuthor($deleteID);
+      header('Location: index.php?action=delete-author');
     } catch (Exception $e) {
       echo $e;
       $message = "<p class='px-4 py-3 bg-danger rounded'>Delete failed.</p>";
@@ -27,14 +27,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     try {
       if (isset($_POST['favorite'])) {
         $favorite = "TRUE";
-    } 
-    $newFavorite = removeQuotes($favorite);
+      }
+      $newFavorite = removeQuotes($favorite);
 
-    $blacklist = test_input($_POST["blacklist"]);
-    if (isset($_POST['blacklist'])) {
+      $blacklist = test_input($_POST["blacklist"]);
+      if (isset($_POST['blacklist'])) {
         $blacklist = "TRUE";
-    } 
-    $newBlacklist = removeQuotes($blacklist);
+      }
+      $newBlacklist = removeQuotes($blacklist);
 
       // author
       insertAuthor($db, $first_name, $middle_name, $last_name);
@@ -44,6 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       insertUserAuthor($db, $_SESSION['id'], $newAuthorID, $newBlacklist, $newFavorite);
       header('Location: index.php?action=add-new-author');
     } catch (Exception $e) {
+      echo $e;
       $authorExists = "<p class='px-4 py-3 bg-danger rounded'>Author already exists. Edit author instead.</p>";
     }
   }
