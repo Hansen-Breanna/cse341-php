@@ -22,11 +22,13 @@ $action = filter_input(INPUT_POST, 'action');
 
 // Switch case to choose page
 switch ($action){
+    // catalog page
     case 'catalog':
         $catalog = getCatalog($_SESSION['id']);
         $catalogTable = displayCatalog($catalog);
         include 'view/catalog.php';
     break;
+    // search catalog by title
     case 'catalog-title':
         $title = test_input($_POST["title"]);
         $catalog = getTitle($title, $_SESSION['id']);
@@ -34,6 +36,7 @@ switch ($action){
         $message = "<p class='px-4 py-3 bg-danger rounded'>No title selected.</p>";
         include 'view/catalog.php';
     break;
+    // search catalog by author
     case 'catalog-author':
         $first_name = test_input($_POST["first_name"]);
         $last_name = test_input($_POST["last_name"]);
@@ -42,12 +45,14 @@ switch ($action){
         $message = "<p class='px-4 py-3 bg-danger rounded'>No author selected.</p>";
         include 'view/catalog.php';
     break;
+    // author page
     case 'authors':
         $authors = getAuthors($_SESSION['id']);
         $authorsTable = displayAuthors($authors);
         $author = addAuthor();
         include 'view/authors.php';
     break;
+    // search author page by name
     case 'get-author':
         $first_name = test_input($_POST["first_name"]);
         $last_name = test_input($_POST["last_name"]);
@@ -56,11 +61,13 @@ switch ($action){
         $message = "<p class='px-4 py-3 bg-danger rounded'>No author selected.</p>";
         include 'view/authors.php';
     break;
+    // loans page
     case 'loans':
         $loans = getLoans($_SESSION['id']);
         $loansTable = displayLoans($loans);
         include 'view/loans.php';
     break;
+    // search loans page by title
     case 'loans-title':
         $title = test_input($_POST["title"]);
         $loans = getLoansTitle($title, $_SESSION['id']);
@@ -68,6 +75,7 @@ switch ($action){
         $message = "<p class='px-4 py-3 bg-danger rounded'>No title selected.</p>";
         include 'view/loans.php';
     break;
+    //search loans page by borrower
     case 'loans-borrower':
         $first_name = test_input($_POST["first_name"]);
         $last_name = test_input($_POST["last_name"]);
@@ -76,11 +84,13 @@ switch ($action){
         $message = "<p class='px-4 py-3 bg-danger rounded'>No borrower selected.</p>";
         include 'view/loans.php';
     break;
+    // reviews page
     case 'reviews':
         $reviews = getReviews();
         $reviewsTable = displayReviews($reviews);
         include 'view/reviews.php';
     break;
+    // search reviews by title
     case 'reviews-title':
         $title = test_input($_POST["title"]);
         $reviews = getReviewTitle($title);
@@ -88,6 +98,7 @@ switch ($action){
         $message = "<p class='px-4 py-3 bg-danger rounded'>No title selected.</p>";
         include 'view/reviews.php';
     break;
+    // search reviews by author
     case 'reviews-author':
         $first_name = test_input($_POST["first_name"]);
         $last_name = test_input($_POST["last_name"]);
@@ -96,6 +107,7 @@ switch ($action){
         $message = "<p class='px-4 py-3 bg-danger rounded'>No author selected.</p>";
         include 'view/reviews.php';
     break;
+    // wish page
     case 'wish':
         $readWishes = getReadWishes($_SESSION['id']);
         $ownWishes = getOwnWishes($_SESSION['id']);
@@ -103,6 +115,7 @@ switch ($action){
         $ownTable = displayCatalog($ownWishes);
         include 'view/wish-list.php';
     break;
+    // search wishes by title
     case 'wish-title':
         $title = test_input($_POST["title"]);
         $ownWishes = getOwnTitle($title, $_SESSION['id']);
@@ -112,6 +125,7 @@ switch ($action){
         $message = "<p class='px-4 py-3 bg-danger rounded'>No title selected.</p>";
         include 'view/wish-list.php';
     break;
+    // search wishes by author
     case 'wish-author':
         $first_name = test_input($_POST["first_name"]);
         $last_name = test_input($_POST["last_name"]);
@@ -122,24 +136,22 @@ switch ($action){
         $message = "<p class='px-4 py-3 bg-danger rounded'>No author selected.</p>";
         include 'view/wish-list.php';
     break;
+    // add a full book with author, title, and checkboxes
     case 'add-title':
         $message = "<p class='px-4 py-3 bg-danger rounded'>Title added. Please add another or return to the catalog.</p>";
         $author = addAuthor();
         include 'view/add-title.php';
     break;
-    case 'add-author':
-        include 'view/add-author.php';
-    break;
+    // add 
+    // case 'add-author':
+    //     include 'view/add-author.php';
+    // break;
+    // add a full book with an existing author
     case 'existing-author';
         $author = selectAuthor($db);
         $message = "<p class='px-4 py-3 bg-danger rounded'>Title added. Please add another or return to the catalog.</p>";
         include 'view/add-title.php';
     break;
-    case 'add-existing-author':
-        $author = selectAuthor($db);
-        include 'view/authors.php';    
-    break;
-
     default:
         include 'view/home.php';
 }

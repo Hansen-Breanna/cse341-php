@@ -41,19 +41,14 @@ session_start();
         }
         ?>
         <div class="d-flex flex-row flex-wrap justify-content-center">
-          <form method="post" action="">
+          <form class="mb-2" method="post" action="">
             <!-- Author -->
             <h2 class="author-name mt-2">Author</h2>
-            <p>Enter name for a new or existing author.</p>
             <?php
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
               echo $author_message;
             }
             ?>
-            <p>
-              <a href="index.php?action=add-existing-author" class="btn bg-orange p-2" title="Add title by existing author">Use Existing</a>
-              <a href="index.php?action=authors" class="btn bg-orange p-2" title="Add title by with new author">Add New</a>
-            </p>
             <table>
               <tbody>
                 <?php echo $author ?>
