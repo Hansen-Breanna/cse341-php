@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $returned = removeQuotes($isReturned);
 
         insertLoan($db, $_SESSION['id'], $titleID, $newBorrowerID, $dateBorrowed, $returnDate, $returned);
-
+        header('Location: index.php?action=loans');
     } catch (Exception $e) {
         echo $e;
         $message = "<p class='px-4 py-3 bg-danger rounded'>Borrower already exists.</p>";
@@ -80,7 +80,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             ?>
 
             <!-- Loan Form -->
-            <form method="post" action="">
+            <form method="post" action="index.php?action=loans">
                 <div>
                     <!-- Borrower -->
                     <h2 class="mt-2">Borrower</h2>
