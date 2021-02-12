@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       if (isset($_POST['blacklist'])) {
         $blacklist = "TRUE";
       } else {
-        $favorite = "FALSE";
+        $blacklist = "FALSE";
       }
       $newBlacklist = removeQuotes($blacklist);
 
