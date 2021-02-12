@@ -31,6 +31,9 @@ session_start();
           <!-- Search Author -->
           <form method="post" action="index.php?action=wish-author">
             <?php include 'common/author.php'; ?>
+
+            <!-- Add/Remove -->
+            <a href="index.php?action=wish" title="See All Wishes" class="btn btn-custom bg-info my-2 ml-1">See All Wishes</a>
       </div>
     </div>
     <div>
@@ -40,7 +43,14 @@ session_start();
           echo $message;
         }
         ?>
-
+        <div>
+        <h2 class="author-name mt-2">Add to Wish List</h2>
+            <p>Enter name for a new or existing author.</p>
+            <p>
+              <a href="index.php?action=add-title" class="btn bg-orange p-2" title="Add title by with new author">Add New</a>
+              <a href="index.php?action=existing-author" class="btn bg-orange p-2" title="Add title by existing author">Use Existing</a>
+            </p>
+        </div>
       </div>
       <div class="d-flex flex-row flex-wrap justify-content-around">
         <div class="m-2">
