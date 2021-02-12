@@ -192,10 +192,12 @@ switch ($action){
         // include 'view/add-title.php';
     break;
     case 'add-review':
+        $message = "<p class='px-4 py-3 bg-danger rounded'>Review added. Please add another or return to reviews.</p>";
         $author = addAuthor();
         include 'view/add-review.php';
     break;
     case 'review-existing-author':
+        $message = "<p class='px-4 py-3 bg-danger rounded'>Review added. Please add another or return to reviews.</p>";
         $author = selectAuthor($db);
         include 'view/add-review.php';
     break;

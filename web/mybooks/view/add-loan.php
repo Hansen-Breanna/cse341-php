@@ -73,7 +73,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </div>
             </div>
             <?php
-            if ($_SERVER["REQUEST_METHOD"] == "GET") {
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 echo $message;
             }
             ?>
