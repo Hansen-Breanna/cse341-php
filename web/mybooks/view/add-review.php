@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     } catch (Exception $e) {
         echo $e;
-        $message = "<p class='px-4 py-3 bg-danger rounded'>Title was not added. Please try again.</p>";
+        $message = "<p class='px-4 py-3 bg-danger rounded'>Review was not added. Please try again.</p>";
     }
 }
 
@@ -61,7 +61,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 }
                 ?>
 
-                <form method="post" action="">
+                <form method="post" action="index.php?action=reviews">
                     <div>
                         <!-- Author -->
                         <h2 class="author-name mt-2">Author</h2>
