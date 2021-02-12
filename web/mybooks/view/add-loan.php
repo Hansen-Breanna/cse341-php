@@ -61,10 +61,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <?php include 'common/borrower.php'; ?>
 
                         <div class="my-3 mx-2 py-2 border-secondary border-top border-bottom">
-                            <a href="index.php?action=loans" title="See All Borrowers" class="btn btn-custom my-2 ml-1 bg-info">See All Borrowers</a>
+                            <a href="index.php?action=loans" title="See All Loans" class="btn btn-custom my-2 ml-1 bg-info">See All Loans</a>
                         </div>
             </div>
-            <p class="font-blue mx-1">SMS message reminders must be sent from a mobile device.</p>
             <?php
             if ($_SERVER["REQUEST_METHOD"] == "GET") {
                 echo $message;
