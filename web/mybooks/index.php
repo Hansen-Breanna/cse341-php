@@ -206,6 +206,7 @@ switch ($action){
         include 'view/add-loan.php';
     break;
     case 'existing-borrower':
+        $message = "<p class='px-4 py-3 bg-danger rounded'>Loan added. Please add another or return to loans.</p>";
         $addBorrower = selectBorrower($db);
         $addTitle = selectTitleByUser($db, $_SESSION['id']);
         include 'view/add-loan.php';
