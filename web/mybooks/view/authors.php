@@ -9,17 +9,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $middle_name = test_input($_POST["middle_name"]);
   $last_name = test_input($_POST["last_name"]);
 
-  try {
-    // author
-    insertAuthor($db, $first_name, $middle_name, $last_name);
-    $newAuthorID = $db->lastInsertId('author_id_seq');
+  if (isset($_POST['delete'])) {
+    $deletID = test_input($_POST['delete']);
+    deleteUserAuthor($deleteID);
+  } else if (isset($_POST['update'])) {
+  } else {
+    try {
+      // author
+      insertAuthor($db, $first_name, $middle_name, $last_name);
+      $newAuthorID = $db->lastInsertId('author_id_seq');
 
-    //user_author
-    insertUserAuthor($db, $_SESSION['id'], $newAuthorID, $newBlacklist, $newFavorite);
-    header('Location: index.php?action=add-new-author');
-  } 
-  catch (Exception $e) {
-    $authorExists = "<p class='px-4 py-3 bg-danger rounded'>Author already exists. Edit author instead.</p>";
+      //user_author
+      insertUserAuthor($db, $_SESSION['id'], $newAuthorID, $newBlacklist, $newFavorite);
+      header('Location: index.php?action=add-new-author');
+    } catch (Exception $e) {
+      $authorExists = "<p class='px-4 py-3 bg-danger rounded'>Author already exists. Edit author instead.</p>";
+    }
   }
 }
 ?>
@@ -49,9 +54,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <?php include 'common/author.php'; ?>
       </div>
       <div>
-        <?php 
-          echo $message;
-          echo $authorExists;
+        <?php
+        echo $message;
+        echo $authorExists;
         ?>
         <div class="d-flex flex-row flex-wrap justify-content-center">
           <form class="mb-2" method="post" action="index.php?action=authors">
