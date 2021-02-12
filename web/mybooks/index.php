@@ -144,10 +144,16 @@ switch ($action){
         include 'view/add-title.php';
     break;
     // add a full book with an existing author
-    case 'existing-author';
+    case 'existing-author':
         $author = selectAuthor($db);
         $message = "<p class='px-4 py-3 bg-danger rounded'>Title added. Please add another or return to the catalog.</p>";
         include 'view/add-title.php';
+    break;
+    // Add new author
+    case'add-author':
+        $author = selectAuthor($db);
+        $message = "<p class='px-4 py-3 bg-danger rounded'>$first_name $middle_name $last_name was successfully added to the author list.</p>";
+        include 'view/authors.php';
     break;
     default:
         include 'view/home.php';
