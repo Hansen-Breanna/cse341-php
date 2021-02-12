@@ -5,14 +5,13 @@ session_start();
 $first_name = $middle_name = $last_name =  $title = $review = $rating = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    echo $review;
+    var_dump($_POST);
     $first_name = test_input($_POST['first_name']);
     $middle_name = test_input($_POST['middle_name']);
     $last_name = test_input($_POST['last_name']);
     $title = test_input($_POST['title']);
     $review = test_input($_POST['review']);
     $rating = test_input($_POST['rating']);
-    echo "$first_name $middle_name $last_name $title $review $rating";
 
     try {
         //author
