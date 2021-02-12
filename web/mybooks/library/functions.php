@@ -207,7 +207,6 @@ function getByAuthor($first_name, $last_name, $id) {
   return $results;
 }
 
-
 // Insert author
 function insertAuthor($db, $first_name, $middle_name, $last_name) {
    $stmt = $db->prepare('INSERT INTO author (first_name, middle_name, last_name) VALUES (:first_name, :middle_name, :last_name)');
