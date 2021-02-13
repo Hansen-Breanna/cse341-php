@@ -61,13 +61,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <form method="post" action="index.php?action=update-review">
                     <div>
                         <!-- Author -->
-                        <h2 class="author-name mt-2 d-inline">Author :</h2>
-                        <?php echo $reviewData[0]['first_name']  . ' ' . $reviewData[0]['middle_name'] . ' ' . $reviewData[0]['last_name'];?>
+                        <h2 class="author-name mt-2 d-inline">Author</h2><p>:&nbsp;
+                        <?php echo $reviewData[0]['first_name']  . ' ' . $reviewData[0]['middle_name'] . ' ' . $reviewData[0]['last_name'];?></p>
                     </div>
                     <!-- Title -->
                     <div>
-                        <h2 class="mt-2 d-inline">Title: </h2>
-                        <?php echo $reviewData[0]['title_of_book'];?>
+                        <h2 class="mt-2 d-inline">Title</h2><p>:&nbsp; 
+                        <?php echo $reviewData[0]['title_of_book'];?></p>
                     </div>
                     <h2 class="mt-2">Review</h2>
                     <p>Add review content and rating of 1-5, with 5 being the best.</p>
