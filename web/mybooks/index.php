@@ -218,6 +218,7 @@ switch ($action){
     case 'title-existing-review':
         $message = "<p class='px-4 py-3 bg-danger rounded'>Review added. Please add another or return to reviews.</p>";
         $bookTitle = selectTitle($db);
+        $author = selectAuthor($db);
         include 'view/add-review.php';
     break;
     default:
