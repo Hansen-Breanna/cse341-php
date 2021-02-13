@@ -307,8 +307,8 @@ function deleteLoan($db, $deleteID) {
 
 // Delete review by ID
 function deleteReview($db, $deleteID) {
-   echo $deleteID . "name";
-   $stmt = $db->prepare('DELETE FROM review WHERE id = :deleteID');
+   $stmt = $db->prepare('DELETE FROM reviews WHERE id = :deleteID');
    $stmt->execute(array(':deleteID' => $deleteID));
+   echo "cookie";
 }
 ?>
