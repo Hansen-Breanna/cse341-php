@@ -24,10 +24,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         try {
             if (isset($_POST['update'])) {
                 var_dump($_SESSION['loanData']);
+                $borrower_id = $_SESSION['loanData'][0]['borrower_id'];
+                $book_title_id = $_SESSION['loanData'][0]['book_title_id'];
                 // update borrower
-                updateBorrower($db, $loanData[0]['borrower_id'], $first_name, $middle_name, $last_name, $phone);
+                updateBorrower($db, $borrower_id, $first_name, $middle_name, $last_name, $phone);
                 // update loan
-                updateLoan($db, $loanID, $loanData[0]['book_title_id'], $loanData[0]['borrower_id'], $dateBorrowed, $returnDate);
+                updateLoan($db, $loanID, $book_title_id, $borrower_id, $dateBorrowed, $returnDate);
                 //header('Location: index.php?action=update-loan');
             } 
         } catch (Exception $e) {
