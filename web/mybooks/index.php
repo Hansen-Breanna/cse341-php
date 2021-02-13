@@ -238,7 +238,8 @@ switch ($action){
         include 'view/reviews.php';
     break;
     case 'update-review':
-        $message = "<p class='px-4 py-3 bg-danger rounded'>Review was successfully updated.</p>";
+        $author = addAuthor();
+        //$message = "<p class='px-4 py-3 bg-danger rounded'>Review was successfully updated.</p>";
         include 'view/update-review.php';
     break;
     case 'update-author':
