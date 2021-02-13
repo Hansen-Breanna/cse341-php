@@ -298,7 +298,7 @@ function displayReviewAuthorData($data)
       <td><input type="text" class="rounded mb-1" name="last_name" value="' . $data[0]['last_name'] . '" id="last_name"><br></td>
    </tr>
    <tr>
-   <td><input type="hidden" class="rounded mb-1" name="update_author" value="' . $data[0]['id'] . '" id="update_author"><br></td>
+   <td><input type="hidden" class="rounded mb-1" name="update_author" value="' . $data[0]['author_id'] . '" id="update_author"><br></td>
    </tr>';
    return $author;
 }
