@@ -13,6 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $reviewID = test_input($_POST['reviewid']);
         $reviewData = getReview($db, $reviewid);
         echo "update" .$reviewID . ' ' . $review . ' ' . $rating . ' ' . $update . ' ' . $update_review;
+        echo $reviewData;
     } else {
         try {
             if (isset($_POST['update_review'])) {
@@ -33,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <!-- Head -->
 <?php include 'common/head.php'; ?>
 
-<title>Add Review - My Books updated title (remove this note)</title>
+<title>Add Review - My Books</title>
 
 <!-- Nav -->
 <?php include 'common/nav.php'; ?>
