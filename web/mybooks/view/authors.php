@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (isset($_POST['delete'])) {
     try {
       $deleteID = test_input($_POST['delete']);
-      deleteAuthor($deleteID);
+      deleteAuthor($db, $_SESSION['id'], $deleteID);
       header('Location: index.php?action=delete-author');
     } catch (Exception $e) {
       echo $e;

@@ -218,6 +218,12 @@ switch ($action){
         $bookTitle = selectTitle($db);
         include 'view/title-existing-review.php';
     break;
+    case 'delete-title':
+        $catalog = getCatalog($_SESSION['id']);
+        $catalogTable = displayCatalog($catalog);
+        $message = "<p class='px-4 py-3 bg-danger rounded'>Title was successfully deleted.</p>";
+        include 'view/catalog.php';
+    break;
     default:
         include 'view/home.php';
 }

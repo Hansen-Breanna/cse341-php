@@ -253,7 +253,7 @@ function  insertUserBook($db, $userID, $titleID, $own, $own_wish, $read_wish) {
 // }
 
 // Delete author
-function deleteAuthor($id) {
+function deleteAuthor($db, $id, $authorID) {
    $db = connectMyBooks();
    $stmt = $db->prepare('DELETE FROM author WHERE id = :id');
    $stmt->execute(array(':id' => $id));
@@ -285,4 +285,9 @@ function insertLoan($db, $userID, $titleID, $borrowerID, $dateBorrowed, $returnD
    $stmt->execute(array(':userID' => $userID, ':titleID' => $titleID, ':borrowerID' => $borrowerID, ':dateBorrowed' => $dateBorrowed, ':returnDate' => $returnDate, ':returned' => $returned)); 
 }
 
+// Delete title
+function deleteTitle($db, $id, $titleID) {
+   $stmt = $db->prepare('DELETE FROM user_book WHERE library_user_id = :id AND book_title_id = :titleID');
+   $stmt->execute(array(':id' => $id, ':titleID' => $titleID));
+}
 ?>

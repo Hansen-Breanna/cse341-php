@@ -1,7 +1,7 @@
 <?php
 // start session
 session_start();
-$title = $first_name = $last_name = "";
+$title = $first_name = $last_name = $deleteID = $updateID = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $title = test_input($_POST["title"]);
@@ -10,6 +10,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $_SESSION['title'] = $title;
   $_SESSION['first_name'] = $first_name;
   $_SESSION['last_name'] = $last_name;
+
+  if (isset($_POST['deleteID'])) {
+    try {
+      $deleteID = test_input($_POST['deleteID']);
+      deleteTitle($db, $_SESSION['id'], $deleteID);
+      header('Location: index.php?action=delete-title');
+    } catch (Exception $e) {
+      echo $e;
+      $message = "<p class='px-4 py-3 bg-danger rounded'>Delete failed.</p>";
+    }
+  } else if (isset($_POST['updateID'])) {
+    // $updateID = test_input($_POST['update']);
+    // $authorData = getAuthor($updateID);
+    // $author = updateAuthor($authorData);
+  } else {
+    try {
+    } catch (Exception $e) {
+      echo $e;
+    }
+  }
 }
 
 ?>
