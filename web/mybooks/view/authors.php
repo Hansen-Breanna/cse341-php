@@ -25,6 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $author = displayAuthorData($authorData);
   }  
   else if (isset($_POST['update_author'])) {
+    try {
     $updateAuthor = updateAuthor($db, $first_name, $middle_name, $last_name, $update_author);
 
     if (isset($_POST['favorite'])) {
@@ -44,6 +45,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $updateUserAuthor = updateUserAuthor($db, $_SESSION['id'], $update_author, $newBlacklist, $newFavorite);
     header('Location: index.php?action=authors');
+  } catch (Exception $e) {
+    echo $e;
+  }
   }
   else if (!isset($_POST['delete']) && !isset($_POST['update'])) {
     $_SESSION['authorID'] = "";
