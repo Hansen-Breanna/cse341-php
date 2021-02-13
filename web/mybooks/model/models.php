@@ -77,7 +77,7 @@ function displayReviews($reviews)
                <input type="hidden" name="updateID" value="' . $review['id'] . '"/>
                <input type="submit" class="bg-info btn btn-small mr-1 mb-1" value="Edit"/>
             </form>
-            <form method="post" action="index.php?action=reviews">
+            <form method="post" action="index.php?action=delete-review">
                <input type="hidden" name="deleteID" value="' . $review['id'] . '"/>
                <input type="submit" class="bg-danger btn btn-small mr-1 mb-1" value="Delete"/>
             </form>
