@@ -231,6 +231,12 @@ switch ($action){
         $message = "<p class='px-4 py-3 bg-danger rounded'>Loan was successfully deleted.</p>";
         include 'view/loans.php';
     break;
+    case 'delete-review':
+        $reviews = getReviews();
+        $reviewsTable = displayReviews($reviews);
+        $message = "<p class='px-4 py-3 bg-danger rounded'>Review was successfully deleted.</p>";
+        include 'view/reviews.php';
+    break;
     default:
         include 'view/home.php';
 }
