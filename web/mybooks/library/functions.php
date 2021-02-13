@@ -349,11 +349,12 @@ function getLoanData($db, $id) {
 function updateBorrower($db, $id, $first_name, $middle_name, $last_name, $phone) {
    $stmt = $db->prepare('UPDATE borrower SET first_name = :first_name, middle_name = :middle_name, last_name = :last_name, phone_number = :phone WHERE id = :id');
    $stmt->execute(array(':id' => $id, ':first_name' => $first_name, ':middle_name' => $middle_name, ':last_name' => $last_name, ':phone' => $phone ));
+   echo "monkey";
 }
 
 // Update loan by ID
 function updateLoan($db, $loanID, $book_title_id, $borrower_id, $date_borrowed, $return_date) {
-   $stmt = $db->prepare('UPDATE loans SET book_title_id = :titleID,  borrower_id = :borrower_id, date_borrowed = :date_borrowed, return_date = :return_date WHERE id = :id');
+   $stmt = $db->prepare('UPDATE loans SET book_title_id = :book_title_id, borrower_id = :borrower_id, date_borrowed = :date_borrowed, return_date = :return_date WHERE id = :id');
    $stmt->execute(array(':id' => $loanID, ':book_title_id' => $book_title_id, ':borrower_id' => $borrower_id, ':date_borrowed' => $date_borrowed, ':return_date' => $return_date));
 }
 ?>
