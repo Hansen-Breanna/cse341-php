@@ -109,7 +109,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
                 <div>
                     <!-- Is returned -->
-                    <p class="d-flex align-items-center"><input type="checkbox" id="isReturned" name="isReturned" class="mr-2">Returned</p>
+                    <?php echo $isReturnedEdit($loanData[0]['is_returned']); ?>
                 </div>
                 <div class="submit">
                     <input type="submit" class="rounded btn btm-lg bg-orange">
