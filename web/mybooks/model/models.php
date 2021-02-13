@@ -74,6 +74,7 @@ function displayReviews($reviews)
       if ($review['library_user_id'] == $_SESSION['id']) {
          $reviewList .= '<div class="pl-2 d-flex flex-column flex-sm-row flex-sm-wrap">
             <form method="post" action="index.php?action=update-review">
+               <input type="hidden" name="reviewid" value="' . $review['id'] . '"/>
                <input type="hidden" name="update" value="' . $review['id'] . '"/>
                <input type="submit" class="bg-info btn btn-small mr-1 mb-1" value="Edit"/>
             </form>
