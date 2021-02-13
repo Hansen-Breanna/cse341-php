@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $reviewID = test_input($_POST['reviewid']);
         $reviewData = getReview($db, $reviewid);
         echo "update" .$reviewID . ' ' . $review . ' ' . $rating . ' ' . $update . ' ' . $update_review;
-        echo $reviewData;
+        var_dump($reviewData);
     } else {
         try {
             if (isset($_POST['update_review'])) {
