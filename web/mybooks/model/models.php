@@ -25,6 +25,7 @@ function displayCatalog($catalog) {
 function displayLoans($loans) {
     $loanList = '<tbody>';
     foreach ($loans as $loan) {
+       echo $loan;
        $loanList .= '<tr><td class="d-none d-md-table-cell">' . $loan['title_of_book'] . '</td>';
        $loanList .= '<td>' . $loan['first_name'] . ' ' . $loan['last_name'] . '</td>';
        $loanList .= '<td class="d-none d-lg-table-cell">' . $loan['date_borrowed'] . '</td>';
@@ -33,9 +34,16 @@ function displayLoans($loans) {
        $loanList .= '?&body=Hi%20' . $loan['first_name'] . '!%20The%20book%20you%20borrowed%2C%20' . $loan['title_of_book'];
        $loanList .= '%2C%20is%20overdue.%20Please%20contact%20me%20at%20' . $loan['user_phone'];
        $loanList .= '%20to%20return%20it.%20Thanks!">SMS</a>';
-       $loanList .= '<a href="" title="Edit"><i class="btn btn-small mr-1 rounded far fa-edit bg-info p-2" data-toggle="tooltip" data-placement="top" title="Edit"></i></a>';
-       $loanList .= '<a href="" title="Delete"><i class="btn btn-small rounded far fa-trash-alt bg-danger p-2" data-toggle="tooltip" data-placement="top" title="Delete"></i></a></td>';
-       $loanList .= '</tr>';
+       $loanList .= '<td class="pl-2 d-flex flex-column flex-sm-row flex-sm-wrap"> 
+       <form method="post" action="index.php?action=authors">
+         <input type="hidden" name="update" value="' . $loan['id'] . '"/>
+         <input type="submit" class="bg-info btn btn-small mr-1 mb-1" value="Edit"/>
+       </form>
+       <form method="post" action="index.php?action=authors">
+         <input type="hidden" name="delete" value="' . $loan['id'] . '"/>
+         <input type="submit" class="bg-danger btn btn-small mr-1 mb-1" value="Delete"/>
+      </form>
+      </tr>';
     }
     $loanList .= '</tbody>';
     return $loanList;

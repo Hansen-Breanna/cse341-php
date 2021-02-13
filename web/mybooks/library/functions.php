@@ -52,7 +52,7 @@ function getCatalogAuthor($first_name, $last_name, $id) {
  function getLoans($id) {
    $db = connectMyBooks();
    $stmt = $db->prepare('SELECT b.title_of_book, bo.first_name, bo.last_name, bo.phone_number, l.date_borrowed, l.return_date, 
-   l.is_returned, lu.user_phone FROM loan l INNER JOIN book_title b ON l.book_title_id = b.id INNER JOIN library_user lu 
+   l.is_returned, lu.user_phone, l.id FROM loan l INNER JOIN book_title b ON l.book_title_id = b.id INNER JOIN library_user lu 
    ON lu.id = l.library_user_id INNER JOIN borrower bo ON l.borrower_id = bo.id WHERE l.library_user_id = :id 
    ORDER BY date_borrowed;');
    $stmt->bindValue(':id', $id, PDO::PARAM_INT);
@@ -297,5 +297,11 @@ function getAuthorID($db, $first_name, $middle_name, $last_name) {
    $stmt->execute(array(':first_name' => $first_name, ':middle_name' => $middle_name, ':last_name' => $last_name));
    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
    return $results[0]['id'];
+}
+
+// Delete loan by ID
+function deleteLoan($db, $userID, $deleteID) {
+   $stmt = $db->prepare('DELETE FROM loan WHERE library_user_id = :userID AND id = :deleteID');
+   $stmt->execute(array(':userID' => $userID, ':deleteID' => $deleteID));
 }
 ?>
