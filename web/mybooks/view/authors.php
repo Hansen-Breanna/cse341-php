@@ -18,15 +18,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } catch (Exception $e) {
       $message = "<p class='px-4 py-3 bg-danger rounded'>Delete failed.</p>";
     }
-  } else if (isset($_POST['update'])) {
-    // $updateID = test_input($_POST['update']);
-    // $authorData = getAuthor($updateID);
-    // $author = displayAuthorData($authorData);
-    // var_dump($authorData);
-    // $updateAuthor = updateAuthor($db, $authorData);
-    // echo "blue";
-    //header('Location: index.php?action=authors');
-  } else if (!isset($_POST['delete']) && !isset($_POST['update'])) {
+  } 
+  else if (isset($_POST['update'])) {
+    $updateID = test_input($_POST['update']);
+    $_SESSION['authorID'] = $updateID;
+    $authorData = getAuthor($updateID);
+    $author = displayAuthorData($authorData);
+    var_dump($authorData);
+    //$updateAuthor = updateAuthor($db, $authorData);
+    echo "blue";
+  }  
+  else if (isset($_SESSION['authorID'])) {
+    $authorData = getAuthor($_SESSION['authorID']);
+    $updateAuthor = updateAuthor($db, $authorData);
+    header('Location: index.php?action=authors');
+  }
+  else if (!isset($_POST['delete']) && !isset($_POST['update'])) {
+    $_SESSION['authorID'] = "";
     echo "book";
     try {
       if (isset($_POST['favorite'])) {
