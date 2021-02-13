@@ -29,11 +29,11 @@ function displayLoans($loans) {
        $loanList .= '<td>' . $loan['first_name'] . ' ' . $loan['last_name'] . '</td>';
        $loanList .= '<td class="d-none d-lg-table-cell">' . $loan['date_borrowed'] . '</td>';
        $loanList .= '<td>' . $loan['return_date'] . '</td>'; 
-       $loanList .= '<td><a class="btn btn-small bg-orange mr-1" href="sms://+1' . $loan['phone_number'];
+       $loanList .= '<td><a class="btn btn-small bg-orange" href="sms://+1' . $loan['phone_number'];
        $loanList .= '?&body=Hi%20' . $loan['first_name'] . '!%20The%20book%20you%20borrowed%2C%20' . $loan['title_of_book'];
        $loanList .= '%2C%20is%20overdue.%20Please%20contact%20me%20at%20' . $loan['user_phone'];
        $loanList .= '%20to%20return%20it.%20Thanks!">SMS</a>';
-       $loanList .= '<td class="pl-2 d-flex flex-column flex-sm-row flex-sm-wrap"> 
+       $loanList .= '<td class="d-flex flex-column flex-sm-row flex-sm-wrap"> 
        <form method="post" action="index.php?action=authors">
          <input type="hidden" name="update" value="' . $loan['id'] . '"/>
          <input type="submit" class="bg-info btn btn-small mr-1 mb-1" value="Edit"/>
