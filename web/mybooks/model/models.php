@@ -84,14 +84,14 @@ function displayAuthors($authors) {
        } else {
           $authorList .= '<td></td>';
        }
-       $authorList .= '<td class="pl-2 d-flex flex-row row-nowrap"> 
+       $authorList .= '<td class="pl-2 d-flex flex-row row-wrap"> 
        <form method="post" action="index.php?action=authors">
-         <input type="hidden" name="update" value="' . $author['id'] . '"/>
-         <input type="submit" class="bg=info" value="Edit"/>
+         <input type="hidden" class="bg-info" name="update" value="' . $author['id'] . '"/>
+         <input type="submit" class="bg-info" value="Edit"/>
        </form>
        <form method="post" action="index.php?action=authors">
-         <input type="hidden" name="delete" value="' . $author['id'] . '"/>
-         <input type="submit" class="bg=info" value="Delete"/>
+         <input type="hidden" name="delete" class="bg-danger" value="' . $author['id'] . '"/>
+         <input type="submit" class="bg=info" class="bg-danger"  value="Delete"/>
       </form>';
        $authorList .= '<a href="index.php?action=authors" title="Edit"><i class="mr-1 rounded far fa-edit bg-info p-2" data-toggle="tooltip" data-placement="top" title="Edit"></i></a>';
        $authorList .= '<a href="index.php?action=authors"  title="Delete"><i class="rounded far fa-trash-alt bg-danger p-2" data-toggle="tooltip" data-placement="top" title="Delete"></i></a></td>';
