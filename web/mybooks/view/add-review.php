@@ -39,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <!-- Head -->
 <?php include 'common/head.php'; ?>
 
-<title>Catalog - My Books</title>
+<title>Add Review - My Books</title>
 
 <!-- Nav -->
 <?php include 'common/nav.php'; ?>

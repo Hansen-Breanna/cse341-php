@@ -44,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <!-- Head -->
 <?php include 'common/head.php'; ?>
 
-<title>Catalog - My Books</title>
+<title>Update Title - My Books</title>
 
 <!-- Nav -->
 <?php include 'common/nav.php'; ?>
@@ -52,7 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <!-- Header -->
 <?php include '../common/header.php'; ?>
 
-<h1 class="offset-1 col-10 offset-md-0 col-md-12">Add Wish List Item</h1>
+<h1 class="offset-1 col-10 offset-md-0 col-md-12">Update Wish List Item</h1>
 </div>
 </div>
 </header>

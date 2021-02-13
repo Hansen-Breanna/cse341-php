@@ -21,6 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   } else if (isset($_POST['update'])) {
     $updateID = test_input($_POST['update']);
     $authorData = getAuthor($updateID);
+    var_dump($authorData);
     $author = updateAuthor($authorData);
   } else {
     try {
@@ -102,12 +103,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               </div>
             </form>
             <div class="my-3 mx-2 py-2 border-secondary border-top border-bottom">
+            <p color="font-blue">Deleting an author will delete all associated titles, wish lists, and loans.</p>
               <table class="table table-dark table-striped text-light">
                 <thead>
                   <tr>
                     <th>Authors</th>
                     <th>Favorite</th>
                     <th>Blacklisted</th>
+                    <th></th>
                   </tr>
                 </thead>
                 <?php echo $authorsTable; ?>

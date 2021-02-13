@@ -261,7 +261,7 @@ function deleteAuthor($db, $id, $authorID) {
 
 function getAuthor($id) {
    $db = connectMyBooks();
-   $stmt = $db->prepare('SELECT a.first_name, a.middle_name, a.last_name, ua.is_blacklist, ua.is_favorite FROM author a INNER JOIN user_author ua ON ua.author_id = a.id WHERE a.id = :id');
+   $stmt = $db->prepare('SELECT a.first_name, a.middle_name, a.last_name, ua.is_blacklist, ua.is_favorite, a.id FROM author a INNER JOIN user_author ua ON ua.author_id = a.id WHERE a.id = :id');
    $stmt->bindValue(':id', $id, PDO::PARAM_INT);
    $stmt->execute();
    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
