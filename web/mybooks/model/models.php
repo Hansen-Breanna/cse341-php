@@ -116,7 +116,7 @@ function displayAuthors($authors)
       }
       $authorList .= '<td class="pl-2 d-flex flex-column flex-sm-row flex-sm-wrap"> 
        <form method="get" action="index.php?action=update-author">
-         <input type="hidden" name="update" value="' . $author['id'] . '"/>
+         <input type="hidden" name="update-author" value="' . $author['id'] . '"/>
          <input type="submit" class="bg-info btn btn-small mr-1 mb-1" value="Edit"/>
        </form>
        <form method="post" action="index.php?action=authors">
