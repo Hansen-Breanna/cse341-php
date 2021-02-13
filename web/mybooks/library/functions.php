@@ -293,7 +293,6 @@ function deleteTitle($db, $id, $titleID) {
 
 // Get author id by using names
 function getAuthorID($db, $first_name, $middle_name, $last_name) {
-   echo "$first_name $middle_name $last_name";
    $stmt = $db->prepare('SELECT id FROM author WHERE first_name = :first_name AND middle_name = :middle_name AND last_name = :last_name');
    $stmt->execute(array(':first_name' => $first_name, ':middle_name' => $middle_name, ':last_name' => $last_name));
    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
