@@ -64,8 +64,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $_SESSION['title'] = $title;
 
-        //user_author
-        insertUserAuthor($db, $_SESSION['id'], $newAuthorID, $newBlacklist, $newFavorite);
+        if (!isset($_POST['authorID'])) {
+            //user_author
+            insertUserAuthor($db, $_SESSION['id'], $newAuthorID, $newBlacklist, $newFavorite);
+        }
 
         //book
         insertTitle($db, $newAuthorID, $title);
@@ -75,7 +77,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         insertUserBook($db, $_SESSION['id'], $newTitleID, $newOwn, $newOwn_wish, $newRead_wish);
     } catch (Exception $e) {
         echo $e;
-        $message = "<p class='px-4 py-3 bg-danger rounded'>Title was not added. Please try again.</p>";
+        $message = "<p class='px-4 py-3 bg-danger rounded'>Title was not added. Please check for existing author and try again.</p>";
     }
 }
 
