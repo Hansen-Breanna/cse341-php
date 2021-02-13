@@ -2,8 +2,27 @@
 // start session
 session_start();
 
-if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION))) {
-  // $_SESSION['id'] = array(); 
+$update = $delete = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if (isset($_POST['delete'])) {
+    try {
+      $deleteID = test_input($_POST['delete']);
+      deleteReview($db, $deleteID);
+      header('Location: index.php?action=delete-review');
+    } catch (Exception $e) {
+      $message = "<p class='px-4 py-3 bg-danger rounded'>Delete failed.</p>";
+    }
+  } else if (isset($_POST['update'])) {
+    // $updateID = test_input($_POST['update']);
+    // $authorData = getAuthor($updateID);
+    // $author = updateAuthor($authorData);
+  } else {
+    try {
+    } catch (Exception $e) {
+      $message = "<p class='px-4 py-3 bg-danger rounded'>Review already exists. Edit review instead.</p>";
+    }
+  }
 }
 
 ?>
