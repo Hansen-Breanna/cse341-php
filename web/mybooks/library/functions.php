@@ -333,7 +333,7 @@ function getReview($db, $id) {
 
 // Update review by ID
 function updateReview($db, $id, $review, $rating) {
-   $stmt = $db->prepare('UPDATE review SET rating = :rating, review = :review WHERE id = :id');
+   $stmt = $db->prepare('UPDATE reviews SET rating = :rating, review = :review WHERE id = :id');
    $stmt->execute(array(':id' => $id, ':rating' => $rating, ':review' => $review));
 }
 ?>
