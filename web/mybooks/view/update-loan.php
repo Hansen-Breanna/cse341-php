@@ -15,10 +15,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $returnDate = test_input($_POST['returnDate']);
     $isReturned = test_input($_POST['isReturned']);
 
-    $newLoanID = test_input($_POST['loanID']);
-    $loanData = getLoanData($db, $newLoanID);  
-    $_SESSION['loanData'] = $loanData;
     if (isset($_POST['loanID'])) {
+        $newLoanID = test_input($_POST['loanID']);
+        $loanData = getLoanData($db, $newLoanID);  
+        $_SESSION['loanData'] = $loanData;
         $borrower = displayBorrowerData($loanData); 
     } else {
         try {
