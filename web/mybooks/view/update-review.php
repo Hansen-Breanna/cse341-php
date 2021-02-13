@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <!-- Head -->
 <?php include 'common/head.php'; ?>
 
-<title>Add Review - My Books</title>
+<title>Add Review - My Books updated title (remove this note)</title>
 
 <!-- Nav -->
 <?php include 'common/nav.php'; ?>
