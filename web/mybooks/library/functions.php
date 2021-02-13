@@ -298,6 +298,6 @@ function getAuthorID($db, $first_name, $middle_name, $last_name) {
    $stmt->execute(array(':first_name' => $first_name, ':middle_name' => $middle_name, ':last_name' => $last_name));
    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
    var_dump($results . "worked");
-   return $results;
+   return $results[0];
 }
 ?>
