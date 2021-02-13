@@ -242,6 +242,14 @@ switch ($action){
         $message = "<p class='px-4 py-3 bg-danger rounded'>Review was successfully updated.</p>";
         include 'view/add-review.php';
     break;
+    case 'update-author':
+        $authors = getAuthors($_SESSION['id']);
+        $authorsTable = displayAuthors($authors);
+        $author = addAuthor();
+        $choice = addFavBlack();
+        //$message-2 = "<p class='px-4 py-3 bg-danger rounded'>Author already exists.</p>";
+        include 'view/authors.php';
+    break;
     default:
         include 'view/home.php';
 }
