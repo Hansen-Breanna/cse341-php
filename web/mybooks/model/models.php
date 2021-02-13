@@ -72,7 +72,7 @@ function displayReviews($reviews)
       $reviewList .= '<p>by: ' . $review['first_name'] . ' ' . $review['middle_name'] . ' ' . $review['last_name'] . '<p>';
       $reviewList .= '<p>' . $review['review'] . '<p>';
       $reviewList .= '<p>Review by: ' . $review['username'] . '</p>';
-      if ($review['id'] == $_SESSION['id']) {
+      if ($review['library_user_id'] == $_SESSION['id']) {
          $reviewList .= '<div class="pl-2 d-flex flex-column flex-sm-row flex-sm-wrap">
             <form method="post" action="index.php?action=update-review">
                <input type="hidden" name="update" value="' . $review['id'] . '"/>
