@@ -88,6 +88,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </select>
                     </div>
                     <div>
+                        <input type="hidden" name="update_review" value="<?php echo $reviewData[0]['id']; ?>" id="reviewid"> 
                         <input type="hidden" name="reviewid" value="<?php echo $reviewData[0]['id']; ?>" id="reviewid"> 
                     </div>
                     <div class="submit">
