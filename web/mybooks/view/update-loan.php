@@ -15,18 +15,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $returnDate = test_input($_POST['returnDate']);
     $isReturned = test_input($_POST['isReturned']);
 
-
+    if (isset($_POST['loanID'])) {
         $newLoanID = test_input($_POST['loanID']);
         $loanData = getLoanData($db, $newLoanID);  
         $borrower = displayBorrowerData($loanData); 
-    
+    } else {
         try {
             if (isset($_POST['update'])) {
+                var_dump($loanData);
                 // update borrower
                 updateBorrower($db, $loanData[0]['borrower_id'], $first_name, $middle_name, $last_name, $phone);
                 // update loan
-                //db, $loanID, $book_title_id, $borrower_id, $date_borrowed, $return_date
-                echo $loanID . ' ' . $loanData[0]['book_title_id'] . ' ' . $loanData[0]['borrower_id'];
                 updateLoan($db, $loanID, $loanData[0]['book_title_id'], $loanData[0]['borrower_id'], $dateBorrowed, $returnDate);
                 //header('Location: index.php?action=update-loan');
             } 
@@ -34,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo $e;
             $message = "<p class='px-4 py-3 bg-danger rounded'>Loan was not updated. Please try again.</p>";
         }
-    
+    }
 }
 
 ?>
