@@ -313,6 +313,7 @@ function deleteReview($db, $deleteID) {
 
 // Update author name
 function updateAuthor($db, $first_name, $middle_name, $last_name, $id) {
+   echo $id . "go";
    $stmt = $db->prepare('UPDATE author SET first_name = :first_name, middle_name = :middle_name, last_name = :last_name WHERE id = :id');
    $stmt->execute(array(':id' => $id, ':first_name' => $first_name, ':middle_name' => $middle_name, ':last_name' => $last_name));
 }
