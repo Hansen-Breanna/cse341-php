@@ -55,7 +55,7 @@ function displayReviews($reviews)
 {
    $reviewList = '<div class="d-flex flex-row justify-content-center flex-wrap review">';
    foreach ($reviews as $review) {
-      var_dump($review);
+      var_dump($review . "<br>");
       $count = $review['rating'];
       $reviewList .= '<div class="p-3 border border-secondary m-3 single-review"><p>';
       for ($i = 0; $i < $count; $i++) {
