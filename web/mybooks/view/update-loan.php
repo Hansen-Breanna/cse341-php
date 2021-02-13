@@ -16,7 +16,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $isReturned = test_input($_POST['isReturned']);
 
     if (isset($_POST['loanID'])) {
-        $loanData = getLoanData($db, $loanID);   
+        $newLoanID = test_input($_POST['loanID']);
+        $loanData = getLoanData($db, $newLoanID);   
     } else {
         // try {
         //     if (!isset($_POST['borrowerID'])) {
@@ -106,7 +107,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <tbody>
                             <tr class="mb-2">
                                 <td><label for="dateBorrowed">Date borrowed:</label></td>
-                                <td><input type="date" class="rounded" id="dateBorrowed" name="dateBorrowed" value="<?php echo $loanData[0]['date_borrowed'];?>"><br></td>
+                                <td><input type="date" class="rounded" id="dateBorrowed" name="dateBorrowed" value="<?php echo $loanData[0]['date_borrowed']; ?>"><br></td>
                             </tr>
                             <tr class="mb-2">
                                 <td><label for="returnDate">Return date:</label></td>
