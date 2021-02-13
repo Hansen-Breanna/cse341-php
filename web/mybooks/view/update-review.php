@@ -8,10 +8,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $reviewID = test_input($_POST['reviewID']);
 
     if (isset($_POST['update'])) {
-        // $updateID = test_input($_POST['update']);
-        // $reviewData = getReview($db, $updateID);
-        // var_dump($reviewData);
-        // $author = displayReviewAuthorData($authorData);
+        $updateID = test_input($_POST['update']);
+        $reviewData = getReview($db, $updateID);
+        var_dump($reviewData);
+        $author = displayReviewAuthorData($reviewData);
     } else {
         try {
             if (!isset($_POST['authorID'])) {
@@ -91,7 +91,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <p>Add review content and rating of 1-5, with 5 being the best.</p>
                     <div class="d-flex justify-content-start pb-2">
                         <label class="mr-2">Content:</label>
-                        <textarea class="rounded" cols="45" rows="4" id="review" name="review"></textarea>
+                        <textarea class="rounded" cols="45" rows="4" id="review" name="review" value="<?php echo $reviewData['review']; ?>"></textarea>
                     </div>
                     <div class="pb-1">
                         <label class="mr-2">Rating:</label>
