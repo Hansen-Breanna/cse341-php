@@ -2,7 +2,7 @@
 // start session
 session_start();
 
-$reviewID = $update = $update_review = "";
+$reviewID = $review = $rating = $update = $update_review = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $reviewID = test_input($_POST['reviewID']);
@@ -10,27 +10,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['update'])) {
         $updateID = test_input($_POST['update']);
         $reviewData = getReview($db, $updateID);
-        var_dump($reviewData);
-        $author = displayReviewAuthorData($reviewData);
     } else {
         try {
             if (isset($_POST['update_review'])) {
-                $authorID = test_input($_POST['update_review']);
-                $updateAuthor = updateAuthor($db, $first_name, $middle_name, $last_name, $authorID);
-
-                //author
-                insertAuthor($db, $first_name, $middle_name, $last_name);
-                $newAuthorID = $db->lastInsertId('author_id_seq');
-            } else {
-                $newAuthorID = $authorID;
+                $reviewID = test_input($_POST['update_review']);
+                $updateReview = updateReview($db, $reviewID, $review, $rating);
+                $message = "<p class='px-4 py-3 bg-danger rounded'>Review was successfully updated.</p>";
             }
-
-            //book
-            insertTitle($db, $newAuthorID, $title);
-            $newTitleID = $db->lastInsertId('book_title_id_seq');
-
-            // insert review
-            insertReview($db, $_SESSION['id'], $newTitleID, $review, $rating);
         } catch (Exception $e) {
             echo $e;
             $message = "<p class='px-4 py-3 bg-danger rounded'>Review was not added. Please try again.</p>";
@@ -74,19 +60,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <!-- Author -->
                         <h2 class="author-name mt-2">Author</h2>
                         <p>Name: <?php echo $reviewData[0]['first_name']  . ' ' . $reviewData[0]['middle_name'] . ' ' . $reviewData[0]['last_name'];?> </p>
-                        <!-- <table>
-                            <tbody>
-                                <?php //echo $author ?>
-                            </tbody>
-                        </table> -->
                     </div>
                     <!-- Title -->
                     <h2 class="mt-2">Title</h2>
                     <p>Book title: <?php echo $reviewData[0]['title_of_book'];?></p>
-                    <!-- <div class="book-title">
-                        <label class="mr-1">Book title:</label>
-                        <input type="text" class="rounded" id="title" name="title" value="<?php echo $reviewData[0]['title_of_book'];?>">
-                    </div> -->
                     <h2 class="mt-2">Review</h2>
                     <p>Add review content and rating of 1-5, with 5 being the best.</p>
                     <div class="d-flex justify-content-start pb-2">

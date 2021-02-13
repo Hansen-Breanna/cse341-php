@@ -313,7 +313,6 @@ function deleteReview($db, $deleteID) {
 
 // Update author name
 function updateAuthor($db, $first_name, $middle_name, $last_name, $id) {
-   echo $id . "go";
    $stmt = $db->prepare('UPDATE author SET first_name = :first_name, middle_name = :middle_name, last_name = :last_name WHERE id = :id');
    $stmt->execute(array(':id' => $id, ':first_name' => $first_name, ':middle_name' => $middle_name, ':last_name' => $last_name));
 }
@@ -330,5 +329,11 @@ function getReview($db, $id) {
    $stmt->execute(array(':id' => $id));
    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
    return $results;
+}
+
+// Update review by ID
+function updateReview($db, $id, $review, $rating) {
+   $stmt = $db->prepare('UPDATE review SET rating = :rating, review = :review WHERE id = :id');
+   $stmt->execute(array(':id' => $id, ':rating' => $rating, ':review' => $review));
 }
 ?>
