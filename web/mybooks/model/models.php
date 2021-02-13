@@ -74,11 +74,11 @@ function displayReviews($reviews)
       if ($review['id'] == $_SESSION['id']) {
          $reviewList .= '<div class="pl-2 d-flex flex-column flex-sm-row flex-sm-wrap">
             <form method="post" action="index.php?action=update-review">
-               <input type="hidden" name="updateID" value="' . $review['id'] . '"/>
+               <input type="hidden" name="update" value="' . $review['id'] . '"/>
                <input type="submit" class="bg-info btn btn-small mr-1 mb-1" value="Edit"/>
             </form>
             <form method="post" action="index.php?action=reviews">
-               <input type="hidden" name="deleteID" value="' . $review['id'] . '"/>
+               <input type="hidden" name="delete" value="' . $review['id'] . '"/>
                <input type="submit" class="bg-danger btn btn-small mr-1 mb-1" value="Delete"/>
             </form>
             </div>';
