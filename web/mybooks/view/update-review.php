@@ -91,16 +91,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <p>Add review content and rating of 1-5, with 5 being the best.</p>
                     <div class="d-flex justify-content-start pb-2">
                         <label class="mr-2">Content:</label>
-                        <textarea class="rounded" cols="45" rows="4" id="review" name="review" value="<?php echo $reviewData[0]['review']; ?>"><?php echo $reviewData[0]['title_of_book'];?></textarea>
+                        <textarea class="rounded" cols="45" rows="4" id="review" name="review"><?php echo $reviewData[0]['review'];?></textarea>
                     </div>
                     <div class="pb-1">
                         <label class="mr-2">Rating:</label>
                         <select name="rating" id="rating">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
+                        <?php 
+                            for ($i = 1; $x <= 5; $x++) {
+                                if ($reviewData[0]['rating'] == $i) {
+                                    echo "<option value='$reviewData[0]['rating']' selected>$reviewData[0]['rating']</option>";
+                                } else {
+                                    echo "<option value='$i'>$i</option>";
+                                }
+                          }
+                        ?>
                         </select>
                     </div>
                     <div class="submit">
