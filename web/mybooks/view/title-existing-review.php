@@ -2,32 +2,16 @@
 // start session
 session_start();
 
-$first_name = $middle_name = $last_name =  $title = $review = $rating = $authorID = "";
+$titleID = $review = $rating = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $authorID = test_input($_POST['authorID']);
-    $first_name = test_input($_POST['first_name']);
-    $middle_name = test_input($_POST['middle_name']);
-    $last_name = test_input($_POST['last_name']);
-    $title = test_input($_POST['title']);
+    $titleID = test_input($_POST['titleID']);
     $review = test_input($_POST['review']);
     $rating = test_input($_POST['rating']);
 
     try {
-        if (!isset($_POST['authorID'])) {
-            //author
-            insertAuthor($db, $first_name, $middle_name, $last_name);
-            $newAuthorID = $db->lastInsertId('author_id_seq');
-        } else {
-            $newAuthorID = $authorID;
-        }
-
-        //book
-        insertTitle($db, $newAuthorID, $title);
-        $newTitleID = $db->lastInsertId('book_title_id_seq');
-
-        // insert review
-        insertReview($db, $_SESSION['id'], $newTitleID, $review, $rating);
+         // insert review
+        insertReview($db, $_SESSION['id'], $titleID, $review, $rating);
     } catch (Exception $e) {
         echo $e;
         $message = "<p class='px-4 py-3 bg-danger rounded'>Review was not added. Please try again.</p>";
