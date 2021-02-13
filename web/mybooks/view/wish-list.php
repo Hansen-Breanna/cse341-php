@@ -2,6 +2,31 @@
 // start session
 session_start();
 
+$deleteID = $updateID = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+  // if (isset($_POST['deleteID'])) {
+  //   try {
+  //     $deleteID = test_input($_POST['deleteID']);
+  //     deleteTitle($db, $_SESSION['id'], $deleteID);
+  //     header('Location: index.php?action=delete-title');
+  //   } catch (Exception $e) {
+  //     echo $e;
+  //     $message = "<p class='px-4 py-3 bg-danger rounded'>Delete failed.</p>";
+  //   }
+  // } else if (isset($_POST['updateID'])) {
+  //   // $updateID = test_input($_POST['update']);
+  //   // $authorData = getAuthor($updateID);
+  //   // $author = updateAuthor($authorData);
+  // } else {
+  //   try {
+  //   } catch (Exception $e) {
+  //     echo $e;
+  //   }
+  // }
+}
+
 ?>
 
 <!-- Head -->

@@ -10,11 +10,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $middle_name = test_input($_POST["middle_name"]);
   $last_name = test_input($_POST["last_name"]);
 
-  if (isset($_POST['delete'])) {
+  if (isset($_POST['deleteID'])) {
     try {
       $deleteID = test_input($_POST['delete']);
       deleteAuthor($db, $_SESSION['id'], $deleteID);
-      header('Location: index.php?action=delete-author');
+      //header('Location: index.php?action=delete-author');
     } catch (Exception $e) {
       echo $e;
       $message = "<p class='px-4 py-3 bg-danger rounded'>Delete failed.</p>";
