@@ -325,6 +325,7 @@ function updateUserAuthor($db, $userID, $authorID, $blacklist, $favorite) {
 
 // Get data for review by ID
 function getReview($db, $id) {
+   echo "getting id" .$id;
    $stmt = $db->prepare('SELECT r.review, r.rating, r.id, a.first_name, a.middle_name, a.last_name, b.title_of_book, b.author_id FROM reviews r INNER JOIN book_title b ON r.book_title_id = b.id INNER JOIN author a ON a.id = b.author_id WHERE r.id = :id');
    $stmt->execute(array(':id' => $id));
    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
