@@ -238,7 +238,6 @@ switch ($action){
         include 'view/reviews.php';
     break;
     case 'update-review':
-        //$message = "<p class='px-4 py-3 bg-danger rounded'>Review was successfully updated.</p>";
         include 'view/update-review.php';
     break;
     case 'update-author':
@@ -250,6 +249,9 @@ switch ($action){
         // $choice = addFavBlack();
         //$message-2 = "<p class='px-4 py-3 bg-danger rounded'>Author already exists.</p>";
         include 'view/authors.php';
+    break;
+    case 'update-loan':
+        include 'view/update-loan.php';
     break;
     default:
         include 'view/home.php';

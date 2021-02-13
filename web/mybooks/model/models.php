@@ -37,7 +37,7 @@ function displayLoans($loans)
       $loanList .= '%2C%20is%20overdue.%20Please%20contact%20me%20at%20' . $loan['user_phone'];
       $loanList .= '%20to%20return%20it.%20Thanks!">SMS</a>';
       $loanList .= '<form method="post" action="index.php?action=update-loan">
-         <input type="hidden" name="update" value="' . $loan['id'] . '"/>
+         <input type="hidden" name="loanID" value="' . $loan['id'] . '"/>
          <input type="submit" class="bg-info btn btn-small mr-1 mb-1" value="Edit"/>
        </form>
        <form method="post" action="index.php?action=loans">

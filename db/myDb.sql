@@ -122,6 +122,7 @@ CREATE TABLE borrower
 (
 	id SERIAL,
 	first_name VARCHAR(100) NOT NULL,
+    middle_name VARCHAR(100),
 	last_name VARCHAR(100) NOT NULL,
 	phone_number VARCHAR(12) NOT NULL,
 	PRIMARY KEY (id)

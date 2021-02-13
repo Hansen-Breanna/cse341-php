@@ -2,7 +2,7 @@
 // start session
 session_start();
 
-$update = $delete = "";
+$delete = $loanID = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } catch (Exception $e) {
       $message = "<p class='px-4 py-3 bg-danger rounded'>Delete failed.</p>";
     }
-  } else if (isset($_POST['update'])) {
+  } else if (isset($_POST['loanID'])) {
     // $updateID = test_input($_POST['update']);
     // $authorData = getAuthor($updateID);
     // $author = updateAuthor($authorData);
