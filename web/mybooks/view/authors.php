@@ -21,7 +21,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   } else if (isset($_POST['update'])) {
     $updateID = test_input($_POST['update']);
     $authorData = getAuthor($updateID);
-    var_dump($authorData);
     $author = updateAuthor($authorData);
   } else {
     try {
@@ -95,7 +94,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               <h2 class="author-name mt-2">Add Author</h2>
               <table>
                 <tbody>
-                  <?php echo $author . $choice; ?>
+                  <?php 
+                    echo $author;
+                    if (!isset($_POST['update'])) {
+                      echo $choice;
+                    }
+                    ?>
                 </tbody>
               </table>
               <div class="submit">
