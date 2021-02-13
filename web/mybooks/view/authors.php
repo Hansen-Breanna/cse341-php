@@ -2,7 +2,7 @@
 // start session
 session_start();
 
-$first_name = $middle_name = $last_name = $delete = $update = "";
+$first_name = $middle_name = $last_name = $delete = $update = $updating = "";
 $favorite = $blacklist = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -26,6 +26,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $updateAuthor = updateAuthor($db, $authorData);
     echo "blue";
     //header('Location: index.php?action=authors');
+  } else if(isset($_POST['upddating'])) {
+    
   } else if (!isset($_POST['delete']) && !isset($_POST['update'])) {
     echo "book";
     try {
