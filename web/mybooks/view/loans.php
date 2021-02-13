@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $message = "<p class='px-4 py-3 bg-danger rounded'>Loan already exists. Edit loan instead.</p>";
     }
   }
-
+}
 ?>
 
 <!-- Head -->
