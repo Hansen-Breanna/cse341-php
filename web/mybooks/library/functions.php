@@ -353,7 +353,6 @@ function updateBorrower($db, $id, $first_name, $middle_name, $last_name, $phone)
 
 // Update loan by ID
 function updateLoan($db, $loanID, $book_title_id, $borrower_id, $date_borrowed, $return_date) {
-   echo "$loanID $book_title_id $borrower_id $date_borrowed $return_date";
    $stmt = $db->prepare('UPDATE loan SET book_title_id = :book_title_id, borrower_id = :borrower_id, date_borrowed = :date_borrowed, return_date = :return_date WHERE id = :id');
    $stmt->execute(array(':id' => $loanID, ':book_title_id' => $book_title_id, ':borrower_id' => $borrower_id, ':date_borrowed' => $date_borrowed, ':return_date' => $return_date));
 }

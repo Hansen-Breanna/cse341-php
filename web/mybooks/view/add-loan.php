@@ -59,18 +59,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <main class="mb-5">
     <div class="container">
         <div class="row d-flex flex-column align-items-center">
-            <div>
-                <!-- Search Title -->
-                <form method="post" action="index.php?action=loans-title">
-                    <?php include 'common/title.php'; ?>
-
-                    <!-- Search Borrowers -->
-                    <form method="post" action="index.php?action=loans-borrower">
-                        <?php include 'common/borrower.php'; ?>
-
-                        <div class="my-3 mx-2 py-2 border-secondary border-top border-bottom">
-                            <a href="index.php?action=loans" title="See All Loans" class="btn btn-custom my-2 ml-1 bg-info">See All Loans</a>
-                        </div>
+            <div class="my-3 mx-2 py-2 border-secondary border-top border-bottom">
+                <a href="index.php?action=loans" title="See All Loans" class="btn btn-custom my-2 ml-1 bg-info">See All Loans</a>
             </div>
             <?php
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
