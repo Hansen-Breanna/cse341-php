@@ -84,7 +84,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <h2 class="mt-2">Title</h2>
                     <div class="book-title">
                         <label class="mr-1">Book title:</label>
-                        <input type="text" class="rounded" id="title" name="title">
                         <?php $bookTitle ?>
                     </div>
                     <h2 class="mt-2">Review</h2>
