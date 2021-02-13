@@ -17,7 +17,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (isset($_POST['loanID'])) {
         $newLoanID = test_input($_POST['loanID']);
-        $loanData = getLoanData($db, $newLoanID);   
+        $loanData = getLoanData($db, $newLoanID);  
+        var_dump($loanData); 
     } else {
         // try {
         //     if (!isset($_POST['borrowerID'])) {
@@ -57,7 +58,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <!-- Header -->
 <?php include '../common/header.php'; ?>
 
-<h1 class="offset-1 col-10 offset-md-0 col-md-12">Add Loan</h1>
+<h1 class="offset-1 col-10 offset-md-0 col-md-12">Update Loan</h1>
 </div>
 </div>
 </header>
@@ -65,25 +66,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <main class="mb-5">
     <div class="container">
         <div class="row d-flex flex-column align-items-center">
-            <div>
-                <!-- Search Title -->
-                <form method="post" action="index.php?action=loans-title">
-                    <?php include 'common/title.php'; ?>
-
-                    <!-- Search Borrowers -->
-                    <form method="post" action="index.php?action=loans-borrower">
-                        <?php include 'common/borrower.php'; ?>
-
-                        <div class="my-3 mx-2 py-2 border-secondary border-top border-bottom">
-                            <a href="index.php?action=loans" title="See All Loans" class="btn btn-custom my-2 ml-1 bg-info">See All Loans</a>
-                        </div>
+            <div class="my-3 mx-2 py-2 border-secondary border-top border-bottom">
+                <a href="index.php?action=loans" title="See All Loans" class="btn btn-custom my-2 ml-1 bg-info">See All Loans</a>
             </div>
             <?php
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 echo $message;
             }
             ?>
-
             <!-- Loan Form -->
             <form method="post" action="index.php?action=add-loan">
                 <div>
@@ -98,7 +88,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
                 <div class="book-title">
                     <!-- Title -->
-                    <h2 class="mt-2">Title</h2><span><?php $loanData[0]['title_of_book'];?></span>
+                    <h2 class="mt-2">Title</h2><span><?php $loanData[0]['title_of_book']; ?></span>
                 </div>
                 <div>
                     <!-- Dates -->
