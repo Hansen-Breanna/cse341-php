@@ -55,7 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 }
                 ?>
                 <p>If you wish to change the author and/or title, please delete the current review and create a new review instead.</p>
-                <form method="post" action="index.php?action=add-review">
+                <form method="post" action="index.php?action=update-review">
                     <div>
                         <!-- Author -->
                         <h2 class="author-name mt-2">Author</h2>
