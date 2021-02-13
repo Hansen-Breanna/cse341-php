@@ -44,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     $newBlacklist = removeQuotes($blacklist);
 
-    $updateUserAuthor = updateUserAuthor($db, $_SESSION['id'], $update_author, $newBlacklist, $newFavorite);
+    $updateUserAuthor = updateUserAuthor($db, $_SESSION['id'], $authorID, $newBlacklist, $newFavorite);
     header('Location: index.php?action=authors');
   } catch (Exception $e) {
     echo $e;
