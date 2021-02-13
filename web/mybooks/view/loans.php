@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (isset($_POST['delete'])) {
     try {
       $deleteID = test_input($_POST['delete']);
-      deleteLoan($db, $_SESSION['id'], $deleteID);
+      deleteLoan($db, $deleteID);
       header('Location: index.php?action=delete-loan');
     } catch (Exception $e) {
       $message = "<p class='px-4 py-3 bg-danger rounded'>Delete failed.</p>";

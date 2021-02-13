@@ -25,7 +25,6 @@ function displayCatalog($catalog) {
 function displayLoans($loans) {
     $loanList = '<tbody>';
     foreach ($loans as $loan) {
-       echo $loan['id'];
        $loanList .= '<tr><td class="d-none d-md-table-cell">' . $loan['title_of_book'] . '</td>';
        $loanList .= '<td>' . $loan['first_name'] . ' ' . $loan['last_name'] . '</td>';
        $loanList .= '<td class="d-none d-lg-table-cell">' . $loan['date_borrowed'] . '</td>';

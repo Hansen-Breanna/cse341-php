@@ -300,8 +300,8 @@ function getAuthorID($db, $first_name, $middle_name, $last_name) {
 }
 
 // Delete loan by ID
-function deleteLoan($db, $userID, $deleteID) {
-   $stmt = $db->prepare('DELETE FROM loan WHERE library_user_id = :userID AND id = :deleteID');
-   $stmt->execute(array(':userID' => $userID, ':deleteID' => $deleteID));
+function deleteLoan($db, $deleteID) {
+   $stmt = $db->prepare('DELETE FROM loan WHERE id = :deleteID');
+   $stmt->execute(array(':deleteID' => $deleteID));
 }
 ?>

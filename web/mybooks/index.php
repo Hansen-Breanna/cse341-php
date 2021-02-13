@@ -224,6 +224,13 @@ switch ($action){
         $message = "<p class='px-4 py-3 bg-danger rounded'>Title was successfully deleted.</p>";
         include 'view/catalog.php';
     break;
+    case 'delete-loan':
+        $loans = getLoans($_SESSION['id']);
+        $loansTable = displayLoans($loans);
+        $author = addAuthor();
+        $message = "<p class='px-4 py-3 bg-danger rounded'>Loan was successfully deleted.</p>";
+        include 'view/loans.php';
+    break;
     default:
         include 'view/home.php';
 }
