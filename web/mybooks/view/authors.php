@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $authorData = getAuthor($updateID);
     $author = displayAuthorData($authorData);
     var_dump($authorData);
-    //$updateAuthor = updateAuthor($db, $authorData);
+    $updateAuthor = updateAuthor($db, $authorData);
   } else {
     try {
       if (isset($_POST['favorite'])) {
