@@ -9,6 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (isset($_POST['update'])) {
         $updateID = test_input($_POST['update']);
+        echo $updateID;
         $reviewData = getReview($db, $updateID);
         var_dump($reviewData);
         $author = displayReviewAuthorData($authorData);
