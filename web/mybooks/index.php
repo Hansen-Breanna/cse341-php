@@ -237,6 +237,11 @@ switch ($action){
         $message = "<p class='px-4 py-3 bg-danger rounded'>Review was successfully deleted.</p>";
         include 'view/reviews.php';
     break;
+    case 'update-review':
+        $author = addAuthor();
+        $message = "<p class='px-4 py-3 bg-danger rounded'>Review was successfully updated.</p>";
+        include 'view/add-review.php';
+    break;
     default:
         include 'view/home.php';
 }
