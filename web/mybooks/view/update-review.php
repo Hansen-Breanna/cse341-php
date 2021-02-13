@@ -10,6 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $review = test_input($_POST['review']);
     
     if (isset($_POST['update'])) {
+        echo "in update before post review";
         $reviewID = test_input($_POST['reviewid']);
         $reviewData = getReview($db, $reviewid);
         echo "update" .$reviewID . ' ' . $review . ' ' . $rating . ' ' . $update . ' ' . $update_review;
