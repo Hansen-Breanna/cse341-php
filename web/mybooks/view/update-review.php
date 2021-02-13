@@ -2,21 +2,16 @@
 // start session
 session_start();
 
-$first_name = $middle_name = $last_name =  $title = $review = $rating = $authorID = $update = "";
+$reviewID = $update = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $authorID = test_input($_POST['authorID']);
-    $first_name = test_input($_POST['first_name']);
-    $middle_name = test_input($_POST['middle_name']);
-    $last_name = test_input($_POST['last_name']);
-    $title = test_input($_POST['title']);
-    $review = test_input($_POST['review']);
-    $rating = test_input($_POST['rating']);
+    $reviewID = test_input($_POST['reviewID']);
 
     if (isset($_POST['update'])) {
         $updateID = test_input($_POST['update']);
         $reviewData = getReview($db, $updateID);
-        $author = displayAuthorData($authorData);
+        var_dump($reviewData);
+        //$author = displayAuthorData($authorData);
     } else {
         try {
             if (!isset($_POST['authorID'])) {

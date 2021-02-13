@@ -14,11 +14,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } catch (Exception $e) {
       $message = "<p class='px-4 py-3 bg-danger rounded'>Delete failed.</p>";
     }
-  } else if (isset($_POST['update'])) {
-    echo "cookie";
-    // $updateID = test_input($_POST['update']);
-    // $authorData = getAuthor($updateID);
-    // $author = updateAuthor($authorData);
   } else {
     try {
     } catch (Exception $e) {

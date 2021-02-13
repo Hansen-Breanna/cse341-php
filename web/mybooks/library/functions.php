@@ -323,4 +323,10 @@ function updateUserAuthor($db, $userID, $authorID, $blacklist, $favorite) {
    $stmt = $db->prepare('UPDATE user_author SET is_blacklist = :blacklist, is_favorite = :favorite WHERE author_id = :authorID AND library_user_id  = :userID');
    $stmt->execute(array(':userID' => $userID, ':authorID' => $authorID, ':blacklist' => $blacklist, ':favorite' => $favorite));
 }
+
+// Get data for review by ID
+function getReview($db, $id) {
+   $stmt = $db->prepare('SELECT r.review, r.rating, r.id, a.first_name, a.middle_name, a.last_name, b.title_of_book FROM reviews r INNER JOIN book_title b ON r.book_title_id = b.id INNER JOIN author a ON a.id = b.author_id WHERE r.id = :id');
+   $stmt->execute(array(':id' => $id));
+}
 ?>
