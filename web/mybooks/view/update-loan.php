@@ -2,7 +2,7 @@
 // start session
 session_start();
 
-$loanID = $first_name = $middle_name = $last_name = $phone = $titleID = $borrowerID = $dateBorrowed = $returnDate = $isReturned = "";
+$loanID = $first_name = $middle_name = $last_name = $phone = $titleID = $borrowerID = $dateBorrowed = $returnDate = $isReturned = $update = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $first_name = test_input($_POST['first_name']);
@@ -18,31 +18,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['loanID'])) {
         $newLoanID = test_input($_POST['loanID']);
         $loanData = getLoanData($db, $newLoanID);  
-        $borrower = displayBorrowerData($loanData);
-        var_dump($loanData); 
+        $borrower = displayBorrowerData($loanData); 
     } else {
-        // try {
-        //     if (!isset($_POST['borrowerID'])) {
-        //         //author
-        //         insertBorrower($db, $first_name, $middle_name, $last_name, $phone);
-        //         $newBorrowerID = $db->lastInsertId('borrower_id_seq');
-        //     } else {
-        //         $newBorrowerID = $borrowerID;
-        //     }
-
-        //     if (isset($_POST['isReturned'])) {
-        //         $isReturned = "TRUE";
-        //     } else {
-        //         $isReturned = "FALSE";
-        //     }
-        //     $returned = removeQuotes($isReturned);
-
-        //     insertLoan($db, $_SESSION['id'], $titleID, $newBorrowerID, $dateBorrowed, $returnDate, $returned);
-        // } 
-        // catch (Exception $e) {
-        //     echo $e;
-        //     $message = "<p class='px-4 py-3 bg-danger rounded'>Loan was not updated.</p>";
-        // }
+        try {
+            if (isset($_POST['update'])) {
+                // update borrower
+                updateBorrower($db, $loanData[0]['borrower_id'], $first_name, $middle_name, $last_name, $phone);
+                // update loan
+                updateLoan($db, $loanID, $title, $first_name, $middle_name, $last_name, $phone, $dateBorrowed, $returnDate);
+                header('Location: index.php?action=loans');
+            } 
+        } catch (Exception $e) {
+            echo $e;
+            $message = "<p class='px-4 py-3 bg-danger rounded'>Loan was not updated. Please try again.</p>";
+        }
     }
 }
 
@@ -106,6 +95,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             </tr>
                         </tbody>
                     </table>
+                </div>
+                <div>
+                    <input type="hidden" name="update" value="update">
                 </div>
                 <div class="submit">
                     <input type="submit" class="rounded btn btm-lg bg-orange">
