@@ -107,10 +107,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </tbody>
                     </table>
                 </div>
-                <div>
-                    <!-- Is returned -->
-                    <?php if ($loanData[0]['is_returned'] == FALSE) {echo "not checked.";} //try {echo $isReturnedEdit($loanData[0]['is_returned']);}catch(Exception $e) {echo $e;} ?>
-                </div>
                 <div class="submit">
                     <input type="submit" class="rounded btn btm-lg bg-orange">
                 </div>

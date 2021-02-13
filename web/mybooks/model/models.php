@@ -42,7 +42,7 @@ function displayLoans($loans)
        </form>
        <form method="post" action="index.php?action=loans">
          <input type="hidden" name="delete" value="' . $loan['id'] . '"/>
-         <input type="submit" class="bg-danger btn btn-small mr-1 mb-1" value="Delete"/>
+         <input type="submit" class="bg-danger btn btn-small mr-1 mb-1" value="Return"/>
       </form>
       </td></tr>';
    }
@@ -326,12 +326,4 @@ function displayBorrowerData($data)
       <td><input type="text" class="rounded mb-1" name="phone" id="phone" value="' . $data[0]['phone_number'] . '"><br></td>
    </tr>';
    return $borrowerForm;
-}
-
-function isReturnedEdit($returned) {
-   $checkedReturned = "";
-   if ($returned == '1') {
-      $checkedReturned = 'checked';
-   }
-   echo '<p class="d-flex align-items-center"><input type="checkbox" class="rounded mr-1" id="is_returned" name="is_returned" value="TRUE" ' . $checkedReturned . '>';
 }
