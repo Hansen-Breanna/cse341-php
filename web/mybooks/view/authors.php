@@ -2,7 +2,7 @@
 // start session
 session_start();
 
-$first_name = $middle_name = $last_name = $delete =  "";
+$first_name = $middle_name = $last_name = $delete =  $update = "";
 $favorite = $blacklist = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -18,7 +18,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } catch (Exception $e) {
       $message = "<p class='px-4 py-3 bg-danger rounded'>Delete failed.</p>";
     }
-  } else {
+  } 
+  else if (isset($_POST['update'])) {
+    $udpate = test_input($_POST['update']);
+    $_SESSION['authorID'] = $update;
+    header('Location: index.php?action=update=author');
+  }
+  else {
     echo "book";
     try {
       if (isset($_POST['favorite'])) {
