@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   else if (isset($_POST['update'])) {
     $udpate = test_input($_POST['update']);
     $_SESSION['authorID'] = $update;
-    header('Location: index.php?action=update-author');
+    header('Location: index.php?action=authors');
   }
   else {
     echo "book";
