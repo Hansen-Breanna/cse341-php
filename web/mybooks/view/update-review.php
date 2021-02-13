@@ -2,7 +2,7 @@
 // start session
 session_start();
 
-$reviewID = $update = "";
+$reviewID = $update = $update_review = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $reviewID = test_input($_POST['reviewID']);
@@ -14,7 +14,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $author = displayReviewAuthorData($reviewData);
     } else {
         try {
-            if (!isset($_POST['authorID'])) {
+            if (isset($_POST['update_review'])) {
+                $authorID = test_input($_POST['update_review']);
+                $updateAuthor = updateAuthor($db, $first_name, $middle_name, $last_name, $authorID);
+
                 //author
                 insertAuthor($db, $first_name, $middle_name, $last_name);
                 $newAuthorID = $db->lastInsertId('author_id_seq');
@@ -70,11 +73,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <div>
                         <!-- Author -->
                         <h2 class="author-name mt-2">Author</h2>
-                        <p>Enter name for a new or existing author.</p>
-                        <p>
-                            <a href="index.php?action=update-review" class="btn bg-orange p-2" title="Add title by with new author">Add New</a>
-                            <a href="index.php?action=review-existing-author" class="btn bg-orange p-2" title="Add title by existing author">Use Existing</a>
-                        </p>
                         <table>
                             <tbody>
                                 <?php echo $author ?>
@@ -106,6 +104,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             }
                         ?>
                         </select>
+                    </div>
+                    <div>
+                        <input type="hidden" name="update_review" value="<?php echo $reviewData[0]['author_id']; ?>" id="update_author"> 
                     </div>
                     <div class="submit">
                         <input type="submit" class="rounded btn btm-lg bg-orange">
