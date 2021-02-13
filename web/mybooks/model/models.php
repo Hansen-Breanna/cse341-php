@@ -6,8 +6,6 @@ function displayCatalog($catalog) {
     foreach ($catalog as $book) {
        $bookList .= '<tr><td>' . $book['title_of_book'] . '</td>';
        $bookList .= '<td class="pl-2">' . $book['first_name'] . ' ' . $book['middle_name'] . ' ' . $book['last_name'] . '</td>';
-       $bookList .= '<td class="pl-2"><a href="" title="Edit"><i class="mr-1 rounded far fa-edit bg-info p-2" data-toggle="tooltip" data-placement="top" title="Edit"></i></a>';
-       $bookList .= '<a href=""  title="Delete"><i class="rounded far fa-trash-alt bg-danger p-2" data-toggle="tooltip" data-placement="top" title="Delete"></i></a></td>';
        $bookList .= '<td class="pl-2 d-flex flex-column flex-sm-row flex-sm-wrap"> 
        <form method="post" action="index.php?action=authors">
          <input type="hidden" name="update" value="' . $book['id'] . '"/>
