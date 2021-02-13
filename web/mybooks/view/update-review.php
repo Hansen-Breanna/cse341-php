@@ -9,9 +9,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $rating = test_input($_POST['rating']);
     $review = test_input($_POST['review']);
     
-    if (isset($_POST['update'])) {
-        $reviewID = test_input($_POST['reviewid']);
-        $reviewData = getReview($db, $reviewid);
+    if (isset($_POST['update'])) {        
+        $reviewData = getReview($db, $reviewID);
         echo "update" .$reviewID . ' ' . $review . ' ' . $rating . ' ' . $update . ' ' . $update_review;
         var_dump($reviewData);
     } else {
