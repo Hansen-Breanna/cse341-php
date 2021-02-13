@@ -15,11 +15,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $returnDate = test_input($_POST['returnDate']);
     $isReturned = test_input($_POST['isReturned']);
 
-    if (isset($_POST['loanID'])) {
+
         $newLoanID = test_input($_POST['loanID']);
         $loanData = getLoanData($db, $newLoanID);  
         $borrower = displayBorrowerData($loanData); 
-    } else {
+    
         try {
             if (isset($_POST['update'])) {
                 // update borrower
@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo $e;
             $message = "<p class='px-4 py-3 bg-danger rounded'>Loan was not updated. Please try again.</p>";
         }
-    }
+    
 }
 
 ?>
