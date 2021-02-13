@@ -243,7 +243,7 @@ switch ($action){
         include 'view/add-review.php';
     break;
     case 'update-author':
-        echo $_SESSION['authorID'];
+        echo $_GET['authorID'];
         $authors = getAuthors($_SESSION['id']);
         //$authorData = getAuthor($_SESSION['authorID']);
         // $authorsTable = displayAuthors($authors);
