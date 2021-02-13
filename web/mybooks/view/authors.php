@@ -29,6 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo "blue";
   }  
   else if (isset($_SESSION['authorID'])) {
+    echo $_SESSION['authorID'];
     $authorData = getAuthor($_SESSION['authorID']);
     $updateAuthor = updateAuthor($db, $authorData);
     header('Location: index.php?action=authors');
