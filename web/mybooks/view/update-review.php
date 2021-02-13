@@ -85,13 +85,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <h2 class="mt-2">Title</h2>
                     <div class="book-title">
                         <label class="mr-1">Book title:</label>
-                        <input type="text" class="rounded" id="title" name="title">
+                        <input type="text" class="rounded" id="title" name="title" value="<?php echo $reviewData[0]['title_of_book'];?>">
                     </div>
                     <h2 class="mt-2">Review</h2>
                     <p>Add review content and rating of 1-5, with 5 being the best.</p>
                     <div class="d-flex justify-content-start pb-2">
                         <label class="mr-2">Content:</label>
-                        <textarea class="rounded" cols="45" rows="4" id="review" name="review" value="<?php echo $reviewData['review']; ?>"></textarea>
+                        <textarea class="rounded" cols="45" rows="4" id="review" name="review" value="<?php echo $reviewData[0]['review']; ?>"></textarea>
                     </div>
                     <div class="pb-1">
                         <label class="mr-2">Rating:</label>
