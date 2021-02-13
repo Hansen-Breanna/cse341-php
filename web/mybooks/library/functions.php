@@ -335,7 +335,6 @@ function getReview($db, $id) {
 function updateReview($db, $id, $review, $rating) {
    $stmt = $db->prepare('UPDATE reviews SET rating = :rating, review = :review WHERE id = :id');
    $stmt->execute(array(':id' => $id, ':rating' => $rating, ':review' => $review));
-   $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-   echo $results;
+   echo "worked";
 }
 ?>
