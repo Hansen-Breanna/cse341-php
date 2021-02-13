@@ -26,6 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 var_dump($_SESSION['loanData']);
                 $borrower_id = $_SESSION['loanData'][0]['borrower_id'];
                 $book_title_id = $_SESSION['loanData'][0]['book_title_id'];
+                echo $dateBorrowed;
                 // update borrower
                 updateBorrower($db, $borrower_id, $first_name, $middle_name, $last_name, $phone);
                 // update loan
