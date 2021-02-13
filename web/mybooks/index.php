@@ -238,6 +238,10 @@ switch ($action){
         include 'view/reviews.php';
     break;
     case 'update-review':
+        $updateID = test_input($_POST['update']);
+        $reviewData = getReview($db, $updateID);
+        var_dump($reviewData);
+        $author = displayReviewAuthorData($authorData);
         //$message = "<p class='px-4 py-3 bg-danger rounded'>Review was successfully updated.</p>";
         include 'view/update-review.php';
     break;

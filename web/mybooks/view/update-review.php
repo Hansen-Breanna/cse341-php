@@ -8,10 +8,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $reviewID = test_input($_POST['reviewID']);
 
     if (isset($_POST['update'])) {
-        $updateID = test_input($_POST['update']);
-        $reviewData = getReview($db, $updateID);
-        var_dump($reviewData);
-        $author = displayReviewAuthorData($authorData);
+        // $updateID = test_input($_POST['update']);
+        // $reviewData = getReview($db, $updateID);
+        // var_dump($reviewData);
+        // $author = displayReviewAuthorData($authorData);
     } else {
         try {
             if (!isset($_POST['authorID'])) {
