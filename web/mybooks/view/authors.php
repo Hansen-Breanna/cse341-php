@@ -25,6 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     var_dump($authorData);
     $updateAuthor = updateAuthor($db, $authorData);
   } else {
+    echo "book";
     try {
       if (isset($_POST['favorite'])) {
         $favorite = "TRUE";
