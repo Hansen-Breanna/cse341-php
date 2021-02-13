@@ -18,6 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['loanID'])) {
         $newLoanID = test_input($_POST['loanID']);
         $loanData = getLoanData($db, $newLoanID);  
+        $borrower = displayBorrowerData($loanData);
         var_dump($loanData); 
     } else {
         // try {
@@ -88,7 +89,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
                 <div class="book-title">
                     <!-- Title -->
-                    <h2 class="mt-2">Title</h2><span><?php echo $loanData[0]['title_of_book']; ?></span>
+                    <h2 class="mt-2 d-inline">Title</h2><span>: <?php echo $loanData[0]['title_of_book']; ?></span>
                 </div>
                 <div>
                     <!-- Dates -->

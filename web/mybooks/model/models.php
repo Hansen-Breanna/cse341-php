@@ -303,3 +303,27 @@ function selectTitleByUser($db, $id)
 //    </tr>';
 //    return $author;
 // }
+
+
+// Add new borrower
+function displayBorrowerData($data)
+{
+   $borrowerForm =
+   '<tr>
+      <td><label for="first-name">First name:</label></td>
+      <td><input type="text" class="rounded mb-1" name="first_name" value="' . $data[0]['first_name'] . '" id="first_name"></td>
+   </tr>
+   <tr>
+      <td><label for="middle_name">Middle Name:</label></td>
+      <td><input type="text" class="rounded mb-1" name="middle_name" value="' . $data[0]['middle_name'] . '" id="middle_name"></td>
+   </tr>
+   <tr>
+      <td><label for="last_name">Last name:</label></td>
+      <td><input type="text" class="rounded mb-1" name="last_name" value="' . $data[0]['last_name'] . '" id="last_name"><br></td>
+   </tr>
+   <tr>
+      <td><label for="phone">Phone number:</label></td>
+      <td><input type="text" class="rounded mb-1" name="phone" id="phone" value="' . $data[0]['phone_number'] . '"><br></td>
+   </tr>';
+   return $borrowerForm;
+}
