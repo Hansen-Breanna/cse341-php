@@ -97,7 +97,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <label class="mr-2">Rating:</label>
                         <select name="rating" id="rating">
                         <?php 
-                            for ($i = 1; $x <= 5; $x++) {
+                            for ($i = 1; $i <= 5; $i++) {
                                 if ($reviewData[0]['rating'] == $i) {
                                     echo "<option value='$reviewData[0]['rating']' selected>$reviewData[0]['rating']</option>";
                                 } else {
