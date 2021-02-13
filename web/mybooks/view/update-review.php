@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $reviewID = test_input($_POST['reviewid']);
                 updateReview($db, $reviewID, $review, $rating);
                 $message = "<p class='px-4 py-3 bg-danger rounded'>Review was successfully updated.</p>";
-                //header('Location: index.php?action=update-review');
+                header('Location: index.php?action=update-review');
             }
         } catch (Exception $e) {
             echo $e;
@@ -61,12 +61,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <form method="post" action="index.php?action=update-review">
                     <div>
                         <!-- Author -->
-                        <h2 class="author-name mt-2">Author</h2>
-                        <p>Name: <?php echo $reviewData[0]['first_name']  . ' ' . $reviewData[0]['middle_name'] . ' ' . $reviewData[0]['last_name'];?> </p>
+                        <h2 class="author-name mt-2 d-inline">Author :</h2>
+                        <?php echo $reviewData[0]['first_name']  . ' ' . $reviewData[0]['middle_name'] . ' ' . $reviewData[0]['last_name'];?>
                     </div>
                     <!-- Title -->
-                    <h2 class="mt-2">Title</h2>
-                    <p>Book title: <?php echo $reviewData[0]['title_of_book'];?></p>
+                    <div>
+                        <h2 class="mt-2 d-inline">Title: </h2>
+                        <?php echo $reviewData[0]['title_of_book'];?>
+                    </div>
                     <h2 class="mt-2">Review</h2>
                     <p>Add review content and rating of 1-5, with 5 being the best.</p>
                     <div class="d-flex justify-content-start pb-2">
