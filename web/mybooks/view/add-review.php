@@ -84,7 +84,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <h2 class="mt-2">Title</h2>
                     <div class="book-title">
                         <label class="mr-1">Book title:</label>
-                        <?php echo $bookTitle; ?>
+                        <input type="text" class="rounded" id="title" name="title">
                     </div>
                     <h2 class="mt-2">Review</h2>
                     <p>Add review content and rating of 1-5, with 5 being the best.</p>

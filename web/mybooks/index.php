@@ -194,13 +194,11 @@ switch ($action){
     case 'add-review':
         $message = "<p class='px-4 py-3 bg-danger rounded'>Review added. Please add another or return to reviews.</p>";
         $author = addAuthor();
-        $booktitle = "<input type='text' class='rounded' id='title' name='title'>";
         include 'view/add-review.php';
     break;
     case 'review-existing-author':
         $message = "<p class='px-4 py-3 bg-danger rounded'>Review added. Please add another or return to reviews.</p>";
         $author = selectAuthor($db);
-        $booktitle = "<input type='text' class='rounded' id='title' name='title'>";
         include 'view/add-review.php';
     break;
     case 'add-loan':
@@ -218,8 +216,7 @@ switch ($action){
     case 'title-existing-review':
         $message = "<p class='px-4 py-3 bg-danger rounded'>Review added. Please add another or return to reviews.</p>";
         $bookTitle = selectTitle($db);
-        $author = selectAuthor($db);
-        include 'view/existing-title-review.php';
+        include 'view/title-existing-review.php';
     break;
     default:
         include 'view/home.php';
