@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     try {
       $deleteID = test_input($_POST['delete']);
       deleteAuthor($db, $_SESSION['id'], $deleteID);
-      //header('Location: index.php?action=delete-author');
+      header('Location: index.php?action=delete-author');
     } catch (Exception $e) {
       echo $e;
       $message = "<p class='px-4 py-3 bg-danger rounded'>Delete failed.</p>";
