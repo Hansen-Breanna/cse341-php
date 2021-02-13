@@ -8,6 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $reviewID = test_input($_POST['reviewID']);
     $rating = test_input($_POST['rating']);
     $review = test_input($_POST['review']);
+    $newReviewID = removeQuotes($reviewID);
 
     if (isset($_POST['update'])) {
         $updateID = test_input($_POST['update']);
@@ -16,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         try {
             if (isset($_POST['update_review'])) {
                 $reviewID = test_input($_POST['update_review']);
-                updateReview($db, $reviewID, $review, $rating);
+                updateReview($db, $newReviewID, $review, $rating);
                 $message = "<p class='px-4 py-3 bg-danger rounded'>Review was successfully updated.</p>";
                 //header('Location: index.php?action=update-review');
             }
