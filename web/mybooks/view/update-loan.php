@@ -82,7 +82,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <h2 class="mt-2">Borrower</h2>
                     <table>
                         <tbody>
-                            <?php echo $borrower . $choice; ?>
+                            <?php echo $borrower; ?>
                         </tbody>
                     </table>
 

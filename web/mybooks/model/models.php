@@ -327,3 +327,12 @@ function displayBorrowerData($data)
    </tr>';
    return $borrowerForm;
 }
+
+function isReturnedEdit($returned) {
+   $checkedReturned = "";
+   if ($returned == '1') {
+      $checkedReturned = 'checked';
+   }
+   echo '<p class="d-flex align-items-center"><input type="checkbox" id="isReturned" name="isReturned" class="mr-2">Returned</p>';
+   echo '<p class="d-flex align-items-center"><input type="checkbox" class="rounded mr-1" id="is_returned" name="is_returned" value="TRUE" ' . $checkedReturned . '>';
+}
