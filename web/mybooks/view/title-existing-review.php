@@ -2,16 +2,16 @@
 // start session
 session_start();
 
-$titleID = $review = $rating = "";
+$title = $review = $rating = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $titleID = test_input($_POST['titleID']);
+    $title = test_input($_POST['title']);
     $review = test_input($_POST['review']);
     $rating = test_input($_POST['rating']);
 
     try {
          // insert review
-        insertReview($db, $_SESSION['id'], $titleID, $review, $rating);
+        insertReview($db, $_SESSION['id'], $title, $review, $rating);
     } catch (Exception $e) {
         echo $e;
         $message = "<p class='px-4 py-3 bg-danger rounded'>Review was not added. Please try again.</p>";
