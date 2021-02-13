@@ -40,13 +40,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       }
       $newBlacklist = removeQuotes($blacklist);
 
-      // author
-      insertAuthor($db, $first_name, $middle_name, $last_name);
-      $newAuthorID = $db->lastInsertId('author_id_seq');
-
-      //user_author
-      insertUserAuthor($db, $_SESSION['id'], $newAuthorID, $newBlacklist, $newFavorite);
-      header('Location: index.php?action=add-new-author');
+      try {
+        // author
+        insertAuthor($db, $first_name, $middle_name, $last_name);
+        $newAuthorID = $db->lastInsertId('author_id_seq');
+      } catch (Exception $e) {
+        $newAuthorID = getAuthorID($db, $first_name, $middle_name, $last_name);
+      } finally {
+        //user_author
+        insertUserAuthor($db, $_SESSION['id'], $newAuthorID, $newBlacklist, $newFavorite);
+        header('Location: index.php?action=add-new-author');
+      }
     } catch (Exception $e) {
       $authorExists = "<p class='px-4 py-3 bg-danger rounded'>Author already exists. Edit author instead.</p>";
     }

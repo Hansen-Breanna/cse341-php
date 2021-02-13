@@ -290,4 +290,12 @@ function deleteTitle($db, $id, $titleID) {
    $stmt = $db->prepare('DELETE FROM user_book WHERE library_user_id = :id AND book_title_id = :titleID');
    $stmt->execute(array(':id' => $id, ':titleID' => $titleID));
 }
+
+// Get author id by using names
+function getAuthorID($db, $first_name, $middle_name, $last_name) {
+   $stmt = $db->prepare('SELECT a.id FROM author WHERE first_name = :first_name AND middle_name = :middle_name AND last_name = :last_name');
+   $stmt->execute(array(':first_name' => $first_name, ':middle_name' => $middle_name, ':last_name' => $last_name));
+   $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+   return $results;
+}
 ?>
