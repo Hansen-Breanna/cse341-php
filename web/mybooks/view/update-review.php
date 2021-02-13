@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $reviewID = test_input($_POST['update_review']);
                 $updateReview = updateReview($db, $reviewID, $review, $rating);
                 $message = "<p class='px-4 py-3 bg-danger rounded'>Review was successfully updated.</p>";
-                header('Location: index.php?action=reviews');
+                header('Location: index.php?action=update-review');
             }
         } catch (Exception $e) {
             echo $e;
