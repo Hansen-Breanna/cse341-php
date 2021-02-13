@@ -2,7 +2,7 @@
 // start session
 session_start();
 
-$first_name = $middle_name = $last_name = $delete = $update = "";
+$first_name = $middle_name = $last_name = $delete = $update = $update_author = "";
 $favorite = $blacklist = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -21,17 +21,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   } 
   else if (isset($_POST['update'])) {
     $updateID = test_input($_POST['update']);
-    $_SESSION['authorID'] = $updateID;
-    echo $_SESSION['authorID'];
     $authorData = getAuthor($updateID);
     $author = displayAuthorData($authorData);
-    var_dump($authorData);
-    //$updateAuthor = updateAuthor($db, $authorData);
   }  
-  else if (isset($_SESSION['authorID'])) {
-    echo $_SESSION['authorID'];
-    $authorData = getAuthor($_SESSION['authorID']);
-    $updateAuthor = updateAuthor($db, $authorData);
+  else if (isset($_POST['update_author'])) {
+    $updateAuthor = updateAuthor($db, $first_name, $middle_name, $last_name, $update_author);
+
+    if (isset($_POST['favorite'])) {
+      $favorite = "TRUE";
+    } else {
+      $favorite = "FALSE";
+    }
+    $newFavorite = removeQuotes($favorite);
+
+    $blacklist = test_input($_POST["blacklist"]);
+    if (isset($_POST['blacklist'])) {
+      $blacklist = "TRUE";
+    } else {
+      $blacklist = "FALSE";
+    }
+    $newBlacklist = removeQuotes($blacklist);
+
+    $updateUserAuthor = updateUserAuthor($db, $_SESSION['id'], $update_author, $newBlacklist, $newFavorite);
     header('Location: index.php?action=authors');
   }
   else if (!isset($_POST['delete']) && !isset($_POST['update'])) {

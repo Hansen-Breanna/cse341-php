@@ -211,6 +211,9 @@ function displayAuthorData($data)
    <tr>
       <td><span class="d-flex align-items-center"><input type="checkbox" class="rounded mr-1" id="favorite" name="favorite" value="TRUE" ' . $checkedFavorite . '>Favorite</span></td>
       <td><span class="d-flex align-items-center"><input type="checkbox" class="rounded mr-1" id="blacklist" name="blacklist" value="TRUE" ' . $checkedBlacklist . '>Blacklist</span></td>
+   </tr>
+   <tr>
+   <td><input type="hidden" class="rounded mb-1" name="update_author" value="' . $data[0]['id'] . '" id="update_author"></td>
    </tr>';
    return $author;
 }

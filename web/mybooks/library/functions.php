@@ -312,8 +312,14 @@ function deleteReview($db, $deleteID) {
 }
 
 // Update author name
-function updateAuthor($db, $authorData) {
+function updateAuthor($db, $first_name, $middle_name, $last_name, $id) {
    $stmt = $db->prepare('UPDATE author SET first_name = :first_name, middle_name = :middle_name, last_name = :last_name WHERE id = :id');
-   $stmt->execute(array(':id' => $authorData['id'], ':first_name' => $authorData['first_name'], ':middle_name' => $authorData['middle_name'], ':last_name' => $authorData['last_name']));
+   $stmt->execute(array(':id' => $id, ':first_name' => $first_name, ':middle_name' => $middle_name, ':last_name' => $last_name));
+}
+
+// Update User Author by Author ID
+function updateUserAuthor($db, $userID, $authorID, $blacklist, $favorite) {
+   $stmt = $db->prepare('UPDATE user_author SET author_id = :authorID, is_blacklist = :blacklist, is_favorite = :favorite WHERE userID = :userID');
+   $stmt->execute(array(':userID' => $userID, ':authorID' => $authorID, ':blacklist' => $blacklist, ':favorite' => $favorite));
 }
 ?>
