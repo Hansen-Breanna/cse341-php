@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $middle_name = test_input($_POST["middle_name"]);
   $last_name = test_input($_POST["last_name"]);
 
-  if (isset($_POST['deleteID'])) {
+  if (isset($_POST['delete'])) {
     try {
       $deleteID = test_input($_POST['delete']);
       deleteAuthor($db, $_SESSION['id'], $deleteID);
