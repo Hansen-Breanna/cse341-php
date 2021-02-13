@@ -23,7 +23,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         try {
             if (isset($_POST['update'])) {
-                var_dump($_SESSION['loanData']);
                 $borrower_id = $_SESSION['loanData'][0]['borrower_id'];
                 $book_title_id = $_SESSION['loanData'][0]['book_title_id'];
                 echo removeQuotes($dateBorrowed);
