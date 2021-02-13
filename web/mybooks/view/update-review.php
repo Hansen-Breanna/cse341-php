@@ -6,6 +6,8 @@ $reviewID = $review = $rating = $update = $update_review = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $reviewID = test_input($_POST['reviewID']);
+    $rating = test_input($_POST['rating']);
+    $review = test_input($_POST['review']);
 
     if (isset($_POST['update'])) {
         $updateID = test_input($_POST['update']);
