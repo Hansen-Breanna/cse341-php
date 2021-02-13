@@ -11,11 +11,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     if (isset($_POST['update'])) {        
         $reviewData = getReview($db, $reviewID);
-        echo "update" .$reviewID . ' ' . $review . ' ' . $rating . ' ' . $update . ' ' . $update_review;
-        var_dump($reviewData);
     } else {
         try {
             if (isset($_POST['update_review'])) {
+                echo "in the update review with id" . $reviewID;
                 $reviewID = test_input($_POST['reviewid']);
                 updateReview($db, $reviewID, $review, $rating);
                 $message = "<p class='px-4 py-3 bg-danger rounded'>Review was successfully updated.</p>";
