@@ -7,6 +7,7 @@ $update = $delete = "";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (isset($_POST['delete'])) {
     try {
+      echo $_POST['delete'];
       $deleteID = test_input($_POST['delete']);
       deleteReview($db, $deleteID);
       header('Location: index.php?action=reviews');
