@@ -9,7 +9,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $first_name = test_input($_POST["first_name"]);
   $middle_name = test_input($_POST["middle_name"]);
   $last_name = test_input($_POST["last_name"]);
-  echo $_POST['update_author'];
 
   if (isset($_POST['delete'])) {
     try {
@@ -26,6 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $author = displayAuthorData($authorData);
   }  
   else if (isset($_POST['update_author'])) {
+    echo $_POST['update_author'];
     try {
     $updateAuthor = updateAuthor($db, $first_name, $middle_name, $last_name, $update_author);
 
