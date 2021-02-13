@@ -245,7 +245,7 @@ switch ($action){
     case 'update-author':
         echo $_SESSION['authorID'];
         $authors = getAuthors($_SESSION['id']);
-        $authorData = getAuthor($_SESSION['authorID']);
+        //$authorData = getAuthor($_SESSION['authorID']);
         // $authorsTable = displayAuthors($authors);
         // $author = displayAuthorData($authorData);
         // $choice = addFavBlack();
