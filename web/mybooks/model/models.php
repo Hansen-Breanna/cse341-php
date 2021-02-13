@@ -8,7 +8,16 @@ function displayCatalog($catalog) {
        $bookList .= '<td class="pl-2">' . $book['first_name'] . ' ' . $book['middle_name'] . ' ' . $book['last_name'] . '</td>';
        $bookList .= '<td class="pl-2"><a href="" title="Edit"><i class="mr-1 rounded far fa-edit bg-info p-2" data-toggle="tooltip" data-placement="top" title="Edit"></i></a>';
        $bookList .= '<a href=""  title="Delete"><i class="rounded far fa-trash-alt bg-danger p-2" data-toggle="tooltip" data-placement="top" title="Delete"></i></a></td>';
-       $bookList .= '</tr>';
+       $bookList .= '<td class="pl-2 d-flex flex-column flex-sm-row flex-sm-wrap"> 
+       <form method="post" action="index.php?action=authors">
+         <input type="hidden" name="update" value="' . $book['id'] . '"/>
+         <input type="submit" class="bg-info btn btn-small mr-1 mb-1" value="Edit"/>
+       </form>
+       <form method="post" action="index.php?action=authors">
+         <input type="hidden" name="delete" value="' . $book['id'] . '"/>
+         <input type="submit" class="bg-danger btn btn-small mr-1 mb-1" value="Delete"/>
+      </form>
+      </tr>';
     }
     $bookList .= '</tbody>';
     return $bookList;
@@ -84,7 +93,7 @@ function displayAuthors($authors) {
        } else {
           $authorList .= '<td></td>';
        }
-       $authorList .= '<td class="pl-2 d-flex flex-column flex-sm-row"> 
+       $authorList .= '<td class="pl-2 d-flex flex-column flex-sm-row flex-sm-wrap"> 
        <form method="post" action="index.php?action=authors">
          <input type="hidden" name="update" value="' . $author['id'] . '"/>
          <input type="submit" class="bg-info btn btn-small mr-1 mb-1" value="Edit"/>
