@@ -25,9 +25,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $author = displayAuthorData($authorData);
   }  
   else if (isset($_POST['update_author'])) {
-    echo $_POST['update_author'];
+    $authorID = test_input($_POST['update_author']);
     try {
-    $updateAuthor = updateAuthor($db, $first_name, $middle_name, $last_name, $update_author);
+    $updateAuthor = updateAuthor($db, $first_name, $middle_name, $last_name, $authorID);
 
     if (isset($_POST['favorite'])) {
       $favorite = "TRUE";
