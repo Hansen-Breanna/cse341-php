@@ -16,8 +16,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         try {
             if (isset($_POST['update_review'])) {
-                $reviewID = test_input($_POST['update_review']);
-                updateReview($db, $updateID, $review, $rating);
+                $reviewID = test_input($_POST['reviewid']);
+                updateReview($db, $reviewID, $review, $rating);
                 $message = "<p class='px-4 py-3 bg-danger rounded'>Review was successfully updated.</p>";
                 //header('Location: index.php?action=update-review');
             }
@@ -89,7 +89,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </select>
                     </div>
                     <div>
-                        <input type="hidden" name="update_review" value="<?php echo $reviewData[0]['author_id']; ?>" id="update_author"> 
+                        <input type="hidden" name="reviewid" value="<?php echo $reviewData[0]['id']; ?>" id="reviewid"> 
                     </div>
                     <div class="submit">
                         <input type="submit" class="rounded btn btm-lg bg-orange">
