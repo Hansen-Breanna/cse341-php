@@ -244,8 +244,9 @@ switch ($action){
     break;
     case 'update-author':
         $authors = getAuthors($_SESSION['id']);
+        $authorData = getAuthor($_SESSION['authorID']);
         $authorsTable = displayAuthors($authors);
-        $author = addAuthor();
+        $author = displayAuthorData($authorData);
         $choice = addFavBlack();
         //$message-2 = "<p class='px-4 py-3 bg-danger rounded'>Author already exists.</p>";
         include 'view/authors.php';
