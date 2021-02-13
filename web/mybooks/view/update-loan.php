@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if (isset($_POST['update'])) {
                 $borrower_id = $_SESSION['loanData'][0]['borrower_id'];
                 $book_title_id = $_SESSION['loanData'][0]['book_title_id'];
-                $loan_id = $_SESSION['loanData'][0]['id']
+                $loan_id = $_SESSION['loanData'][0]['id'];
                 echo removeQuotes($dateBorrowed);
                 // update borrower
                 updateBorrower($db, $borrower_id, $first_name, $middle_name, $last_name, $phone);
