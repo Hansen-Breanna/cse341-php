@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $updateID = test_input($_POST['update']);
         $reviewData = getReview($db, $updateID);
         var_dump($reviewData);
-        //$author = displayAuthorData($authorData);
+        $author = displayReviewAuthorData($authorData);
     } else {
         try {
             if (!isset($_POST['authorID'])) {
@@ -48,7 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <!-- Header -->
 <?php include '../common/header.php'; ?>
 
-<h1 class="offset-1 col-10 offset-md-0 col-md-12">Add Review</h1>
+<h1 class="offset-1 col-10 offset-md-0 col-md-12">Update Review</h1>
 </div>
 </div>
 </header>
@@ -72,7 +72,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <h2 class="author-name mt-2">Author</h2>
                         <p>Enter name for a new or existing author.</p>
                         <p>
-                            <a href="index.php?action=add-review" class="btn bg-orange p-2" title="Add title by with new author">Add New</a>
+                            <a href="index.php?action=update-review" class="btn bg-orange p-2" title="Add title by with new author">Add New</a>
                             <a href="index.php?action=review-existing-author" class="btn bg-orange p-2" title="Add title by existing author">Use Existing</a>
                         </p>
                         <table>
