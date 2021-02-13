@@ -26,12 +26,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $borrower_id = $_SESSION['loanData'][0]['borrower_id'];
                 $book_title_id = $_SESSION['loanData'][0]['book_title_id'];
                 $loan_id = $_SESSION['loanData'][0]['id'];
-                echo removeQuotes($dateBorrowed);
                 // update borrower
                 updateBorrower($db, $borrower_id, $first_name, $middle_name, $last_name, $phone);
                 // update loan
                 updateLoan($db, $loan_id, $book_title_id, $borrower_id, $dateBorrowed, $returnDate);
-                //header('Location: index.php?action=update-loan');
+                header('Location: index.php?action=update-loan');
             } 
         } catch (Exception $e) {
             echo $e;
