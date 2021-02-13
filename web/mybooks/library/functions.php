@@ -320,7 +320,7 @@ function updateAuthor($db, $first_name, $middle_name, $last_name, $id) {
 
 // Update User Author by Author ID
 function updateUserAuthor($db, $userID, $authorID, $blacklist, $favorite) {
-   $stmt = $db->prepare('UPDATE user_author SET author_id = :authorID, is_blacklist = :blacklist, is_favorite = :favorite WHERE userID = :userID');
+   $stmt = $db->prepare('UPDATE user_author SET is_blacklist = :blacklist, is_favorite = :favorite WHERE author_id = :authorID AND library_user_id  = :userID');
    $stmt->execute(array(':userID' => $userID, ':authorID' => $authorID, ':blacklist' => $blacklist, ':favorite' => $favorite));
 }
 ?>
