@@ -93,7 +93,7 @@ function getCatalogAuthor($first_name, $last_name, $id) {
  // get reviews
  function getReviews() {
    $db = connectMyBooks();
-   $stmt = $db->query('SELECT r.review, r.rating, r.id, a.first_name, a.middle_name, a.last_name, b.title_of_book, lu.username FROM reviews r INNER JOIN book_title b ON r.book_title_id = b.id INNER JOIN library_user lu ON r.library_user_id = lu.id INNER JOIN author a ON a.id = b.author_id ORDER BY b.title_of_book');
+   $stmt = $db->query('SELECT r.review, r.rating, r.id, a.first_name, a.middle_name, a.last_name, b.title_of_book, lu.username, lu.id FROM reviews r INNER JOIN book_title b ON r.book_title_id = b.id INNER JOIN library_user lu ON r.library_user_id = lu.id INNER JOIN author a ON a.id = b.author_id ORDER BY b.title_of_book');
    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
    return $results;
 }

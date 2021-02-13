@@ -71,16 +71,18 @@ function displayReviews($reviews)
       $reviewList .= '<p>by: ' . $review['first_name'] . ' ' . $review['middle_name'] . ' ' . $review['last_name'] . '<p>';
       $reviewList .= '<p>' . $review['review'] . '<p>';
       $reviewList .= '<p>Review by: ' . $review['username'] . '</p>';
-      $reviewList .= '<div class="pl-2 d-flex flex-column flex-sm-row flex-sm-wrap">
-      <form method="post" action="index.php?action=reviews">
-         <input type="hidden" name="updateID" value="' . $review['id'] . '"/>
-         <input type="submit" class="bg-info btn btn-small mr-1 mb-1" value="Edit"/>
-      </form>
-      <form method="post" action="index.php?action=reviews">
-         <input type="hidden" name="deleteID" value="' . $review['id'] . '"/>
-         <input type="submit" class="bg-danger btn btn-small mr-1 mb-1" value="Delete"/>
-      </form>
-      </div>';
+      if ($review['id'] = $_SESSION['id']) {
+         $reviewList .= '<div class="pl-2 d-flex flex-column flex-sm-row flex-sm-wrap">
+            <form method="post" action="index.php?action=reviews">
+               <input type="hidden" name="updateID" value="' . $review['id'] . '"/>
+               <input type="submit" class="bg-info btn btn-small mr-1 mb-1" value="Edit"/>
+            </form>
+            <form method="post" action="index.php?action=reviews">
+               <input type="hidden" name="deleteID" value="' . $review['id'] . '"/>
+               <input type="submit" class="bg-danger btn btn-small mr-1 mb-1" value="Delete"/>
+            </form>
+            </div>';
+      }
       $reviewList .= '</div>';
    }
    $reviewList .= '</div>';
