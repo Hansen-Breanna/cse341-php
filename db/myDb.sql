@@ -40,7 +40,8 @@ CREATE TABLE user_author
 	is_favorite BOOLEAN,
 	PRIMARY KEY (id),
 	ADD CONSTRAINT FK_UserAuthor_User FOREIGN KEY (library_user_id) REFERENCES library_user(id) ON DELETE CASCADE,
-	ADD CONSTRAINT FK_UserAuthor_Author FOREIGN KEY (author_id) REFERENCES author(id) ON DELETE CASCADE
+	ADD CONSTRAINT FK_UserAuthor_Author FOREIGN KEY (author_id) REFERENCES author(id) ON DELETE CASCADE,
+    ADD CONSTRAINT UC_user_author UNIQUE (library_user_id, author_id)
 );
 INSERT INTO user_author (library_user_id, author_id, is_blacklist, is_favorite) VALUES (1, 1, FALSE, TRUE);
 INSERT INTO user_author (library_user_id, author_id, is_blacklist, is_favorite) VALUES (1, 2, FALSE, TRUE);
