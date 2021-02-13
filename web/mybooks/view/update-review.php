@@ -74,19 +74,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <!-- Author -->
                         <h2 class="author-name mt-2">Author</h2>
                         <p>Name: <?php echo $reviewData[0]['first_name']  . ' ' . $reviewData[0]['middle_name'] . ' ' . $reviewData[0]['last_name'];?> </p>
-                        <table>
+                        <!-- <table>
                             <tbody>
-                                <?php echo $author ?>
+                                <?php //echo $author ?>
                             </tbody>
-                        </table>
+                        </table> -->
                     </div>
                     <!-- Title -->
                     <h2 class="mt-2">Title</h2>
                     <p>Book title: <?php echo $reviewData[0]['title_of_book'];?></p>
-                    <div class="book-title">
+                    <!-- <div class="book-title">
                         <label class="mr-1">Book title:</label>
                         <input type="text" class="rounded" id="title" name="title" value="<?php echo $reviewData[0]['title_of_book'];?>">
-                    </div>
+                    </div> -->
                     <h2 class="mt-2">Review</h2>
                     <p>Add review content and rating of 1-5, with 5 being the best.</p>
                     <div class="d-flex justify-content-start pb-2">
