@@ -99,11 +99,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <?php 
                             for ($i = 1; $i <= 5; $i++) {
                                 if ($reviewData[0]['rating'] == $i) {
-                                    echo '<option value="' . $reviewData[0]['rating'] . ' selected>' . $reviewData[0]['rating'] . '</option>';
+                                    echo "<option value='$i' selected>$i</option>";
                                 } else {
                                     echo "<option value='$i'>$i</option>";
                                 }
-                          }
+                            }
                         ?>
                         </select>
                     </div>
