@@ -339,7 +339,7 @@ function updateReview($db, $id, $review, $rating) {
 
 // Get data for loan by ID
 function getLoanData($db, $id) {
-   $stmt = $db->prepare('SELECT b.id, b.title_of_book, bo.first_name, bo.middle_name, bo.last_name, bo.phone_number, l.borrower_id, l.date_borrowed, l.return_date, l.is_returned FROM loan l INNER JOIN borrower bo ON l.borrower_id = bo.id INNER JOIN book_title b ON b.id = l.book_title_id WHERE l.id = :id');
+   $stmt = $db->prepare('SELECT l.book_title_id, b.title_of_book, bo.first_name, bo.middle_name, bo.last_name, bo.phone_number, l.borrower_id, l.date_borrowed, l.return_date, l.is_returned FROM loan l INNER JOIN borrower bo ON l.borrower_id = bo.id INNER JOIN book_title b ON b.id = l.book_title_id WHERE l.id = :id');
    $stmt->execute(array(':id' => $id));
    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
    return $results;

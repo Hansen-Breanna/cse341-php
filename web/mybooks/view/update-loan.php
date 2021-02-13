@@ -25,7 +25,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 // update borrower
                 updateBorrower($db, $loanData[0]['borrower_id'], $first_name, $middle_name, $last_name, $phone);
                 // update loan
-                updateLoan($db, $loanID, $title, $first_name, $middle_name, $last_name, $phone, $dateBorrowed, $returnDate);
+                //db, $loanID, $book_title_id, $borrower_id, $date_borrowed, $return_date
+                updateLoan($db, $loanID, $loanData[0]['book_title_id'], $loanData[0]['borrower_id'], $dateBorrowed, $returnDate);
                 //header('Location: index.php?action=update-loan');
             } 
         } catch (Exception $e) {
