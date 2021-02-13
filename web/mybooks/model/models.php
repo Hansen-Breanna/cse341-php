@@ -7,11 +7,11 @@ function displayCatalog($catalog) {
        $bookList .= '<tr><td>' . $book['title_of_book'] . '</td>';
        $bookList .= '<td class="pl-2">' . $book['first_name'] . ' ' . $book['middle_name'] . ' ' . $book['last_name'] . '</td>';
        $bookList .= '<td class="pl-2 d-flex flex-column flex-sm-row flex-sm-wrap"> 
-       <form method="post" action="index.php?action=authors">
+       <form method="post" action="index.php?action=catalog">
          <input type="hidden" name="updateID" value="' . $book['id'] . '"/>
          <input type="submit" class="bg-info btn btn-small mr-1 mb-1" value="Edit"/>
        </form>
-       <form method="post" action="index.php?action=authors">
+       <form method="post" action="index.php?action=catalog">
          <input type="hidden" name="deleteID" value="' . $book['id'] . '"/>
          <input type="submit" class="bg-danger btn btn-small mr-1 mb-1" value="Delete"/>
       </form>
