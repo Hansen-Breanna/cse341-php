@@ -87,7 +87,7 @@ function displayAuthors($authors) {
        $authorList .= '<td class="pl-2 d-flex flex-row row-nowrap"> 
        <form method="post" action="index.php?action=authors">
          <input type="hidden" name="update" value="' . $author['id'] . '"/>
-         <input type="submit" class="bg=info" value="U+0270E"/>
+         <input type="submit" class="bg=info" value="&#x270D;"/>
        </form>
        <form method="post" action="index.php?action=authors">
          <input type="hidden" name="delete" value="' . $author['id'] . '"/>
