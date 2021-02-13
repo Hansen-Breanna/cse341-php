@@ -84,14 +84,14 @@ function displayAuthors($authors) {
        } else {
           $authorList .= '<td></td>';
        }
-       $authorList .= '<td class="pl-2 d-flex flex-row row-wrap"> 
+       $authorList .= '<td class="pl-2 d-flex flex-column flex-md-row row-wrap"> 
        <form method="post" action="index.php?action=authors">
          <input type="hidden" name="update" value="' . $author['id'] . '"/>
-         <input type="submit" class="bg-info btn btn-small" value="Edit"/>
+         <input type="submit" class="bg-info btn btn-small mr-1 mb-1" value="Edit"/>
        </form>
        <form method="post" action="index.php?action=authors">
          <input type="hidden" name="delete" value="' . $author['id'] . '"/>
-         <input type="submit" class="bg-danger btn btn-small" value="Delete"/>
+         <input type="submit" class="bg-danger btn btn-small mr-1 mb-1" value="Delete"/>
       </form>
       </tr>';
     }
