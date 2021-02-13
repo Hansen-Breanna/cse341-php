@@ -185,7 +185,7 @@ function addFavBlack()
    return $choice;
 }
 
-function updateAuthor($data)
+function displayAuthorData($data)
 {
    $checkedBlacklist = "";
    $checkedFavorite = "";

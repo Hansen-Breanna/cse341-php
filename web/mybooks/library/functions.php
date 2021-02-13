@@ -309,6 +309,11 @@ function deleteLoan($db, $deleteID) {
 function deleteReview($db, $deleteID) {
    $stmt = $db->prepare('DELETE FROM reviews WHERE id = :deleteID');
    $stmt->execute(array(':deleteID' => $deleteID));
-   echo "cookie";
+}
+
+// Update author name
+function updateAuthor($db, $authorData) {
+   $stmt = $db->prepare('UPDATE author SET first_name = :first_name, middle_name = :middle_name, last_name = :last_name WHERE id = :id');
+   $stmt->execute(array(':id' => $authorData['id']));
 }
 ?>
