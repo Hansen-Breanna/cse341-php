@@ -49,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 }
                 ?>
 
-                <form method="post" action="index.php?action=add-review">
+                <form method="post" action="index.php?action=title-existing-review">
                     <!-- Title -->
                     <h2 class="mt-2">Title</h2>
                     <div class="book-title">
