@@ -22,11 +22,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   else if (isset($_POST['update'])) {
     $updateID = test_input($_POST['update']);
     $_SESSION['authorID'] = $updateID;
+    echo $_SESSION['authorID'];
     $authorData = getAuthor($updateID);
     $author = displayAuthorData($authorData);
     var_dump($authorData);
     //$updateAuthor = updateAuthor($db, $authorData);
-    echo "blue";
   }  
   else if (isset($_SESSION['authorID'])) {
     echo $_SESSION['authorID'];
