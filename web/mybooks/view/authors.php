@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     var_dump($authorData);
     $updateAuthor = updateAuthor($db, $authorData);
     echo "blue";
-    header('Location: index.php?action=authors');
+    //header('Location: index.php?action=authors');
   } else if (!isset($_POST['delete']) && !isset($_POST['update'])) {
     echo "book";
     try {
