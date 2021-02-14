@@ -248,7 +248,7 @@ switch ($action){
     break;
     case 'update-wish':
         $author = selectAuthor($db);
-        $addTitle = selectTitleByUser($db, $_SESSION['id']);
+        $bookTitle = selectTitleByUser($db, $_SESSION['id']);
         include 'view/update-wish.php';
     break;
     default:
