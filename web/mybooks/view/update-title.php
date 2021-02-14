@@ -26,17 +26,52 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         try {
             if (isset($_POST['update_title'])) {
                 $book_title_id = $_SESSION['title_data'][0]['book_title_id'];
-                // $owned = removeQuotes($_SESSION['title_data'][0]['is_owned']);
-                // $own_wish = removeQuotes($_SESSION['title_data'][0]['own_wish_list']);
-                // $read_wish = removeQuotes($_SESSION['title_data'][0]['read_wish_list']);
-                // $blacklist = removeQuotes($_SESSION['title_data'][0]['is_blacklist']);
-                // $favorite = removeQuotes($_SESSION['title_data'][0]['is_favorite']);
                 $author_id = $_SESSION['title_data'][0]['author_id'];
 
+                $favorite = test_input($_POST["favorite"]);
+                if (isset($_POST['favorite'])) {
+                    $favorite = "TRUE";
+                } else {
+                    $favorite = "FALSE";
+                }
+                $new_favorite = removeQuotes($favorite);
+
+                $blacklist = test_input($_POST["blacklist"]);
+                if (isset($_POST['blacklist'])) {
+                    $blacklist = "TRUE";
+                } else {
+                    $blacklist = "FALSE";
+                }
+                $new_blacklist = removeQuotes($blacklist);
+
+                $own = test_input($_POST["own"]);
+                if (isset($_POST['own'])) {
+                    $own = "TRUE";
+                } else {
+                    $own = "FALSE";
+                }
+                $new_own = removeQuotes($own);
+
+                $own_wish = test_input($_POST["own_wish"]);
+                if (isset($_POST['own_wish'])) {
+                    $own_wish = "TRUE";
+                } else {
+                    $own_wish = "FALSE";
+                }
+                $new_own_wish = removeQuotes($own_wish);
+
+                $read_wish = test_input($_POST["read_wish"]);
+                if (isset($_POST['read_wish'])) {
+                    $read_wish = "TRUE";
+                } else {
+                    $read_wish = "FALSE";
+                }
+                $new_read_wish = removeQuotes($read_wish);
+
                 // update user_author
-                updateUserAuthor($db, $user_id, $author_id, $blacklist, $favorite);
+                updateUserAuthor($db, $user_id, $author_id, $new_blacklist, $new_favorite);
                 // update user_book
-                updateUserBook($db, $user_id, $book_title_id, $own, $own_wish, $read_wish);
+                updateUserBook($db, $user_id, $book_title_id, $new_own, $new_own_wish, $new_read_wish);
 
                 unset($_SESSION['title_data']);
                 header('Location: index.php?action=update-title');
