@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $author_id = $titleData[0]['author_id'];
         //$displayTitle = displayTitleData($loanData); 
         $authorData = getAuthor($author_id);
-        $author = displayAuthorData($authorData);
+        $choice = displayFavBlackData($authorData);
     } else {
         // try {
         //     if (isset($_POST['update'])) {
@@ -146,7 +146,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <form method="post" action="index.php?action=add-title">
                     <div>
                         <!-- Author -->
-                        <h2 class="author-name mt-2 d-inline">Author</h2><span>
+                        <h2 class="author-name mt-2 d-inline">Author</h2><span>:&nbsp;
                             <?php 
                                 echo $titleData[0]['first_name'] . ' ';
                                 echo $titleData[0]['middle_name'] . ' ';
