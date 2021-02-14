@@ -114,8 +114,8 @@ switch ($action){
     case 'wish':
         $readWishes = getReadWishes($_SESSION['id']);
         $ownWishes = getOwnWishes($_SESSION['id']);
-        $readTable = displayWishList($readWishes);
-        $ownTable = displayWishList($ownWishes);
+        $readTable = displayCatalog($readWishes);
+        $ownTable = displayCatalog($ownWishes);
         $author = selectAuthor($db);
         include 'view/wish-list.php';
     break;
