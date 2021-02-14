@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 // update loan
                 updateLoan($db, $loan_id, $book_title_id, $borrower_id, $dateBorrowed, $returnDate);
                 unset($_SESSION['loanData']);
-                header('Location: index.php?action=update-loan');
+                header('Location: index.php?action=loans');
             } 
         } catch (Exception $e) {
             echo $e;
@@ -70,7 +70,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
             ?>
             <!-- Loan Form -->
-            <form method="post" action="index.php?action=loans">
+            <form method="post" action="index.php?action=update-loan">
                 <div>
                     <!-- Borrower -->
                     <h2 class="mt-2">Borrower</h2>
