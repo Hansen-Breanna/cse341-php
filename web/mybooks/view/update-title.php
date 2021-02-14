@@ -161,18 +161,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </div>
                     <!-- Title -->
                     <div class="book-title">
-                        <h2 class="mt-2">Title</h2>
-                        <?php
-                        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                            echo $title_message;
-                        }
-                        ?>
+                        <h2 class="mt-2 d-inline">Title</h2><span>:&nbsp;<?php echo $$titleData[0]['title_of_book']; ?></span>
                         <table>
                             <tbody>
-                                <tr>
-                                    <td><label>Book title:</label></td>
-                                    <td><input type="text" class="rounded" id="title" name="title"></td>
-                                </tr>
                                 <tr>
                                     <td>
                                         <span class="d-flex align-items-center"><input type="checkbox" class="rounded mr-1" id="own" name="own" value="TRUE">Currently Own</span>
