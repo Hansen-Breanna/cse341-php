@@ -20,8 +20,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             insertAuthor($db, $first_name, $middle_name, $last_name);
             $newAuthorID = $db->lastInsertId('author_id_seq');
         }
+       
         $favorite = test_input($_POST["favorite"]);
-
         if (isset($_POST['favorite'])) {
             $favorite = "TRUE";
         } else {
@@ -38,6 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $newBlacklist = removeQuotes($blacklist);
 
         $title = test_input($_POST["title"]);
+        
         $own = test_input($_POST["own"]);
         if (isset($_POST['own'])) {
             $own = "TRUE";
