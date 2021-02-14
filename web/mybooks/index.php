@@ -246,6 +246,10 @@ switch ($action){
     case 'update-loan':
         include 'view/update-loan.php';
     break;
+    case 'update-wish':
+        include 'view/wish-list.php';
+    break;
     default:
         include 'view/home.php';
+    break;
 }
