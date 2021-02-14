@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $title_choices = displayTitleChoices($title_data);
             } catch (Exception $e) {
                 echo $e;
-            }
+            }}
     //     } else {
     //         try {
     //             if (isset($_POST['update'])) {
@@ -71,7 +71,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <!-- Head -->
 <?php include 'common/head.php'; ?>
 
-<title>Update Title - My Books</title>
+<title>Update Wish - My Books</title>
 
 <!-- Nav -->
 <?php include 'common/nav.php'; ?>
@@ -98,7 +98,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <h2 class="author-name mt-2">Author</h2>
                         <table>
                             <tbody>
-                                <?php echo $author ?>
+                                <?php echo $author; ?>
                             </tbody>
                         </table>
                     </div>
