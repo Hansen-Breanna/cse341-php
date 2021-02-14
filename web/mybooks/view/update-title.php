@@ -2,8 +2,9 @@
 // start session
 session_start();
 
-$first_name = $middle_name = $last_name =  $title = $authorID = $title_id = "";
+$first_name = $middle_name = $last_name =  $title = $authorID = $title_id = $update_title = "";
 $favorite = $blacklist = $own = $own_wish = $read_wish = "";
+$user_id = $_SESSION['id'];
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $authorID = test_input($_POST['authorID']);
@@ -11,30 +12,38 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (isset($_POST['title_id'])) {
         $book_title_id = test_input($_POST['title_id']);
-        $title_data = getUserBookData($db, $_SESSION['id'], $book_title_id);  
+        // get all book data
+        $title_data = getUserBookData($db, $user_id, $book_title_id);  
         var_dump($title_data);
-        $_SESSION['titleData'] = $title_data;
-        $author_id = $title_data[0]['author_id'];
-        //$displayTitle = displayTitleData($loanData); 
+        $_SESSION['title_data'] = $title_data;
+        // author
+        $author_id = $title_data[0]['author_id']; 
         $author_data = getAuthor($author_id);
+        // own, own-wish, read-wish
         $choice = displayFavBlackData($author_data);
         $title_choices = displayTitleChoices($title_data);
     } else {
-        // try {
-        //     if (isset($_POST['update'])) {
-        //         $borrower_id = $_SESSION['loanData'][0]['borrower_id'];
-        //         $book_title_id = $_SESSION['loanData'][0]['book_title_id'];
-        //         $loan_id = $_SESSION['loanData'][0]['id'];
-        //         // update borrower
-        //         updateBorrower($db, $borrower_id, $first_name, $middle_name, $last_name, $phone);
-        //         // update loan
-        //         updateLoan($db, $loan_id, $book_title_id, $borrower_id, $dateBorrowed, $returnDate);
-        //         header('Location: index.php?action=update-loan');
-        //     } 
-        // } catch (Exception $e) {
-        //     echo $e;
-        //     $message = "<p class='px-4 py-3 bg-danger rounded'>Loan was not updated. Please try again.</p>";
-        // }
+        try {
+            if (isset($_POST['update_title'])) {
+                $book_title_id = $_SESSION['title_data'][0]['book_title_id'];
+                $own = $_SESSION['title_data'][0]['is_owned'];
+                $own_wish = $_SESSION['title_data'][0]['own_wish_list'];
+                $read_wish = $_SESSION['title_data'][0]['read_wish_list'];
+                $blacklist = $_SESSION['title_data'][0]['is_blacklist'];
+                $favorite = $_SESSION['title_data'][0]['is_favorite'];
+                $author_id = $_SESSION['title_data'][0]['author_id'];
+                // update user_author
+                updateUserAuthor($db, $user_id, $author_id, $blacklist, $favorite);
+                // update user_book
+                updateUserBook($db, $user_id, $book_title_id, $own, $own_wish, $read_wish);
+
+                unset($_SESSION['title_data']);
+                header('Location: index.php?action=update-title');
+            } 
+        } catch (Exception $e) {
+            echo $e;
+            $message = "<p class='px-4 py-3 bg-danger rounded'>Loan was not updated. Please try again.</p>";
+        }
     }
 
 
@@ -147,13 +156,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <form method="post" action="index.php?action=update-title">
                     <div>
                         <!-- Author -->
-                        <h2 class="author-name mt-2 d-inline">Author</h2><span>:&nbsp;
+                        <h2 class="author-name mt-2 d-inline">Author</h2>
+                        <p>
                             <?php 
                                 echo $title_data[0]['first_name'] . ' ';
                                 echo $title_data[0]['middle_name'] . ' ';
                                 echo $title_data[0]['last_name'];
                                 ?>
-                            </span>
+                        </p>
                         <table>
                             <tbody>
                                 <?php echo $choice; ?>
@@ -162,7 +172,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </div>
                     <!-- Title -->
                     <div class="book-title">
-                        <h2 class="mt-2 d-inline">Title</h2><span>:&nbsp;<?php echo $title_data[0]['title_of_book']; ?></span>
+                        <h2 class="mt-2 d-inline">Title</h2>
+                        <p><?php echo $title_data[0]['title_of_book']; ?></p>
                         <table>
                             <tbody>
                                <?php echo $title_choices; ?>
@@ -173,7 +184,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <input type="submit" class="rounded btn btm-lg bg-orange">
                     </div>
                 </form>
-
             </div>
         </div>
     </div>

@@ -365,4 +365,9 @@ function getUserBookData($db, $library_user_id, $book_title_id) {
    return $results;
 }
 
+// update user_book by book title
+function updateUserBook($db, $user_id, $book_title_id, $own, $own_wish, $read_wish) {
+$stmt = $db->prepare('UPDATE user_book SET is_owned = :is_owned, own_wish_list = :own_wish_list, read_wish_list = :read_wish_list WHERE library_user_id = :id AND book_title_id = :book_title_id');
+$stmt->execute(array(':id' => $user_id, ':own_wish_list' => $own_wish, ':is_owned' => $own, ':read_wish_list' => $read_wish, ':book_title_id' => $book_title_id));
+}
 ?>

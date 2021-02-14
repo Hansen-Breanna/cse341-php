@@ -369,7 +369,7 @@ function displayTitleChoices($data) {
          </td>
       </tr>
       <tr>
-         <td><input type="hidden" class="rounded mb-1" name="update_author" value="' . $data[0]['book_title_id'] . '" id="update_author"><br></td>
+         <td><input type="hidden" class="rounded mb-1" name="update_title" value="' . $data[0]['book_title_id'] . '" id="update_author"><br></td>
       </tr>';
    return $title;
 }
