@@ -371,4 +371,5 @@ $stmt = $db->prepare('UPDATE user_book SET is_owned = :is_owned, own_wish_list =
 $stmt->execute(array(':id' => $user_id, ':own_wish_list' => $own_wish, ':is_owned' => $own, ':read_wish_list' => $read_wish, ':book_title_id' => $book_title_id));
 }
 
+
 ?>

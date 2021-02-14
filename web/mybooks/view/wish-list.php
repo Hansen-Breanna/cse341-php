@@ -2,29 +2,62 @@
 // start session
 session_start();
 
-$deleteID = $updateID = "";
+$update_title_id = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-  // if (isset($_POST['deleteID'])) {
-  //   try {
-  //     $deleteID = test_input($_POST['deleteID']);
-  //     deleteTitle($db, $_SESSION['id'], $deleteID);
-  //     header('Location: index.php?action=delete-title');
-  //   } catch (Exception $e) {
-  //     echo $e;
-  //     $message = "<p class='px-4 py-3 bg-danger rounded'>Delete failed.</p>";
-  //   }
-  // } else if (isset($_POST['updateID'])) {
-  //   // $updateID = test_input($_POST['update']);
-  //   // $authorData = getAuthor($updateID);
-  //   // $author = updateAuthor($authorData);
-  // } else {
-  //   try {
-  //   } catch (Exception $e) {
-  //     echo $e;
-  //   }
-  // }
+  if (isset($_POST['update_title_id'])) {
+      $book_title_id = test_input($_POST['update_title_id']);
+      // get all book data
+      $title_data = getUserBookData($db, $user_id, $book_title_id);  
+      var_dump($title_data);
+      $_SESSION['title_data'] = $title_data;
+      // author
+      $author_id = $title_data[0]['author_id']; 
+      $author_data = getAuthor($author_id);
+      // own, own-wish, read-wish
+      $title_choices = displayTitleChoices($title_data);
+  } else {
+      try {
+          if (isset($_POST['update_title'])) {
+              $book_title_id = $_SESSION['title_data'][0]['book_title_id'];
+              $author_id = $_SESSION['title_data'][0]['author_id'];
+
+              $own = test_input($_POST["own"]);
+              if (isset($_POST['own'])) {
+                  $own = "TRUE";
+              } else {
+                  $own = "FALSE";
+              }
+              $new_own = removeQuotes($own);
+
+              $own_wish = test_input($_POST["own_wish"]);
+              if (isset($_POST['own_wish'])) {
+                  $own_wish = "TRUE";
+              } else {
+                  $own_wish = "FALSE";
+              }
+              $new_own_wish = removeQuotes($own_wish);
+
+              $read_wish = test_input($_POST["read_wish"]);
+              if (isset($_POST['read_wish'])) {
+                  $read_wish = "TRUE";
+              } else {
+                  $read_wish = "FALSE";
+              }
+              $new_read_wish = removeQuotes($read_wish);
+              
+              // update user_book
+              updateUserBook($db, $user_id, $book_title_id, $new_own, $new_own_wish, $new_read_wish);
+
+              unset($_SESSION['title_data']);
+              header('Location: index.php?action=catalog');
+          } 
+      } catch (Exception $e) {
+          echo $e;
+          $message = "<p class='px-4 py-3 bg-danger rounded'>Loan was not updated. Please try again.</p>";
+      }
+  }
 }
 
 ?>
