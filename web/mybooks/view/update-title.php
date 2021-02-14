@@ -26,12 +26,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         try {
             if (isset($_POST['update_title'])) {
                 $book_title_id = $_SESSION['title_data'][0]['book_title_id'];
-                $own = $_SESSION['title_data'][0]['is_owned'];
-                $own_wish = $_SESSION['title_data'][0]['own_wish_list'];
-                $read_wish = $_SESSION['title_data'][0]['read_wish_list'];
-                $blacklist = $_SESSION['title_data'][0]['is_blacklist'];
-                $favorite = $_SESSION['title_data'][0]['is_favorite'];
-                $author_id = $_SESSION['title_data'][0]['author_id'];
+                $own = removeQuotes($_SESSION['title_data'][0]['is_owned']);
+                $own_wish = removeQuotes($_SESSION['title_data'][0]['own_wish_list']);
+                $read_wish = removeQuotes($_SESSION['title_data'][0]['read_wish_list']);
+                $blacklist = removeQuotes($_SESSION['title_data'][0]['is_blacklist']);
+                $favorite = removeQuotes($_SESSION['title_data'][0]['is_favorite']);
+                $author_id = removeQuotes($_SESSION['title_data'][0]['author_id'];
+
                 // update user_author
                 updateUserAuthor($db, $user_id, $author_id, $blacklist, $favorite);
                 // update user_book
