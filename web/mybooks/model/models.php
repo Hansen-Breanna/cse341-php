@@ -27,6 +27,7 @@ function displayWishList($catalog)
 {
    $bookList = '<tbody>';
    foreach ($catalog as $book) {
+      var_dump($book);
       $bookList .= '<tr><td>' . $book['title_of_book'] . '</td>';
       $bookList .= '<td class="pl-2">' . $book['first_name'] . ' ' . $book['middle_name'] . ' ' . $book['last_name'] . '</td>';
       $bookList .= '<td class="pl-2 d-flex flex-column flex-sm-row flex-sm-wrap"> 
