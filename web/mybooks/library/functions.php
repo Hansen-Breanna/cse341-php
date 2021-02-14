@@ -356,4 +356,11 @@ function updateLoan($db, $loanID, $book_title_id, $borrower_id, $date_borrowed, 
    $stmt = $db->prepare('UPDATE loan SET book_title_id = :book_title_id, borrower_id = :borrower_id, date_borrowed = :date_borrowed, return_date = :return_date WHERE id = :id');
    $stmt->execute(array(':id' => $loanID, ':book_title_id' => $book_title_id, ':borrower_id' => $borrower_id, ':date_borrowed' => $date_borrowed, ':return_date' => $return_date));
 }
+
+// Get book_title data by user
+function getUserBookData($db, $library_user_id, $book_title_id) {
+   $stmt = $db->prepare('SELECT ub.book_title_id, ub.is_owned, ub.own_wish_list, ub.read_wish_list, b.author_id, b.title_of_book, ua.is_blacklist, ua.is_favorite, a.first_name, a.middle_name, a.last_name FROM user_book ub INNER JOIN book_title b ON ub.book_title_id = b.id INNER JOIN user_author ua ON b.author_id = ua.author_id INNER JOIN author a ON ua.author_id = a.id WHERE book_title_id = :book_title_id AND ub.library_user_id = :library_user_id');
+   $stmt->execute(array(':book_title_id' => $book_title_id, ':library_user_id' => $library_user_id));
+}
+
 ?>

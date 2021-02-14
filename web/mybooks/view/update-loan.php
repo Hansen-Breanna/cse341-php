@@ -30,6 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 updateBorrower($db, $borrower_id, $first_name, $middle_name, $last_name, $phone);
                 // update loan
                 updateLoan($db, $loan_id, $book_title_id, $borrower_id, $dateBorrowed, $returnDate);
+                unset($_SESSION['loanData']);
                 header('Location: index.php?action=update-loan');
             } 
         } catch (Exception $e) {

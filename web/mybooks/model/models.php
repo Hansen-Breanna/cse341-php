@@ -9,7 +9,7 @@ function displayCatalog($catalog)
       $bookList .= '<td class="pl-2">' . $book['first_name'] . ' ' . $book['middle_name'] . ' ' . $book['last_name'] . '</td>';
       $bookList .= '<td class="pl-2 d-flex flex-column flex-sm-row flex-sm-wrap"> 
        <form method="post" action="index.php?action=update-title">
-         <input type="hidden" name="updateID" value="' . $book['id'] . '"/>
+         <input type="hidden" name="title_id" value="' . $book['id'] . '"/>
          <input type="submit" class="bg-info btn btn-small mr-1 mb-1" value="Edit"/>
        </form>
        <form method="post" action="index.php?action=catalog">
