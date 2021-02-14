@@ -182,13 +182,6 @@ switch ($action){
     break;
     // Add wish list item with existing title
     case 'update-title':
-        try {
-        $author = selectAuthor($db);
-        $bookTitle = selectTitle($db);
-        $message = "<p class='px-4 py-3 bg-danger rounded'>Title added. Please add another or return to the catalog.</p>";
-        } catch (Exception $e) {
-            echo $e;
-        }
         include 'view/update-title.php';
     break;
     case 'add-review':

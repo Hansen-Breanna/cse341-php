@@ -125,7 +125,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <!-- Header -->
 <?php include '../common/header.php'; ?>
 
-<h1 class="offset-1 col-10 offset-md-0 col-md-12">Add Title</h1>
+<h1 class="offset-1 col-10 offset-md-0 col-md-12">Update Title</h1>
 </div>
 </div>
 </header>
