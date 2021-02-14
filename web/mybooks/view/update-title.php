@@ -14,12 +14,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $titleData = getUserBookData($db, $_SESSION['id'], $book_title_id);  
         var_dump($titleData);
         $_SESSION['titleData'] = $titleData;
-        echo $titleData[0]['author_id'];
+        $author_id = $titleData[0]['author_id'];
         //$displayTitle = displayTitleData($loanData); 
-        $authorData = getAuthor($updateID);
+        $authorData = getAuthor($author_id);
         $author = displayAuthorData($authorData);
-
-    $author = displayAuthorData($authorData);
     } else {
         // try {
         //     if (isset($_POST['update'])) {
