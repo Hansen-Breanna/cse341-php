@@ -9,8 +9,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (isset($_POST['update_title_id'])) {
             try {
                 $book_title_id = test_input($_POST['update_title_id']);
+                echo $book_title_id;
                 // get all book data
-                $title_data = getUserBookData($db, $_SESSION['id'], $book_title_id);  
+                //$title_data = getUserBookData($db, $_SESSION['id'], $book_title_id);  
                 var_dump($title_data);
                 // $_SESSION['title_data'] = $title_data;
                 // // author
