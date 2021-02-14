@@ -246,11 +246,6 @@ switch ($action){
     case 'update-loan':
         include 'view/update-loan.php';
     break;
-    case 'update-wish':
-        $author = selectAuthor($db);
-        $bookTitle = selectTitleByUser($db, $_SESSION['id']);
-        include 'view/update-wish.php';
-    break;
     default:
         include 'view/home.php';
     break;
