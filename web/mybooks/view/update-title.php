@@ -144,7 +144,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 }
                 ?>
 
-                <form method="post" action="index.php?action=add-title">
+                <form method="post" action="index.php?action=update-title">
                     <div>
                         <!-- Author -->
                         <h2 class="author-name mt-2 d-inline">Author</h2><span>:&nbsp;
