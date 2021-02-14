@@ -146,10 +146,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <form method="post" action="index.php?action=add-title">
                     <div>
                         <!-- Author -->
-                        <h2 class="author-name mt-2">Author</h2>
+                        <h2 class="author-name mt-2 d-inline">Author</h2><span>
+                            <?php 
+                                echo $titleData[0]['first_name'] . ' ';
+                                echo $titleData[0]['middle_name'] . ' ';
+                                echo $titleData[0]['last_name'];
+                                ?>
+                            </span>
                         <table>
                             <tbody>
-                                <?php echo $author . $choice; ?>
+                                <?php echo $choice; ?>
                             </tbody>
                         </table>
                     </div>
