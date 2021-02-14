@@ -10,6 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     if (isset($_POST['title_id'])) {
+        echo "hello";
         $book_title_id = test_input($_POST['title_id']);
         $titleData = getUserBookData($db, $_SESSION['id'], $book_title_id);  
         $_SESSION['titleData'] = $titleData;
