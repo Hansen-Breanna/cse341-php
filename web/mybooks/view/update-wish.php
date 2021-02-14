@@ -9,16 +9,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (isset($_POST['update_title_id'])) {
             try {
                 $book_title_id = test_input($_POST['update_title_id']);
-                echo $book_title_id;
                 // get all book data
-                //$title_data = getUserBookData($db, $_SESSION['id'], $book_title_id);  
-                // $_SESSION['title_data'] = $title_data;
-                // // author
-                // $author_id = $title_data[0]['author_id']; 
-                // $author_data = getAuthor($author_id);
-                // // own, own-wish, read-wish
-                // $choice = displayFavBlackData($author_data);
-                // $title_choices = displayTitleChoices($title_data);
+                $title_data = getUserBookData($db, $_SESSION['id'], $book_title_id);  
+                $_SESSION['title_data'] = $title_data;
+                // author
+                $author_id = $title_data[0]['author_id']; 
+                $author_data = getAuthor($author_id);
+                // own, own-wish, read-wish
+                $choice = displayFavBlackData($author_data);
+                $title_choices = displayTitleChoices($title_data);
             } catch (Exception $e) {
                 echo $e;
             }
