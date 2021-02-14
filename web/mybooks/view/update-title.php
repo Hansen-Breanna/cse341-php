@@ -11,8 +11,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (isset($_POST['title_id'])) {
         $book_title_id = test_input($_POST['title_id']);
-        echo $book_title_id;
         $titleData = getUserBookData($db, $_SESSION['id'], $book_title_id);  
+        var_dump($titleData);
         $_SESSION['titleData'] = $titleData;
         echo $titleData[0]['author_id'];
         //$displayTitle = displayTitleData($loanData); 
