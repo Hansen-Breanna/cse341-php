@@ -115,7 +115,7 @@ switch ($action){
         $readWishes = getReadWishes($_SESSION['id']);
         $ownWishes = getOwnWishes($_SESSION['id']);
         $readTable = displayCatalog($readWishes);
-        $ownTable = displayCatalog($ownWishes);
+        $ownTable = displayOwnWishList($ownWishes);
         $author = selectAuthor($db);
         include 'view/wish-list.php';
     break;

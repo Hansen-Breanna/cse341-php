@@ -74,7 +74,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 updateUserBook($db, $user_id, $book_title_id, $new_own, $new_own_wish, $new_read_wish);
 
                 unset($_SESSION['title_data']);
-                header('Location: index.php?action=update-title');
+                header('Location: index.php?action=catalog');
             } 
         } catch (Exception $e) {
             echo $e;
