@@ -346,3 +346,30 @@ function displayFavBlackData($data) {
       </tr>';
    return $author;
 }
+
+function displayTitleChoices($data) {
+   $checked_own = "";
+   $checked_own_wish = "";
+   $checked_read_wish = "";
+   if ($data[0]['is_owned'] == '1') {
+      $checked_own = 'checked';
+   }
+   if ($data[0]['own_wish_list'] == '1') {
+      $checked_own_wish = 'checked';
+   }
+   if ($data[0]['read_wish_list'] == '1') {
+      $checked_read_wish = 'checked';
+   }
+   $title = '
+      <tr>
+         <td>
+            <span class="d-flex align-items-center"><input type="checkbox" class="rounded mr-1" id="own" name="own" value="TRUE" ' . $checked_own . '>Currently Own</span>
+            <span class="d-flex align-items-center"><input type="checkbox" class="rounded mr-1" id="ownWish" name="own_wish" value="TRUE" ' . $checked_own_wish . '>Own Wish List</span>
+            <span class="d-flex align-items-center"><input type="checkbox" class="rounded mr-1" id="readWish" name="read_wish" value="TRUE" ' . $checked_read_wish . '>Read Wish List</span>
+         </td>
+      </tr>
+      <tr>
+         <td><input type="hidden" class="rounded mb-1" name="update_author" value="' . $data[0]['book_title_id'] . '" id="update_author"><br></td>
+      </tr>';
+   return $title;
+}

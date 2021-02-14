@@ -11,13 +11,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (isset($_POST['title_id'])) {
         $book_title_id = test_input($_POST['title_id']);
-        $titleData = getUserBookData($db, $_SESSION['id'], $book_title_id);  
-        var_dump($titleData);
-        $_SESSION['titleData'] = $titleData;
-        $author_id = $titleData[0]['author_id'];
+        $title_data = getUserBookData($db, $_SESSION['id'], $book_title_id);  
+        var_dump($title_data);
+        $_SESSION['titleData'] = $title_data;
+        $author_id = $title_data[0]['author_id'];
         //$displayTitle = displayTitleData($loanData); 
-        $authorData = getAuthor($author_id);
-        $choice = displayFavBlackData($authorData);
+        $author_data = getAuthor($author_id);
+        $choice = displayFavBlackData($author_data);
+        $title_choices = displayTitleChoices($title_data);
     } else {
         // try {
         //     if (isset($_POST['update'])) {
@@ -148,9 +149,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <!-- Author -->
                         <h2 class="author-name mt-2 d-inline">Author</h2><span>:&nbsp;
                             <?php 
-                                echo $titleData[0]['first_name'] . ' ';
-                                echo $titleData[0]['middle_name'] . ' ';
-                                echo $titleData[0]['last_name'];
+                                echo $title_data[0]['first_name'] . ' ';
+                                echo $title_data[0]['middle_name'] . ' ';
+                                echo $title_data[0]['last_name'];
                                 ?>
                             </span>
                         <table>
@@ -161,16 +162,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </div>
                     <!-- Title -->
                     <div class="book-title">
-                        <h2 class="mt-2 d-inline">Title</h2><span>:&nbsp;<?php echo $titleData[0]['title_of_book']; ?></span>
+                        <h2 class="mt-2 d-inline">Title</h2><span>:&nbsp;<?php echo $title_data[0]['title_of_book']; ?></span>
                         <table>
                             <tbody>
-                                <tr>
-                                    <td>
-                                        <span class="d-flex align-items-center"><input type="checkbox" class="rounded mr-1" id="own" name="own" value="TRUE">Currently Own</span>
-                                        <span class="d-flex align-items-center"><input type="checkbox" class="rounded mr-1" id="ownWish" name="own_wish" value="TRUE">Own Wish List</span>
-                                        <span class="d-flex align-items-center"><input type="checkbox" class="rounded mr-1" id="readWish" name="read_wish" value="TRUE">Read Wish List</span>
-                                    </td>
-                                </tr>
+                               <?php echo $title_choices; ?>
                             </tbody>
                         </table>
                     </div>
