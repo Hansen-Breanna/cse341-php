@@ -12,7 +12,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 echo $book_title_id;
                 // get all book data
                 //$title_data = getUserBookData($db, $_SESSION['id'], $book_title_id);  
-                var_dump($title_data);
                 // $_SESSION['title_data'] = $title_data;
                 // // author
                 // $author_id = $title_data[0]['author_id']; 
