@@ -26,11 +26,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         try {
             if (isset($_POST['update_title'])) {
                 $book_title_id = $_SESSION['title_data'][0]['book_title_id'];
-                $owned = removeQuotes($_SESSION['title_data'][0]['is_owned']);
-                $own_wish = removeQuotes($_SESSION['title_data'][0]['own_wish_list']);
-                $read_wish = removeQuotes($_SESSION['title_data'][0]['read_wish_list']);
-                $blacklist = removeQuotes($_SESSION['title_data'][0]['is_blacklist']);
-                $favorite = removeQuotes($_SESSION['title_data'][0]['is_favorite']);
+                // $owned = removeQuotes($_SESSION['title_data'][0]['is_owned']);
+                // $own_wish = removeQuotes($_SESSION['title_data'][0]['own_wish_list']);
+                // $read_wish = removeQuotes($_SESSION['title_data'][0]['read_wish_list']);
+                // $blacklist = removeQuotes($_SESSION['title_data'][0]['is_blacklist']);
+                // $favorite = removeQuotes($_SESSION['title_data'][0]['is_favorite']);
                 $author_id = $_SESSION['title_data'][0]['author_id'];
 
                 // update user_author
@@ -46,80 +46,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $message = "<p class='px-4 py-3 bg-danger rounded'>Loan was not updated. Please try again.</p>";
         }
     }
-
-
-
-
-    // try {
-    //     if (isset($_POST['authorID'])) {
-    //         $newAuthorID = $authorID;
-    //     } else {
-    //         $first_name = test_input($_POST["first_name"]);
-    //         $middle_name = test_input($_POST["middle_name"]);
-    //         $last_name = test_input($_POST["last_name"]);
-
-    //         //author
-    //         insertAuthor($db, $first_name, $middle_name, $last_name);
-    //         $newAuthorID = $db->lastInsertId('author_id_seq');
-    //     }
-    //     $favorite = test_input($_POST["favorite"]);
-
-    //     if (isset($_POST['favorite'])) {
-    //         $favorite = "TRUE";
-    //     } else {
-    //         $favorite = "FALSE";
-    //     }
-    //     $newFavorite = removeQuotes($favorite);
-
-    //     $blacklist = test_input($_POST["blacklist"]);
-    //     if (isset($_POST['blacklist'])) {
-    //         $blacklist = "TRUE";
-    //     } else {
-    //         $blacklist = "FALSE";
-    //     }
-    //     $newBlacklist = removeQuotes($blacklist);
-
-    //     $title = test_input($_POST["title"]);
-    //     $own = test_input($_POST["own"]);
-    //     if (isset($_POST['own'])) {
-    //         $own = "TRUE";
-    //     } else {
-    //         $own = "FALSE";
-    //     }
-    //     $newOwn = removeQuotes($own);
-
-    //     $own_wish = test_input($_POST["own_wish"]);
-    //     if (isset($_POST['own_wish'])) {
-    //         $own_wish = "TRUE";
-    //     } else {
-    //         $own_wish = "FALSE";
-    //     }
-    //     $newOwn_wish = removeQuotes($own_wish);
-
-    //     $read_wish = test_input($_POST["read_wish"]);
-    //     if (isset($_POST['read_wish'])) {
-    //         $read_wish = "TRUE";
-    //     } else {
-    //         $read_wish = "FALSE";
-    //     }
-    //     $newRead_wish = removeQuotes($read_wish);
-
-    //     $_SESSION['title'] = $title;
-
-    //     if (!isset($_POST['authorID'])) {
-    //         //user_author
-    //         insertUserAuthor($db, $_SESSION['id'], $newAuthorID, $newBlacklist, $newFavorite);
-    //     }
-
-    //     //book
-    //     insertTitle($db, $newAuthorID, $title);
-    //     $newTitleID = $db->lastInsertId('book_title_id_seq');
-
-    //     // //user-book
-    //     insertUserBook($db, $_SESSION['id'], $newTitleID, $newOwn, $newOwn_wish, $newRead_wish);
-    // } catch (Exception $e) {
-    //     $message = "<p class='px-4 py-3 bg-danger rounded'>Title was not added. Please check for existing author and try again.</p>";
-    // }
 }
 
 ?>
