@@ -114,8 +114,8 @@ switch ($action){
     case 'wish':
         $readWishes = getReadWishes($_SESSION['id']);
         $ownWishes = getOwnWishes($_SESSION['id']);
-        $readTable = displayCatalog($readWishes);
-        $ownTable = displayOwnWishList($ownWishes);
+        $readTable = displayWishList($readWishes);
+        $ownTable = displayWishList($ownWishes);
         $author = selectAuthor($db);
         include 'view/wish-list.php';
     break;
@@ -247,6 +247,8 @@ switch ($action){
         include 'view/update-loan.php';
     break;
     case 'update-wish':
+        $author = selectAuthor($db);
+        $addTitle = selectTitleByUser($db, $_SESSION['id']);
         include 'view/update-wish.php';
     break;
     default:

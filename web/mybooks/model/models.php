@@ -22,9 +22,8 @@ function displayCatalog($catalog)
    return $bookList;
 }
 
-// Display own wish list
-// Display book catalog
-function displayOwnWishList($catalog)
+// Display wish list
+function displayWishList($catalog)
 {
    $bookList = '<tbody>';
    foreach ($catalog as $book) {
