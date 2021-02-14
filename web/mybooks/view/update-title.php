@@ -14,7 +14,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $book_title_id = test_input($_POST['title_id']);
         // get all book data
         $title_data = getUserBookData($db, $user_id, $book_title_id);  
-        var_dump($title_data);
         $_SESSION['title_data'] = $title_data;
         // author
         $author_id = $title_data[0]['author_id']; 

@@ -34,12 +34,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if (!isset($_SESSION['cart'][$key])) {
                 $count = 1;
                 $_SESSION['cart'][$key] = [array($productName, $imageUrl, $price, $count)];
-                //var_dump($_SESSION['cart'][$key]);
             } else {
                 $count = $_SESSION['cart'][$key][0][3]++;
                 ++$count;
                 $_SESSION['cart'][$key] = [array($productName, $imageUrl, $price, $count)];
-                //var_dump($_SESSION['cart'][$key]);
             }
         }
     }
