@@ -161,7 +161,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </div>
                     <!-- Title -->
                     <div class="book-title">
-                        <h2 class="mt-2 d-inline">Title</h2><span>:&nbsp;<?php echo $$titleData[0]['title_of_book']; ?></span>
+                        <h2 class="mt-2 d-inline">Title</h2><span>:&nbsp;<?php echo $titleData[0]['title_of_book']; ?></span>
                         <table>
                             <tbody>
                                 <tr>
