@@ -12,17 +12,19 @@ require_once '../mybooks/library/connections.php';
      $pass = test_input($_POST['password']);
  
      try {
+        $hash = "";
         $data = check_id($db, $user, $pass);
-        foreach ($data as $user) {
-            $verify = password_verify($pass, $hash);
-            echo $verify;
-            if ($user['username'] == $user && $user['user_password'] == $verify) {
-                $hash = $user['user_password'];
-                $username = $user['username'];
+        foreach ($data as $user_data) {
+            $verify = password_verify($pass, $user_data['user_password']);
+            echo $user_data['username'];
+            if ($user_data['username'] == $user && $user_data['user_password'] == $pass) {
+                $hash = $user_data['user_password'];
+                $username = $user_data['username'];
                 echo $hash;
                 echo $username;
             }
         }
+        $verify = password_verify($pass, $hash);
         $_SESSION['user'] = $username;
         //header('Location: welcome.php');
      } catch (Exception $e) {
