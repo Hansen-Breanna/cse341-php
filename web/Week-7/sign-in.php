@@ -33,7 +33,7 @@ require_once '../mybooks/library/connections.php';
 
  function check_id($db, $user, $pass) 
  {
-    $stmt = $db->prepare('SELECT username, user_password FROM week7_user WHERE username = :user AND user_password = :pass');
+    $stmt = $db->prepare('SELECT username, user_password FROM week7_user WHERE username = :user');
     $stmt->bindValue(':user', $user, PDO::PARAM_STR);
     $stmt->bindValue(':pass', $pass, PDO::PARAM_STR);
     $stmt->execute();
