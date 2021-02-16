@@ -183,3 +183,5 @@ AND bo.first_name = 'Kayli' AND bo.last_name = 'Hansen';
    
 SELECT r.review, r.rating, a.first_name, a.middle_name, a.last_name, b.title_of_book, lu.username FROM reviews r INNER JOIN book_title b ON r.book_title_id = b.id INNER JOIN library_user lu ON r.library_user_id = 1 INNER JOIN author a ON a.id = b.author_id WHERE a.first_name = :first_name AND a.last_name;
 */
+
+SELECT a.id, a.first_name, a.middle_name, a.last_name, u.is_blacklist, u.is_favorite FROM author a INNER JOIN user_author u ON a.id = u.author_id INNER JOIN book_title b ON b.author_id = a.id INNER JOIN user_book ub ON ub.book_title_id = b.id WHERE u.library_user_id = 1 ORDER BY last_name;
