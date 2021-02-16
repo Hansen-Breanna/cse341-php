@@ -24,10 +24,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $stmt = $db->prepare('INSERT INTO week7_user (username, user_password) VALUES (:user, :pass)');
                 $stmt->execute(array(':user' => $user, ':pass' => $passwordHash));
                 header('Location: sign-in.php');
+            } else {
+                echo $message = "<p class='danger'>Please use at least 7 characters and 1 number.</p>";
             }
         } catch (Exception $e) {
             echo $e;
-            echo $message = "<p class='danger'>Please use at least 7 characters and 1 number.</p>";
         }
     }
 }
@@ -58,8 +59,10 @@ function test_input($data)
     <?php echo $message; ?>
         <form method="post" action="sign-up.php">
             <input class="m-1 pl-1" type="text" id="username" name="username" placeholder="username"><br>
-            <input class="m-1 pl-1" type='text' id="password" name="password" placeholder="password"><?php echo $star; ?><br>
-            <input class="m-1 pl-1" type='text' id="confirm_password" name="confirm_password" placeholder="confirm password"><?php echo $star; ?><br>
+            <input class="m-1 pl-1" type='text' id="password" name="password" placeholder="password" pattern="(?=^.{7,}$)(?=.*\d)(?=.*[a-z]).*$"
+><?php echo $star; ?><br>
+            <input class="m-1 pl-1" type='text' id="confirm_password" name="confirm_password" placeholder="confirm password" pattern="(?=^.{7,}$)(?=.*\d)(?=.*[a-z]).*$"
+><?php echo $star; ?><br>
             <input type="submit" class="btn bg-primary m-1" value="Log In">
         </form>
         <script src="" async defer></script>
