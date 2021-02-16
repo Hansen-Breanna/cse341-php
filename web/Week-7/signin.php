@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -15,6 +14,5 @@
             <input class="m-1 pl-1" type='password' id="password" name="password" placeholder="password"><br>
             <input type="submit" class="btn bg-primary m-1" value="Log In">
         </form>
-        <script src="" async defer></script>
     </body>
 </html>
