@@ -15,15 +15,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($pass != $confirm) {
         $message = "<p class='danger'>Your passwords do not match. Please try again.</p>";
         $star = "<span class='danger'>*</span>";
+        $pattern = '/^(?=.*[[:digit:]])(?=.*[a-z])([^\s]){7,}$/';
     } else {
         try {
-            $passwordHash = password_hash($pass, PASSWORD_DEFAULT);
-            $db = connectMyBooks();
-            $stmt = $db->prepare('INSERT INTO week7_user (username, user_password) VALUES (:user, :pass)');
-            $stmt->execute(array(':user' => $user, ':pass' => $passwordHash));
-            header('Location: sign-in.php');
+            if (preg_match($pattern, $pass)) {
+                $passwordHash = password_hash($pass, PASSWORD_DEFAULT);
+                $db = connectMyBooks();
+                $stmt = $db->prepare('INSERT INTO week7_user (username, user_password) VALUES (:user, :pass)');
+                $stmt->execute(array(':user' => $user, ':pass' => $passwordHash));
+                header('Location: sign-in.php');
+            }
         } catch (Exception $e) {
             echo $e;
+            echo $message = "Please use at least 7 characters and 1 number.";
         }
     }
 }
