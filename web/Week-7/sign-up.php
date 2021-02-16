@@ -18,6 +18,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $pattern = "/^(?=.*[[:digit:]])(?=.*[a-z])([^\s]){7,}$/";
     } else {
         try {
+            $check = preg_match($pattern, $pass);
+            echo $check;
             if (preg_match($pattern, $pass) == 1) {
                 $passwordHash = password_hash($pass, PASSWORD_DEFAULT);
                 $db = connectMyBooks();
