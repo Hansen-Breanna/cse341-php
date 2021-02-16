@@ -16,6 +16,8 @@ require_once '../mybooks/library/connections.php';
             if ($user[0]['username'] == $user && $user[0]['user_password'] == $pass) {
                 $hash = $user[0]['user_password'];
                 $username = $user[0]['username'];
+                echo $hash;
+                echo $username;
             }
         }
         $verify = password_verify($pass, $hash);
