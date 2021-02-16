@@ -8,7 +8,7 @@ require_once '../mybooks/library/connections.php';
 
  if ($_SERVER["REQUEST_METHOD"] == "POST") 
  {
-  
+  echo $username;
      $user = test_input($_POST['username']);
      $pass = test_input($_POST['password']);
      echo $user;
