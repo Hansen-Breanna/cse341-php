@@ -70,8 +70,8 @@ require_once '../mybooks/library/connections.php';
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-    <h1>Sign Up</h1>
-    <p>To sign up, please create a username and password.</p>
+    <h1>Sign In</h1>
+    <p>Please sign in.</p>
         <form method="post" action="sign-in.php">
             <input class="m-1 pl-1" type="text" id="username" name="username" placeholder="username"><br>
             <input class="m-1 pl-1" type='password' id="password" name="password" placeholder="password"><br>
