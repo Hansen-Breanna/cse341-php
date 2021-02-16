@@ -75,10 +75,10 @@ function confirm() {
         <form method="post" action="sign-up.php">
             <input class="m-1 pl-1" type="text" id="username" name="username" placeholder="username"><br>
             <input class="m-1 pl-1" type='text' id="password" name="password" placeholder="password" pattern="(?=^.{7,}$)(?=.*\d)(?=.*[a-z]).*$"
-            onkeyup="confirm()"><?php echo $star; ?><br>
+><?php echo $star; ?><br>
             <input class="m-1 pl-1" type='text' id="confirm_password" name="confirm_password" placeholder="confirm password" pattern="(?=^.{7,}$)(?=.*\d)(?=.*[a-z]).*$"
-            onkeyup="confirm()"><?php echo $star; ?><br>
-            <input type="submit" class="btn bg-primary m-1" value="Log In">
+><?php echo $star; ?><br>
+            <input type="submit" class="btn bg-primary m-1" value="Log In" onclick="confirm()">
         </form>
         <script src="" async defer></script>
     </body>
