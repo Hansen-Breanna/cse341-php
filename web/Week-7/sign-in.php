@@ -5,7 +5,8 @@ require_once '../mybooks/library/connections.php';
  
  $username = $password = "";
 
- if ($_SERVER["REQUEST_METHOD"] == "POST") {
+ if ($_SERVER["REQUEST_METHOD"] == "POST") 
+ {
      $user = test_input($_POST['username']);
      $pass = test_input($_POST['password']);
 
@@ -17,12 +18,13 @@ require_once '../mybooks/library/connections.php';
         $message = "<p>An incorrect username or password was entered. Please try again.</p>";
      }
  
-     $stmt = $db->prepare('INSERT INTO week7_user (username, password) VALUES (:user, :pass)');
-     $stmt->execute(array(':user' => $user, ':pass' => $pass));
-     header('Location: sign-in.php');
+    //  $stmt = $db->prepare('INSERT INTO week7_user (username, password) VALUES (:user, :pass)');
+    //  $stmt->execute(array(':user' => $user, ':pass' => $pass));
+    //  header('Location: sign-in.php');
  }
 
- function check_id($db, $user, $pass) {
+ function check_id($db, $user, $pass) 
+ {
     $stmt = $db->prepare('SELECT username, user_password FROM week7_user WHERE username = :user AND user_password = :pass');
     $stmt->bindValue(':user', $user, PDO::PARAM_STR);
     $stmt->bindValue(':pass', $pass, PDO::PARAM_STR);
