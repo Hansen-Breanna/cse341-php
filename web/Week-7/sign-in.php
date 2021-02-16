@@ -14,6 +14,7 @@ require_once '../mybooks/library/connections.php';
      try {
         $hash = "";
         $data = check_id($db, $user, $pass);
+        var_dump($data);
         foreach ($data as $user_data) {
             $verify = password_verify($pass, $user_data['user_password']);
             echo $user_data['username'];
