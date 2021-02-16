@@ -16,7 +16,7 @@ require_once '../mybooks/library/connections.php';
         echo $data[0]['username'];
         echo $user;
         echo $pass;
-        echo $data[0]['password'];
+        echo $data[0]['user_password'];
         foreach ($data as $user) {
             if ($user[0]['username'] == $user && $user[0]['user_password'] == $pass) {
                 $hash = $user[0]['user_password'];
