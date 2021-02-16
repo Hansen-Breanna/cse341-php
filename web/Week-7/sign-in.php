@@ -1,5 +1,6 @@
 <?php
  
+ echo "Books";
 // Get the database connection file
 require_once '../mybooks/library/connections.php';
  
