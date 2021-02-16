@@ -19,7 +19,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         try {
             $check = preg_match($pattern, $pass);
-            echo $check;
             if ($check == 1) {
                 $passwordHash = password_hash($pass, PASSWORD_DEFAULT);
                 $db = connectMyBooks();
@@ -45,6 +44,16 @@ function test_input($data)
 
 ?>
 
+<script>
+    $pass = document.getElementById("password").value;
+    $confirm = document.getElementById("password").value;
+    if ($pass == $confirm) {
+        document.getElementById("confirmed").innerHTML = "Password inputs match.";
+    } else {
+        document.getElementById("confirmed").innerHTML = "Passwords do not match.";
+    }
+</script>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -59,6 +68,7 @@ function test_input($data)
     <h1>Sign Up</h1>
     <p>To sign up, please create a username and password. Password must be 7 characters and contain a number.</p>
     <?php echo $message; ?>
+    <div id="confirmed"></div>
         <form method="post" action="sign-up.php">
             <input class="m-1 pl-1" type="text" id="username" name="username" placeholder="username"><br>
             <input class="m-1 pl-1" type='text' id="password" name="password" placeholder="password" pattern="(?=^.{7,}$)(?=.*\d)(?=.*[a-z]).*$"
