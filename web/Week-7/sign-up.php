@@ -5,21 +5,26 @@ session_start();
 // Get the database connection file
 require_once '../mybooks/library/connections.php';
 
- $username = $password = "";
+ $username = $password = $confirm_password = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $user = test_input($_POST['username']);
     $pass = test_input($_POST['password']);
+    $confirm =  test_input($_POST['confirm_password']);
 
-    try {
-        $passwordHash = password_hash($pass, PASSWORD_DEFAULT);
-        echo $passwordHash;
-        $db = connectMyBooks();
-        $stmt = $db->prepare('INSERT INTO week7_user (username, user_password) VALUES (:user, :pass)');
-        $stmt->execute(array(':user' => $user, ':pass' => $passwordHash));
-        header('Location: sign-in.php');
-    } catch (Exception $e) {
-        echo $e;
+    if ($pass != $confirm) {
+        $message = "<p class='danger'>Your passwords do not match. Please try again.</p>";
+        $star = "<span class='danger'>*</span>";
+    } else {
+        try {
+            $passwordHash = password_hash($pass, PASSWORD_DEFAULT);
+            $db = connectMyBooks();
+            $stmt = $db->prepare('INSERT INTO week7_user (username, user_password) VALUES (:user, :pass)');
+            $stmt->execute(array(':user' => $user, ':pass' => $passwordHash));
+            header('Location: sign-in.php');
+        } catch (Exception $e) {
+            echo $e;
+        }
     }
 }
 
@@ -34,10 +39,6 @@ function test_input($data)
 ?>
 
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
     <head>
         <meta charset="utf-8">
@@ -48,15 +49,13 @@ function test_input($data)
         <link rel="stylesheet" href="">
     </head>
     <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-
     <h1>Sign Up</h1>
     <p>To sign up, please create a username and password.</p>
+    <?php echo $message; ?>
         <form method="post" action="sign-up.php">
             <input class="m-1 pl-1" type="text" id="username" name="username" placeholder="username"><br>
-            <input class="m-1 pl-1" type='text' id="password" name="password" placeholder="password"><br>
+            <input class="m-1 pl-1" type='text' id="password" name="password" placeholder="password"><?php echo $star; ?><br>
+            <input class="m-1 pl-1" type='text' id="confirm_password" name="confirm_password" placeholder="confirm password"><?php echo $star; ?><br>
             <input type="submit" class="btn bg-primary m-1" value="Log In">
         </form>
         <script src="" async defer></script>
