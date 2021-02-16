@@ -18,7 +18,7 @@ require_once '../mybooks/library/connections.php';
             $verify = password_verify($pass, $data[0]['user_password']);
             echo $user_data['username'];
             if ($data[0]['username'] == $user && $data[0]['user_password'] == $pass) {
-                $hash = $user_data['user_password'];
+                $hash = $data[0]['user_password'];
                 $username = $user_data['username'];
                 echo $hash;
                 echo $username;
@@ -38,6 +38,7 @@ require_once '../mybooks/library/connections.php';
     $stmt->bindValue(':pass', $pass, PDO::PARAM_STR);
     $stmt->execute();
     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    var_dump($results);
     return $results;
  }
  
