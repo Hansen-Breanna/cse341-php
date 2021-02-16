@@ -1,6 +1,6 @@
 <?php
+session_start();
  
- echo "Books";
 // Get the database connection file
 require_once '../mybooks/library/connections.php';
  
@@ -8,7 +8,6 @@ require_once '../mybooks/library/connections.php';
 
  if ($_SERVER["REQUEST_METHOD"] == "POST") 
  {
-  echo $username;
      $user = test_input($_POST['username']);
      $pass = test_input($_POST['password']);
      echo $user;
