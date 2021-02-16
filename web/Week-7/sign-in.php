@@ -7,30 +7,27 @@ require_once '../mybooks/library/connections.php';
 
  if ($_SERVER["REQUEST_METHOD"] == "POST") 
  {
-     $user = test_input($_POST['username']);
-     $pass = test_input($_POST['password']);
-     echo $user;
+    header('Location: welcome.php');
+    //  $user = test_input($_POST['username']);
+    //  $pass = test_input($_POST['password']);
+    //  echo $user;
  
-     try {
-        $data = check_id($db, $user, $pass);
-        foreach ($data as $user) {
-            if ($user[0]['username'] == $user && $user[0]['user_password'] == $pass) {
-                $hash = $user[0]['user_password'];
-                $username = $user[0]['username'];
-                echo $hash;
-                echo $username;
-            }
-        }
-        $verify = password_verify($pass, $hash);
-        $_SESSION['user'] = $username;
-        header('Location: welcome.php');
-     } catch (Exception $e) {
-        $message = "<p>An incorrect username or password was entered. Please try again.</p>";
-     }
- 
-    //  $stmt = $db->prepare('INSERT INTO week7_user (username, password) VALUES (:user, :pass)');
-    //  $stmt->execute(array(':user' => $user, ':pass' => $pass));
-    //  header('Location: sign-in.php');
+    //  try {
+    //     $data = check_id($db, $user, $pass);
+    //     foreach ($data as $user) {
+    //         if ($user[0]['username'] == $user && $user[0]['user_password'] == $pass) {
+    //             $hash = $user[0]['user_password'];
+    //             $username = $user[0]['username'];
+    //             echo $hash;
+    //             echo $username;
+    //         }
+    //     }
+    //     $verify = password_verify($pass, $hash);
+    //     $_SESSION['user'] = $username;
+    //     header('Location: welcome.php');
+    //  } catch (Exception $e) {
+    //     $message = "<p>An incorrect username or password was entered. Please try again.</p>";
+    //  }
  }
 
  function check_id($db, $user, $pass) 
