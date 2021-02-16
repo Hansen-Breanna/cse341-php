@@ -11,16 +11,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $user = test_input($_POST['username']);
     $pass = test_input($_POST['password']);
     $confirm =  test_input($_POST['confirm_password']);
+    $pattern = "/^(?=.*[[:digit:]])(?=.*[a-z])([^\s]){7,}$/";
 
     if ($pass != $confirm) {
         $message = "<p class='danger'>Your passwords do not match. Please try again.</p>";
         $star = "<span class='danger'>*</span>";
-        $pattern = "/^(?=.*[[:digit:]])(?=.*[a-z])([^\s]){7,}$/";
     } else {
         try {
             $check = preg_match($pattern, $pass);
             echo $check;
-            if (preg_match($pattern, $pass) == 1) {
+            if ($check == 1) {
                 $passwordHash = password_hash($pass, PASSWORD_DEFAULT);
                 $db = connectMyBooks();
                 $stmt = $db->prepare('INSERT INTO week7_user (username, user_password) VALUES (:user, :pass)');
