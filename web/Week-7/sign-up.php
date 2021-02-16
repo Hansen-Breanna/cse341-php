@@ -46,11 +46,11 @@ function test_input($data)
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>
     <h1>Sign Up</h1>
-    <p>To sign up, please create a username and password.</p>
+    <p>To sign up, please create a username and password. Password must be 7 characters and contain a number.</p>
     <?php echo $message; ?>
         <form method="post" action="sign-up.php">
             <input class="m-1 pl-1" type="text" id="username" name="username" placeholder="username"><br>
