@@ -45,6 +45,8 @@ function test_input($data)
 ?>
 
 <script>
+
+function confirm() {
     $pass = document.getElementById("password").value;
     $confirm = document.getElementById("password").value;
     if ($pass == $confirm) {
@@ -52,6 +54,7 @@ function test_input($data)
     } else {
         document.getElementById("confirmed").innerHTML = "Passwords do not match.";
     }
+}
 </script>
 
 <!DOCTYPE html>
@@ -75,7 +78,7 @@ function test_input($data)
 ><?php echo $star; ?><br>
             <input class="m-1 pl-1" type='text' id="confirm_password" name="confirm_password" placeholder="confirm password" pattern="(?=^.{7,}$)(?=.*\d)(?=.*[a-z]).*$"
 ><?php echo $star; ?><br>
-            <input type="submit" class="btn bg-primary m-1" value="Log In">
+            <input type="submit" class="btn bg-primary m-1" value="Log In" onclick="confirm()">
         </form>
         <script src="" async defer></script>
     </body>
