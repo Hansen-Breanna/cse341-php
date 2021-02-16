@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $stmt->execute(array(':user' => $user, ':pass' => $passwordHash));
                 header('Location: sign-in.php');
             } else {
-                echo $message = "<p class='danger'>Please use at least 7 characters and 1 number.</p>";
+                $message = "<p class='danger'>Please use at least 7 characters and 1 number.</p>";
             }
         } catch (Exception $e) {
             echo $e;
