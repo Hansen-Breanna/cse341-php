@@ -18,11 +18,9 @@ require_once '../mybooks/library/connections.php';
             if ($data[0]['username'] == $user && $verify == 1) {
                 $hash = $data[0]['user_password'];
                 $username = $data[0]['username'];
-                echo $hash;
-                echo $username;
             }
         $_SESSION['user'] = $username;
-        //header('Location: welcome.php');
+        header('Location: welcome.php');
      } catch (Exception $e) {
         $message = "<p>An incorrect username or password was entered. Please try again.</p>";
      }
