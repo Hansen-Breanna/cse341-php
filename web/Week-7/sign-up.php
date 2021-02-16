@@ -1,4 +1,8 @@
 <?php
+
+// Get the database connection file
+require_once '../mybooks/library/connections.php';
+
  $username = $password = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -9,9 +13,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     try {
         $passwordHash = password_hash($pass, PASSWORD_DEFAULT);
         echo $passwordHash;
+        $db = connectMyBooks();
         $stmt = $db->prepare('INSERT INTO week7_user (username, user_password) VALUES (:user, :pass)');
         $stmt->execute(array(':user' => $user, ':pass' => $pass));
-        //header('Location: sign-in.php');
+        header('Location: sign-in.php');
     } catch (Exception $e) {
         echo $e;
     }
