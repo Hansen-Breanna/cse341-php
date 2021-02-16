@@ -5,7 +5,6 @@ require_once '../mybooks/library/connections.php';
 
  $username = $password = "";
 
- echo "books";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $user = test_input($_POST['username']);
     $pass = test_input($_POST['password']);
@@ -59,7 +58,6 @@ function test_input($data)
             <input class="m-1 pl-1" type='text' id="password" name="password" placeholder="password"><br>
             <input type="submit" class="btn bg-primary m-1" value="Log In">
         </form>
-        <?php echo "crazy";?>
         <script src="" async defer></script>
     </body>
 </html>
