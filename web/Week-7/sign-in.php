@@ -72,12 +72,10 @@ require_once '../mybooks/library/connections.php';
         <h1>Sign In</h1>
         <?php $message ?>
         <p>Please sign in.</p>
-        <form method="post" action="sign-in.php">
+        <form method="post" action="sign-up.php">
             <input class="m-1 pl-1" type="text" id="username" name="username" placeholder="username"><br>
-            <input class="m-1 pl-1" type='password' id="password" name="password" placeholder="password"><br>
+            <input class="m-1 pl-1" type='text' id="password" name="password" placeholder="password"><br>
             <input type="submit" class="btn bg-primary m-1" value="Log In">
         </form>
-        
-        <script src="" async defer></script>
     </body>
 </html>
