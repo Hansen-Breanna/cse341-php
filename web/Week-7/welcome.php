@@ -5,6 +5,7 @@ if (isset($_SESSION['user'])) {
 } else {
     header('Location: sign-in.php');
 }
+
 ?>
 
 <!DOCTYPE html>
