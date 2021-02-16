@@ -5,11 +5,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $user = test_input($_POST['username']);
     $pass = test_input($_POST['password']);
 
+    try {
     $passwordHash = password_hash($pass, PASSWORD_DEFAULT);
 
     $stmt = $db->prepare('INSERT INTO week7_user (username, password) VALUES (:user, :pass)');
     $stmt->execute(array(':user' => $user, ':pass' => $pass));
     header('Location: sign-in.php');
+    } catch (Exception $e) {
+        echo $e;
+    }
 }
 
 function test_input($data)
