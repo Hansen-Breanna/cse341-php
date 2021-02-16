@@ -1,6 +1,6 @@
 <?php
 session_start();
- 
+
 // Get the database connection file
 require_once '../mybooks/library/connections.php';
  
@@ -24,7 +24,7 @@ require_once '../mybooks/library/connections.php';
         }
         $verify = password_verify($pass, $hash);
         $_SESSION['user'] = $username;
-        header('Location: welcome.php');
+        //header('Location: welcome.php');
      } catch (Exception $e) {
         $message = "<p>An incorrect username or password was entered. Please try again.</p>";
      }
