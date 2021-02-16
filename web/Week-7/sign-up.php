@@ -16,6 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $db = connectMyBooks();
         $stmt = $db->prepare('INSERT INTO week7_user (username, user_password) VALUES (:user, :pass)');
         $stmt->execute(array(':user' => $user, ':pass' => $pass));
+        $url = "sign-in.php";
         header('Location: sign-in.php');
     } catch (Exception $e) {
         echo $e;
@@ -53,7 +54,7 @@ function test_input($data)
 
     <h1>Sign Up</h1>
     <p>To sign up, please create a username and password.</p>
-        <form method="post" action="sign-up.php">
+        <form method="post" action="<?php htmlspecialchars($_SERVER["PHP_SELF"]) ?>">
             <input class="m-1 pl-1" type="text" id="username" name="username" placeholder="username"><br>
             <input class="m-1 pl-1" type='text' id="password" name="password" placeholder="password"><br>
             <input type="submit" class="btn bg-primary m-1" value="Log In">
