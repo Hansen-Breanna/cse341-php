@@ -10,11 +10,11 @@ require_once '../mybooks/library/connections.php';
  {
      $user = test_input($_POST['username']);
      $pass = test_input($_POST['password']);
-    echo $user . $pass;
+
      try {
         $data = check_id($db, $user);
-        var_dump($data);
-            $verify = password_verify($pass, $data[0]['user_password']);
+        echo $data['user_password'];
+        $verify = password_verify($pass, $data[0]['user_password']);
             echo $user_data['username'];
             if ($data[0]['username'] == $user && $data[0]['user_password'] == $pass) {
                 $hash = $data[0]['user_password'];
@@ -36,7 +36,6 @@ require_once '../mybooks/library/connections.php';
     $stmt->bindValue(':user', $user, PDO::PARAM_STR);
     $stmt->execute();
     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    var_dump($results);
     return $results;
  }
  
