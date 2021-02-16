@@ -13,12 +13,11 @@ require_once '../mybooks/library/connections.php';
 
      try {
         $data = check_id($db, $user);
-        echo $data[0]['user_password'];
         $verify = password_verify($pass, $data[0]['user_password']);
-            echo $user_data['username'];
+        echo $verify;
             if ($data[0]['username'] == $user && $data[0]['user_password'] == $pass) {
                 $hash = $data[0]['user_password'];
-                $username = $user_data['username'];
+                $username = $data[0]['username'];
                 echo $hash;
                 echo $username;
             }
