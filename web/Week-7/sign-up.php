@@ -4,6 +4,7 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $user = test_input($_POST['username']);
     $pass = test_input($_POST['password']);
+    echo $user;
 
     try {
         $passwordHash = password_hash($pass, PASSWORD_DEFAULT);
