@@ -48,7 +48,7 @@ function test_input($data)
 
 function confirm() {
     $pass = document.getElementById("password").value;
-    $confirm = document.getElementById("password").value;
+    $confirm = document.getElementById("confirm_password").value;
     if ($pass == $confirm) {
         document.getElementById("confirmed").innerHTML = "Password inputs match.";
     } else {
