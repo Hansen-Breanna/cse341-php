@@ -50,12 +50,14 @@
                     <li id="week-06" class="list-group-item">                    
                         <ul class="list-group-item-action p-0 assign">
                             <li class="py-1"><a href="Week-6/viewScriptures.php">06 Teach: Team Activity</a></li>
+                            <li class="py-1"><a href="mybooks/index.php">My Books - Project</a></li>
                         </ul>
                     </li>
                     <li class="list-group-item" id="vis-wk-07"> &#9660; Week 07</li>
                     <li id="week-07" class="list-group-item">                    
                         <ul class="list-group-item-action p-0 assign">
-                            <li class="py-1"><a href="#">Coming soon</a></li>
+                            <li class="py-1"><a href="Week-7/sign-up.php">07 Teach: Team Activity</a></li>
+                            <li class="py-1"><a href="mybooks/index.php">My Books - Project</a></li>
                         </ul>
                     </li>
                     <li class="list-group-item" id="vis-wk-08"> &#9660; Week 08</li>

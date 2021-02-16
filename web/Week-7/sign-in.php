@@ -14,7 +14,7 @@ require_once '../mybooks/library/connections.php';
         $_SESSION['user'] = $user;
         header('Location: welcome.php');
      } catch (Exception $e) {
-        $message = "<p>An incorrect username or password was entered. Please try again.</p>"
+        $message = "<p>An incorrect username or password was entered. Please try again.</p>";
      }
  
      $stmt = $db->prepare('INSERT INTO week7_user (username, password) VALUES (:user, :pass)');
