@@ -15,13 +15,12 @@ require_once '../mybooks/library/connections.php';
         $data = check_id($db, $user);
         $verify = password_verify($pass, $data[0]['user_password']);
         echo $verify;
-            if ($data[0]['username'] == $user && $data[0]['user_password'] == $pass) {
+            if ($data[0]['username'] == $user && $verify == 1) {
                 $hash = $data[0]['user_password'];
                 $username = $data[0]['username'];
                 echo $hash;
                 echo $username;
             }
-        $verify = password_verify($pass, $hash);
         $_SESSION['user'] = $username;
         //header('Location: welcome.php');
      } catch (Exception $e) {
