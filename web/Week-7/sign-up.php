@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo $passwordHash;
         $db = connectMyBooks();
         $stmt = $db->prepare('INSERT INTO week7_user (username, user_password) VALUES (:user, :pass)');
-        $stmt->execute(array(':user' => $user, ':pass' => $pass));
+        $stmt->execute(array(':user' => $user, ':pass' => $passwordHash));
         //header('Location: sign-in.php');
     } catch (Exception $e) {
         echo $e;
