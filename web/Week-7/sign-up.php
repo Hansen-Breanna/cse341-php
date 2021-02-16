@@ -8,6 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     try {
         $passwordHash = password_hash($pass, PASSWORD_DEFAULT);
+        echo $passwordHash;
         $stmt = $db->prepare('INSERT INTO week7_user (username, user_password) VALUES (:user, :pass)');
         $stmt->execute(array(':user' => $user, ':pass' => $pass));
         //header('Location: sign-in.php');
