@@ -116,15 +116,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <label for="password">password:</label>
                             </td>
                             <td>
-                                <input class="m-1 pl-1" type="text" id="password" name="password" placeholder="password">
+                            <input class="m-1 pl-1" type='text' id="password" name="password" placeholder="password" pattern="(?=^.{7,}$)(?=.*\d)(?=.*[a-z]).*$"><?php echo $star; ?>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <label for="username">username:</label>
+                                <label for="confirm_password">Confirm<br>password:</label>
                             </td>
                             <td>
-                                <input class="m-1 pl-1" type="text" id="username" name="username" placeholder="username">
+                            <input class="m-1 pl-1" type='text' id="confirm_password" name="confirm_password" placeholder="confirm password" pattern="(?=^.{7,}$)(?=.*\d)(?=.*[a-z]).*$"><?php echo $star; ?>
                             </td>
                         </tr>
                     </tbody>
