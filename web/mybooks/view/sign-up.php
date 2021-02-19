@@ -1,87 +1,52 @@
 <?php
-// start session
+
 session_start();
 
-$first_name = $middle_name = $last_name =  $title = $authorID = "";
-$favorite = $blacklist = $own = $own_wish = $read_wish = "";
+// Get the database connection file
+require_once '../mybooks/library/connections.php';
+
+$username = $password = $confirm_password = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $authorID = test_input($_POST['authorID']);
+    $user = test_input($_POST['username']);
+    $pass = test_input($_POST['password']);
+    $confirm =  test_input($_POST['confirm_password']);
+    $pattern = "/^(?=.*[[:digit:]])(?=.*[a-z])([^\s]){7,}$/";
 
-    try {
-        if (isset($_POST['authorID'])) {
-            $newAuthorID = $authorID;
-        } else {
-            $first_name = test_input($_POST["first_name"]);
-            $middle_name = test_input($_POST["middle_name"]);
-            $last_name = test_input($_POST["last_name"]);
-
-            //author
-            insertAuthor($db, $first_name, $middle_name, $last_name);
-            $newAuthorID = $db->lastInsertId('author_id_seq');
+    if ($pass != $confirm) {
+        $message = "<p class='danger'>Your passwords do not match. Please try again.</p>";
+        $star = "<span class='danger'>*</span>";
+    } else {
+        try {
+            $check = preg_match($pattern, $pass);
+            if ($check == 1) {
+                $passwordHash = password_hash($pass, PASSWORD_DEFAULT);
+                $db = connectMyBooks();
+                $stmt = $db->prepare('INSERT INTO week7_user (username, user_password) VALUES (:user, :pass)');
+                $stmt->execute(array(':user' => $user, ':pass' => $passwordHash));
+                header('Location: sign-in.php');
+            } else {
+                $message = "<p class='danger'>Please use at least 7 characters and 1 number.</p>";
+            }
+        } catch (Exception $e) {
+            echo $e;
         }
-
-        $favorite = test_input($_POST["favorite"]);
-        if (isset($_POST['favorite'])) {
-            $favorite = "TRUE";
-        } else {
-            $favorite = "FALSE";
-        }
-        $newFavorite = removeQuotes($favorite);
-
-        $blacklist = test_input($_POST["blacklist"]);
-        if (isset($_POST['blacklist'])) {
-            $blacklist = "TRUE";
-        } else {
-            $blacklist = "FALSE";
-        }
-        $newBlacklist = removeQuotes($blacklist);
-
-        $title = test_input($_POST["title"]);
-
-        $own = test_input($_POST["own"]);
-        if (isset($_POST['own'])) {
-            $own = "TRUE";
-        } else {
-            $own = "FALSE";
-        }
-        $newOwn = removeQuotes($own);
-
-        $own_wish = test_input($_POST["own_wish"]);
-        if (isset($_POST['own_wish'])) {
-            $own_wish = "TRUE";
-        } else {
-            $own_wish = "FALSE";
-        }
-        $newOwn_wish = removeQuotes($own_wish);
-
-        $read_wish = test_input($_POST["read_wish"]);
-        if (isset($_POST['read_wish'])) {
-            $read_wish = "TRUE";
-        } else {
-            $read_wish = "FALSE";
-        }
-        $newRead_wish = removeQuotes($read_wish);
-
-        $_SESSION['title'] = $title;
-
-        if (!isset($_POST['authorID'])) {
-            //user_author
-            insertUserAuthor($db, $_SESSION['id'], $newAuthorID, $newBlacklist, $newFavorite);
-        }
-
-        //book
-        insertTitle($db, $newAuthorID, $title);
-        $newTitleID = $db->lastInsertId('book_title_id_seq');
-
-        // //user-book
-        insertUserBook($db, $_SESSION['id'], $newTitleID, $newOwn, $newOwn_wish, $newRead_wish);
-    } catch (Exception $e) {
-        $message = "<p class='px-4 py-3 bg-danger rounded'>Title was not added. Please check for existing author and try again.</p>";
     }
 }
 
 ?>
+
+<script>
+    function confirm() {
+        $pass = document.getElementById("password").value;
+        $confirm = document.getElementById("confirm_password").value;
+        if ($pass == $confirm) {
+            document.getElementById("confirmed").innerHTML = "Password inputs match.";
+        } else {
+            document.getElementById("confirmed").innerHTML = "Passwords do not match.";
+        }
+    }
+</script>
 
 <!-- Head -->
 <?php include 'common/head.php'; ?>
@@ -95,7 +60,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <?php include '../common/header.php'; ?>
 
 <h1 class="offset-1 col-10 offset-md-0 col-md-12">My Books</h1>
-<h2>Please sign up or log in.</h2>
 </div>
 </div>
 </header>
@@ -115,8 +79,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <input class="m-1 pl-1" type="text" id="username" name="username" placeholder="username"><br>
                 <input class="m-1 pl-1" type='text' id="password" name="password" placeholder="password" pattern="(?=^.{7,}$)(?=.*\d)(?=.*[a-z]).*$"><?php echo $star; ?><br>
                 <input class="m-1 pl-1" type='text' id="confirm_password" name="confirm_password" placeholder="confirm password" pattern="(?=^.{7,}$)(?=.*\d)(?=.*[a-z]).*$"><?php echo $star; ?><br>
-                <input type="submit" class="btn bg-primary m-1" value="Log In" onclick="confirm()">
+                <input type="submit" class="rs-size btn bg-orange m-1" value="Log In" onclick="confirm()">
             </form>
+            <a href="index.php?" title="Log In" class="rs-size btn btn-custom bg-orange m-1">Log In</a>
         </div>
     </div>
 </main>
