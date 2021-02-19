@@ -5,7 +5,7 @@
         <div class="row d-flex justify-content-between align-items-bottom">
             <p class="pt-4 pl-3">&copy;&nbsp; <?php echo date("Y") ;?> - Breanna Hansen</p>
         </div>
-        <div>
+        <div class="d-flex">
             <form method='get' action="index.php?action=home">
                 <input type="submit" class="btn bg-orange p-2 shadow" value="Log In">
             </form>
