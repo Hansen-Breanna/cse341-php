@@ -17,10 +17,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $_SESSION['id'] = getUserID($username, $password);
     $_SESSION['username'] = $username;
     if ($logout == "logout") {
+        message = "<p class='bg-success py-3 px-4 rounded'>You are logged out.</p>";
         session_destroy();
     }
     if (isset($_SESSION['id'])) {
         $message = "<p class='bg-success py-3 px-4 rounded'>You are logged in as: " . $_SESSION['username'] . '</p>';
+    }
+    if (isset($_POST['login'])) {
+        $message = "<p class='bg-success py-3 px-4 rounded'>Please log in.</p>";
     }
 }
 
