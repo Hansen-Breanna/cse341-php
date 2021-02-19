@@ -248,6 +248,6 @@ switch ($action){
         include 'view/sign-up.php';
     break;
     default:
-        include 'view/home.php';
+        include 'view/sign-up.php';
     break;
 }
