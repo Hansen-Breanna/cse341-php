@@ -131,6 +131,17 @@ CREATE TABLE borrower
 INSERT INTO borrower (first_name, last_name, phone_number) VALUES ('Karina', 'Hansen', '208-206-1488');
 INSERT INTO borrower (first_name, last_name, phone_number) VALUES ('Kayli', 'Hansen', '208-206-1488');
 INSERT INTO borrower (first_name, last_name, phone_number) VALUES ('Breanna', 'Hansen', '208-206-1488');
+/* create user_borrower */
+CREATE TABLE user_borrower
+(
+    id SERIAL,
+    library_user_id INT NOT NULL,
+    borrower_id INT NOT NULL,
+    PRIMARY KEY (id),
+    ADD CONSTRAINT FK_User_Borrower_User_ID FOREIGN KEY (library_user_id) REFERENCES library_user(id) ON DELETE CASCADE,
+    ADD CONSTRAINT FK_User_Borrower_Borrower_ID FOREIGN KEY (borrower_id) REFERENCES borrower(id) ON DELETE CASCADE
+);
+
 /* create loan table */
 CREATE TABLE loan
 (
