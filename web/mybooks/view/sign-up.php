@@ -72,14 +72,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 echo $message;
             }
             ?>
-            <p>To sign up, please create a username and password. Password must be 7 characters and contain a number.</p>
+            <p>To sign up, please create a username and password.<br> Password must be 7 characters and contain a number.</p>
             <?php echo $message; ?>
             <div id="confirmed"></div>
             <form method="post" action="sign-up.php">
+            <table>
+            <tbody>
+            <tr>
+            <td>
+            <label for="first_name">First name:</label>
+            </td>
+            <td>
+            <input class="m-1 pl-1" type="text" id="first_name" name="first_name" placeholder="first name">
+            </td>
+            </tr>
+            </tbody>
+            </table>
                 <input class="m-1 pl-1" type="text" id="username" name="username" placeholder="username"><br>
                 <input class="m-1 pl-1" type='text' id="password" name="password" placeholder="password" pattern="(?=^.{7,}$)(?=.*\d)(?=.*[a-z]).*$"><?php echo $star; ?><br>
                 <input class="m-1 pl-1" type='text' id="confirm_password" name="confirm_password" placeholder="confirm password" pattern="(?=^.{7,}$)(?=.*\d)(?=.*[a-z]).*$"><?php echo $star; ?><br>
-                <input type="submit" class="rs-size btn bg-orange m-1" value="Log In" onclick="confirm()">
+                <input type="submit" class="rs-size btn bg-orange m-1" value="Sign Up" onclick="confirm()">
             </form>
             <a href="index.php?" title="Log In" class="rs-size btn btn-custom bg-orange m-1">Log In</a>
         </div>
