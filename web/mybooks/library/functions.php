@@ -373,7 +373,7 @@ function updateUserBook($db, $user_id, $book_title_id, $own, $own_wish, $read_wi
 
 // Insert user
 function insertUser($db, $first_name, $last_name, $username, $passwordHash, $email, $phone) {
-   $stmt = $db->prepare('INSERT INTO library_userr (first_name, last_name, username, user_password, user_email, user_phone) VALUES (:first_name, :last_name, :user, :pass, :email, :phone)');
+   $stmt = $db->prepare('INSERT INTO library_user (first_name, last_name, username, user_password, user_email, user_phone) VALUES (:first_name, :last_name, :user, :pass, :email, :phone)');
    $stmt->execute(array(':first_name' => $first_name, ':last_name' => $last_name, ':user' => $username, ':pass' => $passwordHash, ':email' => $email, ':phone' => $phone));
 }
 ?>
