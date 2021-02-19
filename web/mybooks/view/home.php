@@ -18,12 +18,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     try {
         $data = check_id($db, $username);
         $verify = password_verify($password, $data[0]['user_password']);
-        echo $verify;
             if ($data[0]['username'] == $username && $verify == 1) {
                 $hash = $data[0]['user_password'];
                 $newUsername = $data[0]['username'];
             }
         $_SESSION['user'] = $newUsername;
+        echo $_SESSION['user'];
      } catch (Exception $e) {
         $message = "<p>An incorrect username or password was entered. Please try again.</p>";
      }
