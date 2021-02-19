@@ -6,6 +6,9 @@
             <p class="pt-4 pl-3">&copy;&nbsp; <?php echo date("Y") ;?> - Breanna Hansen</p>
         </div>
         <div>
+            <form method='get' action="index.php?action=home">
+                <input type="submit" class="btn bg-orange p-2 shadow" value="Log In">
+            </form>
             <form method='post' action="index.php">
                 <input type='hidden' id="logout" name="logout" value="logout"><br>
                 <input id="logout-button" type="submit" class="btn bg-orange p-2 shadow" value="Log Out">

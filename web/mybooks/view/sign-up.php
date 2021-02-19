@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $pattern = "/^(?=.*[[:digit:]])(?=.*[a-z])([^\s]){7,}$/";
 
     if ($pass != $confirm) {
-        $message = "<p class='bg-danger'>Your passwords do not match. Please try again.</p>";
+        $message = "<p class='bg-danger py-3 px-4 rounded'>Your passwords do not match. Please try again.</p>";
         $star = "<span class='text-red'>*</span>";
     } else {
         try {

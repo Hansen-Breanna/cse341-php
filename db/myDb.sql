@@ -22,8 +22,8 @@ CREATE TABLE library_user
 	id serial,
 	first_name VARCHAR(100) NOT NULL,
 	last_name VARCHAR(100) NOT NULL,
-	username VARCHAR(40) NOT NULL,
-	user_password VARCHAR(40) NOT NULL,
+	username VARCHAR(100) NOT NULL,
+	user_password VARCHAR(255) NOT NULL,
 	user_email VARCHAR(50) NOT NULL,
 	PRIMARY KEY (id)
 );
