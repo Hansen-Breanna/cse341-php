@@ -5,6 +5,10 @@ session_start();
 $first_name = $middle_name = $last_name =  $title = $authorID = "";
 $favorite = $blacklist = $own = $own_wish = $read_wish = "";
 
+if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION['id']))) {
+    header('Location: index.php?action=sign-up');
+}
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $authorID = test_input($_POST['authorID']);
 

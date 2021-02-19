@@ -4,6 +4,10 @@ session_start();
 
 $first_name = $middle_name = $last_name =  $title = $review = $rating = $authorID = $update = "";
 
+if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION['id']))) {
+    header('Location: index.php?action=sign-up');
+}
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $authorID = test_input($_POST['authorID']);
     $first_name = test_input($_POST['first_name']);

@@ -4,6 +4,10 @@ session_start();
 
 $reviewID = $review = $rating = $update = $update_review = "";
 
+if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION['id']))) {
+    header('Location: index.php?action=sign-up');
+}
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $reviewID = test_input($_POST['reviewid']);
     $rating = test_input($_POST['rating']);

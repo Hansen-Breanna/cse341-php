@@ -236,20 +236,15 @@ switch ($action){
     case 'update-author':
         echo $_GET['authorID'];
         $authors = getAuthors($_SESSION['id']);
-        //$authorData = getAuthor($_SESSION['authorID']);
-        // $authorsTable = displayAuthors($authors);
-        // $author = displayAuthorData($authorData);
-        // $choice = addFavBlack();
-        //$message-2 = "<p class='px-4 py-3 bg-danger rounded'>Author already exists.</p>";
         include 'view/authors.php';
     break;
     case 'update-loan':
         include 'view/update-loan.php';
     break;
-    case 'sign-up':
-        include 'view/sign-up.php';
+    case 'home':
+        include 'view/home.php';
     break;
     default:
-        include 'view/home.php';
+        include 'view/sign-up.php';
     break;
 }

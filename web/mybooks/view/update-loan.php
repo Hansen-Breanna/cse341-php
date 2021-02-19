@@ -4,6 +4,10 @@ session_start();
 
 $loanID = $first_name = $middle_name = $last_name = $phone = $titleID = $borrowerID = $dateBorrowed = $returnDate = $isReturned = $update = "";
 
+if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION['id']))) {
+    header('Location: index.php?action=sign-up');
+}
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $first_name = test_input($_POST['first_name']);
     $middle_name = test_input($_POST['middle_name']);

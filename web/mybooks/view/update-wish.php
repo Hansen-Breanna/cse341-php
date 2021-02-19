@@ -4,6 +4,10 @@ session_start();
 
 $update_title_id = $own = $own_wish = $read_wish = "";
 
+if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION['id']))) {
+    header('Location: index.php?action=sign-up');
+}
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if (isset($_POST['update_title_id'])) {
