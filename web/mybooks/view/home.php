@@ -3,7 +3,7 @@
 session_start();
 
 // define variables and set to empty values
-$username = $password = $logout = "";
+$username = $password = $logout = $login = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "GET" && (isset($_SESSION['id']))) {
     $message = "<p class='bg-success py-3 px-4 rounded'>You are logged in as: " . $_SESSION['username'] . '</p>';
@@ -13,6 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = test_input($_POST["username"]);
     $password = test_input($_POST["password"]);
     $logout = test_input($_POST["logout"]);
+    $login = test_input($_POST["login"]);
     $_SESSION['id'] = getUserID($username, $password);
     $_SESSION['username'] = $username;
     if ($logout == "logout") {
