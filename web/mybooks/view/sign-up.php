@@ -2,9 +2,6 @@
 
 session_start();
 
-// Get the database connection file
-require_once '../mybooks/library/connections.php';
-
 $first_name = $last_name = $username = $password = $confirm_password = $email = $phone = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
