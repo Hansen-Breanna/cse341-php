@@ -9,7 +9,6 @@ $(document).ready(function(){
       
   });
 
-
   function confirm() {
     $pass = document.getElementById("password").value;
     $confirm = document.getElementById("confirm_password").value;

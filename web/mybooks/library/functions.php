@@ -376,4 +376,14 @@ function insertUser($db, $first_name, $last_name, $username, $passwordHash, $ema
    $stmt = $db->prepare('INSERT INTO library_user (first_name, last_name, username, user_password, user_email, user_phone) VALUES (:first_name, :last_name, :user, :pass, :email, :phone)');
    $stmt->execute(array(':first_name' => $first_name, ':last_name' => $last_name, ':user' => $username, ':pass' => $passwordHash, ':email' => $email, ':phone' => $phone));
 }
+
+function check_id($db, $user) 
+{
+   $stmt = $db->prepare('SELECT username, user_password FROM library_user WHERE username = :user');
+   $stmt->bindValue(':user', $user, PDO::PARAM_STR);
+   $stmt->execute();
+   $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+   return $results;
+}
+
 ?>

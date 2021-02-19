@@ -14,8 +14,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = test_input($_POST["password"]);
     $logout = test_input($_POST["logout"]);
     $login = test_input($_POST["login"]);
+
+    try {
+        $data = check_id($db, $username);
+        $verify = password_verify($password, $data[0]['user_password']);
+        echo $verify;
+            if ($data[0]['username'] == $username && $verify == 1) {
+                $hash = $data[0]['user_password'];
+                $newUsername = $data[0]['username'];
+            }
+        $_SESSION['user'] = $newUsername;
+     } catch (Exception $e) {
+        $message = "<p>An incorrect username or password was entered. Please try again.</p>";
+     }
+
     $_SESSION['id'] = getUserID($username, $password);
-    $_SESSION['username'] = $username;
+    //$_SESSION['username'] = $username;
     if ($logout == "logout") {
         $message = "<p class='bg-success py-3 px-4 rounded'>You are logged out.</p>";
         session_destroy();
