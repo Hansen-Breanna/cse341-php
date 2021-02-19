@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $pattern = "/^(?=.*[[:digit:]])(?=.*[a-z])([^\s]){7,}$/";
 
     if ($pass != $confirm) {
-        $message = "<p class='text-red'>Your passwords do not match. Please try again.</p>";
+        $message = "<p class='bg-danger'>Your passwords do not match. Please try again.</p>";
         $star = "<span class='text-red'>*</span>";
     } else {
         try {
@@ -72,7 +72,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
             ?>
             <p>To sign up, please create a username and password.<br> Password must be 7 characters and contain a number.</p>
-            <?php echo $message; ?>
             <div id="confirmed"></div>
             <form method="post" action="<?php htmlspecialchars($_SERVER["PHP_SELF"]) ?>">
                 <table>
