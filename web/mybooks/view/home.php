@@ -9,6 +9,10 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && (isset($_SESSION['id']))) {
     $message = "<p class='bg-success py-3 px-4 rounded'>You are logged in as: " . $_SESSION['username'] . '</p>';
 }
 
+if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION['id']))) {
+    header('Location: index.php?action=sign-up');
+}
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = test_input($_POST["username"]);
     $password = test_input($_POST["password"]);
