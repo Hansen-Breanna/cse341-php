@@ -9,3 +9,13 @@ $(document).ready(function(){
       
   });
 
+
+  function confirm() {
+    $pass = document.getElementById("password").value;
+    $confirm = document.getElementById("confirm_password").value;
+    if ($pass == $confirm) {
+        document.getElementById("confirmed").innerHTML = "Password inputs match.";
+    } else {
+        document.getElementById("confirmed").innerHTML = "Passwords do not match.";
+    }
+}
