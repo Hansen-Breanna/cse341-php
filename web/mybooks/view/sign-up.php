@@ -102,7 +102,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <p>(No dashes)</p>
                             </td>
                             <td>
-                                <input class="m-1 pl-1" type="text" id="phone" name="phone" placeholder="0000000000">
+                                <input class="m-1 pl-1" type="text" id="phone" name="phone" placeholder="0000000000" pattern="^\d{10}$">
                             </td>
                         </tr>
                         <tr>
