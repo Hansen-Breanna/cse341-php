@@ -62,6 +62,10 @@ table {
     color: #fb8500;
 }
 
+.text-red {
+    color: red;
+}
+
 .review {
     width: 80vw;
 }

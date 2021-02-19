@@ -5,28 +5,30 @@ session_start();
 // Get the database connection file
 require_once '../mybooks/library/connections.php';
 
-$username = $password = $confirm_password = "";
+$first_name = $last_name = $username = $password = $confirm_password = $email = $phone = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $first_name = test_input($_POST['first_name']);
+    $last_name = test_input($_POST['last_name']);
+    $email = test_input($_POST['email']);
+    $phone = test_input($_POST['phone']);
     $user = test_input($_POST['username']);
     $pass = test_input($_POST['password']);
     $confirm =  test_input($_POST['confirm_password']);
     $pattern = "/^(?=.*[[:digit:]])(?=.*[a-z])([^\s]){7,}$/";
 
     if ($pass != $confirm) {
-        $message = "<p class='danger'>Your passwords do not match. Please try again.</p>";
-        $star = "<span class='danger'>*</span>";
+        $message = "<p class='text-red'>Your passwords do not match. Please try again.</p>";
+        $star = "<span class='text-red'>*</span>";
     } else {
         try {
             $check = preg_match($pattern, $pass);
             if ($check == 1) {
                 $passwordHash = password_hash($pass, PASSWORD_DEFAULT);
-                $db = connectMyBooks();
-                $stmt = $db->prepare('INSERT INTO week7_user (username, user_password) VALUES (:user, :pass)');
-                $stmt->execute(array(':user' => $user, ':pass' => $passwordHash));
+                insertUser($db, $first_name, $last_name, $username, $passwordHash, $email, $phone);
                 header('Location: sign-in.php');
             } else {
-                $message = "<p class='danger'>Please use at least 7 characters and 1 number.</p>";
+                $message = "<p class='text-red'>Please use at least 7 characters and 1 number.</p>";
             }
         } catch (Exception $e) {
             echo $e;
@@ -37,15 +39,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 
 <script>
-    function confirm() {
-        $pass = document.getElementById("password").value;
-        $confirm = document.getElementById("confirm_password").value;
-        if ($pass == $confirm) {
-            document.getElementById("confirmed").innerHTML = "Password inputs match.";
-        } else {
-            document.getElementById("confirmed").innerHTML = "Passwords do not match.";
-        }
-    }
+    // function confirm() {
+    //     $pass = document.getElementById("password").value;
+    //     $confirm = document.getElementById("confirm_password").value;
+    //     if ($pass == $confirm) {
+    //         document.getElementById("confirmed").innerHTML = "Password inputs match.";
+    //     } else {
+    //         document.getElementById("confirmed").innerHTML = "Passwords do not match.";
+    //     }
+    // }
 </script>
 
 <!-- Head -->
@@ -129,9 +131,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </tr>
                     </tbody>
                 </table>
-                <input class="m-1 pl-1" type="text" id="username" name="username" placeholder="username"><br>
-                <input class="m-1 pl-1" type='text' id="password" name="password" placeholder="password" pattern="(?=^.{7,}$)(?=.*\d)(?=.*[a-z]).*$"><?php echo $star; ?><br>
-                <input class="m-1 pl-1" type='text' id="confirm_password" name="confirm_password" placeholder="confirm password" pattern="(?=^.{7,}$)(?=.*\d)(?=.*[a-z]).*$"><?php echo $star; ?><br>
+                <!-- <input class="m-1 pl-1" type="text" id="username" name="username" placeholder="username"><br>
+                <input class="m-1 pl-1" type='text' id="password" name="password" placeholder="password" pattern="(?=^.{7,}$)(?=.*\d)(?=.*[a-z]).*$"><?php //echo $star; ?><br>
+                <input class="m-1 pl-1" type='text' id="confirm_password" name="confirm_password" placeholder="confirm password" pattern="(?=^.{7,}$)(?=.*\d)(?=.*[a-z]).*$"><?php //echo $star; ?>-->
                 <input type="submit" class="rs-size btn bg-orange m-1" value="Sign Up" onclick="confirm()">
             </form>
             <a href="index.php?" title="Log In" class="rs-size btn btn-custom bg-orange m-1">Log In</a>
