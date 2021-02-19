@@ -9,6 +9,7 @@
             <form method='get' action="index.php?action=home">
                 <input type="submit" class="btn bg-orange p-2 shadow mr-3" value="Log In">
             </form>
+            peanuts
             <form method='post' action="index.php?action=home">
                 <input type='hidden' id="logout" name="logout" value="logout"><br>
                 <input id="logout-button" type="submit" class="btn bg-orange p-2 shadow" value="Log Out">
