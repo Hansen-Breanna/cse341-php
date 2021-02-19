@@ -139,9 +139,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </tr>
                     </tbody>
                 </table>
-                <!-- <input class="m-1 pl-1" type="text" id="username" name="username" placeholder="username"><br>
-                <input class="m-1 pl-1" type='text' id="password" name="password" placeholder="password" pattern="(?=^.{7,}$)(?=.*\d)(?=.*[a-z]).*$"><?php //echo $star; ?><br>
-                <input class="m-1 pl-1" type='text' id="confirm_password" name="confirm_password" placeholder="confirm password" pattern="(?=^.{7,}$)(?=.*\d)(?=.*[a-z]).*$"><?php //echo $star; ?>-->
                 <input type="submit" class="rs-size btn bg-orange m-1" value="Sign Up" onclick="confirm()">
             </form>
             <a href="index.php?" title="Log In" class="rs-size btn btn-custom bg-orange m-1">Log In</a>
