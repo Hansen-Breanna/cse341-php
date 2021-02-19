@@ -86,7 +86,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <!-- Head -->
 <?php include 'common/head.php'; ?>
 
-<title>Add Title - My Books</title>
+<title>Sign Up - My Books</title>
 
 <!-- Nav -->
 <?php include 'common/nav.php'; ?>
@@ -95,7 +95,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <?php include '../common/header.php'; ?>
 
 <h1 class="offset-1 col-10 offset-md-0 col-md-12">My Books</h1>
-<h2>Please register or log in.</h2>
+<h2>Please sign up or log in.</h2>
 </div>
 </div>
 </header>
