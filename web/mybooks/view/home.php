@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $_SESSION['id'] = getUserID($username, $password);
     $_SESSION['username'] = $username;
     if ($logout == "logout") {
-        message = "<p class='bg-success py-3 px-4 rounded'>You are logged out.</p>";
+        $message = "<p class='bg-success py-3 px-4 rounded'>You are logged out.</p>";
         session_destroy();
     }
     if (isset($_SESSION['id'])) {
