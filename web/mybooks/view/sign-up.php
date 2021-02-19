@@ -98,6 +98,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </tr>
                         <tr>
                             <td>
+                                <label for="email">Email:</label>
+                            </td>
+                            <td>
+                                <input class="m-1 pl-1" type="email" id="email" name="email" placeholder="your@email.com">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
                                 <label for="phone">phone number:</label><br>
                                 <p>(No dashes)</p>
                             </td>
