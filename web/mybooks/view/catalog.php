@@ -3,6 +3,10 @@
 session_start();
 $title = $first_name = $last_name = $deleteID = $updateID = "";
 
+if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION['id']))) {
+  header('Location: index.php?action=home');
+}
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $title = test_input($_POST["title"]);
   $first_name = test_input($_POST["first_name"]);

@@ -4,6 +4,10 @@ session_start();
 
 $title = $review = $rating = "";
 
+if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION['id']))) {
+    header('Location: index.php?action=home');
+}
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $title = test_input($_POST['title']);
     $review = test_input($_POST['review']);

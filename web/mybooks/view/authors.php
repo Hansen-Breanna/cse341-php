@@ -6,7 +6,7 @@ $first_name = $middle_name = $last_name = $delete = $update = $update_author = "
 $favorite = $blacklist = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION['id']))) {
-  header('Location: index.php?action=sign-up');
+  header('Location: index.php?action=home');
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

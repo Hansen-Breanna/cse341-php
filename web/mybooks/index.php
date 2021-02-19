@@ -244,7 +244,10 @@ switch ($action){
     case 'home':
         include 'view/home.php';
     break;
-    default:
+    case 'sign-up':
         include 'view/sign-up.php';
+    break;
+    default:
+        include 'view/home.php';
     break;
 }
