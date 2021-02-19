@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $check = preg_match($pattern, $pass);
             if ($check == 1) {
                 $passwordHash = password_hash($pass, PASSWORD_DEFAULT);
-                insertUser($db, $first_name, $last_name, $username, $passwordHash, $email, $phone);
+                insertUser($db, $first_name, $last_name, $user, $passwordHash, $email, $phone);
                 header('Location: index.php?action=home');
             } else {
                 $message = "<p class='text-red'>Please use at least 7 characters and 1 number.</p>";
