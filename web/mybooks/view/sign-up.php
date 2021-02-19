@@ -76,18 +76,59 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <?php echo $message; ?>
             <div id="confirmed"></div>
             <form method="post" action="sign-up.php">
-            <table>
-            <tbody>
-            <tr>
-            <td>
-            <label for="first_name">First name:</label>
-            </td>
-            <td>
-            <input class="m-1 pl-1" type="text" id="first_name" name="first_name" placeholder="first name">
-            </td>
-            </tr>
-            </tbody>
-            </table>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <label for="first_name">First name:</label>
+                            </td>
+                            <td>
+                                <input class="m-1 pl-1" type="text" id="first_name" name="first_name" placeholder="first name">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="last_name">last name:</label>
+                            </td>
+                            <td>
+                                <input class="m-1 pl-1" type="text" id="last_name" name="last_name" placeholder="last name">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="phone">phone number:</label><br>
+                                <p>(No dashes)</p>
+                            </td>
+                            <td>
+                                <input class="m-1 pl-1" type="text" id="phone" name="phone" placeholder="0000000000">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="username">username:</label>
+                            </td>
+                            <td>
+                                <input class="m-1 pl-1" type="text" id="username" name="username" placeholder="username">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="password">password:</label>
+                            </td>
+                            <td>
+                                <input class="m-1 pl-1" type="text" id="password" name="password" placeholder="password">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="username">username:</label>
+                            </td>
+                            <td>
+                                <input class="m-1 pl-1" type="text" id="username" name="username" placeholder="username">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
                 <input class="m-1 pl-1" type="text" id="username" name="username" placeholder="username"><br>
                 <input class="m-1 pl-1" type='text' id="password" name="password" placeholder="password" pattern="(?=^.{7,}$)(?=.*\d)(?=.*[a-z]).*$"><?php echo $star; ?><br>
                 <input class="m-1 pl-1" type='text' id="confirm_password" name="confirm_password" placeholder="confirm password" pattern="(?=^.{7,}$)(?=.*\d)(?=.*[a-z]).*$"><?php echo $star; ?><br>
