@@ -35,18 +35,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 ?>
 
-<script>
-    // function confirm() {
-    //     $pass = document.getElementById("password").value;
-    //     $confirm = document.getElementById("confirm_password").value;
-    //     if ($pass == $confirm) {
-    //         document.getElementById("confirmed").innerHTML = "Password inputs match.";
-    //     } else {
-    //         document.getElementById("confirmed").innerHTML = "Passwords do not match.";
-    //     }
-    // }
-</script>
-
 <!-- Head -->
 <?php include 'common/head.php'; ?>
 
@@ -135,9 +123,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </tr>
                     </tbody>
                 </table>
-                <input type="submit" class="rs-size btn bg-orange m-1" value="Sign Up" onclick="confirm()">
+                <div class="d-flex justify-content-center">
+                    <input type="submit" class="rs-size btn bg-orange m-1" value="Sign Up" onclick="confirm()">
+                    <a href="index.php?" title="Log In" class="rs-size btn btn-custom bg-orange m-1">Log In</a>
+                </div>
             </form>
-            <a href="index.php?" title="Log In" class="rs-size btn btn-custom bg-orange m-1">Log In</a>
         </div>
     </div>
 </main>
