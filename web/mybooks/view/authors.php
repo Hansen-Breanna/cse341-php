@@ -117,6 +117,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <input type="hidden" name="search">
           <?php include 'common/author.php'; ?>
       </div>
+
+      <div class="my-3 mx-2 py-2 border-secondary border-top border-bottom">
+                <a href="index.php?action=authors" title="See All Authors" class="btn btn-custom my-2 ml-1 bg-info">See All Authors</a>
+            </div>
       <div>
         <?php
         echo $message;
