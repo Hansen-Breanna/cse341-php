@@ -56,6 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="my-3 mx-2 py-2 border-secondary border-top border-bottom">
               <a href="index.php?action=add-review" class="btn bg-orange my-2 ml-1">Add Review for New Title</a>
               <a href="index.php?action=title-existing-review" class="btn bg-orange my-2 ml-1">Add Review for Existing Title</a>
+              <a href="index.php?action=reviews" title="See All Reviews" class="btn btn-custom bg-info my-2 ml-1">See Reviews</a>
             </div>
       </div>
       <?php
