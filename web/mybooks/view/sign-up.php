@@ -125,7 +125,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </table>
                 <div class="d-flex justify-content-center">
                     <input type="submit" class="rs-size btn bg-orange m-1" value="Sign Up" onclick="confirm()">
-                    <a href="index.php?" title="Log In" class="rs-size btn btn-custom bg-orange m-1">Log In</a>
+                    <a href="index.php?action=home" title="Log In" class="rs-size btn btn-custom bg-orange m-1">Log In</a>
                 </div>
             </form>
         </div>

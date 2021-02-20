@@ -24,6 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             //author
             insertBorrower($db, $first_name, $middle_name, $last_name, $phone);
             $newBorrowerID = $db->lastInsertId('borrower_id_seq');
+            insertUser_Borrower($db, $_SESSION['id'], $newBorrowerID);
         } else {
             $newBorrowerID = $borrowerID;
         }
