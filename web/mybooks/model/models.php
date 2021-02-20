@@ -60,7 +60,7 @@ function displayLoans($loans)
        </form>
        <form method="post" action="index.php?action=loans">
          <input type="hidden" name="delete" value="' . $loan['id'] . '"/>
-         <input type="submit" class="bg-danger btn-100 btn-small btn mr-1 mb-1" value="Return"/>
+         <input type="submit" class="bg-danger btn-100 mr-1 mb-1" value="Return"/>
       </form>
       </td></tr>';
    }
