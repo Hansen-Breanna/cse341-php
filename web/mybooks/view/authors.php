@@ -50,11 +50,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $updateUserAuthor = updateUserAuthor($db, $_SESSION['id'], $authorID, $newBlacklist, $newFavorite);
     header('Location: index.php?action=authors');
-  } catch (Exception $e) {
-    echo $e;
+    } catch (Exception $e) {
+      $message = "<p class='px-4 py-3 bg-danger rounded'>Author update was not successful. Please try again.</p>";
+    }
   }
-  }
-  else if (!isset($_POST['delete']) && !isset($_POST['update'])) {
+  else if (!isset($_POST['delete']) && !isset($_POST['update']) && !isset($_POST['search'])) {
     $_SESSION['authorID'] = "";
     echo "book";
     try {
@@ -88,7 +88,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } catch (Exception $e) {
       $authorExists = "<p class='px-4 py-3 bg-danger rounded'>Author already exists. Edit author instead.</p>";
     }
-  }
+  } 
 }
 ?>
 
@@ -114,6 +114,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       <div>
         <!-- Search Author -->
         <form method="post" action="index.php?action=get-author">
+          <input type="hidden" name="search">
           <?php include 'common/author.php'; ?>
       </div>
       <div>
