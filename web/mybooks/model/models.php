@@ -279,6 +279,7 @@ function selectBorrower($db, $id)
 {
    $borrower = '<select class="p-2 rounded mb-1" name="borrowerID" id="borrowerList">';
    $statement = $db->prepare("SELECT b.first_name, b.middle_name, b.last_name, ub.borrower_id FROM borrower b INNER JOIN user_borrower ub ON b.id = ub.borrower_id WHERE ub.library_user_id = :id ORDER BY b.last_name");
+   $statement->execute(array(':id' => $id));
    $statement->execute();
 
    while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
