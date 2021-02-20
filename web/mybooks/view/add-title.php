@@ -78,7 +78,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         insertTitle($db, $newAuthorID, $title);
         $newTitleID = $db->lastInsertId('book_title_id_seq');
 
-        // //user-book
+        // user_author
+        insertUserAuthorFromTitle($db, $userID, $newAuthorID);
+        //user_book
         insertUserBook($db, $_SESSION['id'], $newTitleID, $newOwn, $newOwn_wish, $newRead_wish);
     } catch (Exception $e) {
         $message = "<p class='px-4 py-3 bg-danger rounded'>Title was not added. Please check for existing author and try again.</p>";
