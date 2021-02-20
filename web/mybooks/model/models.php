@@ -283,7 +283,7 @@ function selectBorrower($db, $id)
    $statement->execute();
 
    while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-      $borrower .= '<option value=' . $row['id'] . '>' . $row['last_name'] . ', ' . $row['first_name'] . ' ' . $row['middle_name'] . '</option>';
+      $borrower .= '<option value=' . $row['borrower_id'] . '>' . $row['last_name'] . ', ' . $row['first_name'] . ' ' . $row['middle_name'] . '</option>';
    }
    $borrower .= '</select>';
    return $borrower;
