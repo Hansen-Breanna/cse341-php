@@ -286,7 +286,7 @@ function insertUser_Borrower($db, $user_id, $borrower_id) {
 }
 
 function insertLoan($db, $userID, $titleID, $borrowerID, $dateBorrowed, $returnDate, $returned) {
-   echo $userID . $titleID . $borrowerID;
+   echo $userID . ' ' . $titleID . ' ' . $borrowerID;
    $stmt = $db->prepare('INSERT INTO loan (library_user_id, book_title_id, borrower_id, date_borrowed, return_date, is_returned) VALUES (:userID, :titleID, :borrowerID, :dateBorrowed, :returnDate, :returned)');
    $stmt->execute(array(':userID' => $userID, ':titleID' => $titleID, ':borrowerID' => $borrowerID, ':dateBorrowed' => $dateBorrowed, ':returnDate' => $returnDate, ':returned' => $returned)); 
 }
