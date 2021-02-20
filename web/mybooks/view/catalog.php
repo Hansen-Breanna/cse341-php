@@ -24,10 +24,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       echo $e;
       $message = "<p class='px-4 py-3 bg-danger rounded'>Delete failed.</p>";
     }
-  } else if (isset($_POST['updateID'])) {
-    // $updateID = test_input($_POST['update']);
-    // $authorData = getAuthor($updateID);
-    // $author = updateAuthor($authorData);
   } else {
     try {
     } catch (Exception $e) {
@@ -70,6 +66,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             <!-- Add/Remove -->
             <?php include 'common/add-remove-title.php'; ?>
+            <a href="index.php?action=catalog" title="See All Titles" class="btn btn-custom bg-info my-2 ml-1">See Full Catalog</a>
       </div>
     </div>
     <div>
