@@ -26,48 +26,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 echo $e;
             }
         }
-    //     } else {
-    //         try {
-    //             if (isset($_POST['update'])) {
-    //                 $book_title_id = $_SESSION['title_data'][0]['book_title_id'];
-    //                 $author_id = $_SESSION['title_data'][0]['author_id'];
-
-    //                 $own = test_input($_POST["own"]);
-    //                 if (isset($_POST['own'])) {
-    //                     $own = "TRUE";
-    //                 } else {
-    //                     $own = "FALSE";
-    //                 }
-    //                 $new_own = removeQuotes($own);
-
-    //                 $own_wish = test_input($_POST["own_wish"]);
-    //                 if (isset($_POST['own_wish'])) {
-    //                     $own_wish = "TRUE";
-    //                 } else {
-    //                     $own_wish = "FALSE";
-    //                 }
-    //                 $new_own_wish = removeQuotes($own_wish);
-
-    //                 $read_wish = test_input($_POST["read_wish"]);
-    //                 if (isset($_POST['read_wish'])) {
-    //                     $read_wish = "TRUE";
-    //                 } else {
-    //                     $read_wish = "FALSE";
-    //                 }
-    //                 $new_read_wish = removeQuotes($read_wish);
-
-    //                 // update user_book
-    //                 updateUserBook($db, $user_id, $book_title_id, $new_own, $new_own_wish, $new_read_wish);
-
-    //                 unset($_SESSION['title_data']);
-    //                 header('Location: index.php?action=catalog');
-    //             }
-    //         } catch (Exception $e) {
-    //             echo $e;
-    //             $message = "<p class='px-4 py-3 bg-danger rounded'>Wish was not updated. Please try again.</p>";
-    //         }
-    //     } 
-    // }
 }
 
 ?>
