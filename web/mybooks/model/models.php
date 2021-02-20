@@ -49,18 +49,18 @@ function displayLoans($loans)
       $loanList .= '<td>' . $loan['first_name'] . ' ' . $loan['last_name'] . '</td>';
       $loanList .= '<td class="d-none d-lg-table-cell">' . $loan['date_borrowed'] . '</td>';
       $loanList .= '<td>' . $loan['return_date'] . '</td>';
-      $loanList .= '<td class="d-flex flex-column flex-sm-row flex-sm-wrap"><a class="btn bg-orange mr-1 mb-1 rs-small btn-small" href="sms://+1';
+      $loanList .= '<td class="d-flex flex-column flex-sm-row flex-sm-wrap"><a class="btn bg-orange mr-1 mb-1 btn-small" href="sms://+1';
       $loanList .=  $loan['phone_number'];
       $loanList .= '?&body=Hi%20' . $loan['first_name'] . '!%20The%20book%20you%20borrowed%2C%20' . $loan['title_of_book'];
       $loanList .= '%2C%20is%20overdue.%20Please%20contact%20me%20at%20' . $loan['user_phone'];
       $loanList .= '%20to%20return%20it.%20Thanks!">SMS</a>';
       $loanList .= '<form method="post" action="index.php?action=update-loan">
          <input type="hidden" name="loanID" value="' . $loan['id'] . '"/>
-         <input type="submit" class="bg-info rs-small btn btn-small mr-1 mb-1" value="Edit"/>
+         <input type="submit" class="bg-info btn btn-small mr-1 mb-1" value="Edit"/>
        </form>
        <form method="post" action="index.php?action=loans">
          <input type="hidden" name="delete" value="' . $loan['id'] . '"/>
-         <input type="submit" class="bg-danger btn-small rs-small btn mr-1 mb-1" value="Return"/>
+         <input type="submit" class="bg-danger btn-small btn mr-1 mb-1" value="Return"/>
       </form>
       </td></tr>';
    }
