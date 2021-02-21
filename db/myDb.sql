@@ -25,7 +25,8 @@ CREATE TABLE library_user
 	user_password VARCHAR(255) NOT NULL,
 	user_email VARCHAR(50) NOT NULL,
     user_phone VARCHAR(12),
-	PRIMARY KEY (id)
+	PRIMARY KEY (id),
+    ADD CONSTRAINT UC_username UNIQUE (username)
 );
 /* non-hashed password for all is 'testing2021' */
 INSERT INTO library_user (first_name, last_name, username, user_password, user_email, user_phone) VALUES ('Breanna', 'Hansen', 'Breanna', '$2y$10$JM.xjaOGq.AlTb7OXWE5Ie6JSlbEeqe85KdW5v4fi/jPu7ZqqUA/G', 'test@email.com', '2082061488'); 
