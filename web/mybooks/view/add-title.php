@@ -84,8 +84,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // user_author
         insertUserAuthorFromTitle($db, $userID, $newAuthorID);
     } catch (Exception $e) {
-        $e;
-        $message = "<p class='px-4 py-3 bg-danger rounded'>Title was not added. Please check for existing author and try again.</p>";
+        $message = "<p class='px-4 py-3 bg-danger rounded'>Testing. Title was not added. Please check for existing author and try again.</p>";
     }
 }
 
