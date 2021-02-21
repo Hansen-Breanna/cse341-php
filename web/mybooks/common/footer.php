@@ -7,10 +7,6 @@
         </div>
         <div class="d-flex align-items-end">
             <form method='post' action="index.php?action=home">
-                <input type='hidden' id="login" name="login" value="login">
-                <input type="submit" class="btn bg-orange p-2 shadow mr-3" value="Log In">
-            </form>
-            <form method='post' action="index.php?action=home">
                 <input type='hidden' id="logout" name="logout" value="logout">
                 <input id="logout-button" type="submit" class="btn bg-orange p-2 shadow" value="Log Out">
             </form>
