@@ -68,7 +68,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div id="box-1" class="main-box p-5 w-25 mt-4 mx-2">
                 <form method="post" action="<?php htmlspecialchars($_SERVER["PHP_SELF"]) ?>">
                     <input class="rs-size rounded border-light m-1 pl-1" type="text" id="username" name="username" placeholder="username"><br>
-                    <input class="rs-size rounded border-light m-1 pl-1" type='text' id="password" name="password" placeholder="password"><br>
+                    <input class="rs-size rounded border-light m-1 pl-1" type='password' id="password" name="password" placeholder="password"><br>
                     <input type="submit" class="rs-size btn btn-custom bg-orange m-1" value="Log In">
                 </form>
             </div>
