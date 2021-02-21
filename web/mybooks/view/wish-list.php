@@ -58,7 +58,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION['id']))) {
       </div>
       <div class="d-flex flex-row flex-wrap justify-content-around">
         <div class="m-2">
-          <h2 class="pt-4 ml-4">Own Wish List</h2>
+          <h2 class="pt-4 ml-3">Own Wish List</h2>
           <table class="table table-dark table-striped text-light m-2">
             <thead>
               <tr>
@@ -73,7 +73,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION['id']))) {
           </table>
         </div>
         <div class="m-2">
-          <h2 class="pt-4 ml-4">Read Wish List</h2>
+          <h2 class="pt-4 ml-3">Read Wish List</h2>
           <table class="table table-dark table-striped text-light m-2">
             <thead>
               <tr>
