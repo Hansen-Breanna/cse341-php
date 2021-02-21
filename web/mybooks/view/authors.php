@@ -116,7 +116,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <form method="post" action="index.php?action=get-author">
           <input type="hidden" name="search">
           <?php include 'common/author.php'; ?>
-          <a href="index.php?action=authors" title="See All Authors" class="btn btn-custom my-2 ml-1 bg-info">See All Authors</a>
+          <a href="index.php?action=authors" title="See All Authors" class="btn btn-custom my-2 ml-2 ml-1 bg-info">See All Authors</a>
       </div>
       <div>
         <?php

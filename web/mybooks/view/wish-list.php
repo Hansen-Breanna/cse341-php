@@ -35,10 +35,8 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION['id']))) {
           <!-- Search Author -->
           <form method="post" action="index.php?action=wish-author">
             <?php include 'common/author.php'; ?>
+            <a href="index.php?action=wish" title="See All Wishes" class="btn btn-custom my-2 ml-1 bg-info ml-2">See All Wishes</a>
       </div>
-      <div class="my-3 mx-2 py-2 border-secondary border-top border-bottom">
-                <a href="index.php?action=wish" title="See All Wishes" class="btn btn-custom my-2 ml-1 bg-info">See All Wishes</a>
-            </div>
     </div>
     <div>
       <div class="d-flex justify-content-center">
