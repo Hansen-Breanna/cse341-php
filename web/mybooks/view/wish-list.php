@@ -50,15 +50,15 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION['id']))) {
             <h2 class="author-name mt-2">Add to Wish List</h2>
             <p>Add a wish list item with for a new or existing title.</p>
             <p>
-              <a href="index.php?action=add-title" class="btn bg-orange p-2" title="Add title by with new author">Add New Title & Author</a>
-              <a href="index.php?action=existing-author" class="btn bg-orange p-2" title="Add title by existing author">Add New Title & Existing Author</a>
+              <a href="index.php?action=add-title" class="btn bg-orange p-2 mb-1" title="Add title by with new author">Add New Title & Author</a>
+              <a href="index.php?action=existing-author" class="btn bg-orange p-2 mb-1" title="Add title by existing author">Add New Title & Existing Author</a>
             </p>
           </div>
         </div>
       </div>
       <div class="d-flex flex-row flex-wrap justify-content-around">
         <div class="m-2">
-          <h2 class="pt-4">Own Wish List</h2>
+          <h2 class="pt-4 ml-2">Own Wish List</h2>
           <table class="table table-dark table-striped text-light m-2">
             <thead>
               <tr>
@@ -72,7 +72,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && (!isset($_SESSION['id']))) {
           </table>
         </div>
         <div class="m-2">
-          <h2 class="pt-4">Read Wish List</h2>
+          <h2 class="pt-4 ml-2">Read Wish List</h2>
           <table class="table table-dark table-striped text-light m-2">
             <thead>
               <tr>
