@@ -61,7 +61,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             ?>
             <p>To sign up, password must be at least 7 characters and contain a number.</p>
             <div id="confirmed"></div>
-            <form method="post" action="index.php?action=sign-up">
+            <form method="post" action="<?php htmlspecialchars($_SERVER["PHP_SELF"]) ?>">
                 <table>
                     <tbody>
                         <tr>
