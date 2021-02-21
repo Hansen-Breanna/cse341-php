@@ -5,17 +5,16 @@ CREATE TABLE author
 	first_name VARCHAR(100) NOT NULL,
 	middle_name VARCHAR(100),
 	last_name VARCHAR(100) NOT NULL,
-	PRIMARY KEY (id)
+	PRIMARY KEY (id),
+    ADD CONSTRAINT UC_full_author UNIQUE (first_name, middle_name, last_name),
+    ADD CONSTRAINT UC_partial_author UNIQUE (first_name, last_name)
 );
 /* author inserts */
-INSERT INTO author (first_name, last_name) VALUES ('Jane', 'Austen');
-INSERT INTO author (first_name, last_name) VALUES ('Tracie', 'Peterson');
-INSERT INTO author (first_name, last_name) VALUES ('Dee', 'Henderson');
-INSERT INTO author (first_name, middle_name, last_name) VALUES ('Kristi', 'Ann', 'Hunter');
-INSERT INTO author (first_name, last_name) VALUES ('John', 'Flanagan');
-INSERT INTO author (first_name, last_name) VALUES ('J.K.', 'Rowling');
-/* search for favorites */
-SELECT first_name, last_name FROM author WHERE is_favorite = TRUE;
+INSERT INTO author (first_name, middle_name, last_name) VALUES ('F.', 'Scott', 'Fitzgerald');
+INSERT INTO author (first_name, last_name) VALUES ('Marcel', 'Proust');
+INSERT INTO author (first_name, last_name) VALUES ('William', 'Faulkner');
+INSERT INTO author (first_name, last_name) VALUES ('James', 'Joyce');
+
 /* create user */
 CREATE TABLE library_user
 (
@@ -25,11 +24,14 @@ CREATE TABLE library_user
 	username VARCHAR(100) NOT NULL,
 	user_password VARCHAR(255) NOT NULL,
 	user_email VARCHAR(50) NOT NULL,
+    user_phone VARCHAR(12),
 	PRIMARY KEY (id)
 );
-INSERT INTO library_user (first_name, last_name, username, user_password, user_email) VALUES ('Breanna', 'Hansen', 'hansen', 'test', 'test@email.com'); 
-INSERT INTO library_user (first_name, last_name, username, user_password, user_email) VALUES ('Chase', 'Wilcox', 'wilcox', 'test', 'test@email.com');
-INSERT INTO library_user (first_name, last_name, username, user_password, user_email) VALUES ('Brother', 'Lyon', 'lyon', 'test', 'test@email.com');
+/* non-hashed password for all is 'testing2021' */
+INSERT INTO library_user (first_name, last_name, username, user_password, user_email, user_phone) VALUES ('Breanna', 'Hansen', 'Breanna', '$2y$10$JM.xjaOGq.AlTb7OXWE5Ie6JSlbEeqe85KdW5v4fi/jPu7ZqqUA/G', 'test@email.com', '2082061488'); 
+INSERT INTO library_user (first_name, last_name, username, user_password, user_email, user_phone) VALUES ('Chase', 'Wilcox', 'wilcox', '$2y$10$JM.xjaOGq.AlTb7OXWE5Ie6JSlbEeqe85KdW5v4fi/jPu7ZqqUA/G', 'test@email.com', '2082061488');
+INSERT INTO library_user (first_name, last_name, username, user_password, user_email, user_phone) VALUES ('Brother', 'Lyon', 'lyon', '$2y$10$JM.xjaOGq.AlTb7OXWE5Ie6JSlbEeqe85KdW5v4fi/jPu7ZqqUA/G', 'test@email.com', '2082061488');
+
 /* create user/author bridge table */
 CREATE TABLE user_author
 (
@@ -43,14 +45,14 @@ CREATE TABLE user_author
 	ADD CONSTRAINT FK_UserAuthor_Author FOREIGN KEY (author_id) REFERENCES author(id) ON DELETE CASCADE,
     ADD CONSTRAINT UC_user_author UNIQUE (library_user_id, author_id)
 );
-INSERT INTO user_author (library_user_id, author_id, is_blacklist, is_favorite) VALUES (1, 1, FALSE, TRUE);
-INSERT INTO user_author (library_user_id, author_id, is_blacklist, is_favorite) VALUES (1, 2, FALSE, TRUE);
-INSERT INTO user_author (library_user_id, author_id, is_blacklist, is_favorite) VALUES (1, 3, FALSE, TRUE);
-INSERT INTO user_author (library_user_id, author_id, is_blacklist, is_favorite) VALUES (1, 6, TRUE, FALSE);
-INSERT INTO user_author (library_user_id, author_id, is_blacklist, is_favorite) VALUES (2, 3, FALSE, TRUE);
-INSERT INTO user_author (library_user_id, author_id, is_blacklist, is_favorite) VALUES (2, 4, TRUE, FALSE);
-INSERT INTO user_author (library_user_id, author_id, is_blacklist, is_favorite) VALUES (3, 5, FALSE, TRUE);
-INSERT INTO user_author (library_user_id, author_id, is_blacklist, is_favorite) VALUES (3, 6, TRUE, FALSE);
+INSERT INTO user_author (library_user_id, author_id, is_blacklist, is_favorite) VALUES (11, 173, FALSE, TRUE);
+INSERT INTO user_author (library_user_id, author_id, is_blacklist, is_favorite) VALUES (11, 174, FALSE, TRUE);
+INSERT INTO user_author (library_user_id, author_id, is_blacklist, is_favorite) VALUES (11, 175, FALSE, TRUE);
+INSERT INTO user_author (library_user_id, author_id, is_blacklist, is_favorite) VALUES (11, 176, TRUE, FALSE);
+INSERT INTO user_author (library_user_id, author_id, is_blacklist, is_favorite) VALUES (15, 175, FALSE, TRUE);
+INSERT INTO user_author (library_user_id, author_id, is_blacklist, is_favorite) VALUES (15, 176, TRUE, FALSE);
+INSERT INTO user_author (library_user_id, author_id, is_blacklist, is_favorite) VALUES (16, 173, FALSE, TRUE);
+INSERT INTO user_author (library_user_id, author_id, is_blacklist, is_favorite) VALUES (16, 174, TRUE, FALSE);
 /* create book title table */
 CREATE TABLE book_title
 (
@@ -61,18 +63,12 @@ CREATE TABLE book_title
 	ADD CONSTRAINT FK_BookTitle_Author FOREIGN KEY (author_id) REFERENCES author(id) ON DELETE CASCADE
 );
 /* book title inserts */
-INSERT INTO book_title (author_id, title_of_book) VALUES (4, 'A Noble Masquerade');
-INSERT INTO book_title (author_id, title_of_book) VALUES (4, 'An Elegant Facade');
-INSERT INTO book_title (author_id, title_of_book) VALUES (4, 'A Lady of Esteem');
-INSERT INTO book_title (author_id, title_of_book) VALUES (5, 'Ranger''s Apprentice: The Battle of Hackham Heath');
-INSERT INTO book_title (author_id, title_of_book) VALUES (1, 'Pride and Prejudice');
-INSERT INTO book_title (author_id, title_of_book) VALUES (1, 'Sense and Sensibility');
-INSERT INTO book_title (author_id, title_of_book) VALUES (2, 'Treasured Grace');
-INSERT INTO book_title (author_id, title_of_book) VALUES (2, 'In The Shadow of Denali');
-INSERT INTO book_title (author_id, title_of_book) VALUES (2, 'When You are Near');
-INSERT INTO book_title (author_id, title_of_book) VALUES (2, 'Treasured Grace');
-INSERT INTO book_title (author_id, title_of_book) VALUES (3, 'Unspoken');
-INSERT INTO book_title (author_id, title_of_book) VALUES (3, 'Undetected');
+INSERT INTO book_title (author_id, title_of_book) VALUES (173, 'The Great Gatsby');
+INSERT INTO book_title (author_id, title_of_book) VALUES (174, 'In Search of Lost Time');
+INSERT INTO book_title (author_id, title_of_book) VALUES (175, 'The Sounds and the Fury');
+INSERT INTO book_title (author_id, title_of_book) VALUES (176, 'Ulysses');
+INSERT INTO book_title (author_id, title_of_book) VALUES (176, 'Dubliners');
+
 /* select author names by author by id */
 SELECT author.first_name, author.middle_name, author.last_name, book_title.title_of_book FROM author INNER JOIN book_title ON author.id = book_title.author_id;
 /* create book owned table */
@@ -88,18 +84,15 @@ CREATE TABLE user_book
 	ADD CONSTRAINT FK_UserBook_User FOREIGN KEY (library_user_id) REFERENCES library_user(id) ON DELETE CASCADE,
 	ADD CONSTRAINT FK_UserBook_BookTitle FOREIGN KEY (book_title_id) REFERENCES book_title(id) ON DELETE CASCADE	
 );
-INSERT INTO user_book (library_user_id, book_title_id, is_owned, own_wish_list, read_wish_list) VALUES (1, 1, FALSE, TRUE, TRUE);
-INSERT INTO user_book (library_user_id, book_title_id, is_owned, own_wish_list, read_wish_list) VALUES (1, 2, FALSE, TRUE, TRUE);
-INSERT INTO user_book (library_user_id, book_title_id, is_owned, own_wish_list, read_wish_list) VALUES (1, 3, FALSE, TRUE, TRUE);
-INSERT INTO user_book (library_user_id, book_title_id, is_owned) VALUES (1, 4, TRUE);
-INSERT INTO user_book (library_user_id, book_title_id, is_owned) VALUES (1, 5, TRUE);
-INSERT INTO user_book (library_user_id, book_title_id, is_owned) VALUES (1, 6, TRUE);
-INSERT INTO user_book (library_user_id, book_title_id, is_owned, read_wish_list) VALUES (2, 7, FALSE, TRUE);
-INSERT INTO user_book (library_user_id, book_title_id, is_owned, read_wish_list) VALUES (2, 8, FALSE, TRUE);
-INSERT INTO user_book (library_user_id, book_title_id, is_owned, read_wish_list) VALUES (2, 9, FALSE, TRUE);
-INSERT INTO user_book (library_user_id, book_title_id, is_owned, read_wish_list) VALUES (2, 10, FALSE, TRUE);
-INSERT INTO user_book (library_user_id, book_title_id, is_owned, read_wish_list) VALUES (3, 11, FALSE, TRUE);
-INSERT INTO user_book (library_user_id, book_title_id, is_owned, read_wish_list) VALUES (3, 12, FALSE, TRUE);
+INSERT INTO user_book (library_user_id, book_title_id, is_owned, own_wish_list, read_wish_list) VALUES (11, 98, FALSE, TRUE, TRUE);
+INSERT INTO user_book (library_user_id, book_title_id, is_owned, own_wish_list, read_wish_list) VALUES (11, 99, FALSE, TRUE, TRUE);
+INSERT INTO user_book (library_user_id, book_title_id, is_owned, own_wish_list, read_wish_list) VALUES (11, 100, FALSE, TRUE, TRUE);
+INSERT INTO user_book (library_user_id, book_title_id, is_owned) VALUES (11, 101, TRUE);
+INSERT INTO user_book (library_user_id, book_title_id, is_owned, read_wish_list) VALUES (15, 98, FALSE, TRUE);
+INSERT INTO user_book (library_user_id, book_title_id, is_owned, read_wish_list) VALUES (15, 99, FALSE, TRUE);
+INSERT INTO user_book (library_user_id, book_title_id, is_owned, read_wish_list) VALUES (16, 100, FALSE, TRUE);
+INSERT INTO user_book (library_user_id, book_title_id, is_owned, read_wish_list) VALUES (16, 102, FALSE, TRUE);
+
 /* create reviews table */
 CREATE TABLE reviews
 (
@@ -113,24 +106,27 @@ CREATE TABLE reviews
 	ADD CONSTRAINT FK_Reviews_BookTitle FOREIGN KEY (book_title_id) REFERENCES book_title(id) ON DELETE CASCADE
 );
 /* insert reviews */
-INSERT INTO reviews (library_user_id, book_title_id, review, rating) VALUES (1, 1, 'Loved the mystery and humor involved in the historical romance', 5);
-INSERT INTO reviews (library_user_id, book_title_id, review, rating) VALUES (2, 1, 'Deathly boring.', 5);
-INSERT INTO reviews (library_user_id, book_title_id, review, rating) VALUES (3, 2, 'Great read for my wife. Not so much for me.', 5);
-INSERT INTO reviews (library_user_id, book_title_id, review, rating) VALUES (3, 8, 'Fun to read.', 4);
+INSERT INTO reviews (library_user_id, book_title_id, review, rating) VALUES (11, 98, 'A true classic of twentieth-century literature', 5);
+INSERT INTO reviews (library_user_id, book_title_id, review, rating) VALUES (15, 99, 'Worth reading time and time again.', 5);
+INSERT INTO reviews (library_user_id, book_title_id, review, rating) VALUES (15, 100, 'No doubt this is a difficult book but it has a great payoff.', 5);
+INSERT INTO reviews (library_user_id, book_title_id, review, rating) VALUES (16, 102, 'Collection of 15 short stories.', 4);
+
 /* create borrowers */
 CREATE TABLE borrower
 (
 	id SERIAL,
 	first_name VARCHAR(100) NOT NULL,
-    middle_name VARCHAR(100),
 	last_name VARCHAR(100) NOT NULL,
 	phone_number VARCHAR(12) NOT NULL,
-	PRIMARY KEY (id)
+    middle_name VARCHAR(100),
+	PRIMARY KEY (id),
+    ADD CONSTRAINT UC_Borrower_Name UNIQUE (first_name, last_name)
 );
 /* insert borrowers */
-INSERT INTO borrower (first_name, last_name, phone_number) VALUES ('Karina', 'Hansen', '208-206-1488');
-INSERT INTO borrower (first_name, last_name, phone_number) VALUES ('Kayli', 'Hansen', '208-206-1488');
-INSERT INTO borrower (first_name, last_name, phone_number) VALUES ('Breanna', 'Hansen', '208-206-1488');
+INSERT INTO borrower (first_name, last_name, phone_number) VALUES ('Todd', 'Scott', '208-206-1488');
+INSERT INTO borrower (first_name, last_name, phone_number) VALUES ('Maple', 'Wilson', '208-206-1488');
+INSERT INTO borrower (first_name, last_name, phone_number) VALUES ('Avery', 'Johnson', '208-206-1488');
+
 /* create user_borrower */
 CREATE TABLE user_borrower
 (
@@ -141,6 +137,10 @@ CREATE TABLE user_borrower
     ADD CONSTRAINT FK_User_Borrower_User_ID FOREIGN KEY (library_user_id) REFERENCES library_user(id) ON DELETE CASCADE,
     ADD CONSTRAINT FK_User_Borrower_Borrower_ID FOREIGN KEY (borrower_id) REFERENCES borrower(id) ON DELETE CASCADE
 );
+/* insert borrowers for a user */
+INSERT INTO user_borrower (library_user_id, borrower_id) VALUES (11, 30);
+INSERT INTO user_borrower (library_user_id, borrower_id) VALUES (15, 31);
+INSERT INTO user_borrower (library_user_id, borrower_id) VALUES (16, 32);
 
 /* create loan table */
 CREATE TABLE loan
@@ -158,41 +158,8 @@ CREATE TABLE loan
 	ADD CONSTRAINT FK_Loan_Borrower FOREIGN KEY (borrower_id) REFERENCES borrower(id) ON DELETE CASCADE
 );
 /* insert loans */
-INSERT INTO loan (library_user_id, book_title_id, borrower_id, date_borrowed, is_returned) VALUES (1, 4, 2, DATE '01-23-2021', FALSE);
-INSERT INTO loan (library_user_id, book_title_id, borrower_id, date_borrowed, is_returned) VALUES (1, 3, 1, DATE '01-22-2021', FALSE);
-INSERT INTO loan (library_user_id, book_title_id, borrower_id, date_borrowed, return_date, is_returned) VALUES (1, 2, 1, DATE '01-02-2021', DATE '01-20-2021', FALSE);
-INSERT INTO loan (library_user_id, book_title_id, borrower_id, date_borrowed, is_returned) VALUES (2, 3, 2, DATE '01-22-2021', FALSE);
-INSERT INTO loan (library_user_id, book_title_id, borrower_id, date_borrowed, is_returned) VALUES (2, 5, 3, DATE '01-22-2021', FALSE);
-INSERT INTO loan (library_user_id, book_title_id, borrower_id, date_borrowed, is_returned) VALUES (3, 6, 1, DATE '01-22-2021', FALSE);
-INSERT INTO loan (library_user_id, book_title_id, borrower_id, date_borrowed, is_returned) VALUES (3, 3, 2, DATE '01-22-2021', FALSE);
-
-/*
-SELECT b.title_of_book, a.first_name, a.middle_name, a.last_name FROM user_book u INNER JOIN book_title b ON u.book_title_id = b.id INNER JOIN author a ON a.id = b.author_id WHERE u.library_user_id = 1 ORDER BY b.title_of_book; 
-
-SELECT b.title_of_book, a.first_name, a.middle_name, a.last_name FROM user_book u INNER JOIN book_title b ON u.book_title_id = b.id INNER JOIN author a ON a.id = b.author_id WHERE u.library_user_id = 1 AND own_wish_list = TRUE ORDER BY b.title_of_book; 
-
-SELECT b.title_of_book, bo.first_name, bo.last_name, bo.phone_number, l.date_borrowed, l.return_date, l.is_returned, lu.user_phone FROM loan l INNER JOIN book_title b ON l.book_title_id = b.id INNER JOIN library_user lu ON lu.id = l.library_user_id INNER JOIN borrower bo ON l.borrower_id = bo.id WHERE l.library_user_id = 1 ORDER BY date_borrowed DESC;
-
-SELECT r.book_title_id, r.review, r.rating, lu.username FROM reviews r INNER JOIN library_user lu;
-
-SELECT a.first_name, a.middle_name, a.last_name, u.is_blacklist, u.is_favorite FROM author a INNER JOIN user_author u ON a.id = u.author_id WHERE u.library_user_id = 3;
-    
-SELECT b.title_of_book, a.first_name, a.middle_name, a.last_name FROM user_book u INNER JOIN book_title b ON u.book_title_id = b.id INNER JOIN author a ON a.id = b.author_id WHERE u.library_user_id = 1 AND b.title_of_book = 'An Elegant Facade';
-
-SELECT b.title_of_book, a.first_name, a.middle_name, a.last_name FROM user_book u INNER JOIN book_title b ON u.book_title_id = b.id INNER JOIN author a ON a.id = b.author_id WHERE u.library_user_id = 1 ORDER BY b.title_of_book;
-
-SELECT a.first_name, a.middle_name, a.last_name, b.title_of_book, r.rating, r.review, u.username INNER JOIN review r 
-
-SELECT b.title_of_book, a.first_name, a.middle_name, a.last_name FROM user_book u INNER JOIN book_title b ON u.book_title_id = b.id INNER JOIN author a ON a.id = b.author_id WHERE u.library_user_id = 1 AND a.first_name = 'Jane' AND a.last_name = 'Austen';
-
-SELECT a.first_name, a.middle_name, a.last_name, u.is_blacklist, u.is_favorite FROM author a INNER JOIN user_author u ON a.id = u.author_id WHERE u.library_user_id = 1 AND a.first_name = 'Jane' AND a.last_name = 'Austen';
-
-SELECT b.title_of_book, bo.first_name, bo.last_name, bo.phone_number, l.date_borrowed, l.return_date, 
-l.is_returned, lu.user_phone FROM loan l INNER JOIN book_title b ON l.book_title_id = b.id INNER JOIN library_user lu 
-ON lu.id = l.library_user_id INNER JOIN borrower bo ON l.borrower_id = 1 WHERE l.library_user_id = 1 
-AND bo.first_name = 'Kayli' AND bo.last_name = 'Hansen';
-   
-SELECT r.review, r.rating, a.first_name, a.middle_name, a.last_name, b.title_of_book, lu.username FROM reviews r INNER JOIN book_title b ON r.book_title_id = b.id INNER JOIN library_user lu ON r.library_user_id = 1 INNER JOIN author a ON a.id = b.author_id WHERE a.first_name = :first_name AND a.last_name;
-*/
-
-SELECT a.id, a.first_name, a.middle_name, a.last_name, u.is_blacklist, u.is_favorite FROM author a INNER JOIN user_author u ON a.id = u.author_id INNER JOIN book_title b ON b.author_id = a.id INNER JOIN user_book ub ON ub.book_title_id = b.id WHERE u.library_user_id = 1 ORDER BY last_name;
+INSERT INTO loan (library_user_id, book_title_id, borrower_id, date_borrowed, is_returned) VALUES (11, 98, 30, DATE '01-23-2021', FALSE);
+INSERT INTO loan (library_user_id, book_title_id, borrower_id, date_borrowed, is_returned) VALUES (11, 99, 31, DATE '01-22-2021', FALSE);
+INSERT INTO loan (library_user_id, book_title_id, borrower_id, date_borrowed, is_returned) VALUES (15, 100, 32, DATE '01-22-2021', FALSE);
+INSERT INTO loan (library_user_id, book_title_id, borrower_id, date_borrowed, is_returned) VALUES (15, 101, 31, DATE '01-22-2021', FALSE);
+INSERT INTO loan (library_user_id, book_title_id, borrower_id, date_borrowed, is_returned) VALUES (16, 102, 30, DATE '01-22-2021', FALSE);
