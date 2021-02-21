@@ -51,7 +51,6 @@ switch ($action){
         $authorsTable = displayAuthors($authors);
         $author = addAuthor();
         $choice = addFavBlack();
-        //$message-2 = "<p class='px-4 py-3 bg-danger rounded'>Author already exists.</p>";
         include 'view/authors.php';
     break;
     // search author page by name
@@ -59,6 +58,8 @@ switch ($action){
         $first_name = test_input($_POST["first_name"]);
         $last_name = test_input($_POST["last_name"]);
         $authors = getByAuthor($first_name, $last_name, $_SESSION['id']);
+        $author = addAuthor();
+        $choice = addFavBlack();
         $authorsTable = displayAuthors($authors);
         include 'view/authors.php';
     break;
