@@ -80,7 +80,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 header('Location: index.php?action=catalog');
             } 
         } catch (Exception $e) {
-            echo $e;
             $message = "<p class='px-4 py-3 bg-danger rounded'>Loan was not updated. Please try again.</p>";
         }
     }

@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $message = "<p class='text-red'>Please use at least 7 characters and 1 number.</p>";
             }
         } catch (Exception $e) {
-            echo $e;
+        
         }
     }
 }

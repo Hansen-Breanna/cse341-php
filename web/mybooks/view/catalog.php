@@ -21,13 +21,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       deleteTitle($db, $_SESSION['id'], $deleteID);
       header('Location: index.php?action=delete-title');
     } catch (Exception $e) {
-      echo $e;
       $message = "<p class='px-4 py-3 bg-danger rounded'>Delete failed.</p>";
     }
   } else {
     try {
     } catch (Exception $e) {
-      echo $e;
+
     }
   }
 }

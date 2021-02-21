@@ -24,7 +24,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 header('Location: index.php?action=reviews');
             }
         } catch (Exception $e) {
-            echo $e;
             $message = "<p class='px-4 py-3 bg-danger rounded'>Review was not added. Please try again.</p>";
         }
     }

@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $choice = displayFavBlackData($author_data);
                 $title_choices = displayTitleChoices($title_data);
             } catch (Exception $e) {
-                echo $e;
+                
             }
         }
 }
